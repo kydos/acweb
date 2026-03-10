@@ -94,7 +94,7 @@ export default function ZenohReportPage({ params: { locale } }: { params: { loca
             className="group rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-accent dark:hover:border-accent transition-colors duration-200"
           >
             {/* Top row: clickable to issue page */}
-            <Link href={`report/${report.slug}`} className="flex items-start gap-4 p-6 pb-4">
+            <Link href={`/zenoh/report/${report.slug}`} className="flex items-start gap-4 p-6 pb-4">
               <span className="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent font-bold font-mono text-sm">
                 {report.num}
               </span>
@@ -128,28 +128,6 @@ export default function ZenohReportPage({ params: { locale } }: { params: { loca
                   </li>
                 ))}
               </ul>
-              <div className="flex gap-2 flex-wrap">
-                <a
-                  href={report.pdfFile}
-                  download
-                  className="btn-primary text-xs px-3 py-1.5 flex items-center gap-1.5 w-fit"
-                >
-                  <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                  </svg>
-                  PDF
-                </a>
-                <a
-                  href={report.docxFile}
-                  download
-                  className="btn-ghost text-xs px-3 py-1.5 flex items-center gap-1.5 w-fit"
-                >
-                  <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                  </svg>
-                  .docx
-                </a>
-              </div>
             </div>
           </div>
         ))}
