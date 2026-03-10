@@ -1,0 +1,29 @@
+[book]
+title = "The Zenoh Book"
+authors = ["Angelo Corsaro"]
+description = "The comprehensive guide to the Zenoh protocol — architecture, concepts, and hands-on examples."
+language = "en"
+multilingual = false
+src = "src"
+
+[build]
+build-dir = "book-dist"
+
+[output.html]
+theme = "defaults"
+default-theme = "navy"
+preferred-dark-theme = "ayu"
+smart-punctuation = true
+mathjax-support = false
+git-repository-url = "https://github.com/eclipse-zenoh/zenoh"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/kydos/acweb/edit/main/book/src/{path}"
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.playground]
+editable = false
+
+[preprocessor.links]

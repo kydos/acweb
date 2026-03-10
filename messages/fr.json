@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "cv": "CV",
+    "blog": "Blog",
+    "zenoh": "Zenoh",
+    "zenohReport": "Rapport",
+    "zenohBook": "Livre",
+    "zenohPapers": "Articles",
+    "zenohTalks": "Conférences",
+    "contact": "Contact"
+  },
+  "home": {
+    "overline": "Inventeur en Systèmes Distribués",
+    "title": "Architecte de Systèmes Distribués & Concepteur de Protocoles",
+    "shortBio": "Inventeur du Protocole Zenoh. Construire le futur de l'informatique distribuée — un protocole à la fois.",
+    "aboutCta": "À propos de moi",
+    "blogCta": "Lire le Blog",
+    "openSourceCta": "Open Source"
+  },
+  "about": {
+    "heading": "À propos",
+    "bio": "Angelo Corsaro est un expert mondialement reconnu en informatique distribuée et l'inventeur du Protocole Zenoh. Avec des décennies d'expérience dans la conception de middleware haute performance et de protocoles de communication, il a façonné la façon dont les systèmes distribués modernes communiquent à grande échelle.\n\nSon travail couvre les systèmes temps réel, l'edge computing, l'IoT et la robotique — des domaines où l'efficacité, la scalabilité et la faible latence ne sont pas optionnelles mais essentielles. Angelo est un conférencier principal fréquent, un défenseur de l'open source et un leader d'opinion dans la communauté des systèmes distribués.",
+    "areasTitle": "Domaines d'Intérêt",
+    "areas": {
+      "distributedSystems": {
+        "title": "Systèmes Distribués",
+        "desc": "Conception de protocoles et de middleware pour l'informatique distribuée à grande échelle."
+      },
+      "edgeComputing": {
+        "title": "Edge Computing",
+        "desc": "Rapprocher le calcul de là où les données sont produites et consommées."
+      },
+      "robotics": {
+        "title": "Robotique & ROS 2",
+        "desc": "Permettre une communication haute performance pour les systèmes autonomes."
+      },
+      "openSource": {
+        "title": "Open Source",
+        "desc": "Construire des technologies ouvertes qui habilitent les développeurs et les organisations."
+      }
+    }
+  },
+  "blog": {
+    "heading": "Blog",
+    "subtitle": "Réflexions sur les systèmes distribués, les protocoles et le génie logiciel.",
+    "empty": "Aucun article pour l'instant. Revenez bientôt.",
+    "minRead": "min de lecture",
+    "searchPlaceholder": "Rechercher des articles..."
+  },
+  "cv": {
+    "heading": "Curriculum Vitae",
+    "downloadPdf": "Télécharger le PDF",
+    "experience": "Expérience",
+    "education": "Formation",
+    "skills": "Compétences",
+    "researchProfile": "Profil de Recherche",
+    "researchInterests": "Intérêts de Recherche",
+    "keyContributions": "Contributions Séminales",
+    "teaching": "Enseignement",
+    "publications": "Publications Sélectionnées",
+    "standards": "Normes & Open Source",
+    "recognition": "Distinctions & Prix",
+    "languages": "Langues",
+    "programming": "Programmation",
+    "standardsCoAuthored": "Normes Co-Rédigées",
+    "openSourceProjects": "Projets Open Source",
+    "position": "Chef de Projet Eclipse Zenoh · ZettaScale Technology",
+    "location": "Gif-sur-Yvette, France",
+    "publicationsNote": "Liste complète : plus de 100 publications évaluées par des pairs · plus de 1 478 citations ·",
+    "statPublications": "Publications évaluées par des pairs",
+    "statCitations": "Citations",
+    "statYearsExperience": "Années d'expérience",
+    "statStandards": "Normes internationales",
+    "skillCatLanguages": "Langages de Programmation",
+    "skillCatProtocols": "Protocoles & Normes",
+    "skillCatDomains": "Domaines"
+  },
+  "openSource": {
+    "heading": "Open Source",
+    "subtitle": "Projets que j'ai créés ou auxquels je contribue. Étoiles et forks récupérés en direct depuis GitHub.",
+    "loadError": "Impossible de charger les dépôts. Veuillez réessayer plus tard."
+  },
+  "zenoh": {
+    "heading": "Protocole Zenoh",
+    "subtitle": "Unifier le continuum IoT / Edge / Cloud",
+    "tagline": "Un protocole qui unifie les données en mouvement, les données au repos et les calculs. Des microcontrôleurs 2KB aux clusters cloud.",
+    "feature1Title": "Zéro Surcharge",
+    "feature1Desc": "Conçu pour les environnements les plus contraints en ressources. Le format fil de Zenoh est minimal, efficace et déterministe.",
+    "feature2Title": "Fonctionne Partout",
+    "feature2Desc": "Des microcontrôleurs 2KB RAM aux déploiements cloud multi-datacenters. Un seul protocole, chaque niveau de votre stack.",
+    "feature3Title": "Transparent par Localisation",
+    "feature3Desc": "Les producteurs et les consommateurs sont totalement découplés. Déplacez les ressources entre edge et cloud sans modifier le code applicatif.",
+    "reposTitle": "Dépôts Principaux",
+    "comingSoonTitle": "Plongées Profondes à Venir sur le Blog",
+    "comingSoonDesc": "Une série technique approfondie sur les décisions de conception de Zenoh, le format fil et les déploiements réels arrive bientôt.",
+    "viewOnGitHub": "Voir sur GitHub",
+    "repo1Desc": "L'implémentation de référence du protocole Zenoh en Rust.",
+    "repo2Desc": "Une implémentation Rust no_std de Zenoh pour les cibles bare-metal et embarquées.",
+    "reportHeading": "Rapport Zenoh",
+    "bookHeading": "Livre Zenoh",
+    "papersHeading": "Articles Zenoh",
+    "talksHeading": "Conférences Zenoh",
+    "reportSubtitle": "Digest mensuel des innovations Zenoh, des points forts de l'écosystème et des histoires de la communauté.",
+    "reportDownload": "Télécharger",
+    "genesisHeading": "La Genèse de Zenoh",
+    "genesisSubtitle": "Comment un protocole est né de la nécessité — et nommé d'après un philosophe",
+    "bookSubtitle": "Le guide complet du protocole Zenoh — architecture, concepts et exemples pratiques.",
+    "bookChaptersTitle": "Table des matières",
+    "bookBuiltWith": "Construit avec mdBook · Propulsé par Rust",
+    "bookReadOnline": "Lire en ligne",
+    "genesisIntro": "Vers 2009–2010, alors qu’il était directeur technique de PrismTech et co-président du groupe d’intérêt DDS de l’OMG, Angelo Corsaro travaillait sur certains des premiers systèmes à très grande échelle — des déploiements couvrant les domaines militaire, aérospatial et les villes intelligentes. Deux problèmes structurels sont apparus clairement.",
+    "genesisScaleProblemTitle": "Le Problème d’Échelle",
+    "genesisScaleProblemDesc": "DDS ne pouvait pas évoluer vers les réseaux mondiaux, ni se réduire aux appareils contraints. CoAP était trop centré sur le cloud ; le modèle de courtier de MQTT forçait même les appareils co-localisés à communiquer via un serveur à des milliers de kilomètres.",
+    "genesisTransparencyGapTitle": "Le Fossé de Transparence",
+    "genesisTransparencyGapDesc": "Le Pub/Sub avait atteint la transparence de localisation pour les données en mouvement. Mais une fois les données stockées, cette transparence disparaissait — forçant tout vers le stockage cloud centralisé. Les applications nécessitant un accès à faible latence aux données stockées n’avaient pas de bonne réponse.",
+    "genesisFrankenstein": "Les systèmes de cette époque — ce qu’Angelo appelle l’ère du « Frankenstein Numérique » — étaient assemblés en combinant plusieurs piles de protocoles. Son objectif est devenu clair : concevoir un protocole unique du microcontrôleur au centre de données, sans contraintes topologiques, avec des abstractions unifiées pour les données en mouvement, au repos et les calculs.",
+    "genesisQuote": "Je devais faire quelque chose. J’ai commencé à travailler sur l’idée d’un protocole qui pourrait fonctionner efficacement du microcontrôleur jusqu’au centre de données, sans contraintes topologiques et fournissant une abstraction unifiée pour traiter les données en mouvement et au repos.",
+    "genesisWhyTitle": "Pourquoi « Zenoh » ?",
+    "genesisWhyText1": "Le nom porte deux références philosophiques et un acronyme d’ingénierie. Grandi en Sicile, Angelo était entouré de l’héritage de la philosophie grecque antique. Il était particulièrement attiré par Zénon d’Élée, dont les paradoxes de l’infini le fascinaient depuis l’enfance.",
+    "genesisWhyText2": "Le stoïcisme — fondé par Zénon de Citium — a laissé une marque tout aussi profonde à travers les Méditations de Marc Aurèle.",
+    "genesisWhyFootnote": "La différence entre Zenon et Zenoh est inférieure à une lettre — c’est juste le dépassement du « h ».",
+    "exploreTitle": "Explorer Zenoh",
+    "navCardReportDesc": "Digest mensuel des innovations Zenoh, des actualités de l’écosystème et des histoires de la communauté.",
+    "navCardPapersDesc": "Publications scientifiques et recherches sur le protocole Zenoh.",
+    "navCardBookDesc": "Le guide complet de Zenoh — architecture, concepts et exemples pratiques.",
+    "navCardTalksDesc": "Présentations de conférences et exposés techniques d’Angelo Corsaro."
+  },
+  "contact": {
+    "heading": "Prendre Contact",
+    "subtitle": "Je suis toujours heureux de me connecter — que ce soit à propos des systèmes distribués, de la collaboration open source ou des opportunités de conférence.",
+    "github": "Projets open source et contributions",
+    "linkedin": "Profil professionnel et connexions",
+    "twitter": "Réflexions sur les systèmes distribués et la technologie"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "common": {
+    "darkMode": "Basculer le mode sombre",
+    "language": "Langue",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  }
+}

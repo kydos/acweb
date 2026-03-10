@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi sono",
+    "cv": "CV",
+    "blog": "Blog",
+    "zenoh": "Zenoh",
+    "zenohReport": "Report",
+    "zenohBook": "Libro",
+    "zenohPapers": "Articoli",
+    "zenohTalks": "Conferenze",
+    "contact": "Contatti"
+  },
+  "home": {
+    "overline": "Inventore di Sistemi Distribuiti",
+    "title": "Architetto di Sistemi Distribuiti & Progettista di Protocolli",
+    "shortBio": "Inventore del Protocollo Zenoh. Costruire il futuro del calcolo distribuito — un protocollo alla volta.",
+    "aboutCta": "Chi sono",
+    "blogCta": "Leggi il Blog",
+    "openSourceCta": "Open Source"
+  },
+  "about": {
+    "heading": "Chi sono",
+    "bio": "Angelo Corsaro è un esperto riconosciuto a livello mondiale nel calcolo distribuito e l'inventore del Protocollo Zenoh. Con decenni di esperienza nella progettazione di middleware ad alte prestazioni e protocolli di comunicazione, ha plasmato il modo in cui i moderni sistemi distribuiti comunicano su larga scala.\n\nIl suo lavoro abbraccia sistemi in tempo reale, edge computing, IoT e robotica — domini in cui efficienza, scalabilità e bassa latenza non sono opzionali ma essenziali. Angelo è un frequente relatore principale, sostenitore dell'open source e opinion leader nella comunità dei sistemi distribuiti.",
+    "areasTitle": "Aree di Interesse",
+    "areas": {
+      "distributedSystems": {
+        "title": "Sistemi Distribuiti",
+        "desc": "Progettazione di protocolli e middleware per il calcolo distribuito su larga scala."
+      },
+      "edgeComputing": {
+        "title": "Edge Computing",
+        "desc": "Portare il calcolo più vicino a dove i dati vengono prodotti e consumati."
+      },
+      "robotics": {
+        "title": "Robotica & ROS 2",
+        "desc": "Abilitare comunicazioni ad alte prestazioni per sistemi autonomi."
+      },
+      "openSource": {
+        "title": "Open Source",
+        "desc": "Costruire tecnologie aperte che potenziano sviluppatori e organizzazioni."
+      }
+    }
+  },
+  "blog": {
+    "heading": "Blog",
+    "subtitle": "Riflessioni su sistemi distribuiti, protocolli e ingegneria del software.",
+    "empty": "Nessun articolo ancora. Torna presto.",
+    "minRead": "min di lettura",
+    "searchPlaceholder": "Cerca articoli..."
+  },
+  "cv": {
+    "heading": "Curriculum Vitae",
+    "downloadPdf": "Scarica PDF",
+    "experience": "Esperienza",
+    "education": "Formazione",
+    "skills": "Competenze",
+    "researchProfile": "Profilo di Ricerca",
+    "researchInterests": "Interessi di Ricerca",
+    "keyContributions": "Contributi Seminali",
+    "teaching": "Insegnamento",
+    "publications": "Pubblicazioni Selezionate",
+    "standards": "Standard & Open Source",
+    "recognition": "Riconoscimenti & Premi",
+    "languages": "Lingue",
+    "programming": "Programmazione",
+    "standardsCoAuthored": "Standard Co-Redatti",
+    "openSourceProjects": "Progetti Open Source",
+    "position": "Responsabile del Progetto Eclipse Zenoh · ZettaScale Technology",
+    "location": "Gif-sur-Yvette, Francia",
+    "publicationsNote": "Lista completa: oltre 100 pubblicazioni peer-reviewed · oltre 1.478 citazioni ·",
+    "statPublications": "Pubblicazioni peer-reviewed",
+    "statCitations": "Citazioni",
+    "statYearsExperience": "Anni di esperienza",
+    "statStandards": "Standard internazionali",
+    "skillCatLanguages": "Linguaggi di Programmazione",
+    "skillCatProtocols": "Protocolli & Standard",
+    "skillCatDomains": "Settori"
+  },
+  "openSource": {
+    "heading": "Open Source",
+    "subtitle": "Progetti che ho creato o a cui contribuisco. Stelle e fork recuperati in tempo reale da GitHub.",
+    "loadError": "Impossibile caricare i repository. Riprova più tardi."
+  },
+  "zenoh": {
+    "heading": "Protocollo Zenoh",
+    "subtitle": "Unificare il continuum IoT / Edge / Cloud",
+    "tagline": "Un protocollo che unifica dati in movimento, dati a riposo e computazioni. Dai microcontrollori da 2KB ai cluster cloud.",
+    "feature1Title": "Zero Overhead",
+    "feature1Desc": "Progettato per ambienti con le risorse più limitate. Il formato wire di Zenoh è minimale, efficiente e deterministico.",
+    "feature2Title": "Funziona Ovunque",
+    "feature2Desc": "Dai microcontrollori con 2KB di RAM ai deployment cloud multi-datacenter. Un unico protocollo per ogni livello del tuo stack.",
+    "feature3Title": "Trasparente per Posizione",
+    "feature3Desc": "Produttori e consumatori sono completamente disaccoppiati. Sposta le risorse tra edge e cloud senza modificare il codice applicativo.",
+    "reposTitle": "Repository Principali",
+    "comingSoonTitle": "Analisi Approfondite in Arrivo sul Blog",
+    "comingSoonDesc": "Una serie tecnica approfondita sulle decisioni progettuali di Zenoh, il formato wire e i deployment reali è in arrivo.",
+    "viewOnGitHub": "Vedi su GitHub",
+    "repo1Desc": "L'implementazione di riferimento del protocollo Zenoh in Rust.",
+    "repo2Desc": "Un'implementazione Rust no_std di Zenoh per target bare-metal e sistemi embedded.",
+    "reportHeading": "Report Zenoh",
+    "bookHeading": "Libro Zenoh",
+    "papersHeading": "Articoli Zenoh",
+    "talksHeading": "Conferenze Zenoh",
+    "reportSubtitle": "Digest mensile delle innovazioni Zenoh, aggiornamenti sull'ecosistema e storie della community.",
+    "reportDownload": "Scarica",
+    "genesisHeading": "La Genesi di Zenoh",
+    "genesisSubtitle": "Come un protocollo è nato dalla necessità — e ha preso il nome da un filosofo",
+    "bookSubtitle": "La guida completa al protocollo Zenoh — architettura, concetti ed esempi pratici.",
+    "bookChaptersTitle": "Indice",
+    "bookBuiltWith": "Costruito con mdBook · Realizzato in Rust",
+    "bookReadOnline": "Leggi online",
+    "genesisIntro": "Intorno al 2009–2010, mentre ricopriva il ruolo di CTO di PrismTech e co-presiedeva il gruppo di interesse speciale OMG DDS, Angelo Corsaro lavorava su alcuni dei primi sistemi su scala estremamente grande — implementazioni nel settore militare, aerospaziale e delle Smart City. Due problemi strutturali emersero chiaramente.",
+    "genesisScaleProblemTitle": "Il Problema di Scala",
+    "genesisScaleProblemDesc": "DDS non riusciva a scalare verso le reti globali, né verso i dispositivi vincolati. CoAP era troppo centrato sul cloud; il modello broker di MQTT costringeva anche i dispositivi co-localizzati a comunicare tramite un server a migliaia di chilometri.",
+    "genesisTransparencyGapTitle": "Il Divario di Trasparenza",
+    "genesisTransparencyGapDesc": "Il Pub/Sub aveva raggiunto la trasparenza di posizione per i dati in movimento. Ma una volta archiviati, quella trasparenza svaniva — costringendo tutto verso lo storage cloud centralizzato. Le applicazioni con accesso a bassa latenza ai dati archiviati non avevano buone risposte.",
+    "genesisFrankenstein": "I sistemi di quell’epoca — ciò che Angelo chiama l’era del “Frankenstein Digitale” — venivano assemblati combinando più stack di protocolli. Il suo obiettivo divenne chiaro: progettare un unico protocollo dal microcontrollore al data center, senza vincoli topologici, con astrazioni unificate per dati in movimento, a riposo e calcoli.",
+    "genesisQuote": "Dovevo fare qualcosa. Ho iniziato a lavorare sull’idea di un protocollo che potesse funzionare efficientemente dal microcontrollore fino al data center, senza vincoli topologici e con un’astrazione unificata per i dati in movimento e a riposo.",
+    "genesisWhyTitle": "Perché “Zenoh”?",
+    "genesisWhyText1": "Il nome porta due riferimenti filosofici e un acronimo ingegneristico. Cresciuto in Sicilia, Angelo era circondato dall’eredità della filosofia greca antica. Era particolarmente attratto da Zenone di Elea, i cui paradossi dell’infinito lo affascinavano fin dall’infanzia.",
+    "genesisWhyText2": "Lo stoicismo — fondato da Zenone di Cizio — ha lasciato un segno altrettanto profondo attraverso le Meditazioni di Marco Aurelio.",
+    "genesisWhyFootnote": "La differenza tra Zenon e Zenoh è meno di una lettera — è solo il piccolo eccesso della “h”.",
+    "exploreTitle": "Esplora Zenoh",
+    "navCardReportDesc": "Digest mensile delle innovazioni Zenoh, highlights dell’ecosistema e storie della community.",
+    "navCardPapersDesc": "Pubblicazioni scientifiche e ricerche sul protocollo Zenoh.",
+    "navCardBookDesc": "La guida completa a Zenoh — architettura, concetti ed esempi pratici.",
+    "navCardTalksDesc": "Presentazioni a conferenze e talk tecnici di Angelo Corsaro."
+  },
+  "contact": {
+    "heading": "Contattami",
+    "subtitle": "Sono sempre felice di connettermi — che si tratti di sistemi distribuiti, collaborazione open source o opportunità di keynote.",
+    "github": "Progetti open source e contributi",
+    "linkedin": "Profilo professionale e connessioni",
+    "twitter": "Riflessioni su sistemi distribuiti e tecnologia"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati."
+  },
+  "common": {
+    "darkMode": "Attiva/disattiva modalità scura",
+    "language": "Lingua",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "cv": "CV",
+    "blog": "ブログ",
+    "zenoh": "Zenoh",
+    "zenohReport": "レポート",
+    "zenohBook": "書籍",
+    "zenohPapers": "論文",
+    "zenohTalks": "講演",
+    "contact": "連絡先"
+  },
+  "home": {
+    "overline": "分散システムの発明者",
+    "title": "分散システムアーキテクトとプロトコル設計者",
+    "shortBio": "Zenohプロトコルの発明者。一つのプロトコルから、分散コンピューティングの未来を構築しています。",
+    "aboutCta": "自己紹介",
+    "blogCta": "ブログを読む",
+    "openSourceCta": "オープンソース"
+  },
+  "about": {
+    "heading": "自己紹介",
+    "bio": "Angelo Corsaroは、分散コンピューティングの世界的に認められた専門家であり、Zenohプロトコルの発明者です。高性能ミドルウェアと通信プロトコルの設計に数十年の経験を持ち、現代の分散システムが大規模に通信する方法を形作ってきました。\n\n彼の仕事は、リアルタイムシステム、エッジコンピューティング、IoT、ロボティクスにまたがっており、これらのドメインでは効率性、スケーラビリティ、低レイテンシが必須です。Angeloは頻繁な基調講演者であり、オープンソースの支持者であり、分散システムコミュニティの思想的リーダーです。",
+    "areasTitle": "関心分野",
+    "areas": {
+      "distributedSystems": {
+        "title": "分散システム",
+        "desc": "大規模分散コンピューティングのためのプロトコルとミドルウェアの設計。"
+      },
+      "edgeComputing": {
+        "title": "エッジコンピューティング",
+        "desc": "データが生成・消費される場所に近い計算の実現。"
+      },
+      "robotics": {
+        "title": "ロボティクス & ROS 2",
+        "desc": "自律システムのための高性能通信の実現。"
+      },
+      "openSource": {
+        "title": "オープンソース",
+        "desc": "開発者と組織を強化するオープン技術の構築。"
+      }
+    }
+  },
+  "blog": {
+    "heading": "ブログ",
+    "subtitle": "分散システム、プロトコル、ソフトウェアエンジニアリングに関する考察。",
+    "empty": "まだ投稿がありません。近日公開予定です。",
+    "minRead": "分で読める",
+    "searchPlaceholder": "記事を検索..."
+  },
+  "cv": {
+    "heading": "履歴書",
+    "downloadPdf": "PDFをダウンロード",
+    "experience": "経歴",
+    "education": "学歴",
+    "skills": "スキル",
+    "researchProfile": "研究プロフィール",
+    "researchInterests": "研究の関心",
+    "keyContributions": "主要な研究貢献",
+    "teaching": "教育経験",
+    "publications": "代表的な出版物",
+    "standards": "標準規格 & オープンソース",
+    "recognition": "受賞・表彰",
+    "languages": "言語",
+    "programming": "プログラミング言語",
+    "standardsCoAuthored": "共同執筆した標準規格",
+    "openSourceProjects": "オープンソースプロジェクト",
+    "position": "Eclipse Zenoh プロジェクトリード · ZettaScale Technology",
+    "location": "ジフ=シュル=イヴェット、フランス",
+    "publicationsNote": "全リスト：査読付き論文 100本以上 · 引用数 1,478件以上 ·",
+    "statPublications": "査読付き論文",
+    "statCitations": "被引用数",
+    "statYearsExperience": "経験年数",
+    "statStandards": "国際標準",
+    "skillCatLanguages": "プログラミング言語",
+    "skillCatProtocols": "プロトコル & 標準",
+    "skillCatDomains": "専門分野"
+  },
+  "openSource": {
+    "heading": "オープンソース",
+    "subtitle": "私が作成または貢献しているプロジェクト。スターとフォーク数はGitHubからリアルタイムで取得。",
+    "loadError": "リポジトリの読み込みに失敗しました。後でもう一度お試しください。"
+  },
+  "zenoh": {
+    "heading": "Zenohプロトコル",
+    "subtitle": "IoT / エッジ / クラウドの連続体を統一する",
+    "tagline": "動くデータ、静止データ、コンピューテーションを統一するプロトコル。2KBマイクロコントローラからクラウドクラスターまで。",
+    "feature1Title": "ゼロオーバーヘッド",
+    "feature1Desc": "最もリソースが制限された環境向けに設計。Zenohのワイヤーフォーマットは最小限で、効率的で、決定論的です。",
+    "feature2Title": "どこでも動作",
+    "feature2Desc": "2KBのRAMマイクロコントローラからマルチデータセンタークラウドデプロイまで。スタックのあらゆる層で一つのプロトコル。",
+    "feature3Title": "位置透過性",
+    "feature3Desc": "プロデューサーとコンシューマーは完全に分離されています。アプリケーションコードを変更せずにリソースをエッジとクラウド間で移動できます。",
+    "reposTitle": "主要リポジトリ",
+    "comingSoonTitle": "ブログで詳しい解説が近日公開",
+    "comingSoonDesc": "Zenohの設計決定、ワイヤーフォーマット、実際のデプロイメントに関する詳細な技術シリーズが近日公開予定です。",
+    "viewOnGitHub": "GitHubで見る",
+    "repo1Desc": "RustによるZenohプロトコルのリファレンス実装。",
+    "repo2Desc": "ベアメタルおよび組み込みターゲット向けのZenohのno_std Rust実装。",
+    "reportHeading": "Zenohレポート",
+    "bookHeading": "Zenoh書籍",
+    "papersHeading": "Zenoh論文",
+    "talksHeading": "Zenoh講演",
+    "reportSubtitle": "Zenohのイノベーション、エコシステムのハイライト、コミュニティストーリーの月刊ダイジェスト。",
+    "reportDownload": "ダウンロード",
+    "genesisHeading": "Zenohの誕生",
+    "genesisSubtitle": "必然から生まれたプロトコル — そして哲学者の名にちなんで命名された",
+    "bookSubtitle": "Zenohプロトコルの完全ガイド — アーキテクチャ、コンセプト、実践的な例。",
+    "bookChaptersTitle": "目次",
+    "bookBuiltWith": "mdBookで構築 · Rustによる実装",
+    "bookReadOnline": "オンラインで読む",
+    "genesisIntro": "2009–2010年頃、PrismTechのCTOとしてOMG DDS特別利益グループの共同議長を務めていたAngelo Corsaroは、軍事、航空宇宙、スマートシティにまたがる最初の超大規模システムに取り組んでいました。2つの構造的問題が明確になりました。",
+    "genesisScaleProblemTitle": "スケールの問題",
+    "genesisScaleProblemDesc": "DDSはグローバルネットワークへのスケールアップも、制約のあるデバイスへのスケールダウンもできませんでした。CoAPはクラウド中心すぎ、MQTTのブローカーモデルは同一ネットワーク上のデバイスでさえ数千キロ先のサーバー経由での通信を強いました。",
+    "genesisTransparencyGapTitle": "透明性のギャップ",
+    "genesisTransparencyGapDesc": "Pub/Subは動作中のデータに対して位置透明性を実現していました。しかし一旦データが保存されると、その透明性は消え、すべてが集中型クラウドストレージに強制されました。低レイテンシで保存済データにアクセスする必要のあるアプリには良い答えがありませんでした。",
+    "genesisFrankenstein": "その時代のシステム — Angeloが「デジタル・フランケンシュタイン」時代と呼ぶもの — は複数のプロトコルスタックを組み合わせて居たのでした。彼の目標が明確になりました：マイクロコントローラーからデータセンターまで、トポロジー的制約なしで、動作中・保存済みデータと計算の統一抽象を提供する単一プロトコルを設計すること。",
+    "genesisQuote": "何かしなければなりませんでした。マイクロコントローラーからデータセンターまで効率的に機能し、トポロジー的な制約がなく、動作中と保存済みデータの統一抽象化を提供するプロトコルのアイデアに取り組み始めました。",
+    "genesisWhyTitle": "なぜ「Zenoh」？",
+    "genesisWhyText1": "この名前には2つの哲学的参照と1つの工学的頭字語が含まれています。シチリアで育ったAngeloは古代ギリシャ哲学の遣産に囲まれていました。特にエレアのゼノン（Zenon d’Élée）に惹かれ、その無限のパラドックスは幼少期から彼を魅了しました。",
+    "genesisWhyText2": "ストア哲学 — キティオンのゼノンによって創設された — はマルクス・アウレリウスの『瞥想録』を通じて同様に深い痕跡を残しました。",
+    "genesisWhyFootnote": "ZenonとZenohの違いは1文字にも満たない — 「h」のわずかな行き遥ぎです。",
+    "exploreTitle": "Zenohを探索する",
+    "navCardReportDesc": "Zenohのイノベーション、エコシステムのハイライト、コミュニティストーリーの月次ダイジェスト。",
+    "navCardPapersDesc": "Zenohプロトコルに関する科学的出版物と研究。",
+    "navCardBookDesc": "Zenohの包括的ガイド — アーキテクチャ、概念、実践的な例。",
+    "navCardTalksDesc": "Angelo Corsaroによるカンファレンスプレゼンテーションとテクニカルトーク。"
+  },
+  "contact": {
+    "heading": "お問い合わせ",
+    "subtitle": "分散システム、オープンソースコラボレーション、講演の機会など、いつでもお気軽にご連絡ください。",
+    "github": "オープンソースプロジェクトと貢献",
+    "linkedin": "プロフェッショナルプロフィールとコネクション",
+    "twitter": "分散システムと技術に関する考察"
+  },
+  "footer": {
+    "rights": "全著作権所有。"
+  },
+  "common": {
+    "darkMode": "ダークモードの切り替え",
+    "language": "言語",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる"
+  }
+}
