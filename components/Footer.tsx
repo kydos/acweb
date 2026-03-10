@@ -22,9 +22,15 @@ export function Footer() {
               </svg>
             </SocialLink>
           </div>
-          <p className="text-sm text-stone-500 dark:text-ash">
-            &copy; {year} {siteConfig.name} &mdash; {t("rights")}
-          </p>
+          <div className="text-sm text-stone-500 dark:text-ash text-center sm:text-right space-y-0.5">
+            <p>&copy; {year} {siteConfig.name}</p>
+            <p className="text-xs text-stone-400 dark:text-stone-500">
+              Code:{" "}
+              <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">AGPL-3.0</a>
+              {" · "}Content:{" "}
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">CC BY-SA 4.0</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
