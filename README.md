@@ -68,89 +68,37 @@ Place the following in `/public`:
 - `resume.pdf` — CV/resume download
 - `og-image.png` — Open Graph image
 
-## Static Export & GitHub Pages
+## Deployment
 
-### 1. Enable static export
+The site is deployed to **GitHub Pages** at [corsaro.me](https://corsaro.me) via the `.github/workflows/deploy.yml` workflow.
 
-Add `output: 'export'` to `next.config.js`:
+Every push to `main` automatically:
+1. Builds the static site (`npm run build` → `out/`)
+2. Commits the contents of `out/` to the `gh-pages` branch
+3. GitHub Pages serves the `gh-pages` branch at `corsaro.me`
 
-```js
-module.exports = withNextIntl({
-  output: 'export',
-  // If hosting at a subpath (e.g. username.github.io/acweb), also add:
-  // basePath: '/acweb',
-  images: { ... },
-});
-```
+### GitHub Pages setup (one-time)
 
-> **Note:** With static export the GitHub API (Open Source page) is fetched at build time and baked into the HTML. Data will not refresh until the next build.
+In the repository go to **Settings → Pages** and set:
+- **Source:** Deploy from a branch
+- **Branch:** `gh-pages` / `/ (root)`
 
-### 2. Generate the static output
+### Local static build
 
 ```bash
-npm run build
+npm run build   # output in ./out
 ```
 
-Next.js writes all static files to the `out/` directory.
-
-### 3. Deploy to GitHub Pages
-
-#### Option A — GitHub Actions (recommended)
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-      - id: deploy
-        uses: actions/deploy-pages@v4
-```
-
-Then in the repository go to **Settings → Pages** and set the source to **GitHub Actions**.
-
-Every push to `main` will trigger a build and deploy automatically.
-
-#### Option B — Manual push to `gh-pages` branch
-
-```bash
-npm run build
-npx gh-pages -d out
-```
-
-In the repository go to **Settings → Pages** and set the source branch to `gh-pages`, folder `/`.
+> **Note:** With static export the GitHub API (Open Source page) is fetched at build time. Data will not refresh until the next build.
 
 ### Custom domain
 
-Add a `CNAME` file to `/public` containing your domain:
+The `public/CNAME` file contains `corsaro.me` and is automatically included in the build output. DNS must point to GitHub Pages:
 
-```
-corsaro.me
-```
-
-This ensures the file is copied to `out/CNAME` during the build, which GitHub Pages uses to configure the custom domain.
+| Type | Name | Value |
+|------|------|-------|
+| `A` | `@` | `185.199.108.153` |
+| `A` | `@` | `185.199.109.153` |
+| `A` | `@` | `185.199.110.153` |
+| `A` | `@` | `185.199.111.153` |
+| `CNAME` | `www` | `kydos.github.io` |
