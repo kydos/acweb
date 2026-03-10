@@ -34,16 +34,6 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
             {t("location")}
           </p>
         </div>
-        <a
-          href={cv.resumePdfUrl}
-          download
-          className="btn-primary w-fit shrink-0 flex items-center gap-2"
-        >
-          <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-          </svg>
-          {t("downloadPdf")}
-        </a>
       </div>
 
       {/* ── Stats bar ──────────────────────────────────────────── */}
