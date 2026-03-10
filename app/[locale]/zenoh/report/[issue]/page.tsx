@@ -5,11 +5,14 @@ import { PrintButton } from "@/components/PrintButton";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
+type ImageEntry = { src: string; alt: string; caption?: string };
+
 type Section = {
   title: string;
   body: string;
-  image?: { src: string; alt: string; caption?: string };
-  imageAfter?: { src: string; alt: string; caption?: string };
+  image?: ImageEntry;
+  imageAfter?: ImageEntry;
+  imagesAfter?: ImageEntry[];
 };
 
 type Issue = {
@@ -33,7 +36,7 @@ const issues: Record<string, Issue> = {
         title: "Launching The Zenoh Report",
         body: `Innovations in Zenoh and its ecosystem are moving so fast that even those of us at the core sometimes need a moment to catch our breath. That's exactly why we're launching The Zenoh Report — your monthly digest of highlights, stories, and events shaping the future of cloud-to-microcontroller data in motion, data at rest, and computations.`,
         image: {
-          src: "/zenoh-report/2025-10-image1.png",
+          src: "/zenoh-report/2025-10-image3.png",
           alt: "Comic celebrating the many Zenoh papers published by academic and industrial researchers",
           caption: "Comic of the month celebrating the many Zenoh papers published by academic and industrial researchers.",
         },
@@ -72,16 +75,18 @@ The main features introduced by 1.5.1 are (1) transparent use of shared memory f
 The graphs below show throughput on localhost, in both msg/sec and Gbps. From these it is easy to read that Zenoh achieves 11M msgs/sec for 8-byte payloads, 1.2 Gbps for 16-byte payloads, and 410 Gbps for 64 KB payloads.
 
 For those of you that are not familiar with the Zenoh protocol at a message level, the advantage of being able to apply downsampling for Put/Delete as opposed to Push messages ensures that you can downsample publications of resources but not their deletion, which is usually what you want if you have distributed storages in your system.`,
-        image: {
-          src: "/zenoh-report/2025-10-image2.png",
-          alt: "Zenoh 1.5.1 throughput benchmark — messages per second",
-          caption: "Throughput benchmark: msg/sec for varying payload sizes.",
-        },
-        imageAfter: {
-          src: "/zenoh-report/2025-10-image3.png",
-          alt: "Zenoh 1.5.1 throughput benchmark — Gbps",
-          caption: "Throughput benchmark: Gbps for varying payload sizes.",
-        },
+        imagesAfter: [
+          {
+            src: "/zenoh-report/2025-10-image1.png",
+            alt: "Zenoh 1.5.1 throughput benchmark — messages per second",
+            caption: "Throughput benchmark: msg/sec for varying payload sizes.",
+          },
+          {
+            src: "/zenoh-report/2025-10-image2.png",
+            alt: "Zenoh 1.5.1 throughput benchmark — Gbps",
+            caption: "Throughput benchmark: Gbps for varying payload sizes.",
+          },
+        ],
       },
       {
         title: "Community Spotlight — Pico ROS",
@@ -448,16 +453,6 @@ export default function ZenohReportIssuePage({
         {/* Action buttons — hidden when printing */}
         <div className="print:hidden mt-6 flex flex-wrap gap-3">
           <PrintButton />
-          <a
-            href={issue.docxFile}
-            download
-            className="btn-ghost flex items-center gap-2 w-fit"
-          >
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-            </svg>
-            Download .docx
-          </a>
         </div>
       </div>
 
@@ -524,7 +519,7 @@ export default function ZenohReportIssuePage({
               })}
             </div>
 
-            {/* Optional image after body */}
+            {/* Optional single image after body */}
             {section.imageAfter && (
               <figure className="mt-5">
                 <Image
@@ -541,6 +536,24 @@ export default function ZenohReportIssuePage({
                 )}
               </figure>
             )}
+
+            {/* Optional multiple images after body */}
+            {section.imagesAfter && section.imagesAfter.map((img, k) => (
+              <figure key={k} className="mt-5">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={800}
+                  height={450}
+                  className="rounded-lg border border-stone-200 dark:border-ink-wire w-full h-auto"
+                />
+                {img.caption && (
+                  <figcaption className="mt-2 text-xs text-stone-400 dark:text-ash italic text-center">
+                    {img.caption}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
           </div>
         ))}
       </div>

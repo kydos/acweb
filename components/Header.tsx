@@ -27,12 +27,26 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-ink-wire bg-ink/95 backdrop-blur-md">
       <div className="mx-auto max-w-5xl flex items-center justify-between px-6 h-16">
 
-        {/* Logo */}
+        {/* Logo — AC monogram with lightning bolt (AC = alternating current) */}
         <Link
           href="/"
-          className="font-serif text-lg font-semibold tracking-tight text-cream hover:text-accent transition-colors duration-200"
+          aria-label="Home — Angelo Corsaro"
+          className="group flex items-center gap-2 select-none"
         >
-          {siteConfig.name}
+          {/* Lightning bolt badge */}
+          <span className="relative flex items-center justify-center w-8 h-8 rounded-md border border-[#818cf8]/40 group-hover:border-[#818cf8]/80 transition-colors duration-200 bg-[#818cf8]/5 group-hover:bg-[#818cf8]/10">
+            <svg width="14" height="20" viewBox="0 0 14 20" fill="none" aria-hidden="true">
+              <path
+                d="M9 1L2 11H6.5L4 19L12 9H7.5Z"
+                fill="#818cf8"
+                className="group-hover:opacity-100 opacity-80 transition-opacity duration-200"
+              />
+            </svg>
+          </span>
+          {/* Monogram */}
+          <span className="font-serif text-xl font-bold tracking-tight text-cream group-hover:text-accent transition-colors duration-200">
+            AC
+          </span>
         </Link>
 
         {/* Desktop nav */}
