@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
-export default function ZenohTalksPage() {
+export default function ZenohTalksPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("zenoh");
 
   return (

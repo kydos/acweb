@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("zenoh");
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
     title: t("bookHeading"),
     description: t("bookSubtitle"),
@@ -55,7 +56,8 @@ const chapters = [
   },
 ];
 
-export default function ZenohBookPage() {
+export default function ZenohBookPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("zenoh");
 
   return (

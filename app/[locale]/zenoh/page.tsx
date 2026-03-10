@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("zenoh");
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
     title: t("heading"),
     description: t("subtitle"),
@@ -73,7 +74,8 @@ const navCards = [
   },
 ];
 
-export default function ZenohPage() {
+export default function ZenohPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("zenoh");
   const tn = useTranslations("nav");
 

@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("contact");
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "contact" });
   return {
     title: t("heading"),
     description: `${t("heading")} — ${siteConfig.name}`,
   };
 }
 
-export default function ContactPage() {
+export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("contact");
   const { social } = siteConfig;
 

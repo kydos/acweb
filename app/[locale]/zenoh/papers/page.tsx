@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("zenoh");
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
     title: t("papersHeading"),
     description: "Scientific papers, journal articles, and publications on Zenoh and distributed systems by Angelo Corsaro.",
@@ -319,7 +320,8 @@ function Section({ title, count, children }: { title: string; count: number; chi
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function ZenohPapersPage() {
+export default function ZenohPapersPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("zenoh");
   const total = journals.length + conferences.length +
     magazineArticles.length + zenohPapersByOthers.length + nonEnglishArticles.length + reports.length;

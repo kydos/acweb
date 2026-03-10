@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAllPosts } from "@/lib/mdx";
 import { BlogSearch } from "@/components/BlogSearch";
 import { siteConfig } from "@/lib/siteConfig";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("blog");
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "blog" });
   return {
     title: t("heading"),
     description: `${t("heading")} — ${siteConfig.name}`,
   };
 }
 
-export default function BlogPage() {
+export default function BlogPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("blog");
   const posts = getAllPosts();
 

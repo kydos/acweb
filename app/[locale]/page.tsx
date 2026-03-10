@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 
-export default function Home() {
+export default function Home({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   const t = useTranslations("home");
 
   return (
