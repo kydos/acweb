@@ -36,9 +36,9 @@ export const siteConfig = {
     { key: "cv",      href: "/cv" },
     { key: "blog",    href: "/blog" },
     { key: "zenoh",   href: "/zenoh", children: [
-      { key: "zenohReport", href: "/zenoh/report" },
       { key: "zenohBook",   href: "/zenoh/book" },
       { key: "zenohPapers", href: "/zenoh/papers" },
+      { key: "zenohReport", href: "/zenoh/report" },
       { key: "zenohTalks",  href: "/zenoh/talks" },
     ]},
     { key: "contact", href: "/contact" },
