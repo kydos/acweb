@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/lib/navigation";
 import { formatDate } from "@/lib/utils";
 import type { BlogPost } from "@/lib/mdx";
 

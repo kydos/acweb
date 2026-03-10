@@ -1,12 +1,13 @@
-import createMiddleware from 'next-intl/middleware';
+import createMiddleware from "next-intl/middleware";
+import { locales, defaultLocale, localePrefix } from "./lib/navigation";
 
 export default createMiddleware({
-  locales: ['en', 'fr', 'it', 'ja', 'es', 'zh', 'ko', 'ru'],
-  defaultLocale: 'en',
+  locales,
+  defaultLocale,
+  localePrefix,
   localeDetection: false,
-  localePrefix: 'as-needed',
 });
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

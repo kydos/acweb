@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/lib/navigation";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { siteConfig, type NavLink } from "@/lib/siteConfig";
@@ -20,14 +19,8 @@ export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
-  // Strip locale prefix for active-link detection
-  const locales = ["fr", "it", "ja", "es", "zh", "ko", "ru"];
-  const segments = pathname.split("/");
-  const strippedPath =
-    segments.length > 1 && locales.includes(segments[1])
-      ? "/" + segments.slice(2).join("/")
-      : pathname;
-  const activePath = strippedPath || "/";
+  // next-intl usePathname already strips the locale prefix
+  const activePath = pathname || "/";
 
   return (
     /* Header is ALWAYS dark — ink background regardless of theme */
