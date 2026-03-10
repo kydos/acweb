@@ -426,7 +426,7 @@ export default function ZenohReportIssuePage({
     <div className="mx-auto max-w-3xl px-6 py-16 md:py-24 print:py-8 print:max-w-none print:px-8">
       {/* Back link — hidden when printing */}
       <a
-        href="../report"
+        href=".."
         className="print:hidden inline-flex items-center gap-1.5 text-sm text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors mb-8 group"
       >
         <svg viewBox="0 0 24 24" className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2">
@@ -549,7 +549,7 @@ export default function ZenohReportIssuePage({
       <div className="print:hidden mt-16 pt-8 border-t border-stone-200 dark:border-ink-wire flex justify-between gap-4 text-sm animate-fade-in animate-delay-200">
         {prevSlug ? (
           <a
-            href={`../report/${prevSlug}`}
+            href={`../${prevSlug}`}
             className="flex items-center gap-2 text-stone-500 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors group"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2">
@@ -565,7 +565,7 @@ export default function ZenohReportIssuePage({
         )}
         {nextSlug ? (
           <a
-            href={`../report/${nextSlug}`}
+            href={`../${nextSlug}`}
             className="flex items-center gap-2 text-right text-stone-500 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors group"
           >
             <span>
