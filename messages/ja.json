@@ -75,7 +75,12 @@
     "statStandards": "国際標準",
     "skillCatLanguages": "プログラミング言語",
     "skillCatProtocols": "プロトコル & 標準",
-    "skillCatDomains": "専門分野"
+    "skillCatDomains": "専門分野",
+    "Italian": "イタリア語",
+    "English": "英語",
+    "French": "フランス語",
+    "Native": "母語",
+    "Fluent": "流暢"
   },
   "openSource": {
     "heading": "オープンソース",
@@ -119,8 +124,8 @@
     "genesisQuote": "何かしなければなりませんでした。マイクロコントローラーからデータセンターまで効率的に機能し、トポロジー的な制約がなく、動作中と保存済みデータの統一抽象化を提供するプロトコルのアイデアに取り組み始めました。",
     "genesisWhyTitle": "なぜ「Zenoh」？",
     "genesisWhyText1": "この名前には2つの哲学的参照と1つの工学的頭字語が含まれています。シチリアで育ったAngeloは古代ギリシャ哲学の遣産に囲まれていました。特にエレアのゼノン（Zenon d’Élée）に惹かれ、その無限のパラドックスは幼少期から彼を魅了しました。",
-    "genesisWhyText2": "ストア哲学 — キティオンのゼノンによって創設された — はマルクス・アウレリウスの『瞥想録』を通じて同様に深い痕跡を残しました。",
-    "genesisWhyFootnote": "ZenonとZenohの違いは1文字にも満たない — 「h」のわずかな行き遥ぎです。",
+    "genesisWhyText2": "ストア哲学 — キティオンのゼノンによって創設された — はマルクス・アウレリウスの『自省録』を通じて同様に深い痕跡を残しました。",
+    "genesisWhyFootnote": "ZenonとZenohの違いは1文字にも満たない — 「h」のわずかな行き過ぎです。",
     "exploreTitle": "Zenohを探索する",
     "navCardReportDesc": "Zenohのイノベーション、エコシステムのハイライト、コミュニティストーリーの月次ダイジェスト。",
     "navCardPapersDesc": "Zenohプロトコルに関する科学的出版物と研究。",

@@ -75,7 +75,12 @@
     "statStandards": "国际标准",
     "skillCatLanguages": "编程语言",
     "skillCatProtocols": "协议 & 标准",
-    "skillCatDomains": "专业领域"
+    "skillCatDomains": "专业领域",
+    "Italian": "意大利语",
+    "English": "英语",
+    "French": "法语",
+    "Native": "母语",
+    "Fluent": "流利"
   },
   "openSource": {
     "heading": "开源项目",
@@ -110,7 +115,7 @@
     "bookChaptersTitle": "目录",
     "bookBuiltWith": "使用mdBook构建 · 由Rust驱动",
     "bookReadOnline": "在线阅读",
-    "genesisIntro": "大约在2009–2010年，Angelo Corsaro担任PrismTech的首席技术官，并共同主OMG DDS特别兴趣小组，致力于一些最早的超大规模系统——涵盖军事、航空航天和智慧城市基础设施的部署。两个结构性问题逐渐清晰。",
+    "genesisIntro": "大约在2009–2010年，Angelo Corsaro担任PrismTech的首席技术官，并共同主持OMG DDS特别兴趣小组，致力于一些最早的超大规模系统——涵盖军事、航空航天和智慧城市基础设施的部署。两个结构性问题逐渐清晰。",
     "genesisScaleProblemTitle": "规模问题",
     "genesisScaleProblemDesc": "DDS无法向上扩展到全球网络，也无法向下缩小到受限设备。CoAP过于以云为中心；MQTT的代理模型迫使即使是同一网络上的设备也要通过数千公里外的服务器进行通信。",
     "genesisTransparencyGapTitle": "透明度差距",
@@ -118,8 +123,8 @@
     "genesisFrankenstein": "那个时代的系统——Angelo称之为“数字科学怪人”时代——是通过将多个协议栈拼凑在一起组装的。他的目标变得清晰：设计一个从微控制器到数据中心的单一协议，没有拓扑约束，为动态数据、静态数据和计算提供统一抽象。",
     "genesisQuote": "我必须做些什么。我开始研究一个协议的想法，这个协议可以从微控制器到数据中心高效运行，没有任何拓扑约束，并为处理动态数据和静态数据提供统一抽象。",
     "genesisWhyTitle": "为什么叫“Zenoh”？",
-    "genesisWhyText1": "这个名字包含两个哲学参考和一个工程缩写。Angelo在西西里岛长大，被古希腊哲学的遗产所包围。他特别被埃利亚的芒诺（Zenon d’Élée）所吸引，其无穷悟论从小就令他着迷。",
-    "genesisWhyText2": "斯多葛主义——由基提翁的芒诺创立——通过马可·奥勒留的《沉思录》留下了同样深刻的印记。",
+    "genesisWhyText1": "这个名字包含两个哲学参考和一个工程缩写。Angelo在西西里岛长大，被古希腊哲学的遗产所包围。他特别被埃利亚的芝诺（Zenon d’Élée）所吸引，其无穷悖论从小就令他着迷。",
+    "genesisWhyText2": "斯多葛主义——由基提翁的芝诺创立——通过马可·奥勒留的《沉思录》留下了同样深刻的印记。",
     "genesisWhyFootnote": "Zenon和Zenoh之间的差异不到一个字母——它只是“h”的超出部分。",
     "exploreTitle": "探索Zenoh",
     "navCardReportDesc": "Zenoh创新、生态系统亮点和社区故事的月度摘要。",

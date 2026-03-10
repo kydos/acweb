@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
+import { getLocalizedCV } from "@/lib/cvContent";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
@@ -12,11 +13,10 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-const { cv } = siteConfig;
-
 export default function CVPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("cv");
+  const cv = getLocalizedCV(locale);
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
@@ -268,8 +268,8 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
                   key={lang}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-stone-200 dark:border-ink-wire text-sm"
                 >
-                  <span className="font-medium text-stone-800 dark:text-cream">{lang}</span>
-                  <span className="text-stone-400 dark:text-ash text-xs">{level}</span>
+                  <span className="font-medium text-stone-800 dark:text-cream">{t(lang as Parameters<typeof t>[0])}</span>
+                  <span className="text-stone-400 dark:text-ash text-xs">{t(level as Parameters<typeof t>[0])}</span>
                 </div>
               ))}
             </div>
@@ -282,7 +282,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
                 {t(catKey as Parameters<typeof t>[0])}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {items.map((skill) => (
+                {(items as string[]).map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 text-sm rounded-full bg-stone-100 dark:bg-ink-shell/40 text-stone-700 dark:text-fog"

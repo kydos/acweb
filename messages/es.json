@@ -75,7 +75,12 @@
     "statStandards": "Normas internacionales",
     "skillCatLanguages": "Lenguajes de Programación",
     "skillCatProtocols": "Protocolos & Estándares",
-    "skillCatDomains": "Dominios"
+    "skillCatDomains": "Dominios",
+    "Italian": "Italiano",
+    "English": "Inglés",
+    "French": "Francés",
+    "Native": "Nativo",
+    "Fluent": "Fluido"
   },
   "openSource": {
     "heading": "Open Source",
