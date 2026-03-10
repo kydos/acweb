@@ -1,6 +1,6 @@
 # acweb
 
-Personal website for [Angelo Corsaro](https://angelocorsaro.com) — inventor of the Zenoh Protocol and distributed systems expert.
+Personal website for [Angelo Corsaro](https://corsaro.me) — inventor of the Zenoh Protocol and distributed systems expert.
 
 ## Stack
 
@@ -150,7 +150,7 @@ In the repository go to **Settings → Pages** and set the source branch to `gh-
 Add a `CNAME` file to `/public` containing your domain:
 
 ```
-angelocorsaro.com
+corsaro.me
 ```
 
 This ensures the file is copied to `out/CNAME` during the build, which GitHub Pages uses to configure the custom domain.
