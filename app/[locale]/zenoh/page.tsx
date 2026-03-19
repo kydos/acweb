@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/JsonLd";
+
+const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+
+const siteUrl = "https://corsaro.me";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
@@ -9,8 +14,66 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   return {
     title: t("heading"),
     description: t("subtitle"),
+    keywords: [
+      "Zenoh Protocol",
+      "Eclipse Zenoh",
+      "Zenoh IoT",
+      "Zenoh robotics",
+      "Zenoh ROS 2",
+      "pub/sub protocol",
+      "cloud-to-edge",
+      "distributed middleware",
+      "edge computing protocol",
+      "DDS alternative",
+      "ZettaScale",
+      "Angelo Corsaro",
+      "Zenoh inventor",
+      "zero network overhead",
+      "Zenoh embedded",
+      "Zenoh microcontroller",
+      "Zenoh 1.0",
+      "Zenoh 2.0",
+      "Zenoh wire protocol",
+    ],
+    alternates: {
+      canonical: `${siteUrl}/${locale}/zenoh`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}/zenoh`])),
+        "x-default": `${siteUrl}/en/zenoh`,
+      },
+    },
+    openGraph: {
+      title: t("heading"),
+      description: t("subtitle"),
+      url: `${siteUrl}/${locale}/zenoh`,
+      type: "website",
+    },
   };
 }
+
+const zenohProtocolSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Eclipse Zenoh",
+  alternateName: ["Zenoh Protocol", "zenoh", "Eclipse Zenoh Protocol"],
+  description:
+    "Eclipse Zenoh is an open protocol that unifies data in motion (pub/sub), data at rest (distributed queries), and distributed computations across the cloud-to-microcontroller continuum. 5-byte wire overhead, sub-13µs latency, 50 Gbps throughput.",
+  applicationCategory: "Communication Protocol",
+  operatingSystem: "Any",
+  creator: {
+    "@type": "Person",
+    name: "Angelo Corsaro",
+    url: siteUrl,
+    jobTitle: "Inventor of the Zenoh Protocol, CEO/CTO of ZettaScale Technology",
+  },
+  author: { "@type": "Person", name: "Angelo Corsaro", url: siteUrl },
+  url: "https://zenoh.io",
+  sameAs: [
+    "https://github.com/eclipse-zenoh/zenoh",
+    "https://www.eclipse.org/zenoh/",
+  ],
+  license: "https://www.eclipse.org/legal/epl-2.0/",
+};
 
 const zenohRepos = [
   {
@@ -80,6 +143,8 @@ export default function ZenohPage({ params: { locale } }: { params: { locale: st
   const tn = useTranslations("nav");
 
   return (
+    <>
+      <JsonLd data={zenohProtocolSchema} />
     <div>
       {/* Hero */}
       <section className="relative mx-auto max-w-4xl px-6 py-24 md:py-32">
@@ -271,6 +336,7 @@ export default function ZenohPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
     </div>
+    </>
   );
 }
 

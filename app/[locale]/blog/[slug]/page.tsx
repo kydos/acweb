@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
+import { JsonLd } from "@/components/JsonLd";
 
 const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
 
@@ -25,12 +27,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: [
+      ...(post.tags ?? []),
+      "Zenoh Protocol",
+      "Angelo Corsaro",
+      "distributed systems",
+    ],
+    alternates: {
+      canonical: `${siteConfig.siteUrl}/en/blog/${params.slug}`,
+      languages: {
+        ...Object.fromEntries(
+          locales.map((l) => [l, `${siteConfig.siteUrl}/${l}/blog/${params.slug}`])
+        ),
+        "x-default": `${siteConfig.siteUrl}/en/blog/${params.slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [siteConfig.name],
+      url: `${siteConfig.siteUrl}/en/blog/${params.slug}`,
+      images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: post.title }],
     },
   };
 }
@@ -64,13 +83,62 @@ const mdxComponents = {
       {...props}
     />
   ),
+  table: (props: React.HTMLAttributes<HTMLTableElement>) => (
+    <div className="overflow-x-auto my-6">
+      <table className="w-full text-sm border-collapse" {...props} />
+    </div>
+  ),
+  thead: (props: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <thead className="bg-stone-100 dark:bg-ink-shell" {...props} />
+  ),
+  th: (props: React.ThHTMLAttributes<HTMLTableCellElement>) => (
+    <th
+      className="px-4 py-2 text-left font-semibold text-stone-700 dark:text-cream border border-stone-200 dark:border-ink-wire"
+      {...props}
+    />
+  ),
+  td: (props: React.TdHTMLAttributes<HTMLTableCellElement>) => (
+    <td
+      className="px-4 py-2 text-stone-700 dark:text-fog border border-stone-200 dark:border-ink-wire align-top"
+      {...props}
+    />
+  ),
+  tr: (props: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <tr
+      className="even:bg-stone-50 dark:even:bg-ink-shell/40"
+      {...props}
+    />
+  ),
 };
 
 export default function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+    },
+    url: `${siteConfig.siteUrl}/en/blog/${post.slug}`,
+    keywords: post.tags?.join(", "),
+  };
+
   return (
+    <>
+      <JsonLd data={articleSchema} />
     <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
       <header className="mb-10 animate-fade-in">
         <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream">
@@ -88,6 +156,7 @@ export default function BlogPostPage({ params }: Props) {
           components={mdxComponents}
           options={{
             mdxOptions: {
+              remarkPlugins: [remarkGfm],
               rehypePlugins: [
                 [rehypePrettyCode as never, rehypePrettyCodeOptions],
               ],
@@ -96,5 +165,6 @@ export default function BlogPostPage({ params }: Props) {
         />
       </div>
     </article>
+    </>
   );
 }

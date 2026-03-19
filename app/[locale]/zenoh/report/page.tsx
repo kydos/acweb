@@ -3,12 +3,38 @@ import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/lib/navigation";
 
+const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+const siteUrl = "https://corsaro.me";
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
     title: t("reportHeading"),
     description: t("reportSubtitle"),
+    keywords: [
+      "Zenoh Report",
+      "Zenoh newsletter",
+      "Zenoh Protocol updates",
+      "Eclipse Zenoh news",
+      "ZettaScale Zenoh",
+      "Angelo Corsaro newsletter",
+      "Zenoh release notes",
+      "Zenoh 2.0",
+    ],
+    alternates: {
+      canonical: `${siteUrl}/${locale}/zenoh/report`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}/zenoh/report`])),
+        "x-default": `${siteUrl}/en/zenoh/report`,
+      },
+    },
+    openGraph: {
+      title: t("reportHeading"),
+      description: t("reportSubtitle"),
+      url: `${siteUrl}/${locale}/zenoh/report`,
+      type: "website",
+    },
   };
 }
 

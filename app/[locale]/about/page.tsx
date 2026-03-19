@@ -4,12 +4,34 @@ import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 
+const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+const siteUrl = "https://corsaro.me";
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "about" });
   return {
     title: t("heading"),
-    description: `${t("heading")} — ${siteConfig.name}`,
+    description:
+      "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol, expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and edge computing. CEO/CTO of ZettaScale Technology.",
+    keywords: [
+      "Angelo Corsaro",
+      "Zenoh inventor",
+      "Zenoh Protocol creator",
+      "ZettaScale CTO",
+      "distributed systems expert",
+      "ROS 2 middleware",
+      "Eclipse Zenoh creator",
+      "edge computing",
+      "IoT middleware expert",
+    ],
+    alternates: {
+      canonical: `${siteUrl}/${locale}/about`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}/about`])),
+        "x-default": `${siteUrl}/en/about`,
+      },
+    },
   };
 }
 

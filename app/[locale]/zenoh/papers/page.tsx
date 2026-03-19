@@ -2,12 +2,41 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+const siteUrl = "https://corsaro.me";
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
     title: t("papersHeading"),
-    description: "Scientific papers, journal articles, and publications on Zenoh and distributed systems by Angelo Corsaro.",
+    description:
+      "Scientific papers, journal articles, conference proceedings, and press coverage on Zenoh Protocol and distributed systems research by Angelo Corsaro.",
+    keywords: [
+      "Zenoh papers",
+      "Zenoh research",
+      "Angelo Corsaro publications",
+      "Eclipse Zenoh academic",
+      "Zenoh performance benchmarks",
+      "Zenoh ROS 2 study",
+      "distributed systems research",
+      "pub/sub protocol research",
+      "Zenoh DDS comparison",
+    ],
+    alternates: {
+      canonical: `${siteUrl}/${locale}/zenoh/papers`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}/zenoh/papers`])),
+        "x-default": `${siteUrl}/en/zenoh/papers`,
+      },
+    },
+    openGraph: {
+      title: t("papersHeading"),
+      description:
+        "Scientific papers, journal articles, conference proceedings, and press coverage on Zenoh Protocol and distributed systems research by Angelo Corsaro.",
+      url: `${siteUrl}/${locale}/zenoh/papers`,
+      type: "website",
+    },
   };
 }
 

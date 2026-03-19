@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PrintButton } from "@/components/PrintButton";
+import { JsonLd } from "@/components/JsonLd";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -395,6 +396,17 @@ You can control when issuing a query whether you accept replies that don't match
 
 // ─── Static params ────────────────────────────────────────────────────────────
 
+const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+const siteUrl = "https://corsaro.me";
+
+/** Maps issue slug to approximate ISO publication date */
+const issueDates: Record<string, string> = {
+  "2025-10": "2025-10-01",
+  "2025-11": "2025-11-01",
+  "2026-01": "2026-01-01",
+  "2026-02": "2026-02-01",
+};
+
 export function generateStaticParams() {
   return Object.keys(issues).map((issue) => ({ issue }));
 }
@@ -402,13 +414,44 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { issue: string };
+  params: { locale: string; issue: string };
 }): Promise<Metadata> {
   const issue = issues[params.issue];
   if (!issue) return {};
+  const locale = params.locale ?? "en";
+  const title = `The Zenoh Report — ${issue.label}`;
+  const description = `${issue.subtitle}. Monthly newsletter on Zenoh Protocol updates, ecosystem news, and community stories by Angelo Corsaro.`;
   return {
-    title: `The Zenoh Report — ${issue.label}`,
-    description: issue.subtitle,
+    title,
+    description,
+    keywords: [
+      "Zenoh Report",
+      "Zenoh Protocol",
+      "Eclipse Zenoh",
+      issue.label,
+      "Zenoh newsletter",
+      "ZettaScale",
+      "Angelo Corsaro",
+      "distributed systems",
+      "ROS 2 Zenoh",
+    ],
+    alternates: {
+      canonical: `${siteUrl}/en/zenoh/report/${issue.slug}`,
+      languages: {
+        ...Object.fromEntries(
+          locales.map((l) => [l, `${siteUrl}/${l}/zenoh/report/${issue.slug}`])
+        ),
+        "x-default": `${siteUrl}/en/zenoh/report/${issue.slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: issueDates[issue.slug] ?? issue.slug,
+      authors: ["Angelo Corsaro"],
+      url: `${siteUrl}/${locale}/zenoh/report/${issue.slug}`,
+    },
   };
 }
 
@@ -427,7 +470,28 @@ export default function ZenohReportIssuePage({
   const prevSlug = currentIdx > 0 ? allSlugs[currentIdx - 1] : null;
   const nextSlug = currentIdx < allSlugs.length - 1 ? allSlugs[currentIdx + 1] : null;
 
+  const issueSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `The Zenoh Report — ${issue.label}`,
+    name: `The Zenoh Report ${issue.label}: ${issue.subtitle}`,
+    description: `${issue.subtitle}. Monthly newsletter on Zenoh Protocol updates, ecosystem news, and community stories.`,
+    datePublished: issueDates[issue.slug] ?? issue.slug,
+    author: { "@type": "Person", name: "Angelo Corsaro", url: siteUrl },
+    publisher: { "@type": "Person", name: "Angelo Corsaro", url: siteUrl },
+    url: `${siteUrl}/en/zenoh/report/${issue.slug}`,
+    keywords: "Eclipse Zenoh, Zenoh Protocol, distributed systems, robotics middleware, ZettaScale",
+    about: { "@type": "Thing", name: "Eclipse Zenoh Protocol" },
+    isPartOf: {
+      "@type": "Periodical",
+      name: "The Zenoh Report",
+      url: `${siteUrl}/en/zenoh/report`,
+    },
+  };
+
   return (
+    <>
+      <JsonLd data={issueSchema} />
     <div className="mx-auto max-w-3xl px-6 py-16 md:py-24 print:py-8 print:max-w-none print:px-8">
       {/* Back link — hidden when printing */}
       <a
@@ -594,5 +658,6 @@ export default function ZenohReportIssuePage({
         )}
       </div>
     </div>
+    </>
   );
 }
