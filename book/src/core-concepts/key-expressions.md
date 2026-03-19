@@ -15,10 +15,6 @@ Key expressions are forward-slash-separated paths, optionally containing wildcar
 | `sensors/**` | Everything under `sensors/` |
 | `**/temperature` | Any temperature resource anywhere in the namespace |
 
-## Canonicalization
-
-Zenoh normalizes key expressions internally. `a/b/../c` becomes `a/c`.
-
 ## Key Expression Language (KEL)
 
 Key expressions support **intersections** and **inclusion** tests, enabling the router to
@@ -35,6 +31,6 @@ assert!(sub_ke.intersects(&pub_ke)); // true
 
 ## Best Practices
 
-- Use hierarchical namespaces: `/{domain}/{entity}/{attribute}`
-- Keep segments meaningful: `robots/robot-42/pose` over `r42p`
+- Use hierarchical namespaces: `{domain}/{entity}/{attribute}`
+- Keep segments meaningful: `robot/42/pose` over `r42p`
 - Use `**` sparingly — broad wildcards require the router to fan out to more subscribers

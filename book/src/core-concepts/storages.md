@@ -25,6 +25,14 @@ Add to your router configuration:
 }
 ```
 
+## Architecture
+
+The storage plugin intercepts publications flowing through the router and persists them.
+When a `get()` arrives, the plugin serves the stored values — all transparently through
+the same router.
+
+![Storage plugin architecture](/book-assets/storage-arch.svg)
+
 ## Querying Stored Data
 
 From any Zenoh application, query the stored data normally:

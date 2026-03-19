@@ -47,6 +47,13 @@ let _subscriber = session
     .unwrap();
 ```
 
+## Data Flow
+
+The router matches each publication against all active subscriber key expressions and
+delivers only to those that intersect.
+
+![Pub/sub fan-out through the router](/book-assets/pubsub-flow.svg)
+
 ## Sample
 
 Every received message is a `Sample` containing:

@@ -38,6 +38,13 @@ while let Ok(query) = queryable.recv_async().await {
 }
 ```
 
+## Request / Reply Flow
+
+The router fans the `get()` out to all matching queryables and collects replies, which
+stream back to the requester asynchronously.
+
+![Query fan-out and reply collection](/book-assets/query-flow.svg)
+
 ## Consolidated Replies
 
 When querying a key expression that matches multiple resources, consolidation

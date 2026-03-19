@@ -4,7 +4,7 @@
 bare-metal hardware with no operating system.
 
 > This implementation was previewed in the October 2025 Zenoh Report and is under
-> active development. See the [eclipse-zenoh/zenoh-nostd](https://github.com/eclipse-zenoh/zenoh-nostd)
+> active development. See the [eclipse-zenoh/zenoh-nostd](https://github.com/kydos/zenoh-nostd)
 > repository for the latest status.
 
 ## Why Rust on Embedded?

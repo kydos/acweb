@@ -5,12 +5,7 @@ Zenoh's wire format is designed for minimal overhead — a **put** message requi
 
 ## Frame Structure
 
-```
-┌─────────┬──────────────────────┬─────────────┐
-│  Header │  Variable-length ID  │   Payload   │
-│  1 byte │  1–9 bytes (VLE)     │  N bytes    │
-└─────────┴──────────────────────┴─────────────┘
-```
+![Zenoh frame structure](/book-assets/wire-frame.svg)
 
 ## Variable-Length Encoding (VLE)
 

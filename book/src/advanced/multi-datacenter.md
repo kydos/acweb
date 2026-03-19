@@ -5,18 +5,7 @@ seamlessly between datacenters, edge sites, and field devices.
 
 ## Architecture Pattern
 
-```
-┌──────────────────────────────────────────────────────┐
-│                   Global Backbone                    │
-│                                                      │
-│  [DC-US-East] ──────────── [DC-EU-West]             │
-│       │                         │                    │
-└───────┼─────────────────────────┼────────────────────┘
-        │                         │
-   [Edge-NYC]               [Edge-Paris]
-   /    │    \              /     │     \
-[IoT] [Robot] [Car]    [IoT] [Robot] [Car]
-```
+![Multi-datacenter topology](/book-assets/geo-topology.svg)
 
 ## Router Configuration for Geo-Distribution
 
@@ -39,13 +28,6 @@ seamlessly between datacenters, edge sites, and field devices.
 }
 ```
 
-## Latency Budgets
-
-Zenoh's efficient wire format minimises inter-datacenter bandwidth:
-at 5 bytes overhead per message, a 1 KB telemetry payload has **0.5% protocol overhead**.
-
-Compare with HTTP/REST (~30% overhead for small payloads) or gRPC (~10%).
-
 ## Failover
 
 Zenoh handles link failures transparently. If the transatlantic link drops:
@@ -56,6 +38,5 @@ Zenoh handles link failures transparently. If the transatlantic link drops:
 
 ## Recommended Reading
 
-- [Regionalisation](../routing/regionalisation.md) — hierarchical routing for massive scale
 - [Storages](../core-concepts/storages.md) — persist data at each tier
 - [Security](../security/README.md) — encrypt inter-datacenter links with mTLS

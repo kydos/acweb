@@ -9,4 +9,3 @@ on how nodes are arranged. This chapter explains how Zenoh routes data across ar
 - [Client Mode](./client-mode.md) — lightweight mode for constrained devices
 - [Router Mode](./router-mode.md) — infrastructure node connecting segments
 - [Multicast Scouting](./scouting.md) — automatic peer/router discovery
-- [Regionalisation](./regionalisation.md) — hierarchical routing for massive scale

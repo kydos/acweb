@@ -28,7 +28,6 @@
   - [Client Mode](./routing/client-mode.md)
   - [Router Mode](./routing/router-mode.md)
   - [Multicast Scouting](./routing/scouting.md)
-  - [Regionalisation](./routing/regionalisation.md)
 
 # Security
 

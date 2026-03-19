@@ -3,6 +3,13 @@
 **Client mode** is designed for constrained or mobile devices that connect to a router
 rather than maintaining a full routing table.
 
+## Topology
+
+All clients connect to the router; the router handles all routing decisions on their behalf.
+Clients never communicate directly with each other.
+
+![Client mode: star topology](/book-assets/client-star.svg)
+
 ## Configuration
 
 ```json5

@@ -7,11 +7,10 @@ Welcome to **The Zenoh Book** — the definitive guide to the Zenoh protocol.
 Zenoh (pronounced *zen-oh*) is an open protocol that unifies:
 
 - **Data in motion** — publish/subscribe messaging with location-transparent key expressions
-- **Data at rest** — geo-distributed queries with storage abstractions
-- **Computations** — remote procedure call (Queryable) that generalises both
+- **Data at rest and computations** — a location-transparent query/queryable abstraction that enables geo-distributed queries resolved by databases, by on-demand computation, or both
 
 Unlike traditional protocols that address only one tier of the stack, Zenoh works from
-**2 KB RAM microcontrollers** up to **multi-datacenter cloud deployments** — with a single
+**microcontrollers** up to **multi-datacenter cloud deployments** — with a single
 coherent API and a 5-byte wire overhead.
 
 ## Design Goals
@@ -42,8 +41,9 @@ paradoxes of infinity) and the Stoic founder **Zenon of Citium** — and doubles
 ## Who Uses Zenoh?
 
 Zenoh is the official DDS alternative selected by the **ROS 2 Technical Steering Committee**
-and is adopted by General Motors (uProtocol), Bosch, Volvo, Foxconn, Volocopter, and
-recommended by the ITU for Intelligent Transport Systems.
+and is recommended by the ITU for Intelligent Transport Systems. It is adopted by
+General Motors (uProtocol), Bosch, Foxconn, NXP, Ampere Computing, Google/Intrinsic,
+and Dexory Robotics, among others.
 
 ## How to Use This Book
 

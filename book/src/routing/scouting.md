@@ -9,6 +9,8 @@ pre-configured addresses.
 2. Existing nodes reply with a `Hello` containing their transport endpoints
 3. The new node establishes direct connections
 
+![Scouting: Scout multicast and Hello replies](/book-assets/scouting-flow.svg)
+
 ## Configuration
 
 ```json5
