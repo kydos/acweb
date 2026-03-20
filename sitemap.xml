@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://corsaro.me/en</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/about</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/about" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/about" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/about" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/about" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/about" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/about" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/about" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/about" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/cv</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/cv" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/cv" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/cv" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/cv" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/cv" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/cv" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/cv" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/cv" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/blog</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/opensource</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/opensource" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/opensource" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/opensource" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/opensource" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/opensource" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/opensource" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/opensource" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/opensource" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/papers</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/papers" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/papers" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/report</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/report" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/report" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/talks</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/talks" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/talks" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/contact</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/contact" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/contact" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/contact" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/contact" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/contact" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/contact" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/contact" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/contact" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/blog/why-zenoh</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/why-zenoh" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/why-zenoh" />
+<lastmod>2024-06-15T00:00:00.000Z</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/blog/ros2-rmw-zenoh-selection</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/ros2-rmw-zenoh-selection" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/ros2-rmw-zenoh-selection" />
+<lastmod>2023-10-01T00:00:00.000Z</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/introduction</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/introduction" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/introduction" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/getting-started</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/getting-started" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/getting-started" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/getting-started/installation</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/getting-started/installation" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/getting-started/installation" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/getting-started/hello-zenoh</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/getting-started/hello-zenoh" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/getting-started/hello-zenoh" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/getting-started/router</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/getting-started/router" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/getting-started/router" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/getting-started/first-pubsub</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/getting-started/first-pubsub" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/getting-started/first-pubsub" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/core-concepts</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/core-concepts" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/core-concepts" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/core-concepts/key-expressions</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/core-concepts/key-expressions" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/core-concepts/key-expressions" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/core-concepts/sessions</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/core-concepts/sessions" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/core-concepts/sessions" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/core-concepts/pub-sub</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/core-concepts/pub-sub" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/core-concepts/pub-sub" />
+<lastmod>2026-03-20T00:02:44.852Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/core-concepts/queryables</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/core-concepts/queryables" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/core-concepts/queryables" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/core-concepts/storages</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/core-concepts/storages" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/core-concepts/storages" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/routing</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/routing" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/routing" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/routing/peer-mode</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/routing/peer-mode" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/routing/peer-mode" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/routing/client-mode</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/routing/client-mode" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/routing/client-mode" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/routing/router-mode</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/routing/router-mode" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/routing/router-mode" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/routing/scouting</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/routing/scouting" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/routing/scouting" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/security</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/security" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/security" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/security/tls</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/security/tls" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/security/tls" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/security/acl</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/security/acl" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/security/acl" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/security/auth</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/security/auth" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/security/auth" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/embedded</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/embedded" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/embedded" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/embedded/zenoh-pico</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/embedded/zenoh-pico" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/embedded/zenoh-pico" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/embedded/no-std</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/embedded/no-std" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/embedded/no-std" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/embedded/embassy</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/embedded/embassy" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/embedded/embassy" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/embedded/rtos</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/embedded/rtos" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/embedded/rtos" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/advanced</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/advanced" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/advanced" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/advanced/wire-format</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/advanced/wire-format" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/advanced/wire-format" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/advanced/congestion-control</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/advanced/congestion-control" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/advanced/congestion-control" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/advanced/shared-memory</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/advanced/shared-memory" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/advanced/shared-memory" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/advanced/multi-datacenter</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/advanced/multi-datacenter" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/advanced/multi-datacenter" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/book/contributing</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/book/contributing" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/book/contributing" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/report/2025-10</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/report/2025-10" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/report/2025-10" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>never</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/report/2025-11</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/report/2025-11" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/report/2025-11" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>never</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/report/2026-01</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/report/2026-01" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/report/2026-01" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>never</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/zenoh/report/2026-02</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/zenoh/report/2026-02" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/zenoh/report/2026-02" />
+<lastmod>2026-03-20T00:02:44.854Z</lastmod>
+<changefreq>never</changefreq>
+<priority>0.8</priority>
+</url>
+</urlset>

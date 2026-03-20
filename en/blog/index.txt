@@ -1,77 +1,193 @@
 3:I[4707,[],""]
 5:I[6423,[],""]
 4:["locale","en","d"]
-0:["6nJariLnHNvu1UUk50DDc",[[["",{"children":[["locale","en","d"],{"children":["blog",{"children":["__PAGE__?{\"locale\":\"en\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["locale","en","d"],{"children":["blog",{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/6d7a22db2951eda4.css","precedence":"next","crossOrigin":"$undefined"}]],"$L6"],null],null]},[[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]],null],null],["$L7",null]]]]
-8:I[1733,["441","static/chunks/441-8b172abf5e732dbb.js","905","static/chunks/905-6b4f6496a397e052.js","326","static/chunks/app/%5Blocale%5D/blog/page-187cd28b44b36572.js"],"BlogSearch"]
-9:T7ad,
-Edge computing is not just "the cloud, but closer." It represents a fundamentally different computational model — one where latency, bandwidth, and autonomy constraints reshape how we think about communication.
+0:["_SNYyD2SMMMsmm3nF3CUO",[[["",{"children":[["locale","en","d"],{"children":["blog",{"children":["__PAGE__?{\"locale\":\"en\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["locale","en","d"],{"children":["blog",{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0a6317f463e11891.css","precedence":"next","crossOrigin":"$undefined"}]],"$L6"],null],null]},[[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]],null],null],["$L7",null]]]]
+8:I[1733,["441","static/chunks/441-8b172abf5e732dbb.js","972","static/chunks/972-b56475708b7af64f.js","326","static/chunks/app/%5Blocale%5D/blog/page-4556fd3d3268bc06.js"],"BlogSearch"]
+9:Tfcf,
+Around 2009–2010, while serving as PrismTech's CTO and co-chairing the OMG DDS Special Interest Group (as one of its founding members), I was working on some of the earliest Extremely Large Scale Systems — deployments spanning military, aerospace, and Smart City infrastructure.
 
-## Why Traditional Protocols Fall Short
+Working on these systems made it crystal clear that DDS would not scale as-is. The problem wasn't just scaling out — it was also scaling down. DDS was not designed to target constrained hardware nor constrained networks.
 
-Most communication protocols were designed with an implicit assumption: **reliable, high-bandwidth, low-latency networks**. At the edge, none of these assumptions hold.
+## The Landscape at the Time
 
-Consider a fleet of autonomous vehicles sharing sensor data. You need:
+Other protocols had their own fundamental limitations:
 
-- **Sub-millisecond latency** for safety-critical updates
-- **Graceful degradation** when connectivity is intermittent
-- **Minimal bandwidth** usage over cellular links
-- **Peer-to-peer capability** when the cloud is unreachable
+- **CoAP** worked best integrating small devices with web applications in IoT scenarios, but was still cloud-centric and client/server in nature.
+- **MQTT**, popularised by IBM as the "holy grail of IoT," had a broker-based approach that suits applications relying on a cloud broker but is problematic for high performance and low latency — especially when spatial locality can be exploited. The **MQTT paradox**: even two devices sitting on the same network talk through a broker sitting on a cloud thousands of kilometres away.
+- **DDS** and other pub/sub technologies had brought location transparency for data in motion. But once data was stored, that transparency vanished — forcing everything onto centralised cloud storage. This model does not work for low-latency access, applications that cannot guarantee cloud connectivity, or infrastructure-less deployments.
 
-No single existing protocol handles all of these well.
+Back in those days, large-scale cloud-to-microcontroller systems were duct-taped together by assembling a series of protocols, each of which could work on a given system segment. I call this the **Digital Frankenstein era**.
 
-## Key Properties for Edge Protocols
+## The Break Point
 
-After years of working in this space, I believe effective edge protocols need:
+My discomfort with this way of building systems grew unbearable. I started working on a new protocol that could work efficiently from the microcontroller up to the data-centre, impose no topological constraints, and provide unified abstractions for data in motion (pub/sub) and data at rest (distributed queries).
 
-### 1. Wire Efficiency
+Mainstream protocols implementing pub/sub took one of two approaches: peer-to-peer (assuming each peer can directly communicate with every other peer) or broker-based. Flat P2P networks like DDS don't scale; brokered systems are too fragile with respect to loss of connectivity and not suitable for high performance.
 
-Every byte matters. Protocols should minimize overhead — both in message framing and in metadata. This is why Zenoh uses a compact binary wire format rather than text-based encoding.
+Eventually it became clear that the same abstraction used for wells of data also applies to computations — giving Zenoh its three pillars:
 
-### 2. Adaptive Routing
+1. **Data in motion** — location-transparent pub/sub with no topological constraints, from microcontrollers to cloud clusters.
+2. **Data at rest and computations** — queryables act as oracles that answer queries, whether backed by a data store, a computation, or both. The same key-expression model used for pub/sub reaches storage and services wherever they live, making remote data and computations indistinguishable from local ones.
 
-Data paths should adapt to network topology changes. A message between two co-located processes shouldn't traverse the cloud just because that's where the broker lives.
+## Why "Zenoh"?
 
-### 3. Computation Placement Awareness
+I am Sicilian. Growing up in Sicily, I was immersed in the legacy of ancient Greek philosophy — Archimedes from Syracuse, Plato's visits, the pre-Socratics. I was particularly drawn to **Zeno of Elea**, whose paradoxes of infinity fascinated me from childhood.
 
-The protocol should understand that some computations are better performed at the edge, others in the cloud. This isn't just a deployment concern — it's a protocol design concern.
+**Stoicism** — founded in Athens by **Zenon of Citium** — left an equally deep mark on me through Marcus Aurelius' *Meditations*.
 
-## Looking Forward
+The name Zenoh thus references two philosophers: Zeno of Elea (pre-Socratic, paradoxes of infinity) and Zenon of Citium (Stoic founder). It also stands for **ZEro Network OverHead**.
 
-As edge deployments scale from thousands to millions of nodes, the protocols we use today will need to evolve. I believe we'll see convergence toward unified protocols that handle pub/sub, querying, and storage across the full edge-to-cloud continuum.
+The difference between Zenon and Zenoh is less than a letter — it is just the overshoot of the "h".
 
-The question isn't whether this convergence will happen — it's whether we'll design it intentionally or let it emerge chaotically from duct-taped integrations.
-a:T6c6,
-When I started working on distributed systems middleware in the early 2000s, the landscape looked very different. DDS was the gold standard for real-time publish/subscribe, and it served its purpose well. But as computing moved toward the edge, as IoT devices proliferated, and as the gap between cloud and embedded systems widened, I saw a fundamental problem emerging.
-
-## The Gap
-
-Existing protocols were designed for specific niches:
-
-- **MQTT** excelled at constrained IoT devices but lacked the expressiveness of a true data-centric model.
-- **DDS** provided rich data distribution but assumed relatively capable networks and devices.
-- **HTTP/REST** was ubiquitous but inherently request/response — ill-suited for real-time, push-based data flows.
-
-None of these could seamlessly bridge the continuum from a microcontroller on a robot arm to a cloud-scale data pipeline. That gap is exactly what Zenoh was designed to fill.
-
-## The Design Principles
-
-Zenoh is built on a few core ideas:
-
-1. **Unify pub/sub, queries, and storage** into a single protocol.
-2. **Work everywhere** — from 2KB RAM microcontrollers to cloud clusters.
-3. **Zero overhead abstraction** — the protocol should add minimal latency and bandwidth overhead.
-4. **Location transparency** — data should be accessible regardless of where it lives.
-
-## What's Next
+## Where Zenoh Is Today
 
 Zenoh is now an Eclipse Foundation project with a growing community. We're seeing adoption in robotics (ROS 2), automotive, and industrial IoT. The journey is just beginning, and I'm excited about where the community will take it.
 
 If you're interested in learning more, check out the [Zenoh GitHub repository](https://github.com/eclipse-zenoh/zenoh) or join the discussion on Discord.
-2:["$","section",null,{"className":"mx-auto max-w-4xl px-6 py-16 md:py-24","children":[["$","h1",null,{"className":"text-3xl md:text-4xl font-serif font-bold animate-fade-in text-stone-900 dark:text-cream","children":"Blog"}],["$","p",null,{"className":"mt-3 text-stone-600 dark:text-fog animate-fade-in animate-delay-100","children":"Thoughts on distributed systems, protocols, and software engineering."}],["$","$L8",null,{"posts":[{"slug":"edge-computing-protocols","title":"Rethinking Protocols for Edge Computing","date":"2024-09-20","excerpt":"Edge computing demands a new breed of communication protocols. Here's what I think matters most.","readingTime":"2 min read","content":"$9","tags":["edge-computing","protocols","architecture"]},{"slug":"why-zenoh","title":"Why I Created Zenoh","date":"2024-06-15","excerpt":"The story behind the Zenoh protocol — why existing middleware wasn't enough, and what we set out to build.","readingTime":"2 min read","content":"$a","tags":["zenoh","distributed-systems","protocols"]}],"placeholder":"Search articles...","empty":"No posts yet. Check back soon."}]]}]
+a:T27b3,
+In September 2023, the ROS 2 core team published a study titled *"ROS 2 RMW Alternate"* — a systematic evaluation of whether DDS, the middleware that has powered ROS 2 since its inception around 2015, should be supplemented with an alternative. After surveying over 180 community members, deriving a formal requirements list, and comparing more than twenty middleware candidates against those requirements, the team reached a clear conclusion: **Zenoh best meets the requirements** and will be developed into the new non-DDS RMW for ROS 2.
+
+This post walks through the study's findings in the order they appear in the report.
+
+## The Problem: Eight Years of DDS Pain Points
+
+The RMW (ROS MiddleWare) interface was designed as an abstraction layer that lets ROS 2 swap its underlying communication mechanism at compile time or runtime. All current Tier 1 implementations are DDS-based. DDS was a reasonable choice in 2015 — it had a long history in mission-critical deployments and addressed many of the same goals as ROS. But eight years of real-world use had accumulated a clear set of recurring problems.
+
+### Fully-Connected Graph
+
+DDS maintains a fully-connected graph: every participant, topic, and service in the network must be discovered by every other participant. This produces O(n²) discovery traffic and "packet storms" when new nodes join large networks. ROS programs are accustomed to creating many topics cheaply — an assumption that does not hold with DDS at scale.
+
+### UDP Multicast for Discovery
+
+By default, DDS relies on UDP multicast for peer discovery. Many institutional networks disable multicast for security or performance reasons, and large WiFi deployments routinely suppress it. The failure mode is silent: nodes simply do not find each other, leaving users to diagnose a network-level issue they may not even know exists.
+
+### Large Message Transfers
+
+DDS uses UDP as its default transport. While this gives fine-grained QoS control, UDP is far less optimised than TCP across the entire software stack — from OS kernels to network chipsets. Linux defaults to small UDP buffer sizes (~256 KB), which is routinely insufficient for the images and point clouds that are staples of robotics. Transferring large sensor data reliably requires manual kernel tuning that most users are not equipped to perform.
+
+### WiFi Reliability
+
+WiFi compounds both of the above problems. Spotty connectivity interacts badly with UDP-fragmented large messages, and disabled multicast breaks discovery. Since ROS 2 is routinely used on mobile robots and debugging laptops, poor out-of-the-box WiFi behaviour is a significant friction point.
+
+### Complex Tuning
+
+All of the above issues are, in principle, addressable through DDS configuration. In practice, the configuration surface is enormous, the parameters that work on one network often fail on another, and new users have no clear path to the right settings. This is complexity relocated, not eliminated.
+
+### Vendor-Specific Extensions
+
+Several DDS vendors have developed proprietary workarounds — custom discovery servers, non-standard transports, closed-source tooling. These create vendor lock-in and cannot be freely used in an open-source framework. They also diverge from each other, multiplying what users must learn.
+
+The study is careful to note that DDS works well when expertly tuned on a well-managed network — as evidenced by its use in mission-critical systems worldwide. The goal is not to replace DDS for demanding applications, but to provide an alternative that "just works" for the broad majority of robotics use cases.
+
+## Requirements Gathering
+
+The core team drew requirements from three sources: known ROS 2 use cases, targeted interviews with key stakeholders, and a public community survey.
+
+### The Survey
+
+On July 31, 2023, the team posted to ROS Discourse asking the community for input. Over 180 responses were collected. A few highlights from the technical data:
+
+- **Fleet sizes** — Nearly half of respondents run fewer than 10 robots; the other half are roughly evenly split between 10–1,000 and larger fleets.
+- **Topic counts** — The most common range was 20–200 topics per deployment, with a significant portion exceeding 200.
+- **Containers** — The vast majority use Docker or Podman.
+- **Network topologies** — No single topology dominated. Respondents reported localhost-only, WiFi, VPN, cellular, and mixed configurations.
+
+When asked to suggest alternative middlewares to investigate, Zenoh was the most frequently nominated option, ahead of TCPROS, MQTT, and ZeroMQ.
+
+### The Requirements
+
+Using RFC 2119 terminology, the team derived the following requirements:
+
+**Must-have**
+
+| Requirement | Notes |
+|---|---|
+| Pub/Sub | Peer-to-peer preferred for performance |
+| Security — Encryption | e.g. TLS |
+| Security — Authentication | Certificate-based peer verification |
+| Security — Access Control | Per-identity, per-topic granularity |
+| Graceful disconnect/reconnect | Critical for WiFi and mobile robots |
+| Tolerance to bandwidth changes | WiFi can swing by orders of magnitude |
+| Configure network interface | Essential for virtual networks and routing |
+| Multi-megabyte messages | Images, point clouds at up to ~30 Hz |
+| Fast small messages | Robot state at ~1 kHz, sub-1 kB |
+| Restart discovery without restarting nodes | No single point of failure in safety-critical systems |
+| Cross-platform support | Ubuntu amd64/arm64 and Windows (ROS 2 Tier 1) |
+| OSI-approved permissive license | No copyleft |
+
+**Should-have**
+
+- Built-in discovery
+- Routing across subnets
+- Shared memory for intra-host transfers
+- Peer-to-peer data connections (brokers amplify bandwidth and latency)
+
+**May-have**
+
+- RPC support
+- Protocol debugging tooling (CLI, Wireshark plugins)
+- Message stream prioritisation
+- QoS reliability and history controls
+- Latching for late-joining subscribers
+- Static peer configuration
+
+## Comparative Analysis
+
+### Middlewares Investigated
+
+The team examined over twenty options. A representative selection:
+
+| Middleware | License | Existing RMW? |
+|---|---|---|
+| Eclipse Cyclone DDS | EPL 2.0 | Yes |
+| eProsima Fast DDS | Apache 2.0 | Yes |
+| RTI Connext | Proprietary | Yes |
+| **Zenoh** | **Apache 2.0 / EPL 2.0** | **Yes (rmw_zenoh)** |
+| Zenoh-Pico | Apache 2.0 | — |
+| MQTT | Implementation-dependent | — |
+| ZeroMQ / nng | MPL 2.0 / MIT | — |
+| LCM | LGPL | — |
+| IceOryx | Apache 2.0 | Yes (rmw_iceoryx) |
+| OPC-UA | Mixed | — |
+| eCal | Apache 2.0 | Yes (rmw_ecal) |
+| Kafka | Apache 2.0 | — |
+| TCPROS (ROS 1) | BSD / Apache | — |
+| Cyphal (libcanard) | MIT | — |
+
+### On Performance
+
+The team deliberately excluded detailed performance benchmarking from the comparison. Their reasoning is worth quoting directly: previous performance testing exercises (Galactic, Humble middleware selection) proved extremely time-intensive and could only surface gross differences, because machine configuration, network conditions, and middleware tuning all dominate the fine-grained numbers. In ideal conditions, all seriously-considered options can saturate a gigabit link — the meaningful differences lie in how easily each middleware can be configured to perform well across the wide range of real-world applications.
+
+Third-party benchmarks (including the [Zenoh vs MQTT vs Kafka vs DDS comparison](https://zenoh.io/blog/2023-03-21-zenoh-vs-mqtt-kafka-dds/)) were noted as illustrative but not treated as definitive evidence.
+
+### Key Takeaways from the Requirements Matrix
+
+The full requirements-versus-middleware matrix is in Appendix A of the study. The team's summary findings:
+
+- **Zenoh** meets most requirements. Where gaps exist, either the feature is already in development or it can be layered on top of existing Zenoh mechanisms.
+- **TCPROS** (the ROS 1 transport) also meets most requirements, since it was designed specifically for robotics — but it is a legacy protocol without a path forward.
+- **MQTT** meets several requirements and is widely used in IoT, but its message size limitations and fully-brokered architecture are poor fits for ROS use cases.
+- **ZeroMQ / nng** meet a number of requirements and are actively used by Gazebo, but ZeroMQ is fundamentally a toolkit of networking primitives — building a fully-featured middleware on top would require substantial additional development.
+- **OPC-UA** meets several requirements but uses a brokered architecture and lacks built-in discovery.
+- **DDS** (the current choice) meets most requirements, but with the documented problems that motivated this study.
+- **Kafka** is widely used but complex, and its messaging model does not map naturally to ROS concepts.
+
+## Conclusion
+
+The study concludes:
+
+> *"The research has concluded that Zenoh best meets the requirements, and will be chosen as an alternative middleware. Zenoh was also the most-recommended alternative by users. It can be viewed as a modern version of the TCPROS implementation, and meets most of the ROS 2 requirements."*
+
+Zenoh satisfies every Must requirement either natively or through in-development features. It provides built-in discovery via both gossip and UDP multicast, routes across subnets through a Zenoh router, supports shared memory (experimental at the time of the study), and operates peer-to-peer — avoiding the bandwidth amplification of brokered systems. Its dual Apache 2.0 / EPL 2.0 licensing satisfies the permissive OSI requirement, and it already had an existing RMW implementation (`rmw_zenoh`) maintained at `github.com/atolab/rmw_zenoh`.
+
+For me, having designed Zenoh precisely to work across the full compute continuum — from microcontrollers to cloud infrastructure — seeing it chosen by the ROS 2 core team as the middleware that "just works" for robotics is a meaningful validation. The problems DDS exposed at scale over eight years are exactly the ones Zenoh was built to avoid from first principles.
+
+The next step, as noted in the study, was to begin design discussions on [discourse.ros.org](https://discourse.ros.org) and develop the implementation. That work is now well underway.
+2:["$","section",null,{"className":"mx-auto max-w-4xl px-6 py-16 md:py-24","children":[["$","h1",null,{"className":"text-3xl md:text-4xl font-serif font-bold animate-fade-in text-stone-900 dark:text-cream","children":"Blog"}],["$","p",null,{"className":"mt-3 text-stone-600 dark:text-fog animate-fade-in animate-delay-100","children":"Thoughts on distributed systems, protocols, and software engineering."}],["$","$L8",null,{"posts":[{"slug":"why-zenoh","title":"Why I Created Zenoh","date":"2024-06-15","excerpt":"The story behind the Zenoh protocol — why existing middleware wasn't enough, and what we set out to build.","readingTime":"4 min read","content":"$9","tags":["zenoh","distributed-systems","protocols"]},{"slug":"ros2-rmw-zenoh-selection","title":"How the ROS 2 Core Team Chose Zenoh as Its Alternative Middleware","date":"2023-10-01","excerpt":"An overview of the official ROS 2 core team study that evaluated alternative middlewares to DDS — and concluded that Zenoh best meets the requirements of modern robotics systems.","readingTime":"8 min read","content":"$a","tags":["zenoh","ros2","robotics","distributed-systems","middleware"]}],"placeholder":"Search articles...","empty":"No posts yet. Check back soon."}]]}]
 6:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_f367f3 __variable_c1a059 __variable_3c557b font-sans antialiased","children":"$Lb"}]}]
-7:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Blog | Angelo Corsaro"}],["$","meta","3",{"name":"description","content":"Blog — Angelo Corsaro"}],["$","meta","4",{"property":"og:title","content":"Angelo Corsaro"}],["$","meta","5",{"property":"og:description","content":"Personal website of Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol and distributed systems expert."}],["$","meta","6",{"property":"og:url","content":"https://corsaro.me/"}],["$","meta","7",{"property":"og:site_name","content":"Angelo Corsaro"}],["$","meta","8",{"property":"og:image","content":"https://corsaro.me/og-image.png"}],["$","meta","9",{"property":"og:type","content":"website"}],["$","meta","10",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","11",{"name":"twitter:title","content":"Angelo Corsaro"}],["$","meta","12",{"name":"twitter:description","content":"Personal website of Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol and distributed systems expert."}],["$","meta","13",{"name":"twitter:image","content":"https://corsaro.me/og-image.png"}],["$","link","14",{"rel":"icon","href":"/icon?d144addd7c411e81","alt":"$undefined","type":"image/png","sizes":"32x32"}],["$","link","15",{"rel":"apple-touch-icon","href":"/apple-icon?4f4f79bb68f70acc","alt":"$undefined","type":"image/png","sizes":"180x180"}],["$","meta","16",{"name":"next-size-adjust"}]]
+7:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Blog | Angelo Corsaro"}],["$","meta","3",{"name":"description","content":"Articles on Zenoh Protocol, distributed systems, robotics middleware, AI infrastructure, and edge computing — by Angelo Corsaro, Ph.D., inventor of Zenoh."}],["$","link","4",{"rel":"author","href":"https://corsaro.me"}],["$","meta","5",{"name":"author","content":"Angelo Corsaro"}],["$","meta","6",{"name":"keywords","content":"Zenoh Protocol,Eclipse Zenoh,distributed systems,robotics middleware,ROS 2,edge computing,IoT middleware,DDS,AI infrastructure,Angelo Corsaro,ZettaScale,cloud-to-edge,real-time systems,pub/sub protocol,autonomous systems"}],["$","meta","7",{"name":"creator","content":"Angelo Corsaro"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","meta","9",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","10",{"rel":"canonical","href":"https://corsaro.me/en/blog/"}],["$","meta","11",{"property":"og:title","content":"Angelo Corsaro"}],["$","meta","12",{"property":"og:description","content":"Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol. Expert in distributed systems, robotics middleware (ROS 2), AI-native infrastructure, and cloud-to-edge computing. CEO/CTO of ZettaScale Technology."}],["$","meta","13",{"property":"og:url","content":"https://corsaro.me/"}],["$","meta","14",{"property":"og:site_name","content":"Angelo Corsaro"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://corsaro.me/og-image.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Angelo Corsaro — inventor of the Zenoh Protocol"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@angelocorsaro"}],["$","meta","23",{"name":"twitter:title","content":"Angelo Corsaro"}],["$","meta","24",{"name":"twitter:description","content":"Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol. Expert in distributed systems, robotics middleware (ROS 2), AI-native infrastructure, and cloud-to-edge computing. CEO/CTO of ZettaScale Technology."}],["$","meta","25",{"name":"twitter:image","content":"https://corsaro.me/og-image.png"}],["$","link","26",{"rel":"icon","href":"/icon?d144addd7c411e81","alt":"$undefined","type":"image/png","sizes":"32x32"}],["$","link","27",{"rel":"apple-touch-icon","href":"/apple-icon?4f4f79bb68f70acc","alt":"$undefined","type":"image/png","sizes":"180x180"}],["$","meta","28",{"name":"next-size-adjust"}]]
 1:null
-c:I[9441,["441","static/chunks/441-8b172abf5e732dbb.js","905","static/chunks/905-6b4f6496a397e052.js","326","static/chunks/app/%5Blocale%5D/blog/page-187cd28b44b36572.js"],"default"]
-d:I[5495,["441","static/chunks/441-8b172abf5e732dbb.js","905","static/chunks/905-6b4f6496a397e052.js","203","static/chunks/app/%5Blocale%5D/layout-dadba371fde90182.js"],"ThemeProvider"]
-e:I[987,["441","static/chunks/441-8b172abf5e732dbb.js","905","static/chunks/905-6b4f6496a397e052.js","203","static/chunks/app/%5Blocale%5D/layout-dadba371fde90182.js"],"Header"]
+c:I[9441,["441","static/chunks/441-8b172abf5e732dbb.js","972","static/chunks/972-b56475708b7af64f.js","326","static/chunks/app/%5Blocale%5D/blog/page-4556fd3d3268bc06.js"],"default"]
+d:I[5495,["441","static/chunks/441-8b172abf5e732dbb.js","972","static/chunks/972-b56475708b7af64f.js","203","static/chunks/app/%5Blocale%5D/layout-d7f7fdf8edf3f08b.js"],"ThemeProvider"]
+e:I[987,["441","static/chunks/441-8b172abf5e732dbb.js","972","static/chunks/972-b56475708b7af64f.js","203","static/chunks/app/%5Blocale%5D/layout-d7f7fdf8edf3f08b.js"],"Header"]
 b:["$","$Lc",null,{"formats":"$undefined","locale":"en","messages":{"nav":{"home":"Home","about":"About","cv":"CV","blog":"Blog","zenoh":"Zenoh","zenohReport":"Report","zenohBook":"Book","zenohPapers":"Papers","zenohTalks":"Talks","contact":"Contact"},"home":{"overline":"Distributed Systems Inventor","title":"Distributed Systems Architect & Protocol Designer","shortBio":"Inventor of the Zenoh Protocol. Building the future of distributed computing — one protocol at a time.","aboutCta":"About Me","blogCta":"Read the Blog","openSourceCta":"Open Source"},"about":{"heading":"About","bio":"Angelo Corsaro is a globally recognized expert in distributed computing and the inventor of the Zenoh Protocol. With decades of experience designing high-performance middleware and communication protocols, he has shaped the way modern distributed systems communicate at scale.\n\nHis work spans real-time systems, edge computing, IoT, and robotics — domains where efficiency, scalability, and low latency are not optional but essential. Angelo is a frequent keynote speaker, open-source advocate, and thought leader in the distributed systems community.","areasTitle":"Areas of Interest","areas":{"distributedSystems":{"title":"Distributed Systems","desc":"Designing protocols and middleware for large-scale distributed computing."},"edgeComputing":{"title":"Edge Computing","desc":"Bringing computation closer to where data is produced and consumed."},"robotics":{"title":"Robotics & ROS 2","desc":"Enabling high-performance communication for autonomous systems."},"openSource":{"title":"Open Source","desc":"Building open technologies that empower developers and organizations."}}},"blog":{"heading":"Blog","subtitle":"Thoughts on distributed systems, protocols, and software engineering.","empty":"No posts yet. Check back soon.","minRead":"min read","searchPlaceholder":"Search articles..."},"cv":{"heading":"Curriculum Vitae","downloadPdf":"Download PDF","experience":"Experience","education":"Education","skills":"Skills","researchProfile":"Research Profile","researchInterests":"Research Interests","keyContributions":"Seminal Contributions","teaching":"Teaching","publications":"Selected Publications","standards":"Standards & Open Source","recognition":"Recognition & Awards","languages":"Languages","programming":"Programming","standardsCoAuthored":"Standards Co-Authored","openSourceProjects":"Open-Source Projects","position":"Eclipse Zenoh Project Lead","location":"Gif-sur-Yvette, France","publicationsNote":"Full list: 100+ peer-reviewed publications · 1,478+ citations ·","statPublications":"Peer-reviewed publications","statCitations":"Citations","statYearsExperience":"Years of experience","statStandards":"International standards","skillCatLanguages":"Programming Languages","skillCatProtocols":"Protocols & Standards","skillCatDomains":"Domains","Italian":"Italian","English":"English","French":"French","Native":"Native","Fluent":"Fluent"},"openSource":{"heading":"Open Source","subtitle":"Projects I've created or contribute to. Stars and forks fetched live from GitHub.","loadError":"Unable to load repositories. Please try again later."},"zenoh":{"heading":"Zenoh Protocol","subtitle":"Unifying the IoT / Edge / Cloud continuum","tagline":"A protocol that unifies data in motion, data at rest, and computations. From 2KB microcontrollers to cloud clusters.","feature1Title":"Zero Overhead","feature1Desc":"Designed for the most resource-constrained environments. Zenoh's wire format is minimal, efficient, and deterministic.","feature2Title":"Runs Everywhere","feature2Desc":"From 2KB RAM microcontrollers to multi-datacenter cloud deployments. One protocol, every tier of your stack.","feature3Title":"Location Transparent","feature3Desc":"Producers and consumers are fully decoupled. Move resources between edge and cloud without changing application code.","reposTitle":"Core Repositories","comingSoonTitle":"Deep Dives Coming to the Blog","comingSoonDesc":"An in-depth technical series on Zenoh's design decisions, wire format, and real-world deployments is coming soon.","viewOnGitHub":"View on GitHub","repo1Desc":"The Zenoh protocol implementation in Rust — the reference implementation.","repo2Desc":"A no_std Rust implementation of Zenoh for bare-metal and embedded targets.","reportHeading":"Zenoh Report","bookHeading":"Zenoh Book","papersHeading":"Zenoh Papers","talksHeading":"Zenoh Talks","reportSubtitle":"Monthly digest of Zenoh innovations, ecosystem highlights, and community stories.","reportDownload":"Download","genesisHeading":"The Genesis of Zenoh","genesisSubtitle":"How a protocol was born from necessity — and named after a philosopher","bookSubtitle":"The comprehensive guide to the Zenoh protocol — architecture, concepts, and hands-on examples.","bookChaptersTitle":"Table of Contents","bookBuiltWith":"Built with mdBook · Powered by Rust","bookReadOnline":"Read Online","genesisIntro":"Around 2009–2010, while serving as PrismTech’s CTO and co-chairing the OMG DDS Special Interest Group, Angelo Corsaro was working on some of the earliest Extremely Large Scale Systems — deployments spanning military, aerospace, and Smart City infrastructure. Two structural problems crystallised.","genesisScaleProblemTitle":"The Scale Problem","genesisScaleProblemDesc":"DDS could not scale up to global networks, nor down to constrained devices. CoAP was too cloud-centric; MQTT’s broker model forced even co-located devices to communicate through a server thousands of kilometres away.","genesisTransparencyGapTitle":"The Transparency Gap","genesisTransparencyGapDesc":"Pub/Sub had achieved location transparency for data in motion. But once data was stored, that transparency vanished — forcing everything onto centralised cloud storage. Applications needing low-latency access to stored data had no good answer.","genesisFrankenstein":"Systems of that era — what Angelo calls the “Digital Frankenstein” era — were assembled by duct-taping multiple protocol stacks together, crossing fingers for decent end-to-end semantics. His goal became clear: design a single protocol spanning microcontroller to data-centre, with no topological constraints and unified abstractions for data in motion, data at rest, and computations.","genesisQuote":"I had to do something. I started working on the idea of coming up with a protocol that could work efficiently from the microcontroller up to the data-center, would not have any topological constraints and would provide unified abstraction for dealing with data in movement and data at rest.","genesisWhyTitle":"Why “Zenoh”?","genesisWhyText1":"The name carries two philosophical references and one engineering acronym. Growing up in Sicily, Angelo was surrounded by the legacy of ancient Greek philosophy. He was particularly drawn to Zeno of Elea (Zenon d’Élée), whose paradoxes of infinity fascinated him from childhood.","genesisWhyText2":"Stoicism — founded by Zenon of Citium — left an equally deep mark through Marcus Aurelius’s Meditations.","genesisWhyFootnote":"The difference between Zenon and Zenoh is less than a letter — it is just the overshoot of the “h”.","exploreTitle":"Explore Zenoh","navCardReportDesc":"Monthly digest of Zenoh innovations, ecosystem highlights, and community stories.","navCardPapersDesc":"Scientific publications and research on the Zenoh protocol.","navCardBookDesc":"The comprehensive guide to Zenoh — architecture, concepts, and hands-on examples.","navCardTalksDesc":"Conference presentations and technical talks by Angelo Corsaro."},"contact":{"heading":"Get in Touch","subtitle":"I'm always happy to connect — whether it's about distributed systems, open source collaboration, or speaking opportunities.","github":"Open source projects and contributions","linkedin":"Professional profile and connections","twitter":"Thoughts on distributed systems and tech"},"footer":{"rights":"All rights reserved."},"common":{"darkMode":"Toggle dark mode","language":"Language","openMenu":"Open menu","closeMenu":"Close menu"}},"now":"$undefined","timeZone":"UTC","children":["$","$Ld",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"children":["$","div",null,{"className":"min-h-screen flex flex-col","children":[["$","$Le",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}],["$","footer",null,{"className":"border-t border-stone-200 dark:border-ink-wire mt-20","children":["$","div",null,{"className":"mx-auto max-w-5xl px-6 py-10","children":["$","div",null,{"className":"flex flex-col sm:flex-row items-center justify-between gap-6","children":[["$","div",null,{"className":"flex items-center gap-5","children":[["$","a",null,{"href":"https://github.com/kydos","target":"_blank","rel":"noopener noreferrer","aria-label":"GitHub","className":"text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent hover:scale-110 transition-all duration-200","children":["$","svg",null,{"viewBox":"0 0 24 24","className":"w-5 h-5 fill-current","children":["$","path",null,{"d":"M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"}]}]}],["$","a",null,{"href":"https://linkedin.com/in/corsaro","target":"_blank","rel":"noopener noreferrer","aria-label":"LinkedIn","className":"text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent hover:scale-110 transition-all duration-200","children":["$","svg",null,{"viewBox":"0 0 24 24","className":"w-5 h-5 fill-current","children":["$","path",null,{"d":"M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"}]}]}]]}],["$","div",null,{"className":"text-sm text-stone-500 dark:text-ash text-center sm:text-right space-y-0.5","children":[["$","p",null,{"children":["© ",2026," ","Angelo Corsaro"]}],["$","p",null,{"className":"text-xs text-stone-400 dark:text-stone-500","children":["Code:"," ",["$","a",null,{"href":"https://www.gnu.org/licenses/agpl-3.0.html","target":"_blank","rel":"noopener noreferrer","className":"hover:text-accent transition-colors","children":"AGPL-3.0"}]," · ","Content:"," ",["$","a",null,{"href":"https://creativecommons.org/licenses/by-sa/4.0/","target":"_blank","rel":"noopener noreferrer","className":"hover:text-accent transition-colors","children":"CC BY-SA 4.0"}]]}]]}]]}]}]}]]}]}]}]
