@@ -58,10 +58,16 @@
 
 /* ── rehype-pretty-code syntax highlighting ─────────────────────── */
 
-[data-theme='light'] { display: block; }
-[data-theme='dark']  { display: none; }
-.dark [data-theme='light'] { display: none; }
-.dark [data-theme='dark']  { display: block; }
+/* rehype-pretty-code ≥0.13 injects --shiki-light/--shiki-dark CSS vars on each
+   token span; data-theme is "light dark" (space-separated) on the <code> element. */
+code[data-theme*=' '],
+code[data-theme*=' '] span {
+  color: var(--shiki-light);
+}
+.dark code[data-theme*=' '],
+.dark code[data-theme*=' '] span {
+  color: var(--shiki-dark);
+}
 
 [data-rehype-pretty-code-figure] {
   @apply my-6 rounded-xl overflow-hidden border border-stone-200 dark:border-ink-wire;

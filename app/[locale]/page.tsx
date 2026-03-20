@@ -1,13 +1,88 @@
+import type { Metadata } from "next";
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
+import { JsonLd } from "@/components/JsonLd";
+
+const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = params;
+  const siteUrl = siteConfig.siteUrl;
+  return {
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: Object.fromEntries(
+        locales.map((l) => [l, `${siteUrl}/${l}`])
+      ),
+    },
+  };
+}
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Angelo Corsaro",
+  url: siteConfig.siteUrl,
+  image: `${siteConfig.siteUrl}/me.png`,
+  jobTitle: "Inventor of the Zenoh Protocol, CEO/CTO of ZettaScale Technology",
+  description:
+    "Angelo Corsaro, Ph.D. is the inventor of the Zenoh Protocol and a world expert in distributed systems, robotics middleware, AI-native infrastructure, and cloud-to-edge computing.",
+  sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  knowsAbout: [
+    "Zenoh Protocol",
+    "Distributed Systems",
+    "Robotics",
+    "ROS 2",
+    "Edge Computing",
+    "IoT",
+    "AI infrastructure",
+    "DDS",
+    "Real-Time Systems",
+    "Autonomous Vehicles",
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Washington University in St. Louis",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "ZettaScale Technology",
+    url: "https://zettascale.tech",
+  },
+  award: [
+    "Technology CEO of the Year 2024",
+    "Genius Minds 2024 — Representing France",
+    "Power 200: World's Most Influential Data Economy Leaders 2019",
+    "Gartner Cool Vendor 2014",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Angelo Corsaro",
+  url: siteConfig.siteUrl,
+  description: siteConfig.siteDescription,
+  author: {
+    "@type": "Person",
+    name: "Angelo Corsaro",
+  },
+};
 
 export default function Home({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("home");
 
   return (
+    <>
+      <JsonLd data={personSchema} />
+      <JsonLd data={websiteSchema} />
     <section className="relative mx-auto max-w-4xl px-6 py-24 md:py-36">
       <div className="animate-fade-in">
         {/* Eyebrow — cool sky blue, technical signal */}
@@ -61,6 +136,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         </figcaption>
       </figure>
     </section>
+    </>
   );
 }
 

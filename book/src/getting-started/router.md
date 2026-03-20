@@ -42,15 +42,22 @@ config
 let session = zenoh::open(config).await.unwrap();
 ```
 
-## Router Chaining
+## Router Topology
 
-Routers can be chained to span multiple network segments:
+Routers are not limited to chains — they can be interconnected in any topology, including
+**mesh** networks where each router has multiple peers. Zenoh's link-state routing algorithm
+automatically computes the optimal path through the graph and reroutes around failures.
 
-```
-[Microcontroller] ──── [Edge Router] ──── [Cloud Router] ──── [Cloud App]
-```
+A simple chain spanning cloud-to-edge-to-device:
 
-Each hop adds minimal latency. Zenoh's routing algorithm ensures optimal path selection
-and handles link failures transparently.
+![Router chain topology](/book-assets/router-chain.svg)
+
+A mesh of routers across data centres and edge sites:
+
+![Router mesh topology](/book-assets/router-mesh.svg)
+
+Each hop adds minimal latency. Whether the deployment is a linear chain, a star, or a
+full mesh, the application code is identical — topology is a configuration concern, not
+an API concern.
 
 Continue to [First Pub/Sub](./first-pubsub.md).

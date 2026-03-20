@@ -23,7 +23,7 @@ export const siteConfig = {
   siteUrl: "https://corsaro.me",
   siteTitle: "Angelo Corsaro",
   siteDescription:
-    "Personal website of Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol and distributed systems expert.",
+    "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol. Expert in distributed systems, robotics middleware (ROS 2), AI-native infrastructure, and cloud-to-edge computing. CEO/CTO of ZettaScale Technology.",
   ogImage: "/og-image.png",
 
   // ─── Profile Photo ──────────────────────────────────────────────

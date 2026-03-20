@@ -10,7 +10,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const t = await getTranslations({ locale, namespace: "blog" });
   return {
     title: t("heading"),
-    description: `${t("heading")} — ${siteConfig.name}`,
+    description:
+      "Articles on Zenoh Protocol, distributed systems, robotics middleware, AI infrastructure, and edge computing — by Angelo Corsaro, Ph.D., inventor of Zenoh.",
+    alternates: {
+      canonical: `https://corsaro.me/${locale}/blog`,
+    },
   };
 }
 

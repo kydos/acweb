@@ -1,0 +1,145 @@
+---
+title: "How the ROS 2 Core Team Chose Zenoh as Its Alternative Middleware"
+date: "2023-10-01"
+excerpt: "An overview of the official ROS 2 core team study that evaluated alternative middlewares to DDS — and concluded that Zenoh best meets the requirements of modern robotics systems."
+tags: ["zenoh", "ros2", "robotics", "distributed-systems", "middleware"]
+---
+
+In September 2023, the ROS 2 core team published a study titled *"ROS 2 RMW Alternate"* — a systematic evaluation of whether DDS, the middleware that has powered ROS 2 since its inception around 2015, should be supplemented with an alternative. After surveying over 180 community members, deriving a formal requirements list, and comparing more than twenty middleware candidates against those requirements, the team reached a clear conclusion: **Zenoh best meets the requirements** and will be developed into the new non-DDS RMW for ROS 2.
+
+This post walks through the study's findings in the order they appear in the report.
+
+## The Problem: Eight Years of DDS Pain Points
+
+The RMW (ROS MiddleWare) interface was designed as an abstraction layer that lets ROS 2 swap its underlying communication mechanism at compile time or runtime. All current Tier 1 implementations are DDS-based. DDS was a reasonable choice in 2015 — it had a long history in mission-critical deployments and addressed many of the same goals as ROS. But eight years of real-world use had accumulated a clear set of recurring problems.
+
+### Fully-Connected Graph
+
+DDS maintains a fully-connected graph: every participant, topic, and service in the network must be discovered by every other participant. This produces O(n²) discovery traffic and "packet storms" when new nodes join large networks. ROS programs are accustomed to creating many topics cheaply — an assumption that does not hold with DDS at scale.
+
+### UDP Multicast for Discovery
+
+By default, DDS relies on UDP multicast for peer discovery. Many institutional networks disable multicast for security or performance reasons, and large WiFi deployments routinely suppress it. The failure mode is silent: nodes simply do not find each other, leaving users to diagnose a network-level issue they may not even know exists.
+
+### Large Message Transfers
+
+DDS uses UDP as its default transport. While this gives fine-grained QoS control, UDP is far less optimised than TCP across the entire software stack — from OS kernels to network chipsets. Linux defaults to small UDP buffer sizes (~256 KB), which is routinely insufficient for the images and point clouds that are staples of robotics. Transferring large sensor data reliably requires manual kernel tuning that most users are not equipped to perform.
+
+### WiFi Reliability
+
+WiFi compounds both of the above problems. Spotty connectivity interacts badly with UDP-fragmented large messages, and disabled multicast breaks discovery. Since ROS 2 is routinely used on mobile robots and debugging laptops, poor out-of-the-box WiFi behaviour is a significant friction point.
+
+### Complex Tuning
+
+All of the above issues are, in principle, addressable through DDS configuration. In practice, the configuration surface is enormous, the parameters that work on one network often fail on another, and new users have no clear path to the right settings. This is complexity relocated, not eliminated.
+
+### Vendor-Specific Extensions
+
+Several DDS vendors have developed proprietary workarounds — custom discovery servers, non-standard transports, closed-source tooling. These create vendor lock-in and cannot be freely used in an open-source framework. They also diverge from each other, multiplying what users must learn.
+
+The study is careful to note that DDS works well when expertly tuned on a well-managed network — as evidenced by its use in mission-critical systems worldwide. The goal is not to replace DDS for demanding applications, but to provide an alternative that "just works" for the broad majority of robotics use cases.
+
+## Requirements Gathering
+
+The core team drew requirements from three sources: known ROS 2 use cases, targeted interviews with key stakeholders, and a public community survey.
+
+### The Survey
+
+On July 31, 2023, the team posted to ROS Discourse asking the community for input. Over 180 responses were collected. A few highlights from the technical data:
+
+- **Fleet sizes** — Nearly half of respondents run fewer than 10 robots; the other half are roughly evenly split between 10–1,000 and larger fleets.
+- **Topic counts** — The most common range was 20–200 topics per deployment, with a significant portion exceeding 200.
+- **Containers** — The vast majority use Docker or Podman.
+- **Network topologies** — No single topology dominated. Respondents reported localhost-only, WiFi, VPN, cellular, and mixed configurations.
+
+When asked to suggest alternative middlewares to investigate, Zenoh was the most frequently nominated option, ahead of TCPROS, MQTT, and ZeroMQ.
+
+### The Requirements
+
+Using RFC 2119 terminology, the team derived the following requirements:
+
+**Must-have**
+
+| Requirement | Notes |
+|---|---|
+| Pub/Sub | Peer-to-peer preferred for performance |
+| Security — Encryption | e.g. TLS |
+| Security — Authentication | Certificate-based peer verification |
+| Security — Access Control | Per-identity, per-topic granularity |
+| Graceful disconnect/reconnect | Critical for WiFi and mobile robots |
+| Tolerance to bandwidth changes | WiFi can swing by orders of magnitude |
+| Configure network interface | Essential for virtual networks and routing |
+| Multi-megabyte messages | Images, point clouds at up to ~30 Hz |
+| Fast small messages | Robot state at ~1 kHz, sub-1 kB |
+| Restart discovery without restarting nodes | No single point of failure in safety-critical systems |
+| Cross-platform support | Ubuntu amd64/arm64 and Windows (ROS 2 Tier 1) |
+| OSI-approved permissive license | No copyleft |
+
+**Should-have**
+
+- Built-in discovery
+- Routing across subnets
+- Shared memory for intra-host transfers
+- Peer-to-peer data connections (brokers amplify bandwidth and latency)
+
+**May-have**
+
+- RPC support
+- Protocol debugging tooling (CLI, Wireshark plugins)
+- Message stream prioritisation
+- QoS reliability and history controls
+- Latching for late-joining subscribers
+- Static peer configuration
+
+## Comparative Analysis
+
+### Middlewares Investigated
+
+The team examined over twenty options. A representative selection:
+
+| Middleware | License | Existing RMW? |
+|---|---|---|
+| Eclipse Cyclone DDS | EPL 2.0 | Yes |
+| eProsima Fast DDS | Apache 2.0 | Yes |
+| RTI Connext | Proprietary | Yes |
+| **Zenoh** | **Apache 2.0 / EPL 2.0** | **Yes (rmw_zenoh)** |
+| Zenoh-Pico | Apache 2.0 | — |
+| MQTT | Implementation-dependent | — |
+| ZeroMQ / nng | MPL 2.0 / MIT | — |
+| LCM | LGPL | — |
+| IceOryx | Apache 2.0 | Yes (rmw_iceoryx) |
+| OPC-UA | Mixed | — |
+| eCal | Apache 2.0 | Yes (rmw_ecal) |
+| Kafka | Apache 2.0 | — |
+| TCPROS (ROS 1) | BSD / Apache | — |
+| Cyphal (libcanard) | MIT | — |
+
+### On Performance
+
+The team deliberately excluded detailed performance benchmarking from the comparison. Their reasoning is worth quoting directly: previous performance testing exercises (Galactic, Humble middleware selection) proved extremely time-intensive and could only surface gross differences, because machine configuration, network conditions, and middleware tuning all dominate the fine-grained numbers. In ideal conditions, all seriously-considered options can saturate a gigabit link — the meaningful differences lie in how easily each middleware can be configured to perform well across the wide range of real-world applications.
+
+Third-party benchmarks (including the [Zenoh vs MQTT vs Kafka vs DDS comparison](https://zenoh.io/blog/2023-03-21-zenoh-vs-mqtt-kafka-dds/)) were noted as illustrative but not treated as definitive evidence.
+
+### Key Takeaways from the Requirements Matrix
+
+The full requirements-versus-middleware matrix is in Appendix A of the study. The team's summary findings:
+
+- **Zenoh** meets most requirements. Where gaps exist, either the feature is already in development or it can be layered on top of existing Zenoh mechanisms.
+- **TCPROS** (the ROS 1 transport) also meets most requirements, since it was designed specifically for robotics — but it is a legacy protocol without a path forward.
+- **MQTT** meets several requirements and is widely used in IoT, but its message size limitations and fully-brokered architecture are poor fits for ROS use cases.
+- **ZeroMQ / nng** meet a number of requirements and are actively used by Gazebo, but ZeroMQ is fundamentally a toolkit of networking primitives — building a fully-featured middleware on top would require substantial additional development.
+- **OPC-UA** meets several requirements but uses a brokered architecture and lacks built-in discovery.
+- **DDS** (the current choice) meets most requirements, but with the documented problems that motivated this study.
+- **Kafka** is widely used but complex, and its messaging model does not map naturally to ROS concepts.
+
+## Conclusion
+
+The study concludes:
+
+> *"The research has concluded that Zenoh best meets the requirements, and will be chosen as an alternative middleware. Zenoh was also the most-recommended alternative by users. It can be viewed as a modern version of the TCPROS implementation, and meets most of the ROS 2 requirements."*
+
+Zenoh satisfies every Must requirement either natively or through in-development features. It provides built-in discovery via both gossip and UDP multicast, routes across subnets through a Zenoh router, supports shared memory (experimental at the time of the study), and operates peer-to-peer — avoiding the bandwidth amplification of brokered systems. Its dual Apache 2.0 / EPL 2.0 licensing satisfies the permissive OSI requirement, and it already had an existing RMW implementation (`rmw_zenoh`) maintained at `github.com/atolab/rmw_zenoh`.
+
+For me, having designed Zenoh precisely to work across the full compute continuum — from microcontrollers to cloud infrastructure — seeing it chosen by the ROS 2 core team as the middleware that "just works" for robotics is a meaningful validation. The problems DDS exposed at scale over eight years are exactly the ones Zenoh was built to avoid from first principles.
+
+The next step, as noted in the study, was to begin design discussions on [discourse.ros.org](https://discourse.ros.org) and develop the implementation. That work is now well underway.

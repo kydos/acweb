@@ -5,28 +5,42 @@ excerpt: "The story behind the Zenoh protocol — why existing middleware wasn't
 tags: ["zenoh", "distributed-systems", "protocols"]
 ---
 
-When I started working on distributed systems middleware in the early 2000s, the landscape looked very different. DDS was the gold standard for real-time publish/subscribe, and it served its purpose well. But as computing moved toward the edge, as IoT devices proliferated, and as the gap between cloud and embedded systems widened, I saw a fundamental problem emerging.
+Around 2009–2010, while serving as PrismTech's CTO and co-chairing the OMG DDS Special Interest Group (as one of its founding members), I was working on some of the earliest Extremely Large Scale Systems — deployments spanning military, aerospace, and Smart City infrastructure.
 
-## The Gap
+Working on these systems made it crystal clear that DDS would not scale as-is. The problem wasn't just scaling out — it was also scaling down. DDS was not designed to target constrained hardware nor constrained networks.
 
-Existing protocols were designed for specific niches:
+## The Landscape at the Time
 
-- **MQTT** excelled at constrained IoT devices but lacked the expressiveness of a true data-centric model.
-- **DDS** provided rich data distribution but assumed relatively capable networks and devices.
-- **HTTP/REST** was ubiquitous but inherently request/response — ill-suited for real-time, push-based data flows.
+Other protocols had their own fundamental limitations:
 
-None of these could seamlessly bridge the continuum from a microcontroller on a robot arm to a cloud-scale data pipeline. That gap is exactly what Zenoh was designed to fill.
+- **CoAP** worked best integrating small devices with web applications in IoT scenarios, but was still cloud-centric and client/server in nature.
+- **MQTT**, popularised by IBM as the "holy grail of IoT," had a broker-based approach that suits applications relying on a cloud broker but is problematic for high performance and low latency — especially when spatial locality can be exploited. The **MQTT paradox**: even two devices sitting on the same network talk through a broker sitting on a cloud thousands of kilometres away.
+- **DDS** and other pub/sub technologies had brought location transparency for data in motion. But once data was stored, that transparency vanished — forcing everything onto centralised cloud storage. This model does not work for low-latency access, applications that cannot guarantee cloud connectivity, or infrastructure-less deployments.
 
-## The Design Principles
+Back in those days, large-scale cloud-to-microcontroller systems were duct-taped together by assembling a series of protocols, each of which could work on a given system segment. I call this the **Digital Frankenstein era**.
 
-Zenoh is built on a few core ideas:
+## The Break Point
 
-1. **Unify pub/sub, queries, and storage** into a single protocol.
-2. **Work everywhere** — from 2KB RAM microcontrollers to cloud clusters.
-3. **Zero overhead abstraction** — the protocol should add minimal latency and bandwidth overhead.
-4. **Location transparency** — data should be accessible regardless of where it lives.
+My discomfort with this way of building systems grew unbearable. I started working on a new protocol that could work efficiently from the microcontroller up to the data-centre, impose no topological constraints, and provide unified abstractions for data in motion (pub/sub) and data at rest (distributed queries).
 
-## What's Next
+Mainstream protocols implementing pub/sub took one of two approaches: peer-to-peer (assuming each peer can directly communicate with every other peer) or broker-based. Flat P2P networks like DDS don't scale; brokered systems are too fragile with respect to loss of connectivity and not suitable for high performance.
+
+Eventually it became clear that the same abstraction used for wells of data also applies to computations — giving Zenoh its three pillars:
+
+1. **Data in motion** — location-transparent pub/sub with no topological constraints, from microcontrollers to cloud clusters.
+2. **Data at rest and computations** — queryables act as oracles that answer queries, whether backed by a data store, a computation, or both. The same key-expression model used for pub/sub reaches storage and services wherever they live, making remote data and computations indistinguishable from local ones.
+
+## Why "Zenoh"?
+
+I am Sicilian. Growing up in Sicily, I was immersed in the legacy of ancient Greek philosophy — Archimedes from Syracuse, Plato's visits, the pre-Socratics. I was particularly drawn to **Zeno of Elea**, whose paradoxes of infinity fascinated me from childhood.
+
+**Stoicism** — founded in Athens by **Zenon of Citium** — left an equally deep mark on me through Marcus Aurelius' *Meditations*.
+
+The name Zenoh thus references two philosophers: Zeno of Elea (pre-Socratic, paradoxes of infinity) and Zenon of Citium (Stoic founder). It also stands for **ZEro Network OverHead**.
+
+The difference between Zenon and Zenoh is less than a letter — it is just the overshoot of the "h".
+
+## Where Zenoh Is Today
 
 Zenoh is now an Eclipse Foundation project with a growing community. We're seeing adoption in robotics (ROS 2), automotive, and industrial IoT. The journey is just beginning, and I'm excited about where the community will take it.
 

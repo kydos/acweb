@@ -12,13 +12,19 @@ tokio = { version = "1", features = ["full"] }
 
 ## The Zenoh CLI Tools
 
-Install the pre-built tools for quick experimentation:
+The Zenoh repository ships example binaries (`z_pub`, `z_sub`, `z_get`, `z_queryable`) that are useful for quick smoke-testing. Build them directly from the source tree:
 
 ```bash
-cargo install zenoh-tools
+git clone https://github.com/eclipse-zenoh/zenoh
+cd zenoh
+cargo build --examples --release
 ```
 
-This provides `z_pub`, `z_sub`, `z_get`, and `z_queryable` command-line utilities.
+For richer interactive work, two dedicated tools are available:
+
+- **[NuZe](https://github.com/kydos/nuze)** — a Zenoh shell built on top of [Nushell](https://www.nushell.sh). It combines Nushell's structured data scripting with Zenoh commands, making it convenient for interactive exploration, debugging, and scripting Zenoh sessions.
+
+- **[zsak](https://github.com/kydos/zsak)** — the Zenoh Swiss Army Knife. A focused CLI for publishing, subscribing, querying, and inspecting a Zenoh network from the terminal.
 
 ## The Zenoh Router
 
