@@ -422,6 +422,7 @@ export async function generateMetadata({
   const title = `The Zenoh Report — ${issue.label}`;
   const description = `${issue.subtitle}. Monthly newsletter on Zenoh Protocol updates, ecosystem news, and community stories by Angelo Corsaro.`;
   return {
+    metadataBase: new URL(siteUrl),
     title,
     description,
     keywords: [

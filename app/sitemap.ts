@@ -1,9 +1,18 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/mdx";
 import { flatSlugs } from "@/lib/bookNav";
+import { locales } from "@/lib/navigation";
+import { siteConfig } from "@/lib/siteConfig";
 
-const siteUrl = "https://corsaro.me";
-const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
+const siteUrl = siteConfig.siteUrl;
+const siteLastModified = new Date("2026-04-10");
+const bookLastModified = new Date("2026-04-10");
+const reportIssueDates: Record<string, Date> = {
+  "2025-10": new Date("2025-10-01"),
+  "2025-11": new Date("2025-11-01"),
+  "2026-01": new Date("2026-01-01"),
+  "2026-02": new Date("2026-02-01"),
+};
 
 const staticRoutes = [
   { path: "", priority: 1.0, changeFrequency: "monthly" as const },
@@ -12,6 +21,8 @@ const staticRoutes = [
   { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
   { path: "/opensource", priority: 0.8, changeFrequency: "weekly" as const },
   { path: "/zenoh", priority: 1.0, changeFrequency: "monthly" as const },
+  { path: "/zenoh/ros2", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/zenoh/dds-alternative", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/zenoh/book", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/zenoh/papers", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/zenoh/report", priority: 0.9, changeFrequency: "monthly" as const },
@@ -24,9 +35,12 @@ function localeUrl(locale: string, path: string): string {
 }
 
 function alternateLanguages(path: string): Record<string, string> {
-  return Object.fromEntries(
-    locales.map((locale) => [locale, localeUrl(locale, path)])
-  );
+  return {
+    ...Object.fromEntries(
+      locales.map((locale) => [locale, localeUrl(locale, path)])
+    ),
+    "x-default": localeUrl("en", path),
+  };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -37,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const route of staticRoutes) {
     entries.push({
       url: localeUrl("en", route.path),
-      lastModified: new Date(),
+      lastModified: siteLastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
       alternates: {
@@ -65,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const path = `/zenoh/book/${slug}`;
     entries.push({
       url: localeUrl("en", path),
-      lastModified: new Date(),
+      lastModified: bookLastModified,
       changeFrequency: "monthly",
       priority: slug.includes("/") ? 0.7 : 0.8,
       alternates: { languages: alternateLanguages(path) },
@@ -73,12 +87,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Zenoh Report issues
-  const reportIssues = ["2025-10", "2025-11", "2026-01", "2026-02"];
+  const reportIssues = Object.keys(reportIssueDates);
   for (const issue of reportIssues) {
     const path = `/zenoh/report/${issue}`;
     entries.push({
       url: localeUrl("en", path),
-      lastModified: new Date(),
+      lastModified: reportIssueDates[issue],
       changeFrequency: "never",
       priority: 0.8,
       alternates: { languages: alternateLanguages(path) },

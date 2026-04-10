@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
+    metadataBase: new URL(siteUrl),
     title: t("bookHeading"),
     description: t("bookSubtitle"),
     keywords: [

@@ -76,6 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!title) return {};
   const { locale } = params;
   return {
+    metadataBase: new URL(siteUrl),
     title: `${title} — The Zenoh Book`,
     description: `The Zenoh Book: ${title}. Learn how to use the Eclipse Zenoh Protocol — written by Angelo Corsaro, the inventor of Zenoh.`,
     keywords: [

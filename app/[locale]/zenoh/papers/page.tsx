@@ -9,6 +9,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
+    metadataBase: new URL(siteUrl),
     title: t("papersHeading"),
     description:
       "Scientific papers, journal articles, conference proceedings, and press coverage on Zenoh Protocol and distributed systems research by Angelo Corsaro.",

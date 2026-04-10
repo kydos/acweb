@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
+    metadataBase: new URL(siteUrl),
     title: t("heading"),
     description: t("subtitle"),
     keywords: [
@@ -83,6 +84,19 @@ const zenohRepos = [
   {
     name: "eclipse-zenoh/zenoh-nostd",
     url: "https://github.com/eclipse-zenoh/zenoh-nostd",
+  },
+];
+
+const topicLinks = [
+  {
+    href: "/zenoh/ros2",
+    title: "Zenoh for ROS 2",
+    desc: "How Zenoh helps robot, fleet, edge, and cloud systems communicate beyond a single LAN.",
+  },
+  {
+    href: "/zenoh/dds-alternative",
+    title: "Zenoh as a DDS Alternative",
+    desc: "A focused comparison for deployments that must span embedded, edge, and cloud infrastructure.",
   },
 ];
 
@@ -221,6 +235,28 @@ export default function ZenohPage({ params: { locale } }: { params: { locale: st
                 </svg>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <h3 className="font-serif text-xl font-semibold text-stone-900 dark:text-cream">
+              Popular Zenoh Topics
+            </h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {topicLinks.map((topic) => (
+                <Link
+                  key={topic.href}
+                  href={topic.href}
+                  className="group block rounded-lg border border-stone-200 bg-white p-4 transition-colors hover:border-azure dark:border-ink-wire dark:bg-ink dark:hover:border-azure"
+                >
+                  <h4 className="font-semibold text-stone-900 group-hover:text-azure dark:text-cream dark:group-hover:text-sky">
+                    {topic.title}
+                  </h4>
+                  <p className="mt-1 text-sm leading-relaxed text-stone-500 dark:text-fog">
+                    {topic.desc}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

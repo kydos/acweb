@@ -3,14 +3,18 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { fetchRepos } from "@/lib/github";
 import { siteConfig } from "@/lib/siteConfig";
 import { ProjectCard } from "@/components/ProjectCard";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "openSource" });
-  return {
+  return pageMetadata({
+    locale,
+    path: "/opensource",
     title: t("heading"),
-    description: `${t("heading")} — ${siteConfig.name}`,
-  };
+    description:
+      "Open-source projects and contributions by Angelo Corsaro, including Eclipse Zenoh and embedded distributed-systems software.",
+  });
 }
 
 export default async function OpenSourcePage({ params }: { params: { locale: string } }) {

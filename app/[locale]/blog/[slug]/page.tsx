@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
   return {
+    metadataBase: new URL(siteConfig.siteUrl),
     title: post.title,
     description: post.excerpt,
     keywords: [

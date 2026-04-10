@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return {
+  return pageMetadata({
+    locale,
+    path: "/contact",
     title: t("heading"),
-    description: `${t("heading")} — ${siteConfig.name}`,
-  };
+    description:
+      "Contact Angelo Corsaro through professional and open-source channels.",
+  });
 }
 
 export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {

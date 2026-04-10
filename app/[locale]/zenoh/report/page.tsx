@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "zenoh" });
   return {
+    metadataBase: new URL(siteUrl),
     title: t("reportHeading"),
     description: t("reportSubtitle"),
     keywords: [
@@ -44,7 +45,6 @@ const reports = [
     num: "04",
     date: "February 2026",
     subtitle: "Zenoh's Genesis & Protocol Origins",
-    pdfFile: "/2026.02-TheZenohReport.pdf",
     docxFile: "/2026.02-TheZenohReport.docx",
     topics: [
       "Zenoh Genesis — the origin story of the protocol",
@@ -59,7 +59,6 @@ const reports = [
     num: "03",
     date: "January 2026",
     subtitle: "ZUM25 Recap, Physical AI & Zenoh 2.0",
-    pdfFile: "/2026.01-TheZenohReport.pdf",
     docxFile: "/2026.01-TheZenohReport.docx",
     topics: [
       "ZUM25 recap — Zenoh User Meeting 2025",
@@ -73,7 +72,6 @@ const reports = [
     num: "02",
     date: "November 2025",
     subtitle: "Embedded Rust & Zenoh 1.6.x Imoogi",
-    pdfFile: "/2025.11-TheZenohReport.pdf",
     docxFile: "/2025.11-TheZenohReport.docx",
     topics: [
       "Embedded Rust — ecosystem maturity & esp-hal 1.0",
@@ -87,7 +85,6 @@ const reports = [
     num: "01",
     date: "October 2025",
     subtitle: "Launch Issue & Security by Design",
-    pdfFile: "/2025.10-TheZenohReport.pdf",
     docxFile: "/2025.10-The Zenoh Report-FirstInstallment.docx",
     topics: [
       "Security by Design — Zenoh's memory-safe Rust foundation",
@@ -154,6 +151,22 @@ export default function ZenohReportPage({ params: { locale } }: { params: { loca
                   </li>
                 ))}
               </ul>
+              <a
+                href={report.docxFile}
+                className="inline-flex items-center gap-2 text-sm font-medium text-azure hover:text-sky dark:text-sky dark:hover:text-azure transition-colors"
+              >
+                {t("reportDownload")} DOCX
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" />
+                </svg>
+              </a>
             </div>
           </div>
         ))}

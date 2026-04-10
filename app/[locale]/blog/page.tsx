@@ -3,18 +3,22 @@ import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAllPosts } from "@/lib/mdx";
 import { BlogSearch } from "@/components/BlogSearch";
-import { siteConfig } from "@/lib/siteConfig";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "blog" });
   return {
+    ...pageMetadata({
+      locale,
+      path: "/blog",
+      title: t("heading"),
+      description:
+        "Articles on Zenoh Protocol, distributed systems, robotics middleware, AI infrastructure, and edge computing — by Angelo Corsaro, Ph.D., inventor of Zenoh.",
+    }),
     title: t("heading"),
     description:
       "Articles on Zenoh Protocol, distributed systems, robotics middleware, AI infrastructure, and edge computing — by Angelo Corsaro, Ph.D., inventor of Zenoh.",
-    alternates: {
-      canonical: `https://corsaro.me/${locale}/blog`,
-    },
   };
 }
 

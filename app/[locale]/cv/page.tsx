@@ -3,14 +3,18 @@ import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 import { getLocalizedCV } from "@/lib/cvContent";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "cv" });
-  return {
+  return pageMetadata({
+    locale,
+    path: "/cv",
     title: t("heading"),
-    description: `${t("heading")} — ${siteConfig.name}`,
-  };
+    description:
+      "Academic CV and professional profile for Angelo Corsaro, Ph.D. — distributed systems researcher, Eclipse Zenoh project lead, and protocol designer.",
+  });
 }
 
 export default function CVPage({ params: { locale } }: { params: { locale: string } }) {
