@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { siteConfig } from "@/lib/siteConfig";
 import "../globals.css";
 
@@ -107,6 +108,7 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} ${lora.variable} ${jetbrains.variable} font-sans antialiased`}
       >
+        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="min-h-screen flex flex-col">

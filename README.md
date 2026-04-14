@@ -44,6 +44,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All personal info, social links, nav links, CV data, and featured repos are in `lib/siteConfig.ts`. Edit that file rather than hardcoding values in pages.
 
+### Analytics
+
+Google Analytics 4 is built in and configured with measurement ID `G-XY26Q9S0ZY`. The tracking script loads automatically in production builds.
+
 ## Content
 
 **Blog posts** are `.mdx` files in `/content/blog` with frontmatter:
