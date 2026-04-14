@@ -8,6 +8,8 @@ out/
 # Build outputs
 .vercel/
 dist/
+tsconfig.tsbuildinfo
+.playwright-mcp/
 
 # Misc
 .DS_Store
