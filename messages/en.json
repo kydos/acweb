@@ -22,7 +22,7 @@
   },
   "about": {
     "heading": "About",
-    "bio": "Angelo Corsaro is a globally recognized expert in distributed computing and the inventor of the Zenoh Protocol. With decades of experience designing high-performance middleware and communication protocols, he has shaped the way modern distributed systems communicate at scale.\n\nHis work spans real-time systems, edge computing, IoT, and robotics — domains where efficiency, scalability, and low latency are not optional but essential. Angelo is a frequent keynote speaker, open-source advocate, and thought leader in the distributed systems community.",
+    "bio": "Angelo Corsaro is a globally recognized expert in distributed computing and the inventor of the Zenoh Protocol. With decades of experience designing high-performance middleware and communication protocols, he has shaped the way modern distributed systems communicate at scale.\n\nHis work spans real-time systems, the Cloud to Device Continuum, IoT, and robotics — domains where efficiency, scalability, and low latency are not optional but essential. Angelo is a frequent keynote speaker, open-source advocate, and thought leader in the distributed systems community.",
     "areasTitle": "Areas of Interest",
     "areas": {
       "distributedSystems": {
@@ -30,8 +30,8 @@
         "desc": "Designing protocols and middleware for large-scale distributed computing."
       },
       "edgeComputing": {
-        "title": "Edge Computing",
-        "desc": "Bringing computation closer to where data is produced and consumed."
+        "title": "Cloud to Device Continuum",
+        "desc": "Designing systems and protocols that span the full continuum from cloud platforms to devices."
       },
       "robotics": {
         "title": "Robotics & ROS 2",
