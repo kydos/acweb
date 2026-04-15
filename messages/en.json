@@ -9,11 +9,12 @@
     "zenohBook": "Book",
     "zenohPapers": "Papers",
     "zenohTalks": "Talks",
+    "zenohSpec": "Spec",
     "contact": "Contact"
   },
   "home": {
     "overline": "Distributed Systems Inventor",
-    "title": "Distributed Systems Architect & Protocol Designer",
+    "title": "Innovator & Distributed Systems Architect",
     "shortBio": "Inventor of the Zenoh Protocol. Building the future of distributed computing — one protocol at a time.",
     "aboutCta": "About Me",
     "blogCta": "Read the Blog",

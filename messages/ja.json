@@ -9,11 +9,12 @@
     "zenohBook": "書籍",
     "zenohPapers": "論文",
     "zenohTalks": "講演",
+    "zenohSpec": "Spec",
     "contact": "連絡先"
   },
   "home": {
     "overline": "分散システムの発明者",
-    "title": "分散システムアーキテクトとプロトコル設計者",
+    "title": "イノベーター & 分散システムアーキテクト",
     "shortBio": "Zenohプロトコルの発明者。一つのプロトコルから、分散コンピューティングの未来を構築しています。",
     "aboutCta": "自己紹介",
     "blogCta": "ブログを読む",

@@ -9,11 +9,12 @@
     "zenohBook": "도서",
     "zenohPapers": "논문",
     "zenohTalks": "강연",
+    "zenohSpec": "Spec",
     "contact": "연락처"
   },
   "home": {
     "overline": "분산 시스템 발명가",
-    "title": "분산 시스템 아키텍트 & 프로토콜 설계자",
+    "title": "혁신가 & 분산 시스템 아키텍트",
     "shortBio": "Zenoh 프로토콜의 발명가. 하나의 프로토콜로 분산 컴퓨팅의 미래를 구축합니다.",
     "aboutCta": "소개",
     "blogCta": "블로그 읽기",

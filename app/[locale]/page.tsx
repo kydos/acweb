@@ -27,7 +27,7 @@ const personSchema = {
   name: "Angelo Corsaro",
   url: siteConfig.siteUrl,
   image: `${siteConfig.siteUrl}/me.png`,
-  jobTitle: "Inventor of the Zenoh Protocol, CEO/CTO of ZettaScale Technology",
+  jobTitle: "Innovator & Distributed Systems Architect",
   description:
     "Angelo Corsaro, Ph.D. is the inventor of the Zenoh Protocol and a world expert in distributed systems, robotics middleware, AI-native infrastructure, and cloud-to-edge computing.",
   sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
@@ -72,6 +72,12 @@ const websiteSchema = {
   },
 };
 
+const profilePillRows = [
+  ["ROS 2", "DDS", "Edge AI", "IoT", "SDV", "V2X"],
+  ["Rust", "C++", "OCaml", "Robotics", "Embedded", "Standards"],
+  ["Innovation", "Middleware", "Real-Time", "Cloud Continuum"],
+] as const;
+
 export default function Home({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("home");
@@ -83,7 +89,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       <JsonLd data={personSchema} />
       <JsonLd data={websiteSchema} />
     <section className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
-      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
+      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_440px]">
         <div className="min-w-0">
           <div className="animate-fade-in">
             <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4">
@@ -153,14 +159,18 @@ export default function Home({ params: { locale } }: { params: { locale: string 
               <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-fog">
                 {zenoh("tagline")}
               </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {["ROS 2", "DDS", "Edge AI", "IoT"].map((label) => (
-                  <span
-                    key={label}
-                    className="rounded-full border border-stone-200 dark:border-ink-wire px-2.5 py-1 text-xs text-stone-500 dark:text-ash"
-                  >
-                    {label}
-                  </span>
+              <div className="mt-4 space-y-2">
+                {profilePillRows.map((row, index) => (
+                  <div key={index} className="flex flex-wrap gap-1.5 lg:flex-nowrap">
+                    {row.map((label) => (
+                      <span
+                        key={label}
+                        className="whitespace-nowrap rounded-full border border-stone-200 dark:border-ink-wire px-2.5 py-1 text-[11px] leading-none text-stone-500 dark:text-ash"
+                      >
+                        {label}
+                      </span>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>

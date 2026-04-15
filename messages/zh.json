@@ -9,11 +9,12 @@
     "zenohBook": "书籍",
     "zenohPapers": "论文",
     "zenohTalks": "演讲",
+    "zenohSpec": "Spec",
     "contact": "联系"
   },
   "home": {
     "overline": "分布式系统发明者",
-    "title": "分布式系统架构师 & 协议设计师",
+    "title": "创新者与分布式系统架构师",
     "shortBio": "Zenoh协议的发明者。一次一个协议，构建分布式计算的未来。",
     "aboutCta": "关于我",
     "blogCta": "阅读博客",
