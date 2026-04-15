@@ -137,7 +137,15 @@
     "heading": "联系我",
     "subtitle": "我随时乐于交流——无论是关于分布式系统、开源合作还是演讲机会。",
     "github": "开源项目和贡献",
-    "linkedin": "专业资料和联系",
+    "linkedin": "LinkedIn 可用于职业机会和合作联系",
+    "email": "Email",
+    "emailDesc": "直接邮箱联系方式，按需显示，以减少机器人抓取。",
+    "revealEmail": "显示邮箱",
+    "copyEmail": "复制邮箱",
+    "copied": "已复制",
+    "writeEmail": "写邮件",
+    "bookMeeting": "预约会议",
+    "bookMeetingDesc": "使用 Calendly 预约 30 分钟会议。",
     "twitter": "关于分布式系统和技术的思考"
   },
   "footer": {

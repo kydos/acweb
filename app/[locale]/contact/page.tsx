@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ProtectedEmailCard } from "@/components/ProtectedEmailCard";
 import { siteConfig } from "@/lib/siteConfig";
 import { pageMetadata } from "@/lib/seo";
 
@@ -12,18 +13,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     path: "/contact",
     title: t("heading"),
     description:
-      "Contact Angelo Corsaro through professional and open-source channels.",
+      "Contact Angelo Corsaro through LinkedIn, GitHub, and a protected email channel.",
   });
 }
 
 export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("contact");
-  const { social } = siteConfig;
+  const { social, contact } = siteConfig;
 
   const links = [
     { label: "GitHub",   href: social.github,   description: t("github") },
     { label: "LinkedIn", href: social.linkedin,  description: t("linkedin") },
+    { label: t("bookMeeting"), href: contact.calendlyUrl, description: t("bookMeetingDesc") },
   ];
 
   return (
@@ -37,7 +39,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
         {t("subtitle")}
       </p>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 animate-fade-in animate-delay-200">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 animate-fade-in animate-delay-200">
         {links.map((link) => (
           <a
             key={link.label}
@@ -62,6 +64,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
             </p>
           </a>
         ))}
+        <ProtectedEmailCard />
       </div>
     </section>
   );

@@ -137,7 +137,15 @@
     "heading": "연락하기",
     "subtitle": "분산 시스템, 오픈 소스 협업, 강연 기회 등 언제든지 연락해 주세요.",
     "github": "오픈 소스 프로젝트와 기여",
-    "linkedin": "전문 프로필과 연결",
+    "linkedin": "전문적 기회와 협업 문의는 LinkedIn을 이용하세요",
+    "email": "Email",
+    "emailDesc": "봇 스크래핑을 줄이기 위해 필요할 때만 공개되는 직접 이메일 연락처입니다.",
+    "revealEmail": "이메일 보기",
+    "copyEmail": "이메일 복사",
+    "copied": "복사됨",
+    "writeEmail": "이메일 쓰기",
+    "bookMeeting": "미팅 예약",
+    "bookMeetingDesc": "Calendly로 30분 미팅을 예약하세요.",
     "twitter": "분산 시스템과 기술에 관한 생각"
   },
   "footer": {

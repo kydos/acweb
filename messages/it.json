@@ -137,7 +137,15 @@
     "heading": "Contattami",
     "subtitle": "Sono sempre felice di connettermi — che si tratti di sistemi distribuiti, collaborazione open source o opportunità di keynote.",
     "github": "Progetti open source e contributi",
-    "linkedin": "Profilo professionale e connessioni",
+    "linkedin": "Usa LinkedIn per opportunità professionali e di collaborazione",
+    "email": "Email",
+    "emailDesc": "Contatto diretto via email, rivelato su richiesta per ridurre lo scraping da parte dei bot.",
+    "revealEmail": "Mostra email",
+    "copyEmail": "Copia email",
+    "copied": "Copiata",
+    "writeEmail": "Scrivi email",
+    "bookMeeting": "Prenota un incontro",
+    "bookMeetingDesc": "Usa Calendly per programmare un incontro di 30 minuti.",
     "twitter": "Riflessioni su sistemi distribuiti e tecnologia"
   },
   "footer": {

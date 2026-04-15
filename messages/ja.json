@@ -137,7 +137,15 @@
     "heading": "お問い合わせ",
     "subtitle": "分散システム、オープンソースコラボレーション、講演の機会など、いつでもお気軽にご連絡ください。",
     "github": "オープンソースプロジェクトと貢献",
-    "linkedin": "プロフェッショナルプロフィールとコネクション",
+    "linkedin": "LinkedIn は仕事やコラボレーションの相談に利用できます",
+    "email": "Email",
+    "emailDesc": "ボットによる収集を減らすため、必要時にのみ表示する直接メール連絡先です。",
+    "revealEmail": "メールを表示",
+    "copyEmail": "メールをコピー",
+    "copied": "コピーしました",
+    "writeEmail": "メールを書く",
+    "bookMeeting": "打ち合わせを予約",
+    "bookMeetingDesc": "Calendly を使って 30 分の打ち合わせを予約できます。",
     "twitter": "分散システムと技術に関する考察"
   },
   "footer": {

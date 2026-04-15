@@ -137,7 +137,15 @@
     "heading": "Prendre Contact",
     "subtitle": "Je suis toujours heureux de me connecter — que ce soit à propos des systèmes distribués, de la collaboration open source ou des opportunités de conférence.",
     "github": "Projets open source et contributions",
-    "linkedin": "Profil professionnel et connexions",
+    "linkedin": "Utilisez LinkedIn pour les opportunités professionnelles et de collaboration",
+    "email": "Email",
+    "emailDesc": "Contact direct par email, révélé à la demande pour réduire le scraping par les bots.",
+    "revealEmail": "Révéler l'email",
+    "copyEmail": "Copier l'email",
+    "copied": "Copié",
+    "writeEmail": "Écrire un email",
+    "bookMeeting": "Réserver une réunion",
+    "bookMeetingDesc": "Utilisez Calendly pour planifier une réunion de 30 minutes.",
     "twitter": "Réflexions sur les systèmes distribués et la technologie"
   },
   "footer": {

@@ -18,6 +18,9 @@ export const siteConfig = {
     github: "https://github.com/kydos",
     linkedin: "https://linkedin.com/in/corsaro",
   },
+  contact: {
+    calendlyUrl: "https://calendly.com/angelo-corsaro/30min",
+  },
 
   // ─── Site Metadata ───────────────────────────────────────────────
   siteUrl: "https://corsaro.me",

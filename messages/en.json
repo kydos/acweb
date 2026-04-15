@@ -135,9 +135,17 @@
   },
   "contact": {
     "heading": "Get in Touch",
-    "subtitle": "I'm always happy to connect — whether it's about distributed systems, open source collaboration, or speaking opportunities.",
+    "subtitle": "I'm always happy to connect — whether it's about distributed systems, professional opportunities, collaboration, open source, or speaking.",
     "github": "Open source projects and contributions",
-    "linkedin": "Professional profile and connections",
+    "linkedin": "Use LinkedIn for professional and collaboration opportunities",
+    "email": "Email",
+    "emailDesc": "Direct email contact, revealed on demand to reduce scraping by bots.",
+    "revealEmail": "Reveal email",
+    "copyEmail": "Copy email",
+    "copied": "Copied",
+    "writeEmail": "Write email",
+    "bookMeeting": "Book a Meeting",
+    "bookMeetingDesc": "Use Calendly to schedule a 30-minute meeting.",
     "twitter": "Thoughts on distributed systems and tech"
   },
   "footer": {
