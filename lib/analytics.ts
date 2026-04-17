@@ -56,5 +56,5 @@ export interface ArticleViewParams {
  * Fire on every article page load to capture content-level engagement.
  */
 export function trackArticleView(params: ArticleViewParams) {
-  trackEvent("article_view", params);
+  trackEvent("article_view", params as EventParams);
 }
