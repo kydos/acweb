@@ -44,11 +44,10 @@ export function trackContactAction(contactType: ContactType) {
 // ---------------------------------------------------------------------------
 
 export interface ArticleViewParams {
+  [key: string]: string | number | boolean | undefined;
   article_title: string;
   article_slug: string;
-  /** Primary tag / topic (e.g. "zenoh", "ros2") */
   article_topic?: string;
-  /** Numeric reading time in minutes */
   read_time_minutes?: number;
 }
 
@@ -56,5 +55,5 @@ export interface ArticleViewParams {
  * Fire on every article page load to capture content-level engagement.
  */
 export function trackArticleView(params: ArticleViewParams) {
-  trackEvent("article_view", params as EventParams);
+  trackEvent("article_view", params);
 }
