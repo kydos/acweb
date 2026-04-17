@@ -110,7 +110,7 @@ export default async function RootLayout({
       >
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-1">{children}</main>
