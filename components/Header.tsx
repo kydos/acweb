@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 type NavKey =
   | "home" | "about" | "cv" | "blog" | "zenoh" | "contact"
-  | "zenohReport" | "zenohBook" | "zenohPapers" | "zenohTalks" | "zenohSpec" | "zenohDemo";
+  | "zenohReport" | "zenohBook" | "zenohPapers" | "zenohTalks" | "zenohSpec" | "zenohDemo" | "zenohOverview";
 
 function isExternalHref(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
@@ -87,26 +87,27 @@ export function Header() {
                   {openDropdown === link.key && (
                     <div className="absolute top-full left-0 pt-1 min-w-[140px] z-50">
                       <div className="bg-ink border border-ink-wire rounded-md shadow-lg py-1">
-                        {link.children.map((child) => (
-                          isExternalHref(child.href) ? (
-                            <a
-                              key={child.href}
-                              href={child.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block px-4 py-2 text-sm text-sand hover:text-cream hover:bg-ink-card transition-colors duration-150"
-                            >
-                              {t(child.key as NavKey)}
-                            </a>
-                          ) : (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className="block px-4 py-2 text-sm text-sand hover:text-cream hover:bg-ink-card transition-colors duration-150"
-                            >
-                              {t(child.key as NavKey)}
-                            </Link>
-                          )
+                        {link.children.map((child, i) => (
+                          <span key={child.href}>
+                            {isExternalHref(child.href) ? (
+                              <a
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block px-4 py-2 text-sm text-sand hover:text-cream hover:bg-ink-card transition-colors duration-150"
+                              >
+                                {t(child.key as NavKey)}
+                              </a>
+                            ) : (
+                              <Link
+                                href={child.href}
+                                className="block px-4 py-2 text-sm text-sand hover:text-cream hover:bg-ink-card transition-colors duration-150"
+                              >
+                                {t(child.key as NavKey)}
+                              </Link>
+                            )}
+                            {i === 0 && <div className="my-1 border-t border-ink-wire" />}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -197,28 +198,29 @@ export function Header() {
                   </div>
                   {isExpanded && (
                     <div className="ml-4 pl-3 border-l border-ink-wire space-y-0.5 mt-0.5">
-                      {link.children.map((child) => (
-                        isExternalHref(child.href) ? (
-                          <a
-                            key={child.href}
-                            href={child.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setMobileOpen(false)}
-                            className="block px-3 py-1.5 text-sm text-sand hover:text-cream transition-colors duration-150"
-                          >
-                            {t(child.key as NavKey)}
-                          </a>
-                        ) : (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="block px-3 py-1.5 text-sm text-sand hover:text-cream transition-colors duration-150"
-                          >
-                            {t(child.key as NavKey)}
-                          </Link>
-                        )
+                      {link.children.map((child, i) => (
+                        <span key={child.href}>
+                          {isExternalHref(child.href) ? (
+                            <a
+                              href={child.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setMobileOpen(false)}
+                              className="block px-3 py-1.5 text-sm text-sand hover:text-cream transition-colors duration-150"
+                            >
+                              {t(child.key as NavKey)}
+                            </a>
+                          ) : (
+                            <Link
+                              href={child.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="block px-3 py-1.5 text-sm text-sand hover:text-cream transition-colors duration-150"
+                            >
+                              {t(child.key as NavKey)}
+                            </Link>
+                          )}
+                          {i === 0 && <div className="my-1 border-t border-ink-wire" />}
+                        </span>
                       ))}
                     </div>
                   )}
