@@ -178,6 +178,39 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         </aside>
       </div>
     </section>
+
+    <section className="mx-auto max-w-6xl px-6 pb-16">
+      <div className="rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent dark:from-accent/15 dark:via-accent/5 dark:to-transparent p-6 md:p-8">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent/20 shrink-0">
+                <svg viewBox="0 0 24 24" className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
+              </span>
+              <h2 className="text-lg font-semibold text-stone-900 dark:text-cream">
+                {zenoh("demoCTAHeading")}
+              </h2>
+            </div>
+            <p className="text-sm text-stone-600 dark:text-fog leading-relaxed">
+              {zenoh("demoCTADesc")}
+            </p>
+          </div>
+          <a
+            href="http://zenoh.corsaro.me:8000/examples/web/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent/90 transition-colors duration-200 shrink-0 whitespace-nowrap"
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+            {zenoh("demoCTAButton")}
+          </a>
+        </div>
+      </div>
+    </section>
     </>
   );
 }

@@ -10,7 +10,8 @@
     "zenohPapers": "Articoli",
     "zenohTalks": "Conferenze",
     "zenohSpec": "Spec",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "zenohDemo": "Demo"
   },
   "home": {
     "overline": "Inventore di Sistemi Distribuiti",
@@ -131,7 +132,10 @@
     "navCardReportDesc": "Digest mensile delle innovazioni Zenoh, highlights dell’ecosistema e storie della community.",
     "navCardPapersDesc": "Pubblicazioni scientifiche e ricerche sul protocollo Zenoh.",
     "navCardBookDesc": "La guida completa a Zenoh — architettura, concetti ed esempi pratici.",
-    "navCardTalksDesc": "Presentazioni a conferenze e talk tecnici di Angelo Corsaro."
+    "navCardTalksDesc": "Presentazioni a conferenze e talk tecnici di Angelo Corsaro.",
+    "demoCTAHeading": "Try Zenoh in Your Browser",
+    "demoCTADesc": "Explore all Zenoh features — publishers, subscribers, queryables, and get operations — live in your browser. Open multiple tabs to test cross-instance communication.",
+    "demoCTAButton": "Try the Live Web Demo"
   },
   "contact": {
     "heading": "Contattami",

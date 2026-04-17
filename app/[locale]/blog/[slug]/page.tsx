@@ -7,6 +7,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
 import { JsonLd } from "@/components/JsonLd";
+import { ArticleAnalytics } from "@/components/ArticleAnalytics";
 
 const locales = ["en", "fr", "it", "ja", "es", "zh", "ko", "ru"] as const;
 
@@ -140,6 +141,12 @@ export default function BlogPostPage({ params }: Props) {
   return (
     <>
       <JsonLd data={articleSchema} />
+      <ArticleAnalytics
+        title={post.title}
+        slug={post.slug}
+        tags={post.tags}
+        readingTime={post.readingTime}
+      />
     <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
       <header className="mb-10 animate-fade-in">
         <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream">

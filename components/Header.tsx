@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 type NavKey =
   | "home" | "about" | "cv" | "blog" | "zenoh" | "contact"
-  | "zenohReport" | "zenohBook" | "zenohPapers" | "zenohTalks" | "zenohSpec";
+  | "zenohReport" | "zenohBook" | "zenohPapers" | "zenohTalks" | "zenohSpec" | "zenohDemo";
 
 function isExternalHref(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");

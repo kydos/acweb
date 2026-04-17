@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { trackContactAction } from "@/lib/analytics";
 
 function decode(chars: readonly number[]) {
   return chars.map((char) => String.fromCharCode(char)).join("");
@@ -40,7 +41,7 @@ export function ProtectedEmailCard() {
         {!revealed ? (
           <button
             type="button"
-            onClick={() => setRevealed(true)}
+            onClick={() => { setRevealed(true); trackContactAction("email_reveal"); }}
             className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
           >
             {t("revealEmail")}
@@ -53,13 +54,14 @@ export function ProtectedEmailCard() {
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={handleCopy}
+                onClick={() => { handleCopy(); trackContactAction("email_copy"); }}
                 className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
               >
                 {copied ? t("copied") : t("copyEmail")}
               </button>
               <a
                 href={`mailto:${email}`}
+                onClick={() => trackContactAction("email_write")}
                 className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
               >
                 {t("writeEmail")}

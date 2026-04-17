@@ -42,6 +42,7 @@ export const siteConfig = {
     { key: "cv",      href: "/cv" },
     { key: "blog",    href: "/blog" },
     { key: "zenoh",   href: "/zenoh", children: [
+      { key: "zenohDemo",   href: "http://zenoh.corsaro.me:8000/examples/web/" },
       { key: "zenohSpec",   href: "https://spec.zenoh.io" },
       { key: "zenohBook",   href: "/zenoh/book" },
       { key: "zenohPapers", href: "/zenoh/papers" },

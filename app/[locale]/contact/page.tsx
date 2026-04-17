@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ProtectedEmailCard } from "@/components/ProtectedEmailCard";
+import { ContactLink } from "@/components/ContactLink";
 import { siteConfig } from "@/lib/siteConfig";
 import { pageMetadata } from "@/lib/seo";
 
@@ -23,9 +24,9 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   const { social, contact } = siteConfig;
 
   const links = [
-    { label: "GitHub",   href: social.github,   description: t("github") },
-    { label: "LinkedIn", href: social.linkedin,  description: t("linkedin") },
-    { label: t("bookMeeting"), href: contact.calendlyUrl, description: t("bookMeetingDesc") },
+    { label: "GitHub",   href: social.github,   description: t("github"),          contactType: "github"   as const },
+    { label: "LinkedIn", href: social.linkedin,  description: t("linkedin"),         contactType: "linkedin" as const },
+    { label: t("bookMeeting"), href: contact.calendlyUrl, description: t("bookMeetingDesc"), contactType: "calendly" as const },
   ];
 
   return (
@@ -41,28 +42,13 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 animate-fade-in animate-delay-200">
         {links.map((link) => (
-          <a
+          <ContactLink
             key={link.label}
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-6 rounded-xl
-                       border border-stone-200 dark:border-ink-wire
-                       bg-white dark:bg-ink-card
-                       hover:border-azure dark:hover:border-azure
-                       hover:shadow-sm hover:-translate-y-0.5
-                       transition-all duration-200"
-          >
-            <h2 className="font-semibold
-                           text-stone-800 dark:text-cream
-                           group-hover:text-azure dark:group-hover:text-sky
-                           transition-colors">
-              {link.label}
-            </h2>
-            <p className="mt-1 text-sm text-stone-500 dark:text-ash">
-              {link.description}
-            </p>
-          </a>
+            label={link.label}
+            description={link.description}
+            contactType={link.contactType}
+          />
         ))}
         <ProtectedEmailCard />
       </div>
