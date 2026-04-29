@@ -196,21 +196,6 @@
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://corsaro.me/en/blog/zenoh-vs-dds</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/zenoh-vs-dds" />
-<xhtml:link rel="alternate" hreflang="x-default" href="https://corsaro.me/en/blog/zenoh-vs-dds" />
-<lastmod>2025-02-10T00:00:00.000Z</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
 <loc>https://corsaro.me/en/blog/clock-synchronization</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/clock-synchronization" />
 <xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/clock-synchronization" />
@@ -221,7 +206,22 @@
 <xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/clock-synchronization" />
 <xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/clock-synchronization" />
 <xhtml:link rel="alternate" hreflang="x-default" href="https://corsaro.me/en/blog/clock-synchronization" />
-<lastmod>2024-12-15T00:00:00.000Z</lastmod>
+<lastmod>2026-04-29T00:00:00.000Z</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://corsaro.me/en/blog/zenoh-vs-dds</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/zenoh-vs-dds" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://corsaro.me/en/blog/zenoh-vs-dds" />
+<lastmod>2026-04-29T00:00:00.000Z</lastmod>
 <changefreq>yearly</changefreq>
 <priority>0.7</priority>
 </url>
