@@ -5,11 +5,15 @@ excerpt: "A look back at the coupling-based internal clock synchronization algor
 tags: ["distributed-systems", "clock-synchronization", "algorithms", "research", "gossip-protocols"]
 ---
 
+*This article is based on research I carried out between 2005 and 2009, published in [IEEE Transactions on Parallel and Distributed Systems (TPDS), vol. 21, no. 5, 2009](/papers/clock-sync-tpds09.pdf). I am revisiting it now because the problem it solves has become more relevant than ever: the rise of autonomous swarms — drone fleets, multi-robot systems, vehicle platoons, satellite constellations — puts large-scale, infrastructure-free, churn-resilient clock synchronization back at the centre of the design agenda.*
+
+---
+
 In distributed systems, time is a lie.
 
 Every node has its own hardware clock — a crystal oscillator drifting at a slightly different rate, affected by temperature, voltage, and manufacturing tolerances. The NTP specification acknowledges this: every clock may drift by up to ρ (rho) fractional cycles per unit time. In practice ρ is small — around 10⁻⁵ to 10⁻⁶ — but it accumulates. Two clocks that started synchronized will diverge by milliseconds after a few hours and by seconds after days.
 
-For many applications this doesn't matter. For pub/sub middleware ensuring real-time message ordering, for consensus algorithms that rely on timeouts, for distributed transactions enforcing causal ordering, and for safety-critical systems in aerospace and industrial control — clock divergence is a first-order problem.
+For many applications this doesn't matter. For pub/sub middleware ensuring real-time message ordering, for consensus algorithms that rely on timeouts, for distributed transactions enforcing causal ordering, and for safety-critical systems in aerospace and industrial control — clock divergence is a first-order problem. And for autonomous swarms operating without ground infrastructure, it is an unavoidable one.
 
 ## External vs Internal Synchronization
 
