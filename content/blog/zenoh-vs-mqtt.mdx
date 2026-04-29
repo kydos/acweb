@@ -1,0 +1,98 @@
+---
+title: "Zenoh vs MQTT: Why the 'Holy Grail of IoT' Wasn't Enough"
+date: "2024-09-20"
+excerpt: "MQTT was the first protocol I measured Zenoh against when designing it. Here is an honest comparison — what MQTT does brilliantly, what it cannot do by design, and where Zenoh takes a fundamentally different path."
+tags: ["zenoh", "mqtt", "protocols", "iot", "distributed-systems", "middleware"]
+---
+
+When I started designing Zenoh around 2009, MQTT was the protocol I was most directly reacting against. Not because MQTT is bad — it isn't — but because it made a specific architectural choice that cannot be escaped once you commit to it: **the broker as the centre of the universe**.
+
+This post explains what that means in practice, where MQTT genuinely excels, and where Zenoh takes a fundamentally different path.
+
+## What MQTT Does Well
+
+MQTT was designed by Andy Stanford-Clark (IBM) and Arlen Nipper (Arcom) in 1999 to monitor oil pipelines over satellite links. That origin story tells you almost everything about its design philosophy: it is optimised for connecting remote, power-constrained sensors to a central server over expensive, unreliable, high-latency links.
+
+In that context, MQTT's choices are exactly right:
+
+- **Broker-mediated communication**: the satellite link is too costly to maintain per-device sessions to every subscriber. All traffic flows through a central broker.
+- **Three QoS levels**: 0 (fire-and-forget), 1 (at-least-once), 2 (exactly-once) — precisely the right set for a link that costs money per byte.
+- **Retained messages**: the broker stores the last value of any topic so late-joining subscribers receive immediate state.
+- **Last will and testament (LWT)**: if a device disconnects unexpectedly, the broker publishes a pre-configured "death notice" — critical for detecting offline sensors.
+- **Minimal wire overhead**: a publish can be encoded in as few as 4 bytes.
+- **Persistent sessions**: devices can disconnect and reconnect without losing queued messages.
+
+These properties made MQTT the dominant protocol for cloud-connected IoT. It is simple to implement, has excellent library support in every language, and practically every cloud platform (AWS IoT Core, Azure IoT Hub, Google Cloud IoT, HiveMQ, Eclipse Mosquitto) speaks it natively. IBM called it the "holy grail of IoT" — and for the problem it was designed to solve, that wasn't wrong.
+
+## The MQTT Paradox
+
+MQTT's broker model is also its fundamental constraint. Every message, regardless of origin and destination, must flow through the broker. This produces what I call the **MQTT paradox**:
+
+> Two sensors sitting on the same Ethernet switch must communicate through a broker that might be 10,000 km away in a cloud data centre.
+
+In 1999, this was not a paradox — the device was a pipeline monitor, the subscriber was an operations room, and the cloud broker was the right place for data to land. In 2024, the same protocol is being used for robotic arms communicating with a controller 2 metres away, for vehicle ECUs talking to each other in the same car, and for factory floor sensors feeding a local edge analytics engine. In these cases, the cloud broker is not just unnecessary — it introduces latency, creates a single point of failure, and forces every byte to make a round trip it has no reason to make.
+
+## MQTT's Structural Limitations
+
+**Single point of failure.** The broker is the system. High-availability broker clustering (HiveMQ, EMQX, VerneMQ) exists, but adds considerable operational complexity. In safety-critical systems — autonomous vehicles, industrial machinery, medical devices — no single process should be able to halt all communication.
+
+**Broker bottleneck at high throughput.** At tens of thousands of messages per second across thousands of clients, even a well-tuned broker cluster becomes the limiting factor. Zenoh achieves 50 Gbps throughput in peer-to-peer mode with no intermediary.
+
+**No locality exploitation.** The broker has no concept of "these two clients are on the same machine" or "these clients are on the same LAN segment." Zenoh is topology-aware: two processes on the same host use shared memory, two nodes on the same LAN communicate directly without a router in the middle.
+
+**No native query semantics.** MQTT is purely pub/sub. To query historical data, you need a separate database (InfluxDB, TimescaleDB, ClickHouse) and a separate query interface. The data storage and the communication protocol are completely decoupled. In Zenoh, the `get` operation uses the same key-expression as `publish` and `subscribe`. A queryable can be backed by in-memory storage, a database, or a computation — and the caller does not need to know which.
+
+**No native geo-distribution.** Connecting multiple MQTT broker instances across regions requires explicit bridge configuration. Zenoh routers form a routing fabric automatically using gossip-based discovery.
+
+**QoS 2 does not scale well.** Exactly-once delivery in MQTT requires a 4-step handshake and per-message state tracking on the broker. At high throughput this becomes expensive. Zenoh provides equivalent reliability guarantees through a different mechanism that scales horizontally.
+
+**No infrastructure-less operation.** MQTT requires a broker. Always. Zenoh can operate in a completely infrastructure-free peer-to-peer mode — no routers, no brokers, no external discovery. Two Zenoh peers on the same network find each other and communicate directly.
+
+**Constrained device support.** MQTT was designed for constrained devices, but even the smallest standard MQTT implementation requires a TCP stack and a reasonable heap. [Zenoh-Pico](https://github.com/eclipse-zenoh/zenoh-pico) runs on 32 KB of RAM with no operating system and no standard library.
+
+## A Direct Comparison
+
+| Concern | MQTT | Zenoh |
+|---|---|---|
+| Single point of failure | Broker is SPOF; clustering helps but adds complexity | No SPOF; pure P2P mode needs no infrastructure |
+| Locality awareness | All traffic via broker regardless of proximity | Topology-aware: shared memory, LAN-direct, WAN-routed |
+| Query / storage semantics | External database required | Unified: `get` uses the same key-expression as pub/sub |
+| Geo-distribution | Manual bridge configuration | Automatic via gossip-based router mesh |
+| Infrastructure-free operation | Not supported | Full P2P mode with zero infrastructure |
+| Constrained devices | Requires TCP stack + heap | Zenoh-Pico: 32 KB RAM, no OS, no stdlib |
+| LAN throughput | Broker-bound | 50 Gbps peer-to-peer |
+| LAN latency | Round-trip through broker | Sub-13µs |
+| Wire overhead | Variable (minimum 4 bytes, often significantly more) | 5 bytes |
+
+## When MQTT Is Still the Right Choice
+
+There are scenarios where MQTT remains the better choice today.
+
+- **Existing cloud IoT infrastructure**: if you are already integrated with AWS IoT Core, Azure IoT Hub, or a managed HiveMQ deployment, MQTT is not a bottleneck and migration would add risk without clear benefit.
+- **Simple telemetry to cloud**: if devices report sensor readings to a cloud dashboard and nothing else, the broker model is exactly right. The cloud broker *is* your subscriber, and MQTT's simplicity wins.
+- **Ecosystem and operational familiarity**: MQTT has 25 years of tooling, documentation, and operational knowledge. If your team knows it, migration risk matters.
+- **When centralised aggregation is the goal**: some architectures genuinely want a centralised broker — a factory historian that must receive every event, or a compliance system that must log everything. In that case, the broker model is appropriate.
+
+It is also worth noting that Zenoh provides an MQTT bridge that lets existing MQTT clients connect to a Zenoh infrastructure. Migration, when it makes sense, can be incremental.
+
+## Where Zenoh Was Designed to Go
+
+Zenoh was designed for the systems that MQTT cannot reach without significant architectural workarounds:
+
+**Robotics (ROS 2).** The ROS 2 Technical Steering Committee evaluated over 20 middleware candidates and [selected Zenoh as the official DDS alternative](https://discourse.ros.org/t/ros-2-alternative-middleware-report/33771). The latency, locality-awareness, and zero-infrastructure startup were the key drivers.
+
+**Automotive (V2X, SDV).** General Motors chose Zenoh as the communication fabric for uProtocol. Bosch, Volvo, and Foxconn have adopted it for software-defined vehicle platforms. Vehicle ECUs communicating at microsecond granularity across a high-speed Ethernet backbone cannot afford a broker round-trip — or a broker failure.
+
+**Edge-to-cloud continuum.** When the same application spans a microcontroller in a field sensor, an edge server in a factory, and a cloud analytics platform, a single protocol that works natively across all three tiers eliminates the "digital Frankenstein" of stitching together CoAP, MQTT, and REST with hand-written glue code.
+
+**Air-gapped and infrastructure-less deployments.** Military field systems, autonomous drones, and disaster response networks that cannot assume any network infrastructure. MQTT requires a broker to exist somewhere. Zenoh does not.
+
+**Safety-critical systems with zero SPOF tolerance.** Industrial control, medical devices, avionics, and nuclear plant monitoring — domains where a broker process failure cannot be allowed to halt communication across the system.
+
+## Conclusion
+
+MQTT is an elegant solution to the problem it was designed to solve. It is not a coincidence that it became the dominant IoT protocol — for a large class of deployments, it remains the right answer.
+
+Zenoh was designed to work where MQTT stops. The fundamental difference is not in performance numbers (though those are significant) — it is in the architectural assumptions. MQTT assumes a centralised broker. Zenoh assumes the broker *might not exist* and works from there.
+
+For systems that span devices, edges, and clouds in the same application — where latency and locality matter, where a single point of failure is unacceptable, and where the data model is richer than one-way telemetry — Zenoh was built precisely for that world.

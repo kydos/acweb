@@ -56,7 +56,9 @@ export const siteConfig = {
   // ─── Open Source Projects ────────────────────────────────────────
   featuredRepos: [
     "eclipse-zenoh/zenoh",
-    "eclipse-zenoh/zenoh-nostd",
+    "eclipse-fog05/fog05",
+    "eclipse-zenoh/zenoh-dissector",
+    "kydos/zenoh-nostd",
   ],
 
   // ─── CV Data ─────────────────────────────────────────────────────
