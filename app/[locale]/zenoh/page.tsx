@@ -85,6 +85,10 @@ const zenohRepos = [
     name: "eclipse-zenoh/zenoh-nostd",
     url: "https://github.com/eclipse-zenoh/zenoh-nostd",
   },
+  {
+    name: "kydos/awesome-zenoh",
+    url: "https://github.com/kydos/awesome-zenoh",
+  },
 ];
 
 const topicLinks = [
