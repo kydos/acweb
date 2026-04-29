@@ -14,16 +14,15 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       path: "/about",
       title: t("heading"),
       description:
-        "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol, expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and the Cloud to Device Continuum. CEO/CTO of ZettaScale Technology.",
+        "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol, expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and the Cloud to Device Continuum.",
     }),
     title: t("heading"),
     description:
-      "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol, expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and the Cloud to Device Continuum. CEO/CTO of ZettaScale Technology.",
+      "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol, expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and the Cloud to Device Continuum.",
     keywords: [
       "Angelo Corsaro",
       "Zenoh inventor",
       "Zenoh Protocol creator",
-      "ZettaScale CTO",
       "distributed systems expert",
       "ROS 2 middleware",
       "Eclipse Zenoh creator",

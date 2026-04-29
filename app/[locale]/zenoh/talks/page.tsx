@@ -15,14 +15,13 @@ export async function generateMetadata({
   return {
     title: t("talksHeading"),
     description:
-      "Conference talks, keynotes, workshops, and webinars on the Zenoh Protocol and distributed systems by Angelo Corsaro — inventor of Zenoh and CEO/CTO of ZettaScale Technology.",
+      "Conference talks, keynotes, workshops, and webinars on the Zenoh Protocol and distributed systems by Angelo Corsaro — inventor of Zenoh.",
     keywords: [
       "Zenoh talks",
       "Zenoh presentations",
       "Angelo Corsaro keynote",
       "Eclipse Zenoh conference",
       "Zenoh Protocol video",
-      "ZettaScale webinar",
       "distributed systems talk",
       "ROS 2 Zenoh",
     ],
@@ -260,13 +259,13 @@ export default function ZenohTalksPage({ params: { locale } }: { params: { local
       {/* External links */}
       <div className="mt-5 flex flex-wrap gap-3 animate-fade-in animate-delay-100">
         <a
-          href="https://www.zettascale.tech"
+          href="https://zenoh.io"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-ghost text-sm flex items-center gap-1.5"
         >
           <ExternalIcon />
-          ZettaScale.tech
+          zenoh.io
         </a>
         <a
           href="https://github.com/eclipse-zenoh/zenoh"
@@ -294,16 +293,16 @@ export default function ZenohTalksPage({ params: { locale } }: { params: { local
           </div>
           <div className="rounded-xl border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card p-6">
             <p className="text-sm text-stone-600 dark:text-fog leading-relaxed">
-              ZettaScale hosts regular webinars on Zenoh — covering performance deep-dives, new protocol features,
+              Regular webinars on Zenoh — covering performance deep-dives, new protocol features,
               robotics integrations, and automotive deployments. Recordings and upcoming event details are available
               at{" "}
               <a
-                href="https://www.zettascale.tech"
+                href="https://zenoh.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-azure dark:text-sky hover:text-accent transition-colors underline underline-offset-2"
               >
-                zettascale.tech
+                zenoh.io
               </a>
               .
             </p>

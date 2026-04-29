@@ -47,11 +47,6 @@ const personSchema = {
     "@type": "CollegeOrUniversity",
     name: "Washington University in St. Louis",
   },
-  worksFor: {
-    "@type": "Organization",
-    name: "ZettaScale Technology",
-    url: "https://zettascale.tech",
-  },
   award: [
     "Technology CEO of the Year 2024",
     "Genius Minds 2024 — Representing France",

@@ -13,6 +13,7 @@ export interface BlogPost {
   readingTime: string;
   content: string;
   tags?: string[];
+  draft?: boolean;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -26,7 +27,7 @@ export function getAllPosts(): BlogPost[] {
   });
 
   return posts
-    .filter((p): p is BlogPost => p !== null)
+    .filter((p): p is BlogPost => p !== null && !p.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
@@ -46,5 +47,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
     readingTime: stats.text,
     content,
     tags: data.tags,
+    draft: data.draft ?? false,
   };
 }

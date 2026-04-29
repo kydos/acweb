@@ -431,7 +431,6 @@ export async function generateMetadata({
       "Eclipse Zenoh",
       issue.label,
       "Zenoh newsletter",
-      "ZettaScale",
       "Angelo Corsaro",
       "distributed systems",
       "ROS 2 Zenoh",
@@ -481,7 +480,7 @@ export default function ZenohReportIssuePage({
     author: { "@type": "Person", name: "Angelo Corsaro", url: siteUrl },
     publisher: { "@type": "Person", name: "Angelo Corsaro", url: siteUrl },
     url: `${siteUrl}/en/zenoh/report/${issue.slug}`,
-    keywords: "Eclipse Zenoh, Zenoh Protocol, distributed systems, robotics middleware, ZettaScale",
+    keywords: "Eclipse Zenoh, Zenoh Protocol, distributed systems, robotics middleware, Angelo Corsaro",
     about: { "@type": "Thing", name: "Eclipse Zenoh Protocol" },
     isPartOf: {
       "@type": "Periodical",

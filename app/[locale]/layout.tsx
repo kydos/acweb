@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     "DDS",
     "AI infrastructure",
     "Angelo Corsaro",
-    "ZettaScale",
     "cloud-to-edge",
     "real-time systems",
     "pub/sub protocol",
