@@ -226,21 +226,6 @@
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://corsaro.me/en/blog/zenoh-vs-mqtt</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/zenoh-vs-mqtt" />
-<xhtml:link rel="alternate" hreflang="x-default" href="https://corsaro.me/en/blog/zenoh-vs-mqtt" />
-<lastmod>2024-09-20T00:00:00.000Z</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
 <loc>https://corsaro.me/en/blog/why-zenoh</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/why-zenoh" />
 <xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/why-zenoh" />
