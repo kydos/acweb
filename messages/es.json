@@ -23,7 +23,7 @@
     "openSourceCta": "Open Source"
   },
   "about": {
-    "heading": "Acerca de",
+    "heading": "Sobre Angelo Corsaro",
     "bio": "Angelo Corsaro es un experto mundialmente reconocido en computación distribuida y el inventor del Protocolo Zenoh. Con décadas de experiencia en el diseño de middleware de alto rendimiento y protocolos de comunicación, ha dado forma a cómo los sistemas distribuidos modernos se comunican a escala.\n\nSu trabajo abarca sistemas en tiempo real, edge computing, IoT y robótica — dominios donde la eficiencia, la escalabilidad y la baja latencia no son opcionales sino esenciales. Angelo es un frecuente ponente principal, defensor del open source y líder de opinión en la comunidad de sistemas distribuidos.",
     "areasTitle": "Áreas de Interés",
     "areas": {

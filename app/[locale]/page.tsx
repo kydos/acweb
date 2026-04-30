@@ -142,8 +142,8 @@ export default function Home({ params: { locale } }: { params: { locale: string 
             <Image
               src={siteConfig.profilePhoto}
               alt={siteConfig.name}
-              width={680}
-              height={680}
+              width={802}
+              height={786}
               priority
               className="aspect-square w-full object-cover"
             />
@@ -171,6 +171,27 @@ export default function Home({ params: { locale } }: { params: { locale: string 
             </div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-6xl px-6 pb-12">
+      <div className="border-t border-stone-100 dark:border-ink-wire pt-10">
+        <p className="text-xs font-mono uppercase tracking-[0.2em] text-stone-400 dark:text-ash text-center mb-6">
+          Featured In
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+          {siteConfig.pressMedia.map((item) => (
+            <a
+              key={item.name}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors duration-200 whitespace-nowrap"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 

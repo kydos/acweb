@@ -15,16 +15,16 @@
     "zenohDemo": "Demo"
   },
   "home": {
-    "overline": "Distributed Systems Inventor",
-    "title": "Innovator & Distributed Systems Architect",
-    "shortBio": "Inventor of the Zenoh Protocol. Building the future of distributed computing — one protocol at a time.",
+    "overline": "Protocol Inventor & Technology Executive",
+    "title": "Inventor, Implementor & Industry Driver",
+    "shortBio": "Inventor of the Zenoh Protocol and serial technology executive. A rare combination of deep technologist and proven CEO/CTO — someone who invents technologies from first principles, implements them, and drives their adoption to global industry standards.",
     "aboutCta": "About Me",
     "blogCta": "Read the Blog",
     "openSourceCta": "Open Source"
   },
   "about": {
-    "heading": "About",
-    "bio": "Angelo Corsaro is a globally recognized expert in distributed computing and the inventor of the Zenoh Protocol. With decades of experience designing high-performance middleware and communication protocols, he has shaped the way modern distributed systems communicate at scale.\n\nHis work spans real-time systems, the Cloud to Device Continuum, IoT, and robotics — domains where efficiency, scalability, and low latency are not optional but essential. Angelo is a frequent keynote speaker, open-source advocate, and thought leader in the distributed systems community.",
+    "heading": "About Angelo Corsaro",
+    "bio": "Angelo Corsaro is a rare combination of deep technologist and proven executive leader. Over more than 25 years he has repeatedly moved through the full arc from research insight to production code to global industry adoption — inventing technologies from first principles, implementing them himself in languages from C++ to Rust, and driving their standardization at OMG, IEEE, and Eclipse Foundation level. The combination of inventor, implementor, and industry driver, backed by a proven CEO and CTO track record, makes his profile uniquely valuable at the intersection of deep technology and strategic leadership.\n\nHe completed his Ph.D. in Computer Science at Washington University in St. Louis in 2004, producing jRate — the first open-source ahead-of-time compiled Real-Time Java implementation, adopted by Boeing under the DARPA PCES program for flight-critical UAV avionics.\n\nZettaScale Technology (2022–2026) — Co-Founder, CEO & CTO. Angelo co-founded ZettaScale with the mission of commercializing Eclipse Zenoh and taking it from open-source project to production platform. Under his technical and strategic leadership, ZettaScale grew from zero to become one of the most innovative and widely referenced companies in the cloud-to-thing continuum. Zenoh was adopted by the ROS 2 Technical Steering Committee as the official DDS alternative, selected by General Motors for uProtocol, and deployed across automotive, robotics, aerospace, and industrial systems worldwide. Angelo exited ZettaScale in April 2026 and is now preparing his next adventure.\n\nADLINK Technologies (2016–2022) — Chief Technology Officer. As CTO of the Advanced Technology Office, Angelo established edge computing as a corporate strategic pillar years before mainstream adoption, directed technology scouting and R&D strategy, and continued driving Zenoh's development within the Eclipse Foundation.\n\nPrismTech (2007–2016) — Product Strategy Manager, then CTO. A decade at the centre of the DDS ecosystem: co-chairing the OMG DDS Special Interest Group, co-authoring the full DDS standard family (DDS, DDSI-RTPS, DDS Security, DDS RPC, ISO C++ API), and architecting Vortex — an early commercial platform for unified cloud and fog computing that earned PrismTech a Gartner Cool Vendor distinction in 2014.\n\nFinmeccanica/SELEX-ES (2003–2007) — Chief Architect, then Software Technologies Scientist. Designed the middleware platform for mission-critical air traffic control and naval combat management systems, and co-developed a gossip-based clock synchronization algorithm — applying coupled-oscillator mathematics from biology to synchronize tens of thousands of nodes with no external time reference, published in IEEE TPDS in 2009.",
     "areasTitle": "Areas of Interest",
     "areas": {
       "distributedSystems": {
@@ -69,7 +69,7 @@
     "programming": "Programming",
     "standardsCoAuthored": "Standards Co-Authored",
     "openSourceProjects": "Open-Source Projects",
-    "position": "Eclipse Zenoh Project Lead",
+    "position": "Eclipse Zenoh Project Lead · Exploring Next Venture",
     "location": "Gif-sur-Yvette, France",
     "publicationsNote": "Full list: 100+ peer-reviewed publications · 1,478+ citations ·",
     "statPublications": "Peer-reviewed publications",

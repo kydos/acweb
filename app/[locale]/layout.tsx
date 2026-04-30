@@ -27,7 +27,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     default: siteConfig.siteTitle,
-    template: `%s | ${siteConfig.siteTitle}`,
+    template: `%s | ${siteConfig.siteShortTitle}`,
   },
   description: siteConfig.siteDescription,
   keywords: [
@@ -104,6 +104,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+      </head>
       <body
         className={`${inter.variable} ${lora.variable} ${jetbrains.variable} font-sans antialiased`}
       >

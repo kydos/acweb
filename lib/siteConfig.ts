@@ -24,9 +24,10 @@ export const siteConfig = {
 
   // ─── Site Metadata ───────────────────────────────────────────────
   siteUrl: "https://corsaro.me",
-  siteTitle: "Angelo Corsaro",
+  siteTitle: "Angelo Corsaro — Inventor of Zenoh Protocol & Distributed Systems Expert",
+  siteShortTitle: "Angelo Corsaro",
   siteDescription:
-    "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol. Expert in distributed systems, robotics middleware (ROS 2), AI-native infrastructure, and cloud-to-edge computing.",
+    "Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol and proven technology executive. A rare combination of deep technologist, hands-on implementor, and CEO/CTO who has taken distributed systems technologies from research to global industry standards.",
   ogImage: "/og-image.png",
   analytics: {
     googleMeasurementId: "G-XY26Q9S0ZY",
@@ -52,6 +53,16 @@ export const siteConfig = {
     ]},
     { key: "contact", href: "/contact" },
   ] as NavLink[],
+
+  // ─── Press & Media ───────────────────────────────────────────────
+  pressMedia: [
+    { name: "Electronic Design",      url: "https://www.electronicdesign.com/technologies/communications/article/55039208/zettascale-ros-2-communication-stack-exploring-the-improvements-brought-by-zenoh" },
+    { name: "The Robot Report",       url: "https://www.therobotreport.com/zettascale-designs-zenoh-to-transcend-dds-for-automotive-ros-communications/" },
+    { name: "All About Circuits",     url: "https://www.allaboutcircuits.com/news/new-network-protocol-zenoh-slashes-energy-required-to-send-data/" },
+    { name: "Connected World",        url: "https://connectedworld.com/communicating-towards-net-zero/" },
+    { name: "IoT Now",                url: "https://www.iot-now.com/2024/10/22/147409-eclipse-foundation-releases-zenoh-1-0-0-for-robotics-and-iot/" },
+    { name: "Eclipse Foundation",     url: "https://newsroom.eclipse.org/news/announcements/eclipse-zenoh-100-debuts-redefining-connectivity-robotics-and-automotive" },
+  ],
 
   // ─── Open Source Projects ────────────────────────────────────────
   featuredRepos: [
@@ -89,9 +100,9 @@ export const siteConfig = {
         role: "CEO / CTO & Co-Founder",
         company: "ZettaScale Technology",
         location: "Paris",
-        period: "Jan 2022 – 2026",
+        period: "Jan 2022 – Apr 2026",
         description:
-          "Co-founded company commercializing Eclipse Zenoh. Led the protocol from research prototype to production release (Zenoh 1.0, Oct 2024) within the Eclipse Foundation. Directed all R&D, technology strategy, and scientific publications. Selected to represent France at the Genius Minds 2024 initiative (Business France / Choose France) at the French Embassy in London.",
+          "Co-founded ZettaScale to commercialize Eclipse Zenoh. Grew the company from zero to one of the most innovative and referenced companies in the cloud-to-thing continuum. Led Zenoh from research prototype to production release (Zenoh 1.0, Oct 2024), securing adoption by the ROS 2 TSC, General Motors (uProtocol), Bosch, Volvo, and Foxconn. Directed all R&D, technology strategy, and scientific publications. Selected to represent France at the Genius Minds 2024 initiative at the French Embassy in London. Exited April 2026.",
       },
       {
         role: "Chief Technology Officer",

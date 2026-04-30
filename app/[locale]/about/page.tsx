@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
@@ -32,11 +33,43 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
+const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Angelo Corsaro",
+    url: siteConfig.siteUrl,
+    image: `${siteConfig.siteUrl}/me.png`,
+    jobTitle: "Eclipse Zenoh Project Lead",
+    description:
+      "Angelo Corsaro, Ph.D. is the inventor of the Zenoh Protocol and a world expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and the cloud-to-microcontroller continuum.",
+    sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Washington University in St. Louis",
+    },
+    knowsAbout: [
+      "Zenoh Protocol",
+      "Distributed Systems",
+      "Robotics",
+      "ROS 2",
+      "Edge Computing",
+      "IoT",
+      "AI infrastructure",
+      "DDS",
+      "Real-Time Systems",
+    ],
+  },
+};
+
 export default function AboutPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("about");
 
   return (
+    <>
+    <JsonLd data={profilePageSchema} />
     <section className="mx-auto max-w-4xl px-6 py-16 md:py-24">
       <h1 className="text-3xl md:text-4xl font-serif font-bold animate-fade-in
                      text-stone-900 dark:text-cream">
@@ -91,5 +124,6 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </div>
     </section>
+    </>
   );
 }

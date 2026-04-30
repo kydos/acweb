@@ -18,7 +18,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       "Zenoh newsletter",
       "Zenoh Protocol updates",
       "Eclipse Zenoh news",
-      "ZettaScale Zenoh",
       "Angelo Corsaro newsletter",
       "Zenoh release notes",
       "Zenoh 2.0",
@@ -180,6 +179,12 @@ export default function ZenohReportPage({ params: { locale } }: { params: { loca
           community stories — written entirely by Angelo Corsaro in his own voice, without AI tools.
         </p>
         <div className="mt-4 flex gap-3 flex-wrap">
+          <a
+            href="mailto:angelo@corsaro.me?subject=Subscribe%20to%20The%20Zenoh%20Report"
+            className="btn-primary text-sm"
+          >
+            Subscribe via email
+          </a>
           <a href="https://zenoh.io" target="_blank" rel="noopener noreferrer" className="btn-ghost text-sm">
             zenoh.io
           </a>
