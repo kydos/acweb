@@ -76,32 +76,17 @@ const zenohProtocolSchema = {
 };
 
 const zenohRepos = [
-  {
-    name: "eclipse-zenoh/zenoh",
-    url: "https://github.com/eclipse-zenoh/zenoh",
-  },
-  {
-    name: "eclipse-zenoh/zenoh-nostd",
-    url: "https://github.com/eclipse-zenoh/zenoh-nostd",
-  },
-  {
-    name: "kydos/awesome-zenoh",
-    url: "https://github.com/kydos/awesome-zenoh",
-  },
+  { name: "eclipse-zenoh/zenoh",    url: "https://github.com/eclipse-zenoh/zenoh" },
+  { name: "eclipse-zenoh/zenoh-nostd", url: "https://github.com/eclipse-zenoh/zenoh-nostd" },
+  { name: "kydos/awesome-zenoh",    url: "https://github.com/kydos/awesome-zenoh" },
 ];
 
-const topicLinks = [
-  {
-    href: "/zenoh/ros2",
-    title: "Zenoh for ROS 2",
-    desc: "How Zenoh helps robot, fleet, edge, and cloud systems communicate beyond a single LAN.",
-  },
-  {
-    href: "/zenoh/dds-alternative",
-    title: "Zenoh as a DDS Alternative",
-    desc: "A focused comparison for deployments that must span embedded, edge, and cloud infrastructure.",
-  },
-];
+const perfMetrics = [
+  { value: "sub-13µs", label: "latency" },
+  { value: "50 Gbps",  label: "throughput" },
+  { value: "5 bytes",  label: "wire overhead" },
+  { value: "32 KB",    label: "min. RAM" },
+] as const;
 
 const navCards = [
   {
@@ -152,6 +137,30 @@ const navCards = [
       />
     ),
   },
+  {
+    href: "/zenoh/ros2",
+    titleKey: "zenohRos2" as const,
+    descKey: "navCardRos2Desc" as const,
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z"
+      />
+    ),
+  },
+  {
+    href: "/zenoh/dds-alternative",
+    titleKey: "zenohDdsAlt" as const,
+    descKey: "navCardDdsAltDesc" as const,
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
+      />
+    ),
+  },
 ];
 
 export default function ZenohPage({ params: { locale } }: { params: { locale: string } }) {
@@ -162,251 +171,236 @@ export default function ZenohPage({ params: { locale } }: { params: { locale: st
   return (
     <>
       <JsonLd data={zenohProtocolSchema} />
-    <div>
-      {/* Hero */}
-      <section className="relative mx-auto max-w-4xl px-6 py-24 md:py-32">
-        <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">
-          Eclipse Zenoh
-        </p>
-        <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream animate-fade-in">
-          {t("heading")}
-        </h1>
-        <p className="mt-4 text-xl md:text-2xl text-stone-500 dark:text-sand font-light max-w-2xl animate-fade-in animate-delay-100">
-          {t("subtitle")}
-        </p>
-        <p className="mt-6 text-lg text-stone-600 dark:text-fog max-w-2xl leading-relaxed animate-fade-in animate-delay-200">
-          {t("tagline")}
-        </p>
+      <div>
 
-        {/* GitHub repo links */}
-        <div className="mt-6 flex flex-wrap gap-3 animate-fade-in animate-delay-300">
-          {zenohRepos.map((repo) => (
-            <a
-              key={repo.name}
-              href={repo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card text-xs font-mono text-stone-600 dark:text-fog hover:border-azure dark:hover:border-azure hover:text-azure dark:hover:text-sky transition-all duration-200"
-            >
-              <GitHubIcon />
-              {repo.name}
-            </a>
-          ))}
-        </div>
+        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        <section className="relative mx-auto max-w-4xl px-6 pt-14 pb-10 md:pt-20 md:pb-12">
+          <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">
+            Eclipse Zenoh
+          </p>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream animate-fade-in">
+            {t("heading")}
+          </h1>
+          <p className="mt-4 text-xl md:text-2xl text-stone-500 dark:text-sand font-light max-w-2xl animate-fade-in animate-delay-100">
+            {t("subtitle")}
+          </p>
+          <p className="mt-6 text-lg text-stone-600 dark:text-fog max-w-2xl leading-relaxed animate-fade-in animate-delay-100">
+            {t("tagline")}
+          </p>
 
-        {/* Live Demo CTA */}
-        <div className="mt-10 rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent dark:from-accent/15 dark:via-accent/5 dark:to-transparent p-6 md:p-8 animate-fade-in animate-delay-300">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent/20 shrink-0">
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
-                </span>
-                <h2 className="text-lg font-semibold text-stone-900 dark:text-cream">
-                  {t("demoCTAHeading")}
-                </h2>
+          {/* Performance metrics strip */}
+          <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in animate-delay-200">
+            {perfMetrics.map((m) => (
+              <div
+                key={m.label}
+                className="rounded-lg border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card px-4 py-3"
+              >
+                <div className="font-mono text-base font-bold text-accent">{m.value}</div>
+                <div className="mt-0.5 text-xs text-stone-500 dark:text-ash">{m.label}</div>
               </div>
-              <p className="text-sm text-stone-600 dark:text-fog leading-relaxed">
-                {t("demoCTADesc")}
-              </p>
-            </div>
+            ))}
+          </div>
+
+          {/* GitHub repo pills */}
+          <div className="mt-6 flex flex-wrap gap-3 animate-fade-in animate-delay-300">
+            {zenohRepos.map((repo) => (
+              <a
+                key={repo.name}
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card text-xs font-mono text-stone-600 dark:text-fog hover:border-azure dark:hover:border-azure hover:text-azure dark:hover:text-sky transition-all duration-200"
+              >
+                <GitHubIcon />
+                {repo.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Compact live demo CTA */}
+          <div className="mt-6 flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/5 dark:bg-accent/10 px-4 py-3 animate-fade-in animate-delay-300">
+            <span className="inline-flex items-center justify-center w-6 h-6 rounded-md bg-accent/20 shrink-0">
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </span>
+            <p className="flex-1 text-sm text-stone-600 dark:text-fog">
+              <span className="font-semibold text-stone-900 dark:text-cream">Try Zenoh in your browser</span>
+              {" — publishers, subscribers, queryables, and get operations live across multiple tabs."}
+            </p>
             <a
               href="http://zenoh.corsaro.me:8000/examples/web/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent/90 transition-colors duration-200 shrink-0 whitespace-nowrap"
+              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors whitespace-nowrap"
             >
-              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+              Live Demo
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
-              {t("demoCTAButton")}
             </a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Explore nav cards */}
-      <section className="border-t border-stone-200 dark:border-ink-wire">
-        <div className="mx-auto max-w-4xl px-6 py-16">
-          <h2 className="text-2xl font-serif font-semibold mb-8 text-stone-900 dark:text-cream">
-            {t("exploreTitle")}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {navCards.map((card) => (
-              <Link
-                key={card.href}
-                href={card.href}
-                className="group flex items-start gap-4 p-5 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-azure dark:hover:border-azure hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors">
+        {/* ── Genesis ──────────────────────────────────────────────────── */}
+        <section className="border-t border-stone-100 dark:border-ink-wire/50">
+          <div className="mx-auto max-w-4xl px-6 py-12">
+            <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-2 text-stone-900 dark:text-cream">
+              {t("genesisHeading")}
+            </h2>
+            <p className="text-sm text-stone-400 dark:text-ash mb-8 italic">
+              {t("genesisSubtitle")}
+            </p>
+
+            <div className="space-y-6 text-stone-700 dark:text-fog leading-relaxed text-sm md:text-base">
+              <p>{t("genesisIntro")}</p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="rounded-xl border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card p-5">
+                  <h3 className="font-semibold text-stone-900 dark:text-cream mb-2">
+                    {t("genesisScaleProblemTitle")}
+                  </h3>
+                  <p className="text-sm">{t("genesisScaleProblemDesc")}</p>
+                </div>
+                <div className="rounded-xl border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card p-5">
+                  <h3 className="font-semibold text-stone-900 dark:text-cream mb-2">
+                    {t("genesisTransparencyGapTitle")}
+                  </h3>
+                  <p className="text-sm">{t("genesisTransparencyGapDesc")}</p>
+                </div>
+              </div>
+
+              <p>{t("genesisFrankenstein")}</p>
+
+              <blockquote className="border-l-4 border-accent pl-6 py-1 text-stone-600 dark:text-sand italic">
+                &ldquo;{t("genesisQuote")}&rdquo;
+                <footer className="mt-2 text-xs not-italic text-stone-400 dark:text-ash">
+                  — Angelo Corsaro, The Zenoh Report, February 2026
+                </footer>
+              </blockquote>
+            </div>
+
+            {/* Why "Zenoh"? */}
+            <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-6">
+              <h3 className="font-semibold text-accent mb-3 text-lg">
+                {t("genesisWhyTitle")}
+              </h3>
+              <p className="text-sm text-stone-700 dark:text-fog leading-relaxed mb-3">
+                {t("genesisWhyText1")}
+              </p>
+              <p className="text-sm text-stone-700 dark:text-fog leading-relaxed mb-3">
+                {t("genesisWhyText2")}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <span className="px-3 py-1.5 rounded-lg bg-accent/10 text-sm font-mono text-accent font-semibold">
+                  Z·E·N·O·H
+                </span>
+                <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
+                  <strong>Ze</strong>ro <strong>N</strong>etwork <strong>O</strong>ver<strong>H</strong>ead
+                </span>
+                <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
+                  Zeno of Elea (pre-Socratic)
+                </span>
+                <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
+                  Zenon of Citium (Stoic founder)
+                </span>
+              </div>
+              <p className="mt-3 text-xs text-stone-400 dark:text-ash italic">
+                {t("genesisWhyFootnote")}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Explore nav cards (consolidated 6) ───────────────────────── */}
+        <section className="border-t border-stone-100 dark:border-ink-wire/50">
+          <div className="mx-auto max-w-4xl px-6 py-12">
+            <h2 className="text-2xl font-serif font-semibold mb-8 text-stone-900 dark:text-cream">
+              {t("exploreTitle")}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {navCards.map((card) => (
+                <Link
+                  key={card.href}
+                  href={card.href}
+                  className="group flex items-start gap-4 p-5 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-azure dark:hover:border-azure hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-5 h-5 text-accent"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    >
+                      {card.icon}
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-stone-900 dark:text-cream group-hover:text-azure dark:group-hover:text-sky transition-colors">
+                      {tn(card.titleKey)}
+                    </h3>
+                    <p className="mt-1 text-sm text-stone-500 dark:text-fog leading-relaxed">
+                      {t(card.descKey)}
+                    </p>
+                  </div>
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-5 h-5 text-accent"
+                    className="w-4 h-4 mt-1 shrink-0 text-stone-400 dark:text-ash group-hover:text-azure dark:group-hover:text-sky transition-colors"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.5"
+                    strokeWidth="2"
                   >
-                    {card.icon}
+                    <path d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-stone-900 dark:text-cream group-hover:text-azure dark:group-hover:text-sky transition-colors">
-                    {tn(card.titleKey)}
-                  </h3>
-                  <p className="mt-1 text-sm text-stone-500 dark:text-fog leading-relaxed">
-                    {t(card.descKey)}
-                  </p>
-                </div>
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-4 h-4 mt-1 shrink-0 text-stone-400 dark:text-ash group-hover:text-azure dark:group-hover:text-sky transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <h3 className="font-serif text-xl font-semibold text-stone-900 dark:text-cream">
-              Popular Zenoh Topics
-            </h3>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {topicLinks.map((topic) => (
-                <Link
-                  key={topic.href}
-                  href={topic.href}
-                  className="group block rounded-lg border border-stone-200 bg-white p-4 transition-colors hover:border-azure dark:border-ink-wire dark:bg-ink dark:hover:border-azure"
-                >
-                  <h4 className="font-semibold text-stone-900 group-hover:text-azure dark:text-cream dark:group-hover:text-sky">
-                    {topic.title}
-                  </h4>
-                  <p className="mt-1 text-sm leading-relaxed text-stone-500 dark:text-fog">
-                    {topic.desc}
-                  </p>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Genesis section */}
-      <section className="border-t border-stone-200 dark:border-ink-wire">
-        <div className="mx-auto max-w-4xl px-6 py-16">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-2 text-stone-900 dark:text-cream">
-            {t("genesisHeading")}
-          </h2>
-          <p className="text-sm text-stone-400 dark:text-ash mb-8 italic">
-            {t("genesisSubtitle")}
-          </p>
-
-          <div className="space-y-6 text-stone-700 dark:text-fog leading-relaxed text-sm md:text-base">
-            <p>{t("genesisIntro")}</p>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-xl border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card p-5">
-                <h3 className="font-semibold text-stone-900 dark:text-cream mb-2">
-                  {t("genesisScaleProblemTitle")}
-                </h3>
-                <p className="text-sm">{t("genesisScaleProblemDesc")}</p>
-              </div>
-              <div className="rounded-xl border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card p-5">
-                <h3 className="font-semibold text-stone-900 dark:text-cream mb-2">
-                  {t("genesisTransparencyGapTitle")}
-                </h3>
-                <p className="text-sm">{t("genesisTransparencyGapDesc")}</p>
-              </div>
+        {/* ── Feature grid ─────────────────────────────────────────────── */}
+        <section className="border-t border-stone-100 dark:border-ink-wire/50">
+          <div className="mx-auto max-w-4xl px-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <FeatureCard
+                title={t("feature1Title")}
+                desc={t("feature1Desc")}
+                icon={
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                  />
+                }
+              />
+              <FeatureCard
+                title={t("feature2Title")}
+                desc={t("feature2Desc")}
+                icon={
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                  />
+                }
+              />
+              <FeatureCard
+                title={t("feature3Title")}
+                desc={t("feature3Desc")}
+                icon={
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                  />
+                }
+              />
             </div>
-
-            <p>{t("genesisFrankenstein")}</p>
-
-            <blockquote className="border-l-4 border-accent pl-6 py-1 text-stone-600 dark:text-sand italic">
-              &ldquo;{t("genesisQuote")}&rdquo;
-              <footer className="mt-2 text-xs not-italic text-stone-400 dark:text-ash">
-                — Angelo Corsaro, The Zenoh Report, February 2026
-              </footer>
-            </blockquote>
           </div>
+        </section>
 
-          {/* Why "Zenoh"? */}
-          <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-6">
-            <h3 className="font-semibold text-accent mb-3 text-lg">
-              {t("genesisWhyTitle")}
-            </h3>
-            <p className="text-sm text-stone-700 dark:text-fog leading-relaxed mb-3">
-              {t("genesisWhyText1")}
-            </p>
-            <p className="text-sm text-stone-700 dark:text-fog leading-relaxed mb-3">
-              {t("genesisWhyText2")}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <span className="px-3 py-1.5 rounded-lg bg-accent/10 text-sm font-mono text-accent font-semibold">
-                Z·E·N·O·H
-              </span>
-              <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
-                <strong>Ze</strong>ro <strong>N</strong>etwork <strong>O</strong>ver<strong>H</strong>ead
-              </span>
-              <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
-                Zeno of Elea (pre-Socratic)
-              </span>
-              <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
-                Zenon of Citium (Stoic founder)
-              </span>
-            </div>
-            <p className="mt-3 text-xs text-stone-400 dark:text-ash italic">
-              {t("genesisWhyFootnote")}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature grid */}
-      <section className="border-t border-stone-200 dark:border-ink-wire">
-        <div className="mx-auto max-w-4xl px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard
-              title={t("feature1Title")}
-              desc={t("feature1Desc")}
-              icon={
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                />
-              }
-            />
-            <FeatureCard
-              title={t("feature2Title")}
-              desc={t("feature2Desc")}
-              icon={
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
-                />
-              }
-            />
-            <FeatureCard
-              title={t("feature3Title")}
-              desc={t("feature3Desc")}
-              icon={
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
-                />
-              }
-            />
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
     </>
   );
 }
