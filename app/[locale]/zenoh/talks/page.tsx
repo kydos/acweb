@@ -50,7 +50,55 @@ type Talk = {
   paperUrl?: string;
 };
 
+const keynotes: Talk[] = [
+  {
+    title: "Eclipse Zenoh: Dependable Communication Infrastructure for the Cloud-to-Thing Continuum",
+    event: "54th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN 2025)",
+    year: 2025,
+    month: "June",
+    type: "keynote",
+    description:
+      "Invited keynote examining Zenoh's architecture for resilient, fault-tolerant distributed communication — covering decentralised peer-to-peer topology, churn-resilient discovery, and deployment in safety-critical aerospace and industrial control systems.",
+  },
+  {
+    title: "Zenoh 2.0: Unifying Communication Across the Digital System Stack",
+    event: "28th Euromicro Conference on Digital System Design (DSD 2025)",
+    year: 2025,
+    month: "September",
+    type: "keynote",
+    description:
+      "Keynote on the Zenoh 2.0 roadmap and its evolution from Zenoh 1.0 — covering new protocol capabilities, the growing ecosystem in automotive and robotics, and the path toward a universal communication fabric spanning microcontroller to cloud.",
+  },
+  {
+    title: "Zenoh: The Future of ROS 2 Communication",
+    event: "ROSCon India 2025",
+    location: "India",
+    year: 2025,
+    type: "keynote",
+    description:
+      "Keynote on Zenoh's role as the official DDS alternative for ROS 2, covering real deployment experience from robot platforms to multi-robot swarm systems and the roadmap for deeper integration with the ROS 2 ecosystem.",
+  },
+  {
+    title: "Zenoh as the Next-Generation Middleware for ROS 2",
+    event: "ROSCon India 2024",
+    location: "India",
+    year: 2024,
+    type: "keynote",
+    description:
+      "Keynote presenting Zenoh's selection by the ROS 2 Technical Steering Committee as the official DDS alternative — with performance comparisons, peer-to-peer operation, and infrastructure-free multi-robot communication demonstrations.",
+  },
+];
+
 const conferenceTalks: Talk[] = [
+  {
+    title: "ROS-Z: A Zenoh-Native Runtime for ROS 2",
+    event: "ROSCon France (ROSConFR 2025)",
+    location: "France",
+    year: 2025,
+    type: "conference",
+    description:
+      "Presents ROS-Z, a Zenoh-native implementation of the ROS 2 communication layer that eliminates the DDS abstraction barrier and exposes Zenoh's unified pub/sub, queryable, and storage semantics directly within the ROS 2 programming model.",
+  },
   {
     title: "Zenoh: Unifying Communication, Storage and Computation from the Cloud to the Microcontroller",
     event: "26th Euromicro Conference on Digital System Design (DSD)",
@@ -243,7 +291,7 @@ function Section({
 export default function ZenohTalksPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("zenoh");
-  const total = conferenceTalks.length;
+  const total = keynotes.length + conferenceTalks.length;
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
@@ -252,8 +300,8 @@ export default function ZenohTalksPage({ params: { locale } }: { params: { local
         {t("talksHeading")}
       </h1>
       <p className="mt-3 text-stone-500 dark:text-fog leading-relaxed animate-fade-in animate-delay-100">
-        Conference presentations, workshops, and webinars on Zenoh and distributed systems.{" "}
-        {total} entries — video archive and additional talks being added.
+        Keynotes, conference presentations, workshops, and webinars on Zenoh and distributed systems.{" "}
+        {total} entries — video archive being expanded.
       </p>
 
       {/* External links */}
@@ -280,6 +328,12 @@ export default function ZenohTalksPage({ params: { locale } }: { params: { local
 
       {/* Sections */}
       <div className="animate-fade-in animate-delay-200">
+        <Section title="Keynotes" count={keynotes.length}>
+          {keynotes.map((talk, i) => (
+            <TalkCard key={i} talk={talk} />
+          ))}
+        </Section>
+
         <Section title="Conference & Workshop Presentations" count={conferenceTalks.length}>
           {conferenceTalks.map((talk, i) => (
             <TalkCard key={i} talk={talk} />
