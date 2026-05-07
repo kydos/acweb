@@ -126,6 +126,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
 
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-in animate-delay-300">
             <Link href="/zenoh" className="btn-primary">{zenoh("heading")}</Link>
+            <Link href="/zenoh/report" className="btn-ghost">{zenoh("reportHeading")}</Link>
             <Link href="/cv" className="btn-ghost">{cv("heading")}</Link>
             <Link href="/blog" className="btn-ghost">{t("blogCta")}</Link>
           </div>
