@@ -17,16 +17,16 @@
     "zenohDdsAlt": "DDS Alternative"
   },
   "home": {
-    "overline": "分布式系统发明者",
-    "title": "创新者与分布式系统架构师",
-    "shortBio": "Zenoh协议的发明者。一次一个协议，构建分布式计算的未来。",
+    "overline": "协议发明者与技术高管",
+    "title": "发明者、实现者与行业推动者",
+    "shortBio": "Zenoh协议的发明者和连续技术高管。深度技术专家与经验证的CEO/CTO的罕见结合——一个从第一原理发明技术、亲自实现并推动其被采纳为全球行业标准的人。",
     "aboutCta": "关于我",
     "blogCta": "阅读博客",
     "openSourceCta": "开源项目"
   },
   "about": {
     "heading": "关于 Angelo Corsaro",
-    "bio": "Angelo Corsaro是分布式计算领域全球公认的专家，也是Zenoh协议的发明者。凭借数十年设计高性能中间件和通信协议的经验，他塑造了现代分布式系统在规模化场景下的通信方式。\n\n他的工作涵盖实时系统、边缘计算、物联网和机器人技术——这些领域中，效率、可扩展性和低延迟不是可选的，而是必不可少的。Angelo是频繁的主题演讲者、开源倡导者，也是分布式系统社区的思想领袖。",
+    "bio": "Angelo Corsaro是深度技术专家与经实践验证的执行领导者的罕见结合体。在超过25年的职业生涯中，他一再走完从研究洞察到生产代码再到全球行业采用的完整弧线——从第一原理发明技术，亲自用从C++到Rust的语言实现它们，并在OMG、IEEE和Eclipse Foundation层面推动其标准化。发明者、实现者和行业推动者的结合，辅以经过验证的CEO和CTO履历，使他的个人档案在深度技术与战略领导力的交汇处具有独特的价值。\n\n他于2004年在圣路易斯华盛顿大学获得计算机科学博士学位，开发了jRate——第一个开源的实时Java提前编译实现，被波音公司在DARPA PCES项目下采用，用于飞行关键UAV航电系统。\n\nZettaScale Technology（2022年–2026年）——联合创始人、CEO兼CTO。Angelo联合创立ZettaScale，使命是将Eclipse Zenoh商业化，从开源项目发展为生产平台。在他的技术和战略领导下，ZettaScale从零成长为云到物（cloud-to-thing）连续体中最具创新性和广受引用的公司之一。Zenoh被ROS 2技术指导委员会采纳为官方DDS替代方案，被通用汽车选中用于uProtocol，并部署在全球汽车、机器人、航空航天和工业系统中。Angelo于2026年4月离开ZettaScale，目前正在筹备他的下一段旅程。\n\nADLINK Technologies（2016年–2022年）——首席技术官。作为高级技术办公室的CTO，Angelo在主流采用之前数年就将边缘计算确立为公司战略支柱，指导技术侦察和研发战略，并继续在Eclipse Foundation内推动Zenoh的发展。\n\nPrismTech（2007年–2016年）——产品战略经理，后任CTO。十年处于DDS生态系统的核心：共同主持OMG DDS特别兴趣小组，共同撰写完整的DDS标准系列（DDS、DDSI-RTPS、DDS Security、DDS RPC、ISO C++ API），以及架构设计Vortex——一个统一云和雾计算的早期商业平台，为PrismTech赢得了2014年Gartner酷供应商殊荣。\n\nFinmeccanica/SELEX-ES（2003年–2007年）——首席架构师，后任软件技术科学家。为关键任务的空中交通管制和海军作战管理系统设计中间件平台，并共同开发了基于gossip的时钟同步算法——将生物学中的耦合振荡器数学应用于无需任何外部时间参考即可同步数万个节点，2009年发表于IEEE TPDS。",
     "areasTitle": "兴趣领域",
     "areas": {
       "distributedSystems": {
@@ -34,8 +34,8 @@
         "desc": "为大规模分布式计算设计协议和中间件。"
       },
       "edgeComputing": {
-        "title": "边缘计算",
-        "desc": "将计算带到数据产生和消费的地方。"
+        "title": "云到设备的连续体",
+        "desc": "设计涵盖从云平台到设备的完整连续体的系统和协议。"
       },
       "robotics": {
         "title": "机器人技术 & ROS 2",
@@ -49,7 +49,7 @@
   },
   "blog": {
     "heading": "博客",
-    "subtitle": "关于分布式系统、协议和软件工程的思考。",
+    "subtitle": "关于Zenoh、分布式系统和机器人技术的文章。",
     "empty": "暂无文章，敬请期待。",
     "minRead": "分钟阅读",
     "searchPlaceholder": "搜索文章..."
@@ -71,7 +71,7 @@
     "programming": "编程语言",
     "standardsCoAuthored": "共同编写的标准",
     "openSourceProjects": "开源项目",
-    "position": "Eclipse Zenoh 项目负责人",
+    "position": "Eclipse Zenoh 项目负责人 · 探索下一段旅程",
     "location": "吉夫-叙尔-伊维特，法国",
     "publicationsNote": "完整列表：100+ 同行评审出版物 · 1,478+ 引用 ·",
     "statPublications": "同行评审出版物",
@@ -125,22 +125,22 @@
     "genesisScaleProblemDesc": "DDS无法向上扩展到全球网络，也无法向下缩小到受限设备。CoAP过于以云为中心；MQTT的代理模型迫使即使是同一网络上的设备也要通过数千公里外的服务器进行通信。",
     "genesisTransparencyGapTitle": "透明度差距",
     "genesisTransparencyGapDesc": "Pub/Sub已经实现了动态数据的位置透明性。但一旦数据被存储，这种透明性就消失了——迫使所有内容转向集中式云存储。需要低延迟访问存储数据的应用程序没有好的解决方案。",
-    "genesisFrankenstein": "那个时代的系统——Angelo称之为“数字科学怪人”时代——是通过将多个协议栈拼凑在一起组装的。他的目标变得清晰：设计一个从微控制器到数据中心的单一协议，没有拓扑约束，为动态数据、静态数据和计算提供统一抽象。",
+    "genesisFrankenstein": "那个时代的系统——Angelo称之为\"数字科学怪人\"时代——是通过将多个协议栈拼凑在一起组装的。他的目标变得清晰：设计一个从微控制器到数据中心的单一协议，没有拓扑约束，为动态数据、静态数据和计算提供统一抽象。",
     "genesisQuote": "我必须做些什么。我开始研究一个协议的想法，这个协议可以从微控制器到数据中心高效运行，没有任何拓扑约束，并为处理动态数据和静态数据提供统一抽象。",
-    "genesisWhyTitle": "为什么叫“Zenoh”？",
-    "genesisWhyText1": "这个名字包含两个哲学参考和一个工程缩写。Angelo在西西里岛长大，被古希腊哲学的遗产所包围。他特别被埃利亚的芝诺（Zenon d’Élée）所吸引，其无穷悖论从小就令他着迷。",
+    "genesisWhyTitle": "为什么叫\"Zenoh\"？",
+    "genesisWhyText1": "这个名字包含两个哲学参考和一个工程缩写。Angelo在西西里岛长大，被古希腊哲学的遗产所包围。他特别被埃利亚的芝诺（Zenon d'Élée）所吸引，其无穷悖论从小就令他着迷。",
     "genesisWhyText2": "斯多葛主义——由基提翁的芝诺创立——通过马可·奥勒留的《沉思录》留下了同样深刻的印记。",
-    "genesisWhyFootnote": "Zenon和Zenoh之间的差异不到一个字母——它只是“h”的超出部分。",
+    "genesisWhyFootnote": "Zenon和Zenoh之间的差异不到一个字母——它只是\"h\"的超出部分。",
     "exploreTitle": "探索Zenoh",
     "navCardReportDesc": "Zenoh创新、生态系统亮点和社区故事的月度摘要。",
     "navCardPapersDesc": "关于Zenoh协议的科学出版物和研究。",
     "navCardBookDesc": "Zenoh综合指南——架构、概念和实践示例。",
     "navCardTalksDesc": "Angelo Corsaro的会议演讲和技术讲座。",
-    "demoCTAHeading": "Try Zenoh in Your Browser",
-    "demoCTADesc": "Explore all Zenoh features — publishers, subscribers, queryables, and get operations — live in your browser. Open multiple tabs to test cross-instance communication.",
-    "demoCTAButton": "Try the Live Web Demo",
-    "navCardRos2Desc": "How Zenoh helps robot, fleet, edge, and cloud systems communicate beyond a single LAN.",
-    "navCardDdsAltDesc": "A focused comparison for deployments that must span embedded, edge, and cloud infrastructure."
+    "demoCTAHeading": "在浏览器中试用Zenoh",
+    "demoCTADesc": "在浏览器中实时探索Zenoh的所有功能——发布者、订阅者、可查询对象和get操作。打开多个标签页测试跨实例通信。",
+    "demoCTAButton": "体验在线演示",
+    "navCardRos2Desc": "Zenoh如何帮助机器人、车队、边缘和云系统跨越单一局域网进行通信。",
+    "navCardDdsAltDesc": "针对必须跨越嵌入式、边缘和云基础设施部署的重点比较。"
   },
   "contact": {
     "heading": "联系我",

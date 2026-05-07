@@ -17,16 +17,16 @@
     "zenohDdsAlt": "DDS Alternative"
   },
   "home": {
-    "overline": "Inventore di Sistemi Distribuiti",
-    "title": "Innovatore & Architetto di Sistemi Distribuiti",
-    "shortBio": "Inventore del Protocollo Zenoh. Costruire il futuro del calcolo distribuito — un protocollo alla volta.",
+    "overline": "Inventore di Protocollo & Dirigente Tecnologico",
+    "title": "Inventore, Implementatore & Motore dell'Industria",
+    "shortBio": "Inventore del Protocollo Zenoh e dirigente tecnologico seriale. Una rara combinazione di tecnologa di profondità e CEO/CTO di provata esperienza — qualcuno che inventa tecnologie dai primi principi, le implementa e guida la loro adozione verso standard industriali globali.",
     "aboutCta": "Chi sono",
     "blogCta": "Leggi il Blog",
     "openSourceCta": "Open Source"
   },
   "about": {
     "heading": "Chi è Angelo Corsaro",
-    "bio": "Angelo Corsaro è un esperto riconosciuto a livello mondiale nel calcolo distribuito e l'inventore del Protocollo Zenoh. Con decenni di esperienza nella progettazione di middleware ad alte prestazioni e protocolli di comunicazione, ha plasmato il modo in cui i moderni sistemi distribuiti comunicano su larga scala.\n\nIl suo lavoro abbraccia sistemi in tempo reale, edge computing, IoT e robotica — domini in cui efficienza, scalabilità e bassa latenza non sono opzionali ma essenziali. Angelo è un frequente relatore principale, sostenitore dell'open source e opinion leader nella comunità dei sistemi distribuiti.",
+    "bio": "Angelo Corsaro è una rara combinazione di tecnologa di profondità e dirigente esecutivo di provata esperienza. Nell'arco di oltre 25 anni ha percorso ripetutamente il ciclo completo dall'intuizione di ricerca al codice di produzione all'adozione globale nell'industria — inventando tecnologie dai primi principi, implementandole personalmente in linguaggi dal C++ a Rust, e guidando la loro standardizzazione a livello OMG, IEEE ed Eclipse Foundation. La combinazione di inventore, implementatore e motore dell'industria, supportata da un comprovato track record di CEO e CTO, rende il suo profilo eccezionalmente prezioso all'intersezione tra tecnologia profonda e leadership strategica.\n\nHa conseguito il dottorato in Informatica alla Washington University di Saint Louis nel 2004, producendo jRate — la prima implementazione Java Real-Time compilata ahead-of-time in open source, adottata da Boeing nell'ambito del programma DARPA PCES per l'avionica UAV critica.\n\nZettaScale Technology (2022–2026) — Co-Fondatore, CEO & CTO. Angelo ha co-fondato ZettaScale con la missione di commercializzare Eclipse Zenoh e trasformarlo da progetto open source a piattaforma di produzione. Sotto la sua guida tecnica e strategica, ZettaScale è cresciuta da zero a diventare una delle aziende più innovative e citate nel continuum cloud-to-thing. Zenoh è stato adottato dal Comitato di Steering Tecnico di ROS 2 come alternativa ufficiale a DDS, selezionato da General Motors per uProtocol, e distribuito in sistemi automobilistici, robotici, aerospaziali e industriali in tutto il mondo. Angelo ha lasciato ZettaScale nell'aprile 2026 e sta ora preparando la sua prossima avventura.\n\nADLINK Technologies (2016–2022) — Chief Technology Officer. In qualità di CTO dell'Advanced Technology Office, Angelo ha stabilito l'edge computing come pilastro strategico aziendale anni prima dell'adozione mainstream, ha diretto la technology scouting e la strategia R&D, e ha continuato a guidare lo sviluppo di Zenoh all'interno dell'Eclipse Foundation.\n\nPrismTech (2007–2016) — Product Strategy Manager, poi CTO. Un decennio al centro dell'ecosistema DDS: co-presidenza del Gruppo di Interesse Speciale OMG DDS, co-redazione dell'intera famiglia di standard DDS (DDS, DDSI-RTPS, DDS Security, DDS RPC, ISO C++ API), e progettazione di Vortex — una piattaforma commerciale pionieristica per il cloud e il fog computing unificato che è valsa a PrismTech la distinzione Gartner Cool Vendor nel 2014.\n\nFinmeccanica/SELEX-ES (2003–2007) — Chief Architect, poi Software Technologies Scientist. Ha progettato la piattaforma middleware per sistemi di controllo del traffico aereo e gestione del combattimento navale mission-critical, e co-sviluppato un algoritmo di sincronizzazione degli orologi basato sul gossip — applicando la matematica degli oscillatori accoppiati dalla biologia per sincronizzare decine di migliaia di nodi senza alcun riferimento temporale esterno, pubblicato su IEEE TPDS nel 2009.",
     "areasTitle": "Aree di Interesse",
     "areas": {
       "distributedSystems": {
@@ -34,8 +34,8 @@
         "desc": "Progettazione di protocolli e middleware per il calcolo distribuito su larga scala."
       },
       "edgeComputing": {
-        "title": "Edge Computing",
-        "desc": "Portare il calcolo più vicino a dove i dati vengono prodotti e consumati."
+        "title": "Continuum da Cloud a Dispositivo",
+        "desc": "Progettare sistemi e protocolli che coprono l'intero continuum dalle piattaforme cloud ai dispositivi."
       },
       "robotics": {
         "title": "Robotica & ROS 2",
@@ -49,7 +49,7 @@
   },
   "blog": {
     "heading": "Blog",
-    "subtitle": "Riflessioni su sistemi distribuiti, protocolli e ingegneria del software.",
+    "subtitle": "Articoli su Zenoh, sistemi distribuiti e robotica.",
     "empty": "Nessun articolo ancora. Torna presto.",
     "minRead": "min di lettura",
     "searchPlaceholder": "Cerca articoli..."
@@ -71,7 +71,7 @@
     "programming": "Programmazione",
     "standardsCoAuthored": "Standard Co-Redatti",
     "openSourceProjects": "Progetti Open Source",
-    "position": "Responsabile del Progetto Eclipse Zenoh",
+    "position": "Responsabile del Progetto Eclipse Zenoh · Alla ricerca della prossima avventura",
     "location": "Gif-sur-Yvette, Francia",
     "publicationsNote": "Lista completa: oltre 100 pubblicazioni peer-reviewed · oltre 1.478 citazioni ·",
     "statPublications": "Pubblicazioni peer-reviewed",
@@ -125,22 +125,22 @@
     "genesisScaleProblemDesc": "DDS non riusciva a scalare verso le reti globali, né verso i dispositivi vincolati. CoAP era troppo centrato sul cloud; il modello broker di MQTT costringeva anche i dispositivi co-localizzati a comunicare tramite un server a migliaia di chilometri.",
     "genesisTransparencyGapTitle": "Il Divario di Trasparenza",
     "genesisTransparencyGapDesc": "Il Pub/Sub aveva raggiunto la trasparenza di posizione per i dati in movimento. Ma una volta archiviati, quella trasparenza svaniva — costringendo tutto verso lo storage cloud centralizzato. Le applicazioni con accesso a bassa latenza ai dati archiviati non avevano buone risposte.",
-    "genesisFrankenstein": "I sistemi di quell’epoca — ciò che Angelo chiama l’era del “Frankenstein Digitale” — venivano assemblati combinando più stack di protocolli. Il suo obiettivo divenne chiaro: progettare un unico protocollo dal microcontrollore al data center, senza vincoli topologici, con astrazioni unificate per dati in movimento, a riposo e calcoli.",
-    "genesisQuote": "Dovevo fare qualcosa. Ho iniziato a lavorare sull’idea di un protocollo che potesse funzionare efficientemente dal microcontrollore fino al data center, senza vincoli topologici e con un’astrazione unificata per i dati in movimento e a riposo.",
-    "genesisWhyTitle": "Perché “Zenoh”?",
-    "genesisWhyText1": "Il nome porta due riferimenti filosofici e un acronimo ingegneristico. Cresciuto in Sicilia, Angelo era circondato dall’eredità della filosofia greca antica. Era particolarmente attratto da Zenone di Elea, i cui paradossi dell’infinito lo affascinavano fin dall’infanzia.",
+    "genesisFrankenstein": "I sistemi di quell'epoca — ciò che Angelo chiama l'era del \"Frankenstein Digitale\" — venivano assemblati combinando più stack di protocolli. Il suo obiettivo divenne chiaro: progettare un unico protocollo dal microcontrollore al data center, senza vincoli topologici, con astrazioni unificate per dati in movimento, a riposo e calcoli.",
+    "genesisQuote": "Dovevo fare qualcosa. Ho iniziato a lavorare sull'idea di un protocollo che potesse funzionare efficientemente dal microcontrollore fino al data center, senza vincoli topologici e con un'astrazione unificata per i dati in movimento e a riposo.",
+    "genesisWhyTitle": "Perché \"Zenoh\"?",
+    "genesisWhyText1": "Il nome porta due riferimenti filosofici e un acronimo ingegneristico. Cresciuto in Sicilia, Angelo era circondato dall'eredità della filosofia greca antica. Era particolarmente attratto da Zenone di Elea, i cui paradossi dell'infinito lo affascinavano fin dall'infanzia.",
     "genesisWhyText2": "Lo stoicismo — fondato da Zenone di Cizio — ha lasciato un segno altrettanto profondo attraverso le Meditazioni di Marco Aurelio.",
-    "genesisWhyFootnote": "La differenza tra Zenon e Zenoh è meno di una lettera — è solo il piccolo eccesso della “h”.",
+    "genesisWhyFootnote": "La differenza tra Zenon e Zenoh è meno di una lettera — è solo il piccolo eccesso della \"h\".",
     "exploreTitle": "Esplora Zenoh",
-    "navCardReportDesc": "Digest mensile delle innovazioni Zenoh, highlights dell’ecosistema e storie della community.",
+    "navCardReportDesc": "Digest mensile delle innovazioni Zenoh, highlights dell'ecosistema e storie della community.",
     "navCardPapersDesc": "Pubblicazioni scientifiche e ricerche sul protocollo Zenoh.",
     "navCardBookDesc": "La guida completa a Zenoh — architettura, concetti ed esempi pratici.",
     "navCardTalksDesc": "Presentazioni a conferenze e talk tecnici di Angelo Corsaro.",
-    "demoCTAHeading": "Try Zenoh in Your Browser",
-    "demoCTADesc": "Explore all Zenoh features — publishers, subscribers, queryables, and get operations — live in your browser. Open multiple tabs to test cross-instance communication.",
-    "demoCTAButton": "Try the Live Web Demo",
-    "navCardRos2Desc": "How Zenoh helps robot, fleet, edge, and cloud systems communicate beyond a single LAN.",
-    "navCardDdsAltDesc": "A focused comparison for deployments that must span embedded, edge, and cloud infrastructure."
+    "demoCTAHeading": "Prova Zenoh nel tuo browser",
+    "demoCTADesc": "Esplora tutte le funzionalità di Zenoh — publisher, subscriber, queryable e operazioni get — direttamente nel tuo browser. Apri più schede per testare la comunicazione cross-istanza.",
+    "demoCTAButton": "Prova la demo web live",
+    "navCardRos2Desc": "Come Zenoh consente a robot, fleet, sistemi edge e cloud di comunicare oltre una singola LAN.",
+    "navCardDdsAltDesc": "Un confronto mirato per i deployment che devono coprire infrastrutture embedded, edge e cloud."
   },
   "contact": {
     "heading": "Contattami",
