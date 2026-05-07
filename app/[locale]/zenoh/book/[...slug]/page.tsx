@@ -218,9 +218,21 @@ export default function BookChapterPage({ params }: Props) {
       }
     : null;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home",       item: `${siteUrl}/${locale}/` },
+      { "@type": "ListItem", position: 2, name: "Zenoh",      item: `${siteUrl}/${locale}/zenoh/` },
+      { "@type": "ListItem", position: 3, name: "Zenoh Book", item: `${siteUrl}/${locale}/zenoh/book/` },
+      ...(title ? [{ "@type": "ListItem", position: 4, name: title, item: `${siteUrl}/${locale}/zenoh/book/${currentSlug}` }] : []),
+    ],
+  };
+
   return (
     <>
       {chapterSchema && <JsonLd data={chapterSchema} />}
+      <JsonLd data={breadcrumbSchema} />
     <div className="flex items-start min-h-[calc(100vh-4rem)]">
       <BookSidebar locale={locale} currentSlug={currentSlug} />
 
