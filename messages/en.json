@@ -49,7 +49,7 @@
   },
   "blog": {
     "heading": "Blog",
-    "subtitle": "Thoughts on distributed systems, protocols, and software engineering.",
+    "subtitle": "Writing on Zenoh, distributed systems, and robotics.",
     "empty": "No posts yet. Check back soon.",
     "minRead": "min read",
     "searchPlaceholder": "Search articles..."

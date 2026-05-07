@@ -3,7 +3,36 @@ import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 import { getLocalizedCV } from "@/lib/cvContent";
+import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
+
+const personCVSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Angelo Corsaro",
+  honorificSuffix: "Ph.D.",
+  url: siteConfig.siteUrl,
+  image: `${siteConfig.siteUrl}/me.png`,
+  jobTitle: "Eclipse Zenoh Project Lead",
+  alumniOf: { "@type": "CollegeOrUniversity", name: "Washington University in St. Louis" },
+  sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  award: [
+    "Technology CEO of the Year 2024",
+    "Genius Minds 2024 — Representing France",
+    "Power 200: World's Most Influential Data Economy Leaders 2019",
+    "Gartner Cool Vendor 2014",
+  ],
+  knowsAbout: [
+    "Distributed Systems",
+    "Zenoh Protocol",
+    "ROS 2",
+    "DDS",
+    "Real-Time Systems",
+    "Edge Computing",
+    "IoT",
+    "Protocol Design",
+  ],
+};
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
@@ -23,6 +52,8 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
   const cv = getLocalizedCV(locale);
 
   return (
+    <>
+      <JsonLd data={personCVSchema} />
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
 
       {/* ── Header ─────────────────────────────────────────────── */}
@@ -57,6 +88,26 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
         ))}
       </div>
 
+      {/* ── Jump nav ───────────────────────────────────────────── */}
+      <nav className="mt-6 pb-2 flex flex-wrap gap-x-5 gap-y-1.5 animate-fade-in animate-delay-150">
+        {([
+          { href: "#experience",   label: t("experience") },
+          { href: "#education",    label: t("education") },
+          { href: "#contributions",label: t("keyContributions") },
+          { href: "#publications", label: t("publications") },
+          { href: "#standards",    label: t("standards") },
+          { href: "#recognition",  label: t("recognition") },
+        ] as const).map(({ href, label }) => (
+          <a
+            key={href}
+            href={href}
+            className="text-xs font-mono text-azure dark:text-sky hover:text-accent dark:hover:text-accent transition-colors"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
       {/* ── Research Profile ───────────────────────────────────── */}
       <Section title={t("researchProfile")} delay="animate-delay-100">
         <p className="text-stone-700 dark:text-fog leading-relaxed text-sm md:text-base">
@@ -77,7 +128,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
       </Section>
 
       {/* ── Professional Experience ────────────────────────────── */}
-      <Section title={t("experience")} delay="animate-delay-200">
+      <Section title={t("experience")} id="experience" delay="animate-delay-200">
         <div className="space-y-7">
           {cv.experience.map((job, i) => (
             <div key={i} className="relative pl-6 border-l-2 border-stone-200 dark:border-ink-wire">
@@ -134,7 +185,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
       </Section>
 
       {/* ── Education ──────────────────────────────────────────── */}
-      <Section title={t("education")} delay="animate-delay-200">
+      <Section title={t("education")} id="education" delay="animate-delay-200">
         <div className="space-y-6">
           {cv.education.map((edu, i) => (
             <div key={i} className="relative pl-6 border-l-2 border-stone-200 dark:border-ink-wire">
@@ -160,7 +211,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
       </Section>
 
       {/* ── Key Contributions ──────────────────────────────────── */}
-      <Section title={t("keyContributions")} delay="animate-delay-300">
+      <Section title={t("keyContributions")} id="contributions" delay="animate-delay-300">
         <div className="space-y-6">
           {cv.keyContributions.map((contrib, i) => (
             <div
@@ -184,7 +235,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
       </Section>
 
       {/* ── Selected Publications ──────────────────────────────── */}
-      <Section title={t("publications")} delay="animate-delay-300">
+      <Section title={t("publications")} id="publications" delay="animate-delay-300">
         <p className="mb-4 text-xs text-stone-500 dark:text-ash">
           {t("publicationsNote")}{" "}
           <a
@@ -211,7 +262,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
       </Section>
 
       {/* ── Standards & Open Source ────────────────────────────── */}
-      <Section title={t("standards")} delay="animate-delay-300">
+      <Section title={t("standards")} id="standards" delay="animate-delay-300">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-ash mb-3">
@@ -245,7 +296,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
       </Section>
 
       {/* ── Recognition ────────────────────────────────────────── */}
-      <Section title={t("recognition")} delay="animate-delay-300">
+      <Section title={t("recognition")} id="recognition" delay="animate-delay-300">
         <div className="space-y-2">
           {cv.recognition.map((r, i) => (
             <div key={i} className="flex gap-4 items-baseline">
@@ -300,6 +351,7 @@ export default function CVPage({ params: { locale } }: { params: { locale: strin
         </div>
       </Section>
     </div>
+    </>
   );
 }
 
@@ -307,13 +359,15 @@ function Section({
   title,
   children,
   delay = "",
+  id,
 }: {
   title: string;
   children: React.ReactNode;
   delay?: string;
+  id?: string;
 }) {
   return (
-    <div className={`mt-14 animate-fade-in ${delay}`}>
+    <div id={id} className={`mt-14 animate-fade-in ${delay}`}>
       <h2 className="text-xl md:text-2xl font-serif font-semibold mb-6 pb-3 border-b border-stone-200 dark:border-ink-wire text-stone-900 dark:text-cream">
         {title}
       </h2>

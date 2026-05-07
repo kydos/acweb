@@ -88,6 +88,43 @@ const perfMetrics = [
   { value: "32 KB",    label: "min. RAM" },
 ] as const;
 
+type EcosystemEntry = { name: string; detail?: string };
+type EcosystemCategory = { category: string; description: string; adopters: EcosystemEntry[] };
+
+const ecosystemData: EcosystemCategory[] = [
+  {
+    category: "Automotive",
+    description: "Vehicle communications fabric and in-vehicle domain middleware",
+    adopters: [
+      { name: "General Motors", detail: "uProtocol" },
+      { name: "Bosch" },
+      { name: "Volvo" },
+      { name: "Foxconn" },
+    ],
+  },
+  {
+    category: "Robotics",
+    description: "Official DDS alternative endorsed by the ROS 2 Technical Steering Committee",
+    adopters: [
+      { name: "ROS 2 TSC", detail: "Official DDS alternative" },
+    ],
+  },
+  {
+    category: "Aerospace & Industrial",
+    description: "Safety-critical deployments in air traffic control and naval combat management",
+    adopters: [
+      { name: "SELEX-ES / Finmeccanica", detail: "ATC & naval combat systems" },
+    ],
+  },
+  {
+    category: "Open Ecosystem",
+    description: "Hosted as a top-level Eclipse Foundation project with a growing community",
+    adopters: [
+      { name: "Eclipse Foundation", detail: "Eclipse Zenoh project" },
+    ],
+  },
+];
+
 const navCards = [
   {
     href: "/zenoh/report",
@@ -308,6 +345,44 @@ export default function ZenohPage({ params: { locale } }: { params: { locale: st
               <p className="mt-3 text-xs text-stone-400 dark:text-ash italic">
                 {t("genesisWhyFootnote")}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Community & Ecosystem ────────────────────────────────────── */}
+        <section className="border-t border-stone-100 dark:border-ink-wire/50">
+          <div className="mx-auto max-w-4xl px-6 py-12">
+            <h2 className="text-2xl font-serif font-semibold mb-2 text-stone-900 dark:text-cream">
+              Community &amp; Ecosystem
+            </h2>
+            <p className="text-sm text-stone-400 dark:text-ash mb-8">
+              Organizations and projects deploying Zenoh in production.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {ecosystemData.map((cat) => (
+                <div
+                  key={cat.category}
+                  className="rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card p-5"
+                >
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-ash mb-1">
+                    {cat.category}
+                  </h3>
+                  <p className="text-xs text-stone-400 dark:text-ash mb-3 leading-relaxed">
+                    {cat.description}
+                  </p>
+                  <ul className="space-y-1.5">
+                    {cat.adopters.map((a) => (
+                      <li key={a.name} className="flex items-baseline gap-2 text-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
+                        <span className="font-medium text-stone-800 dark:text-cream">{a.name}</span>
+                        {a.detail && (
+                          <span className="text-stone-400 dark:text-ash text-xs">— {a.detail}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>

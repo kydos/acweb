@@ -9,7 +9,7 @@ tags: ["distributed-systems", "clock-synchronization", "algorithms", "research",
 
 ---
 
-In distributed systems, time is a lie.
+In [distributed systems](/zenoh/), time is a lie.
 
 Every node has its own hardware clock — a crystal oscillator drifting at a slightly different rate, affected by temperature, voltage, and manufacturing tolerances. The NTP specification acknowledges this: every clock may drift by up to ρ (rho) fractional cycles per unit time. In practice ρ is small — around 10⁻⁵ to 10⁻⁶ — but it accumulates. Two clocks that started synchronized will diverge by milliseconds after a few hours and by seconds after days.
 
@@ -114,4 +114,11 @@ This work was published in 2009 in **IEEE Transactions on Parallel and Distribut
 
 [**Download the paper (PDF)**](/papers/clock-sync-tpds09.pdf)
 
-The full mathematical proofs, detailed simulation setup, and complete results are in the paper. If you're building distributed systems that need clock synchronization without external references — particularly in large-scale, dynamic, adversarial, or air-gapped environments — I hope it's useful.
+The full mathematical proofs, detailed simulation setup, and complete results are in the paper. If you're building [distributed systems](/zenoh/) that need clock synchronization without external references — particularly in large-scale, dynamic, adversarial, or air-gapped environments — I hope it's useful.
+
+---
+
+## Related
+
+- [Zenoh Protocol Overview](/zenoh/) — The unified communication protocol I designed after this research, spanning microcontroller to cloud with no infrastructure dependencies.
+- [Zenoh Research Papers](/zenoh/papers/) — Scientific publications on the Zenoh protocol and distributed systems design.

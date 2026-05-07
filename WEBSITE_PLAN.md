@@ -8,133 +8,59 @@ Status legend: ✅ Done | 🔲 Todo
 
 | # | Task | Status |
 |---|------|--------|
-| 1.1 | Populate Zenoh Talks page with past keynotes, conference talks, webinars | ✅ |
-| 1.2 | Expand Open Source page with fog05, Cyclone DDS, zenoh-dissector, zenoh-nostd, awesome-zenoh | ✅ |
-| 1.3 | Add blog posts: clock sync (published), Zenoh vs MQTT (draft), Zenoh vs DDS (draft) | ✅ |
+| 1.1 | Populate Zenoh Talks page — now 10 entries: keynotes section (DSN 2025, DSD 2025, ROSCon India 2024 & 2025) + conference section (ROSConFR 2025 ROS-Z, DSD 2023, WF-IoT 2023, MobiCom 2021, QRS 2021, CIoT 2018) | ✅ |
+| 1.2 | Open Source page: fog05, Cyclone DDS, zenoh-dissector, zenoh-nostd, awesome-zenoh | ✅ |
+| 1.3 | Blog posts: 3 published (clock-sync, why-zenoh, ros2-rmw-zenoh-selection), 2 drafts (zenoh-vs-mqtt, zenoh-vs-dds) | ✅ |
 
 ---
 
 ## Phase 2 — Enrich existing pages ✅ Done
 
-### 2.1 — About page rewrite ✅
-
-**File:** `app/[locale]/about/page.tsx`
-
-Replace the current four minimal cards with a personal narrative arc. The narrative should cover:
-- The journey: Ph.D. at Washington University → PrismTech → Finmeccanica/SELEX-ES → ADLINK → independent
-- The *why*: what keeps drawing Angelo to distributed systems and protocol design
-- The invention of Zenoh: the gap that existing middleware (DDS, MQTT, REST) couldn't fill
-- Current focus: Zenoh ecosystem, robotics, automotive, edge AI, Advanced Research on Distributed Systems
-
-Also:
-- Change the H1 from `"About"` to `"About Angelo Corsaro"`
-- Add a `ProfilePage` JSON-LD schema (see §SEO below)
-
----
-
-### 2.2 — "In the Media" section ✅
-
-**Files:** `app/[locale]/page.tsx` (home page) or a new `app/[locale]/press/page.tsx`
-
-Add a strip of media logos with links. Source material already exists in the papers page (8+ magazine/media articles). Options:
-- A simple horizontal strip of logos + publication names on the home page
-- Or a standalone `/press` page with fuller entries
-
-Content to source from: the publications/press entries already in `lib/siteConfig.ts` or `content/`.
+| # | Task | Status |
+|---|------|--------|
+| 2.1 | About page rewrite — full career narrative (inventor+executive framing, ZettaScale exit Apr 2026, most-recent-first career tour) + `ProfilePage` JSON-LD + H1 updated in all 8 locales | ✅ |
+| 2.2 | "Featured In" press strip on home page — 6 outlets (Electronic Design, Robot Report, All About Circuits, Connected World, IoT Now, Eclipse Foundation) in `siteConfig.pressMedia` | ✅ |
+| 2.3 | Zenoh Report: "Subscribe via email" mailto button added; stale ZettaScale keyword removed | ✅ |
+| 2.4 | Homepage title updated to full SEO descriptor; `siteShortTitle` added for page title templates (`%s \| Angelo Corsaro`) | ✅ |
+| 2.5 | Profile image intrinsic dimensions corrected 680×680 → 802×786 | ✅ |
+| 2.6 | `<link rel="sitemap">` added to locale layout `<head>`; title template updated to use `siteShortTitle` | ✅ |
+| 2.7 | Zenoh page layout redesign — tighter hero padding, 4-metric performance strip (sub-13µs / 50 Gbps / 5 bytes / 32 KB), compact demo CTA strip, Genesis section moved above nav cards, nav cards consolidated from 4+2 grids to single 6-card grid (added ROS 2 and DDS Alternative), border separators softened | ✅ |
+| 2.8 | Site-wide profile positioning — home overline ("Protocol Inventor & Technology Executive"), headline ("Inventor, Implementor & Industry Driver"), `siteDescription` updated to foreground inventor+CEO/CTO duality | ✅ |
+| 2.9 | Coupling Clocks blog: scientific review against IEEE TPDS 2009 paper — 8 corrections (title, author names, K_i value, update rule, SE/SP definitions, churn figure, mean vs. median claim, convergence target) | ✅ |
+| 2.10 | ZettaScale exit (April 2026) reflected across site — CV period, siteConfig experience description, About bio, CV position ("Exploring Next Venture") | ✅ |
 
 ---
 
-### 2.3 — Zenoh Report subscribe mechanism ✅
+## Phase 3 — Structural improvements ✅ Done
 
-**File:** `app/[locale]/zenoh/report/page.tsx`
-
-The page already has a "subscribe" callout but no mechanism. Add one of:
-- A mailto link: `mailto:angelo@...?subject=Subscribe to Zenoh Report`
-- A simple email capture form posting to a form service (Formspree, etc.)
-- An RSS feed link (if a feed is generated)
-
----
-
-### 2.4 — Fix homepage title tag (all 8 locales) ✅
-
-**File:** `lib/siteConfig.ts` → `siteTitle` field (currently `"Angelo Corsaro"`)
-
-Change `siteTitle` to:
-```
-"Angelo Corsaro — Inventor of Zenoh Protocol & Distributed Systems Expert"
-```
-
-The `siteTitle` value is consumed by `app/[locale]/page.tsx` via `siteConfig.siteTitle`. Changing it here propagates to all locales automatically.
-
-For locale-specific titles, translations live in `messages/<locale>.json`. If title is hardcoded per locale, update each locale's translation file under the relevant key.
-
----
-
-### 2.5 — Fix profile image dimensions ✅
-
-**File:** `app/[locale]/page.tsx` (lines ~142–149)
-
-The `<Image>` component already uses `next/image` with `priority` — good. But the declared dimensions are `width={680} height={680}` (square) while the actual file is 802×786 (not square). This causes aspect ratio distortion and a minor CLS issue.
-
-Change to:
-```tsx
-<Image
-  src={siteConfig.profilePhoto}
-  alt={siteConfig.name}
-  width={802}
-  height={786}
-  priority
-  className="aspect-square w-full object-cover"
-/>
-```
-
-Note: `aspect-square` in the className forces square display — the width/height here are the *intrinsic* dimensions used by the browser for layout reservation, not the rendered size. Correcting them eliminates the CLS warning.
-
----
-
-### 2.6 — Add sitemap link to `<head>` ✅
-
-**File:** `app/layout.tsx`
-
-A `sitemap.ts` already exists at `app/sitemap.ts`. Add the `<link>` tag so crawlers discover it:
-
-```tsx
-// Inside <html ...><head> in app/layout.tsx:
-<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-```
-
----
-
-## Phase 3 — Structural improvements
-
-### 3.1 — "Latest from the Blog" section on home page 🔲
+### 3.1 — "Latest from the Blog" section on home page ✅
 
 **File:** `app/[locale]/page.tsx`
 
-Import `getAllPosts` from `lib/mdx.ts` and render the 2–3 most recent non-draft posts as cards above or below the existing CTA. Use the existing `BlogCard` component from `components/`.
+Make the page async and import `getAllPosts` from `lib/mdx.ts`. Render the 2–3 most recent non-draft posts as cards between the "Featured In" strip and the demo CTA. Use the existing `BlogCard` component.
 
-Rough structure:
 ```tsx
+// Convert to async server component:
 const posts = (await getAllPosts()).slice(0, 3);
 // Render using <BlogCard> for each post
 ```
 
-Also add `Blog` + `BlogPosting` JSON-LD to `app/[locale]/blog/page.tsx`:
-- `Blog` schema with `name`, `description`, `url`, `author`
-- `blogPost` array generated dynamically from `getAllPosts()`
-- Change blog page H1 from `"Blog"` to include a subtitle: e.g. "Writing on Zenoh, distributed systems, and robotics"
+Also update `app/[locale]/blog/page.tsx`:
+- Add `Blog` + `BlogPosting` JSON-LD, generated dynamically from `getAllPosts()`
+- Add a subtitle below the H1: "Writing on Zenoh, distributed systems, and robotics"
+
+*Note: 3 posts are currently published (clock-sync, why-zenoh, ros2-rmw-zenoh-selection) — enough to populate the strip immediately.*
 
 ---
 
-### 3.2 — CV anchor navigation 🔲
+### 3.2 — CV anchor navigation ✅
 
 **File:** `app/[locale]/cv/page.tsx`
 
-The CV is long (~350 lines of content across Education, Experience, Publications, Awards, etc.). Add:
-- In-page anchor `id` attributes on each section heading
-- A sticky or top-of-page jump-nav with links: Education | Experience | Publications | Awards | Open Source
+Add `id` attributes to each section heading and a sticky or top-of-page jump-nav with links:
+Experience | Education | Key Contributions | Publications | Standards | Recognition
 
-Also add `Person` JSON-LD schema to the CV page. Template:
+Also add `Person` JSON-LD schema:
 ```json
 {
   "@context": "https://schema.org",
@@ -151,37 +77,38 @@ Also add `Person` JSON-LD schema to the CV page. Template:
 }
 ```
 
-Note: Do NOT include a `worksFor` field — Angelo no longer works at ZettaScale.
+*Note: Do NOT include `worksFor` — Angelo is no longer at ZettaScale.*
 
 ---
 
-### 3.3 — "Community & Ecosystem" section on Zenoh page 🔲
+### 3.3 — "Community & Ecosystem" section on Zenoh page ✅
 
 **File:** `app/[locale]/zenoh/page.tsx`
 
-Add a section listing companies and projects publicly known to use Zenoh:
-- Automotive: General Motors (uProtocol), Bosch, Volvo, Foxconn (SDV platforms)
-- Robotics: ROS 2 official alternative middleware (ROS TSC evaluation)
-- Edge/Cloud: Eclipse Foundation projects
+Add a section (after the feature grid or between Genesis and Explore) listing publicly known Zenoh adopters:
+- **Automotive:** General Motors (uProtocol), Bosch, Volvo, Foxconn
+- **Robotics:** ROS 2 TSC official DDS alternative
+- **Aerospace / Industrial:** SELEX-ES / Finmeccanica heritage; safety-critical deployments
+- **Edge / Cloud:** Eclipse Foundation projects
 
-Source from public announcements and the ROS discourse post already linked in the Zenoh vs MQTT blog.
+Source from public announcements and the ROS TSC discourse post.
 
 ---
 
-### 3.4 — Internal links within blog posts + "Related" section 🔲
+### 3.4 — Internal links within published blog posts + ContactPage schema ✅
 
-**Files:** Each MDX file in `content/blog/` and/or `app/[locale]/blog/[slug]/page.tsx`
+**Files:** `content/blog/clock-synchronization.mdx`, `app/[locale]/blog/[slug]/page.tsx`, `app/[locale]/contact/page.tsx`
 
-Within each published blog post, add contextual internal links:
-- Clock sync post: link to `/zenoh/` when mentioning distributed systems, link to paper PDF
-- Future Zenoh vs MQTT post: link to `/zenoh/`, `/zenoh/ros2/`
-- Future Zenoh vs DDS post: link to `/zenoh/`, `/zenoh/dds-alternative/`
+For the Coupling Clocks post (currently the only fully published non-stub post):
+- Link "distributed systems" references to `/zenoh/`
+- Link the paper PDF reference to `/papers/clock-sync-tpds09.pdf`
+- Add a "Related" section at the bottom linking to Zenoh overview and the Zenoh Papers page
 
-At the end of each post, add a "Related" section linking to 2–3 other relevant pages on the site.
+When the Zenoh vs MQTT and Zenoh vs DDS drafts are published, add:
+- MQTT post: links to `/zenoh/`, `/zenoh/ros2/`
+- DDS post: links to `/zenoh/`, `/zenoh/dds-alternative/`
 
-Also add `AboutPage` JSON-LD schema to `app/[locale]/about/page.tsx` and `ContactPage` schema to `app/[locale]/contact/page.tsx`:
-
-**Contact schema:**
+Also add `ContactPage` JSON-LD to `app/[locale]/contact/page.tsx`:
 ```json
 {
   "@context": "https://schema.org",
@@ -203,16 +130,16 @@ Also add `AboutPage` JSON-LD schema to `app/[locale]/about/page.tsx` and `Contac
 
 ### 4.1 — Breadcrumb schema for Zenoh Book pages 🔲
 
-**File:** `app/[locale]/zenoh/book/[...slug]/page.tsx` (or a book layout file if one exists)
+**File:** `app/[locale]/zenoh/book/[...slug]/page.tsx`
 
-Add `BreadcrumbList` JSON-LD to every book page. Generate dynamically from current path:
+Add `BreadcrumbList` JSON-LD generated from the current path:
 ```json
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corsaro.me/en/" },
-    { "@type": "ListItem", "position": 2, "name": "Zenoh", "item": "https://corsaro.me/en/zenoh/" },
+    { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://corsaro.me/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Zenoh",      "item": "https://corsaro.me/en/zenoh/" },
     { "@type": "ListItem", "position": 3, "name": "Zenoh Book", "item": "https://corsaro.me/en/zenoh/book/" },
     { "@type": "ListItem", "position": 4, "name": "<page title>", "item": "https://corsaro.me<current path>" }
   ]
@@ -221,33 +148,44 @@ Add `BreadcrumbList` JSON-LD to every book page. Generate dynamically from curre
 
 ---
 
-### 4.2 — Appearances / Speaking calendar 🔲
+### 4.2 — Upcoming talks / speaking calendar 🔲
 
-**File:** New section in `app/[locale]/zenoh/talks/page.tsx` or a new `app/[locale]/speaking/page.tsx`
+**File:** `app/[locale]/zenoh/talks/page.tsx` + `lib/siteConfig.ts`
 
-Add a section for upcoming confirmed talks/events with: event name, date, location, link.
-Data source: maintain in `lib/siteConfig.ts` as an `upcomingTalks` array.
+Add an "Upcoming" section at the top of the talks page for confirmed future events. Maintain as an `upcomingTalks` array in `siteConfig.ts`:
+```ts
+upcomingTalks: [
+  { title: "...", event: "...", date: "...", location: "...", url: "..." },
+]
+```
+Render as a compact highlighted strip above the Keynotes section. Hide section entirely when the array is empty.
+
+*Note: Past talks are now well-covered (10 entries). This adds forward-looking visibility.*
 
 ---
 
 ### 4.3 — Teaching & Mentoring page 🔲
 
-**File:** New `app/[locale]/teaching/page.tsx`
+**File:** New `app/[locale]/teaching/page.tsx` + nav entry in `lib/siteConfig.ts`
 
-Content to include:
-- ESIEE Paris courses (subjects, level, years)
-- Ph.D. co-advising (students, topics, institutions)
-- Any public lecture series or workshops
+Content:
+- ESIEE Paris: IoT and Functional Programming courses (2016–2022), member of Conférence des Grandes Écoles
+- Ph.D. co-advising: La Sapienza Rome & Washington University in St. Louis (2003–2007), topics: distributed systems, real-time middleware, fault-tolerant computing
 
-Add nav entry in `lib/siteConfig.ts` → `navLinks`.
+Add to `siteConfig.navLinks` (or as a sub-item under an "About" dropdown).
 
 ---
 
-### 4.4 — i18n translation verification 🔲
+### 4.4 — i18n translation audit 🔲
 
-**Files:** `messages/<locale>.json` for fr, it, ja, es, zh, ko, ru
+**Files:** `messages/fr.json`, `messages/it.json`, `messages/es.json`, `messages/ja.json`, `messages/zh.json`, `messages/ko.json`, `messages/ru.json`
 
-8 locales are configured but translation coverage is unclear. Audit each locale's message file against the English baseline and identify gaps. Fill gaps or mark incomplete sections.
+Several keys added since the original translations were written:
+- `nav.zenohRos2`, `nav.zenohDdsAlt` (added — currently English in all locales)
+- `zenoh.navCardRos2Desc`, `zenoh.navCardDdsAltDesc` (added — currently English in all locales)
+- `about.bio` — English bio was rewritten; other locales still have the old 2-paragraph version
+
+Audit each locale against `messages/en.json` and either translate missing keys or flag them for a native-speaker pass. The `about.bio` rewrite is the highest-priority gap.
 
 ---
 
@@ -255,9 +193,9 @@ Add nav entry in `lib/siteConfig.ts` → `navLinks`.
 
 | Concern | File |
 |---------|------|
-| Central config (titles, social, nav, repos) | `lib/siteConfig.ts` |
+| Central config (titles, social, nav, repos, press) | `lib/siteConfig.ts` |
 | Home page | `app/[locale]/page.tsx` |
-| Root layout (head, fonts, theme) | `app/layout.tsx` |
+| Root layout (head, fonts, theme) | `app/[locale]/layout.tsx` |
 | About page | `app/[locale]/about/page.tsx` |
 | CV page | `app/[locale]/cv/page.tsx` |
 | Blog index | `app/[locale]/blog/page.tsx` |
@@ -273,9 +211,11 @@ Add nav entry in `lib/siteConfig.ts` → `navLinks`.
 | Sitemap | `app/sitemap.ts` |
 | i18n messages | `messages/<locale>.json` |
 
+---
+
 ## Important notes
 
-- **ZettaScale**: Angelo no longer works at ZettaScale. Do not include ZettaScale in any `worksFor` schema field or page content.
-- **Draft posts**: `zenoh-vs-mqtt.mdx` and `zenoh-vs-dds.mdx` are currently `draft: true` — hidden from the blog listing. Enable by removing the `draft` flag when ready to publish.
+- **ZettaScale**: Angelo exited ZettaScale in April 2026. Do not include ZettaScale in any `worksFor` schema field or current-role page content. The CV and About bio already reflect the exit.
+- **Blog posts**: `clock-synchronization.mdx`, `why-zenoh.mdx`, and `ros2-rmw-zenoh-selection.mdx` are published. `zenoh-vs-mqtt.mdx` and `zenoh-vs-dds.mdx` are `draft: true` — enable by removing the draft flag when ready.
+- **No LaTeX in MDX**: MDX's acorn parser interprets `{}` as JSX — use plain-text math descriptions in `.mdx` files.
 - **Commits**: Never commit or push unless Angelo explicitly asks.
-- **No LaTeX in MDX**: MDX's acorn parser interprets `{}` as JSX — use plain-text math descriptions instead of LaTeX in `.mdx` files.

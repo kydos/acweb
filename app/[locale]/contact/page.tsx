@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ProtectedEmailCard } from "@/components/ProtectedEmailCard";
 import { ContactLink } from "@/components/ContactLink";
 import { siteConfig } from "@/lib/siteConfig";
+import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
@@ -18,6 +19,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   });
 }
 
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Angelo Corsaro",
+  url: `${siteConfig.siteUrl}/en/contact/`,
+  mainEntity: {
+    "@type": "Person",
+    name: "Angelo Corsaro",
+    url: siteConfig.siteUrl,
+    sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  },
+};
+
 export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations("contact");
@@ -30,6 +44,8 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   ];
 
   return (
+    <>
+      <JsonLd data={contactPageSchema} />
     <section className="mx-auto max-w-4xl px-6 py-16 md:py-24">
       <h1 className="text-3xl md:text-4xl font-serif font-bold animate-fade-in
                      text-stone-900 dark:text-cream">
@@ -53,5 +69,6 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
         <ProtectedEmailCard />
       </div>
     </section>
+    </>
   );
 }

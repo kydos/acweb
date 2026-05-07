@@ -4,6 +4,8 @@ import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
+import { getAllPosts } from "@/lib/mdx";
+import { BlogCard } from "@/components/BlogCard";
 import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
 
@@ -78,6 +80,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   const t = useTranslations("home");
   const cv = useTranslations("cv");
   const zenoh = useTranslations("zenoh");
+  const recentPosts = getAllPosts().slice(0, 3);
 
   return (
     <>
@@ -194,6 +197,26 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         </div>
       </div>
     </section>
+
+    {recentPosts.length > 0 && (
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <div className="border-t border-stone-100 dark:border-ink-wire pt-10">
+          <div className="flex items-baseline justify-between mb-2">
+            <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">
+              Latest from the Blog
+            </h2>
+            <Link href="/blog" className="text-sm text-azure dark:text-sky hover:text-accent dark:hover:text-accent transition-colors">
+              All posts →
+            </Link>
+          </div>
+          <div className="divide-y divide-stone-100 dark:divide-ink-wire/50">
+            {recentPosts.map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <section className="mx-auto max-w-6xl px-6 pb-16">
       <div className="rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent dark:from-accent/15 dark:via-accent/5 dark:to-transparent p-6 md:p-8">
