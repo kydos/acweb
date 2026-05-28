@@ -17,16 +17,16 @@
     "zenohDdsAlt": "DDS Alternative"
   },
   "home": {
-    "overline": "프로토콜 발명자 & 테크놀로지 임원",
+    "overline": "프로토콜 발명자 & 기술 임원",
     "title": "발명자, 구현자 & 업계 추진자",
-    "shortBio": "Zenoh 프로토콜의 발명자이자 연속적 기술 임원. 깊이 있는 기술자와 검증된 CEO/CTO의 드문 결합 — 제1원리에서 기술을 발명하고, 구현하고, 그 채택을 글로벌 산업 표준으로 이끄는 사람.",
+    "shortBio": "Zenoh 프로토콜의 발명자이자 연쇄 기술 임원. 딥 테크놀로지스트와 검증된 CEO/CTO의 드문 결합 — 제1원리에서 기술을 발명하고, 구현하고, 그 채택을 글로벌 산업 표준으로 이끄는 사람.",
     "aboutCta": "소개",
     "blogCta": "블로그 읽기",
     "openSourceCta": "오픈 소스"
   },
   "about": {
     "heading": "Angelo Corsaro 소개",
-    "bio": "Angelo Corsaro는 깊이 있는 기술자와 검증된 경영 리더의 드문 결합입니다. 25년 이상에 걸쳐 연구 통찰에서 프로덕션 코드, 그리고 글로벌 산업 채택에 이르는 완전한 아크를 반복적으로 걸어왔습니다 — 제1원리에서 기술을 발명하고, C++부터 Rust까지 다양한 언어로 직접 구현하며, OMG, IEEE, Eclipse Foundation 수준에서 표준화를 추진해왔습니다. 발명자, 구현자, 업계 추진자의 조합은 검증된 CEO와 CTO 실적으로 뒷받침되어, 깊은 기술과 전략적 리더십의 교차점에서 독보적으로 가치 있는 프로필을 만들어냅니다.\n\n2004년 세인트루이스 워싱턴 대학교에서 컴퓨터과학 박사학위를 취득하며 jRate를 개발했습니다 — DARPA PCES 프로그램에서 비행 핵심 UAV 항공전자공학을 위해 보잉이 채택한 최초의 오픈소스 실시간 자바 사전 컴파일 구현체입니다.\n\nZettaScale Technology（2022년–2026년）— 공동 창업자, CEO 겸 CTO. Angelo는 Eclipse Zenoh를 상용화하고 오픈소스 프로젝트에서 프로덕션 플랫폼으로 발전시키는 사명으로 ZettaScale을 공동 창립했습니다. 그의 기술 및 전략적 리더십 하에 ZettaScale은 제로에서 성장하여 클라우드-투-씽 연속체에서 가장 혁신적이고 널리 참조되는 회사 중 하나가 되었습니다. Zenoh는 ROS 2 기술 운영 위원회에 의해 공식 DDS 대안으로 채택되고, General Motors에 uProtocol용으로 선정되며, 전 세계 자동차, 로보틱스, 항공우주, 산업 시스템에 배포되었습니다. Angelo는 2026년 4월 ZettaScale을 떠나 다음 모험을 준비하고 있습니다.\n\nADLINK Technologies（2016년–2022년）— 최고 기술 책임자. 첨단 기술 사무소의 CTO로서, Angelo는 주류 채택보다 수년 앞서 엣지 컴퓨팅을 기업 전략적 기둥으로 확립하고, 기술 스카우팅과 R&D 전략을 지휘했으며, Eclipse Foundation 내에서 Zenoh 개발을 계속 이끌었습니다.\n\nPrismTech（2007년–2016년）— 제품 전략 매니저, 이후 CTO. DDS 생태계의 중심에서 보낸 10년: OMG DDS 특별 관심 그룹 공동 의장, DDS 표준 전체 패밀리（DDS, DDSI-RTPS, DDS Security, DDS RPC, ISO C++ API）공동 집필, 그리고 Vortex 아키텍처 설계 — 2014년 PrismTech에 Gartner Cool Vendor 영예를 안겨준 클라우드와 포그 컴퓨팅 통합을 위한 초기 상업 플랫폼.\n\nFinmeccanica/SELEX-ES（2003년–2007년）— 수석 아키텍트, 이후 소프트웨어 기술 과학자. 임무 핵심 항공 교통 관제 및 해군 전투 관리 시스템을 위한 미들웨어 플랫폼을 설계하고, 생물학의 결합 진동자 수학을 적용하여 외부 시간 참조 없이 수만 개의 노드를 동기화하는 가십 기반 클록 동기화 알고리즘을 공동 개발 — 2009년 IEEE TPDS에 발표되었습니다.",
+    "bio": "Angelo Corsaro는 딥 테크놀로지스트와 검증된 경영 리더의 드문 결합입니다. 25년 이상에 걸쳐 연구 통찰에서 프로덕션 코드, 그리고 글로벌 산업 채택에 이르는 전체 여정을 반복적으로 걸어왔습니다 — 제1원리에서 기술을 발명하고, C++부터 Rust까지 다양한 언어로 직접 구현하며, OMG, IEEE, Eclipse Foundation 수준에서 표준화를 추진해왔습니다. 발명자, 구현자, 업계 추진자의 조합은 검증된 CEO와 CTO 실적으로 뒷받침되어, 딥 테크와 전략적 리더십의 교차점에서 독보적으로 가치 있는 프로필을 만들어냅니다.\n\n2004년 세인트루이스 워싱턴 대학교에서 컴퓨터과학 박사학위를 취득하며 jRate를 개발했습니다 — DARPA PCES 프로그램에서 비행 핵심 UAV 항공전자공학을 위해 보잉이 채택한 최초의 오픈소스 실시간 자바 사전 컴파일 구현체입니다.\n\nZettaScale Technology（2022년–2026년）— 공동 창업자, CEO 겸 CTO. Angelo는 Eclipse Zenoh를 상용화하고 오픈소스 프로젝트에서 프로덕션 플랫폼으로 발전시키는 사명으로 ZettaScale을 공동 창립했습니다. 그의 기술 및 전략적 리더십 하에 ZettaScale은 제로에서 성장하여 클라우드-투-사물 연속체에서 가장 혁신적이고 널리 참조되는 회사 중 하나가 되었습니다. Zenoh는 ROS 2 기술 운영 위원회에 의해 공식 DDS 대안으로 채택되고, General Motors에 uProtocol용으로 선정되며, 전 세계 자동차, 로보틱스, 항공우주, 산업 시스템에 배포되었습니다. Angelo는 2026년 4월 ZettaScale을 떠나 다음 모험을 준비하고 있습니다.\n\nADLINK Technologies（2016년–2022년）— 최고 기술 책임자. 첨단 기술 사무소의 CTO로서, Angelo는 주류 채택보다 수년 앞서 엣지 컴퓨팅을 기업 전략적 기둥으로 확립하고, 기술 스카우팅과 R&D 전략을 지휘했으며, Eclipse Foundation 내에서 Zenoh 개발을 계속 이끌었습니다.\n\nPrismTech（2007년–2016년）— 제품 전략 매니저, 이후 CTO. DDS 생태계의 중심에서 보낸 10년: OMG DDS 특별 관심 그룹 공동 의장, DDS 표준 전체 패밀리（DDS, DDSI-RTPS, DDS Security, DDS RPC, ISO C++ API）공동 집필, 그리고 Vortex 아키텍처 설계 — 2014년 PrismTech에 Gartner Cool Vendor 영예를 안겨준 클라우드와 포그 컴퓨팅 통합을 위한 초기 상업 플랫폼.\n\nFinmeccanica/SELEX-ES（2003년–2007년）— 수석 아키텍트, 이후 소프트웨어 기술 과학자. 임무 핵심 항공 교통 관제 및 해군 전투 관리 시스템을 위한 미들웨어 플랫폼을 설계하고, 생물학의 결합 진동자 수학을 적용하여 외부 시간 참조 없이 수만 개의 노드를 동기화하는 가십 기반 클록 동기화 알고리즘을 공동 개발 — 2009년 IEEE TPDS에 발표되었습니다.",
     "areasTitle": "관심 분야",
     "areas": {
       "distributedSystems": {
@@ -62,7 +62,7 @@
     "skills": "기술",
     "researchProfile": "연구 프로필",
     "researchInterests": "연구 관심사",
-    "keyContributions": "핵심 연구 기여",
+    "keyContributions": "선구적 기여",
     "teaching": "교육 경력",
     "publications": "주요 출판물",
     "standards": "표준 & 오픈소스",
@@ -71,7 +71,7 @@
     "programming": "프로그래밍 언어",
     "standardsCoAuthored": "공동 작성한 표준",
     "openSourceProjects": "오픈 소스 프로젝트",
-    "position": "Eclipse Zenoh 프로젝트 리드 · 다음 모험 모색 중",
+    "position": "Eclipse Zenoh 프로젝트 리드 · 차기 벤처 탐색 중",
     "location": "지프쉬르이베트, 프랑스",
     "publicationsNote": "전체 목록: 동료 심사 논문 100편 이상 · 인용 1,478건 이상 ·",
     "statPublications": "동료 심사 논문",
@@ -95,7 +95,7 @@
   "zenoh": {
     "heading": "Zenoh 프로토콜",
     "subtitle": "IoT / 엣지 / 클라우드 연속체 통합",
-    "tagline": "이동 중인 데이터, 정지 데이터, 계산을 통합하는 프로토콜. 2KB 마이크로컨트롤러부터 클라우드 클러스터까지.",
+    "tagline": "이동 중인 데이터, 저장 데이터, 계산을 통합하는 프로토콜. 2KB 마이크로컨트롤러부터 클라우드 클러스터까지.",
     "feature1Title": "제로 오버헤드",
     "feature1Desc": "가장 자원이 제한된 환경을 위해 설계되었습니다. Zenoh의 와이어 포맷은 최소한이고 효율적이며 결정론적입니다.",
     "feature2Title": "어디서나 실행",
@@ -112,7 +112,7 @@
     "bookHeading": "Zenoh 도서",
     "papersHeading": "Zenoh 논문",
     "talksHeading": "Zenoh 강연",
-    "reportSubtitle": "Zenoh 혁신, 에코시스템 하이라이트 및 커뮤니티 스토리의 월간 요약.",
+    "reportSubtitle": "Zenoh 혁신, 에코시스템 하이라이트 및 커뮤니티 스토리의 월간 다이제스트.",
     "reportDownload": "다운로드",
     "genesisHeading": "Zenoh의 탄생",
     "genesisSubtitle": "필요에 의해 탄생한 프로토콜 — 그리고 철학자의 이름을 따서 명명된",
@@ -125,12 +125,12 @@
     "genesisScaleProblemDesc": "DDS는 글로벌 네트워크로 확장할 수도, 제약된 장치로 축소할 수도 없었습니다. CoAP는 너무 클라우드 중심적이었고, MQTT의 브로커 모델은 같은 네트워크에 있는 장치들도 수천 킬로미터 떨어진 서버를 통해 통신하도록 강요했습니다.",
     "genesisTransparencyGapTitle": "투명성 격차",
     "genesisTransparencyGapDesc": "Pub/Sub은 이동 중인 데이터에 대한 위치 투명성을 달성했습니다. 그러나 데이터가 저장되면 그 투명성은 사라졌고, 모든 것을 중앙화된 클라우드 스토리지에 강제했습니다. 저장된 데이터에 낮은 지연 시간으로 접근해야 하는 애플리케이션은 좋은 해답이 없었습니다.",
-    "genesisFrankenstein": "그 시대의 시스템들 — Angelo가 \"디지털 프랑켄슈타인\" 시대라고 부르는 것 — 은 여러 프로토콜 스택을 이어 붙여 조립되었습니다. 그의 목표가 명확해졌습니다: 마이크로컨트롤러에서 데이터센터까지 아우르는 단일 프로토콜을 설계하고, 토폴로지 제약 없이 이동 중인 데이터, 저장된 데이터, 계산에 대한 통합 추상화를 제공하는 것.",
-    "genesisQuote": "나는 무언가를 해야 했습니다. 마이크로컨트롤러에서 데이터센터까지 효율적으로 작동하고, 토폴로지 제약이 없으며, 이동 중인 데이터와 정지 데이터를 처리하기 위한 통합 추상화를 제공하는 프로토콜을 만드는 아이디어를 연구하기 시작했습니다.",
+    "genesisFrankenstein": "그 시대의 시스템들 — Angelo가 \"디지털 프랑켄슈타인\" 시대라고 부르는 것 — 은 여러 프로토콜 스택을 덕테이프로 이어 붙이듯 조립하며, 제대로 된 엔드투엔드 시맨틱스가 되기를 바라며 만들어졌습니다. 그의 목표가 명확해졌습니다: 마이크로컨트롤러에서 데이터센터까지 아우르는 단일 프로토콜을 설계하고, 토폴로지 제약 없이 이동 중인 데이터, 저장 데이터, 계산에 대한 통합 추상화를 제공하는 것.",
+    "genesisQuote": "나는 무언가를 해야 했습니다. 마이크로컨트롤러에서 데이터센터까지 효율적으로 작동하고, 토폴로지 제약이 없으며, 이동 중인 데이터와 저장 데이터를 처리하기 위한 통합 추상화를 제공하는 프로토콜을 만드는 아이디어를 연구하기 시작했습니다.",
     "genesisWhyTitle": "왜 \"Zenoh\"인가요?",
-    "genesisWhyText1": "이 이름에는 두 가지 철학적 참조와 하나의 공학 약어가 담겨 있습니다. 시칠리아에서 자란 Angelo는 고대 그리스 철학의 유산에 둘러싸여 있었습니다. 그는 특히 엘레아의 제논（Zenon d'Élée）에게 끌렸으며, 그의 무한 역설은 어린 시절부터 그를 매료시켰습니다.",
+    "genesisWhyText1": "이 이름에는 두 가지 철학적 참조와 하나의 공학 약어가 담겨 있습니다. 시칠리아에서 자란 Angelo는 고대 그리스 철학의 유산에 둘러싸여 있었습니다. 그는 특히 엘레아의 제논（Zeno of Elea）에게 끌렸으며, 그의 무한 역설은 어린 시절부터 그를 매료시켰습니다.",
     "genesisWhyText2": "스토아 철학 — 키티온의 제논이 창시한 — 은 마르쿠스 아우렐리우스의 『명상록』을 통해 똑같이 깊은 흔적을 남겼습니다.",
-    "genesisWhyFootnote": "Zenon과 Zenoh의 차이는 한 글자도 되지 않습니다 — 그것은 단지 \"h\"의 초과분입니다.",
+    "genesisWhyFootnote": "Zenon과 Zenoh의 차이는 한 글자도 되지 않습니다 — 그것은 단지 \"h\"를 한 획 더 그은 것뿐입니다.",
     "exploreTitle": "Zenoh 탐색",
     "navCardReportDesc": "Zenoh 혁신, 생태계 하이라이트, 커뮤니티 이야기의 월간 다이제스트.",
     "navCardPapersDesc": "Zenoh 프로토콜에 관한 과학적 출판물 및 연구.",
@@ -139,7 +139,7 @@
     "demoCTAHeading": "브라우저에서 Zenoh 체험하기",
     "demoCTADesc": "브라우저에서 직접 Zenoh의 모든 기능 — 퍼블리셔, 서브스크라이버, 쿼리어블, 그리고 get 작업 — 을 체험하세요. 여러 탭을 열어 인스턴스 간 통신을 테스트할 수 있습니다.",
     "demoCTAButton": "라이브 웹 데모 체험하기",
-    "navCardRos2Desc": "Zenoh가 로봇, 플리트, 엣지, 클라우드 시스템이 단일 LAN을 넘어 통신하도록 돕는 방법.",
+    "navCardRos2Desc": "Zenoh가 로봇, 플릿, 엣지, 클라우드 시스템이 단일 LAN을 넘어 통신하도록 돕는 방법.",
     "navCardDdsAltDesc": "임베디드, 엣지, 클라우드 인프라에 걸쳐야 하는 배포를 위한 집중적인 비교."
   },
   "contact": {
