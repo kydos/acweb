@@ -196,6 +196,21 @@
 <priority>0.6</priority>
 </url>
 <url>
+<loc>https://corsaro.me/en/blog/adieu-zettascale</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="it" href="https://corsaro.me/it/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://corsaro.me/ja/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="es" href="https://corsaro.me/es/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://corsaro.me/zh/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://corsaro.me/ko/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://corsaro.me/ru/blog/adieu-zettascale" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://corsaro.me/en/blog/adieu-zettascale" />
+<lastmod>2026-07-01T00:00:00.000Z</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
 <loc>https://corsaro.me/en/blog/clock-synchronization</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://corsaro.me/en/blog/clock-synchronization" />
 <xhtml:link rel="alternate" hreflang="fr" href="https://corsaro.me/fr/blog/clock-synchronization" />
