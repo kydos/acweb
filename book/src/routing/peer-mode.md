@@ -5,7 +5,7 @@ In **peer mode**, Zenoh nodes discover each other and communicate directly — n
 ## When to Use Peer Mode
 
 - All nodes are on the same LAN
-- Low node count (multicast scouting scales to ~dozens of peers)
+- Low node count (flat topologies scale to few hundreds of peers)
 - You want zero infrastructure
 
 ## Configuration
