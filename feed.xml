@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angelo Corsaro — Blog</title>
+    <link>https://corsaro.me/blog/</link>
+    <description>Writing on Zenoh, distributed systems, and robotics by Angelo Corsaro, Ph.D.</description>
+    <language>en</language>
+    <managingEditor>Angelo Corsaro</managingEditor>
+    <atom:link href="https://corsaro.me/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Adieu ZettaScale</title>
+      <link>https://corsaro.me/blog/adieu-zettascale/</link>
+      <guid isPermaLink="true">https://corsaro.me/blog/adieu-zettascale/</guid>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Adieu ZettaScale. The next chapter starts now.</description>
+      <category>zenoh</category>
+      <category>zettascale</category>
+      <category>ceo</category>
+      <category>innovation</category>
+      <category>management</category>
+    </item>
+    <item>
+      <title>Coupling Clocks: How Fireflies Inspired a Distributed Clock Synchronization Algorithm</title>
+      <link>https://corsaro.me/blog/clock-synchronization/</link>
+      <guid isPermaLink="true">https://corsaro.me/blog/clock-synchronization/</guid>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 GMT</pubDate>
+      <description>A look back at the coupling-based internal clock synchronization algorithm I co-developed — using the same mathematics that describes flashing fireflies and beating hearts to synchronize clocks across tens of thousands of nodes without any external time reference.</description>
+      <category>distributed-systems</category>
+      <category>clock-synchronization</category>
+      <category>algorithms</category>
+      <category>research</category>
+      <category>gossip-protocols</category>
+    </item>
+    <item>
+      <title>Why I Created Zenoh</title>
+      <link>https://corsaro.me/blog/why-zenoh/</link>
+      <guid isPermaLink="true">https://corsaro.me/blog/why-zenoh/</guid>
+      <pubDate>Sat, 15 Jun 2024 00:00:00 GMT</pubDate>
+      <description>The story behind the Zenoh protocol — why existing middleware wasn&apos;t enough, and what we set out to build.</description>
+      <category>zenoh</category>
+      <category>distributed-systems</category>
+      <category>protocols</category>
+    </item>
+    <item>
+      <title>How the ROS 2 Core Team Chose Zenoh as Its Alternative Middleware</title>
+      <link>https://corsaro.me/blog/ros2-rmw-zenoh-selection/</link>
+      <guid isPermaLink="true">https://corsaro.me/blog/ros2-rmw-zenoh-selection/</guid>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate>
+      <description>An overview of the official ROS 2 core team study that evaluated alternative middlewares to DDS — and concluded that Zenoh best meets the requirements of modern robotics systems.</description>
+      <category>zenoh</category>
+      <category>ros2</category>
+      <category>robotics</category>
+      <category>distributed-systems</category>
+      <category>middleware</category>
+    </item>
+  </channel>
+</rss>
