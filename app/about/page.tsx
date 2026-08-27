@@ -88,9 +88,9 @@ export default function AboutPage() {
     <>
       <JsonLd data={profilePageSchema} />
       <PageShell>
-        <PageHeader title={title} trail={[{ label: "About", href: "/about" }]} />
+        <PageHeader title={title} />
 
-        <div className="mt-10 flex flex-col md:flex-row gap-10 animate-fade-in animate-delay-100">
+        <div className="mt-phi-lg flex flex-col md:flex-row gap-phi-lg animate-fade-in animate-delay-100">
           <div className="shrink-0">
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden
                             bg-stone-200 dark:bg-ink-card
@@ -113,11 +113,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-16 animate-fade-in animate-delay-200">
-          <h2 className="text-2xl font-serif font-semibold mb-6 text-stone-900 dark:text-cream">
+        <div className="mt-phi-xl animate-fade-in animate-delay-200">
+          <h2 className="text-2xl font-serif font-semibold mb-phi-md text-stone-900 dark:text-cream">
             Areas of Interest
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-phi-xs">
             {areas.map((area) => (
               <div
                 key={area.title}

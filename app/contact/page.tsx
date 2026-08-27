@@ -42,7 +42,6 @@ export default function ContactPage() {
       <PageHeader
         title="Get in Touch"
         lede="I'm always happy to connect — whether it's about distributed systems, professional opportunities, collaboration, open source, or speaking."
-        trail={[{ label: "Contact", href: "/contact" }]}
       />
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 animate-fade-in animate-delay-200">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/siteConfig";
 import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata, canonicalUrl, absoluteUrl } from "@/lib/seo";
-import { PageShell, Breadcrumbs, RelatedLinks } from "@/components/PageShell";
+import { PageShell, RelatedLinks } from "@/components/PageShell";
 
 const personCVSchema = {
   "@context": "https://schema.org",
@@ -46,7 +46,6 @@ export default function CVPage() {
     <>
       <JsonLd data={personCVSchema} />
     <PageShell>
-      <Breadcrumbs trail={[{ label: "CV", href: "/cv" }]} />
 
       {/* ── Header ─────────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 animate-fade-in">

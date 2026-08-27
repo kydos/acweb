@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata, canonicalUrl } from "@/lib/seo";
-import { Breadcrumbs } from "@/components/PageShell";
 
 
 export const metadata: Metadata = pageMetadata({
@@ -148,10 +147,6 @@ export default function ZenohPage() {
     <>
       <JsonLd data={zenohProtocolSchema} />
       <div>
-        <div className="mx-auto max-w-5xl px-6 pt-8">
-          <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }]} />
-        </div>
-
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative mx-auto max-w-5xl px-6 pt-14 pb-10 md:pt-20 md:pb-12">
           <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">

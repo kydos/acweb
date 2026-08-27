@@ -83,7 +83,6 @@ export default async function OpenSourcePage() {
       <PageHeader
         title="Open Source"
         lede="Projects I've created or contribute to. Stars and forks fetched live from GitHub."
-        trail={[{ label: "Open Source", href: "/opensource" }]}
       />
 
       {repos.length === 0 ? (

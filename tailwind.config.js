@@ -8,6 +8,22 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      /* Golden-ratio spacing scale, base 16px, each step x1.618.
+         Used for the site's vertical rhythm so block spacing compounds
+         consistently instead of being picked per component. */
+      spacing: {
+        "phi-xs": "0.625rem",  //  10px
+        "phi-sm": "1rem",      //  16px
+        "phi-md": "1.625rem",  //  26px
+        "phi-lg": "2.625rem",  //  42px
+        "phi-xl": "4.25rem",   //  68px
+        "phi-2xl": "6.875rem", // 110px
+      },
+      /* Hero rail: content is 1104px at the 1152px shell, so a phi-lg gutter
+         leaves 1062px, split phi:1 as 656 / 406. */
+      gridTemplateColumns: {
+        "hero-phi": "minmax(0, 1fr) 406px",
+      },
       fontFamily: {
         sans: [
           "var(--font-inter)",

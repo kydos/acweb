@@ -44,7 +44,6 @@ export default function BlogPage() {
         <PageHeader
           title="Blog"
           lede="Writing on Zenoh, distributed systems, and robotics."
-          trail={[{ label: "Blog", href: "/blog" }]}
         >
           <a
             href="/feed.xml"
@@ -59,7 +58,7 @@ export default function BlogPage() {
         </PageHeader>
 
         {tags.length > 0 && (
-          <nav aria-label="Browse by tag" className="mt-8 flex flex-wrap items-center gap-2">
+          <nav aria-label="Browse by tag" className="mt-phi-md flex flex-wrap items-center gap-2">
             <span className="text-xs font-mono uppercase tracking-[0.11em] text-stone-400 dark:text-ash mr-1">
               Topics
             </span>

@@ -56,6 +56,24 @@ Use them instead of re-writing the container/heading markup:
 - `RelatedLinks` is the "keep reading" rail. Every page should offer somewhere to go next — no
   page should be a link dead end.
 
+### Spacing: the φ scale
+
+`tailwind.config.js` defines a golden-ratio spacing scale — `phi-xs` 10px, `phi-sm` 16,
+`phi-md` 26, `phi-lg` 42, `phi-xl` 68, `phi-2xl` 110 — each step ×1.618 from a 16px base.
+**Use these for vertical rhythm** (page padding, gaps between major blocks, section margins)
+rather than picking Tailwind's default steps per component; the point is that spacing
+compounds consistently down the page. Tailwind's own scale is still fine for small
+component-internal padding.
+
+The hero grid uses `grid-cols-hero-phi`: at the 1152px shell the content box is 1104px, so a
+`phi-lg` gutter leaves 1062px split φ:1 as 656/406. It engages at `min-[1152px]` rather than
+`lg`, because below that the content box is narrower than 1104px and the hero's CTA row
+(~599px) no longer fits beside the rail.
+
+Breadcrumbs are for pages **two or more levels deep** only. On a top-level page a
+"Home / About" trail is decoration costing ~32px above every heading. `Breadcrumbs` emits the
+visible trail and the JSON-LD together, so omitting `trail` correctly drops both.
+
 `components/MdxComponents.tsx` holds the MDX table styling and `rehype-pretty-code` options shared
 by the blog and the book.
 

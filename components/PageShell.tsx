@@ -19,7 +19,7 @@ export function PageShell({
   const max =
     width === "narrow" ? "max-w-3xl" : width === "wide" ? "max-w-6xl" : "max-w-5xl";
   return (
-    <div className={`mx-auto ${max} px-6 py-16 md:py-24 ${className}`}>{children}</div>
+    <div className={`mx-auto ${max} px-6 py-phi-lg md:py-phi-xl ${className}`}>{children}</div>
   );
 }
 
@@ -50,7 +50,7 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
   return (
     <>
       <JsonLd data={schema} />
-      <nav aria-label="Breadcrumb" className="mb-4">
+      <nav aria-label="Breadcrumb" className="mb-phi-sm">
         <ol className="flex flex-wrap items-center gap-1.5 text-xs text-stone-500 dark:text-ash">
           <li>
             <Link href="/" className="hover:text-accent transition-colors">
@@ -82,7 +82,13 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
   );
 }
 
-/** Standard page heading: optional breadcrumbs, an h1, and a lede. */
+/**
+ * Standard page heading: optional breadcrumbs, an h1, and a lede.
+ *
+ * Pass `trail` only where the path is genuinely two or more levels deep.
+ * On a top-level page a "Home / About" trail is decoration that costs ~32px
+ * above every heading without telling the reader anything.
+ */
 export function PageHeader({
   title,
   lede,
@@ -101,9 +107,9 @@ export function PageHeader({
         {title}
       </h1>
       {lede && (
-        <p className="mt-3 text-stone-500 dark:text-fog leading-relaxed max-w-2xl">{lede}</p>
+        <p className="mt-phi-xs text-stone-500 dark:text-fog leading-relaxed max-w-2xl">{lede}</p>
       )}
-      {children && <div className="mt-5">{children}</div>}
+      {children && <div className="mt-phi-md">{children}</div>}
     </header>
   );
 }
@@ -122,12 +128,12 @@ export function RelatedLinks({
   return (
     <nav
       aria-label={heading}
-      className="mt-20 pt-10 border-t border-stone-200 dark:border-ink-wire"
+      className="mt-phi-lg pt-phi-md border-t border-stone-200 dark:border-ink-wire"
     >
       <h2 className="text-xs font-mono uppercase tracking-[0.11em] text-stone-500 dark:text-ash">
         {heading}
       </h2>
-      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+      <ul className="mt-phi-md grid gap-phi-xs sm:grid-cols-2">
         {links.map((link) => (
           <li key={link.href}>
             <Link

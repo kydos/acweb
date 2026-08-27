@@ -15,13 +15,13 @@ export function Footer() {
   const main = (navLinks as NavLink[]).filter((l) => l.href !== "/zenoh" && l.href !== "/");
 
   return (
-    <footer className="border-t border-stone-200 dark:border-ink-wire mt-20">
-      <div className="mx-auto max-w-5xl px-6 py-14">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+    <footer className="border-t border-stone-200 dark:border-ink-wire mt-phi-xl">
+      <div className="mx-auto max-w-5xl px-6 py-phi-lg">
+        <div className="grid gap-phi-lg sm:grid-cols-2 md:grid-cols-4">
 
           <div>
             <FooterHeading>Site</FooterHeading>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-phi-xs space-y-2">
               {main.map((link) => (
                 <li key={link.href}>
                   <FooterLink href={link.href}>{link.label}</FooterLink>
@@ -32,7 +32,7 @@ export function Footer() {
 
           <div>
             <FooterHeading>Zenoh</FooterHeading>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-phi-xs space-y-2">
               {zenoh?.children?.map((child) => (
                 <li key={child.href}>
                   <FooterLink href={child.href}>{child.label}</FooterLink>
@@ -43,7 +43,7 @@ export function Footer() {
 
           <div>
             <FooterHeading>Elsewhere</FooterHeading>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-phi-xs space-y-2">
               <li><FooterLink href={social.github}>GitHub</FooterLink></li>
               <li><FooterLink href={social.linkedin}>LinkedIn</FooterLink></li>
               <li>
@@ -72,7 +72,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-stone-200 dark:border-ink-wire
+        <div className="mt-phi-lg pt-phi-md border-t border-stone-200 dark:border-ink-wire
                         flex flex-col sm:flex-row items-center justify-between gap-3
                         text-sm text-stone-500 dark:text-ash">
           <p>&copy; {year} {siteConfig.name}. All rights reserved.</p>
