@@ -50,10 +50,15 @@ module.exports = {
         fog: "#A7AFBA",
         ash: "#8E97A3",
         ink: {
-          DEFAULT: "#0B0F14",
-          card: "#121821",
-          shell: "#2B3545",
-          wire: "#1F2937",
+          DEFAULT: "#0B0F14",  // page ground
+          card: "#121821",     // raised surface (cards, inputs)
+          shell: "#2B3545",    // interactive outlines (btn-ghost)
+          /* Hairline for static outlines. #1F2937 sat at 1.21 against the card,
+             which made bordered boxes all but invisible on the dark ground —
+             the WCAG ratio understates how weak a hairline reads down here.
+             1.40 matches how the light-mode stone-200 hairline reads, and stays
+             just under `shell` so interactive outlines remain the stronger cue. */
+          wire: "#293345",
         },
       },
       typography: {

@@ -89,6 +89,14 @@ is serialised into the page payload.
 **Fonts:** Inter (sans), Lora (serif/headings), JetBrains Mono (code), `latin` subset only.
 
 **Theming:** `next-themes`, `class` strategy, system preference enabled with dark as the fallback.
+
+Dark-mode surfaces are separated by their **border**, not their fill — `ink-card` sits only 1.08
+against `ink`, much as white sits 1.04 against `stone-50` in light mode. So the hairline colour is
+what makes a box visible, and a hairline needs a *higher* numeric contrast in dark mode than in
+light to read the same: WCAG's ratio understates how weak a thin line looks at low luminance.
+`ink-wire` (static outlines) is tuned to ~1.40 against `ink-card`, just under `ink-shell` (~1.55),
+which is reserved for interactive outlines so buttons stay the stronger cue. Check both themes
+before changing either value.
 The header is deliberately always dark, so anything inside it (e.g. `ThemeToggle`) must use the
 `ink`/`sand`/`cream` palette rather than theme-reactive `stone`/`neutral` classes.
 
