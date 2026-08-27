@@ -110,3 +110,19 @@ code[data-theme*=' '] span {
          px-1.5 py-0.5 rounded text-sm font-mono
          text-stone-800 dark:text-sand;
 }
+
+/* ── Motion preferences ─────────────────────────────────────────── */
+/* The fade/slide animations are decorative; honour an OS-level request
+   to reduce motion rather than animating regardless. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

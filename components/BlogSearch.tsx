@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from "react";
 import { BlogCard } from "./BlogCard";
-import type { BlogPost } from "@/lib/mdx";
+import type { PostSummary } from "@/lib/mdx";
 
 interface Props {
-  posts: BlogPost[];
+  posts: PostSummary[];
   placeholder: string;
   empty: string;
 }

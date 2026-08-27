@@ -1,8 +1,8 @@
-import { Link } from "@/lib/navigation";
+import Link from "next/link";
 import { formatDate } from "@/lib/utils";
-import type { BlogPost } from "@/lib/mdx";
+import type { PostSummary } from "@/lib/mdx";
 
-export function BlogCard({ post }: { post: BlogPost }) {
+export function BlogCard({ post }: { post: PostSummary }) {
   return (
     <article className="group">
       <Link
