@@ -1,10 +1,10 @@
 export interface NavChild {
-  key: string;
+  label: string;
   href: string;
 }
 
 export interface NavLink {
-  key: string;
+  label: string;
   href: string;
   children?: NavChild[];
 }
@@ -17,6 +17,7 @@ export const siteConfig = {
   social: {
     github: "https://github.com/kydos",
     linkedin: "https://linkedin.com/in/corsaro",
+    twitterHandle: "@angelocorsaro",
   },
   contact: {
     calendlyUrl: "https://calendly.com/angelo-corsaro/30min",
@@ -34,24 +35,27 @@ export const siteConfig = {
   },
 
   // ─── Profile Photo ──────────────────────────────────────────────
-  profilePhoto: "/me.png",
+  profilePhoto: "/me-800.webp",
+  profilePhotoSmall: "/me-448.webp",
 
   // ─── Navigation ──────────────────────────────────────────────────
   navLinks: [
-    { key: "home",    href: "/" },
-    { key: "about",   href: "/about" },
-    { key: "cv",      href: "/cv" },
-    { key: "blog",    href: "/blog" },
-    { key: "zenoh",   href: "/zenoh", children: [
-      { key: "zenohOverview", href: "/zenoh" },
-      { key: "zenohDemo",   href: "http://zenoh.corsaro.me:8000/examples/web/" },
-      { key: "zenohSpec",   href: "https://spec.zenoh.io" },
-      { key: "zenohBook",   href: "/zenoh/book" },
-      { key: "zenohPapers", href: "/zenoh/papers" },
-      { key: "zenohReport", href: "/zenoh/report" },
-      { key: "zenohTalks",  href: "/zenoh/talks" },
+    { label: "Home",    href: "/" },
+    { label: "About",   href: "/about" },
+    { label: "CV",      href: "/cv" },
+    { label: "Blog",    href: "/blog" },
+    { label: "Zenoh",   href: "/zenoh", children: [
+      { label: "Overview",        href: "/zenoh" },
+      { label: "Book",            href: "/zenoh/book" },
+      { label: "Papers",          href: "/zenoh/papers" },
+      { label: "Report",          href: "/zenoh/report" },
+      { label: "Talks",           href: "/zenoh/talks" },
+      { label: "ROS 2",           href: "/zenoh/ros2" },
+      { label: "DDS Alternative", href: "/zenoh/dds-alternative" },
+      { label: "Spec",            href: "https://spec.zenoh.io" },
+      { label: "Live Demo",       href: "http://zenoh.corsaro.me:8000/examples/web/" },
     ]},
-    { key: "contact", href: "/contact" },
+    { label: "Contact", href: "/contact" },
   ] as NavLink[],
 
   // ─── Press & Media ───────────────────────────────────────────────
@@ -77,10 +81,10 @@ export const siteConfig = {
     resumePdfUrl: "/2026.03.09-Angelo_Corsaro_CV_Academic.pdf",
 
     stats: [
-      { statKey: "statPublications", value: "100+" },
-      { statKey: "statCitations", value: "1,478+" },
-      { statKey: "statYearsExperience", value: "25+" },
-      { statKey: "statStandards", value: "10+" },
+      { label: "Peer-reviewed publications", value: "100+" },
+      { label: "Years of experience", value: "25+" },
+      { label: "International standards", value: "10+" },
+      { label: "Citations", value: "1,478+" },
     ],
 
     researchProfile:
@@ -282,8 +286,8 @@ export const siteConfig = {
       { year: "Ongoing", award: "IEEE Senior Member | ACM Member | Eclipse Foundation Board of Directors" },
     ],
 
-    skills: {
-      skillCatLanguages: [
+    skills: [
+      { label: "Programming Languages", items: [
         "Rust (expert)",
         "C/C++ (25+ years)",
         "OCaml (expert)",
@@ -291,17 +295,17 @@ export const siteConfig = {
         "Scala (expert)",
         "Python",
         "JavaScript",
-      ],
-      skillCatProtocols: ["Zenoh", "DDS / DDSI-RTPS", "MQTT", "AMQP", "REST / HTTP"],
-      skillCatDomains: [
+      ] },
+      { label: "Protocols & Standards", items: ["Zenoh", "DDS / DDSI-RTPS", "MQTT", "AMQP", "REST / HTTP"] },
+      { label: "Domains", items: [
         "Distributed Systems",
         "Edge & Fog Computing",
         "IoT",
         "Robotics (ROS 2)",
         "Real-Time Systems",
         "Automotive (V2X)",
-      ],
-    },
+      ] },
+    ],
 
     naturalLanguages: [
       { lang: "Italian", level: "Native" },

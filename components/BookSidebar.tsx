@@ -5,19 +5,17 @@ import Link from "next/link";
 import { navItems } from "@/lib/bookNav";
 
 interface Props {
-  locale: string;
   currentSlug: string;
 }
 
 function NavTree({
-  locale,
   currentSlug,
   onClose,
 }: Props & { onClose?: () => void }) {
   return (
     <nav className="px-3 py-6">
       <Link
-        href={`/${locale}/zenoh/book`}
+        href="/zenoh/book"
         onClick={onClose}
         className="block px-2 mb-5 text-xs font-mono uppercase tracking-widest text-stone-400 dark:text-ash hover:text-accent transition-colors"
       >
@@ -35,7 +33,7 @@ function NavTree({
           return (
             <li key={item.slug}>
               <Link
-                href={`/${locale}/zenoh/book/${item.slug}`}
+                href={`/zenoh/book/${item.slug}`}
                 onClick={onClose}
                 className={`flex items-center gap-1.5 px-2 py-1.5 rounded-md text-sm transition-colors ${
                   isActive
@@ -60,7 +58,7 @@ function NavTree({
                     return (
                       <li key={child.slug}>
                         <Link
-                          href={`/${locale}/zenoh/book/${child.slug}`}
+                          href={`/zenoh/book/${child.slug}`}
                           onClick={onClose}
                           className={`block px-2 py-1 rounded-md text-sm transition-colors ${
                             childActive
@@ -83,7 +81,7 @@ function NavTree({
   );
 }
 
-export function BookSidebar({ locale, currentSlug }: Props) {
+export function BookSidebar({ currentSlug }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -119,7 +117,6 @@ export function BookSidebar({ locale, currentSlug }: Props) {
               </button>
             </div>
             <NavTree
-              locale={locale}
               currentSlug={currentSlug}
               onClose={() => setOpen(false)}
             />
@@ -146,7 +143,7 @@ export function BookSidebar({ locale, currentSlug }: Props) {
 
       {/* Desktop sticky sidebar */}
       <aside className="hidden lg:block w-60 xl:w-64 shrink-0 sticky top-16 self-start h-[calc(100vh-4rem)] overflow-y-auto border-r border-stone-200 dark:border-ink-wire">
-        <NavTree locale={locale} currentSlug={currentSlug} />
+        <NavTree currentSlug={currentSlug} />
       </aside>
     </>
   );

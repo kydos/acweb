@@ -4,31 +4,91 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal website for Angelo Corsaro — inventor of the Zenoh Protocol and distributed systems expert. Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and MDX.
+Personal website for Angelo Corsaro — inventor of the Zenoh Protocol and distributed systems expert.
+Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and MDX. **English only** — the site
+served eight locales via `next-intl` until August 2026; see "URL history" below.
 
 ## Commands
 
 - `npm run dev` — Start dev server
-- `npm run build` — Production build
+- `npm run build` — Production build (no static export)
+- `npm run export` — Static export to `./out` **plus** the legacy redirect stubs. This is what CI runs.
 - `npm run start` — Serve production build
 - `npm run lint` — Run ESLint
 
 ## Architecture
 
-**Stack:** Next.js 14 App Router, TypeScript, Tailwind CSS v3, next-themes (dark/light mode), next-mdx-remote/rsc (MDX rendering)
+**Stack:** Next.js 14 App Router, TypeScript, Tailwind CSS v3, next-themes (dark/light),
+next-mdx-remote/rsc (MDX rendering)
 
 **Key directories:**
-- `/app` — All pages using App Router (home, about, cv, blog, opensource, contact)
-- `/content/blog` — MDX blog post files with frontmatter (title, date, excerpt, tags)
-- `/components` — UI components (Header, Footer, ThemeToggle, ProjectCard, BlogCard, ThemeProvider)
-- `/lib` — Utilities: `siteConfig.ts` (central config), `mdx.ts` (post parsing), `github.ts` (GitHub API), `utils.ts`
+- `/app` — All routes. Top-level sections: home, about, cv, blog, opensource, contact, zenoh
+- `/app/zenoh` — Zenoh hub plus book, papers, report, talks, ros2, dds-alternative
+- `/content/blog` — MDX posts with gray-matter frontmatter (title, date, excerpt, tags)
+- `/book/src` — Markdown source for the Zenoh Book, rendered by `/app/zenoh/book/[...slug]`
+- `/components` — UI components
+- `/lib` — `siteConfig.ts`, `seo.ts`, `mdx.ts`, `bookNav.ts`, `github.ts`, `utils.ts`, `analytics.ts`
+- `/scripts` — Build-time helpers
 
-**Configuration:** All personal info, social links, nav links, CV data, and featured repos are in `lib/siteConfig.ts`. This is the single source of truth — update it instead of hardcoding values in pages.
+### Single sources of truth
 
-**Blog:** Posts are `.mdx` files in `/content/blog` with gray-matter frontmatter. Parsed at build time by `lib/mdx.ts`. Rendered server-side using `next-mdx-remote/rsc` (RSC-compatible, no client wrapper needed).
+Do not hardcode these anywhere else:
 
-**Open Source page:** Fetches live repo data (stars, forks, description, topics) from GitHub API via `lib/github.ts`. Repos to display are configured in `siteConfig.featuredRepos`. Results are cached for 1 hour via Next.js `fetch` revalidation.
+- **`lib/siteConfig.ts`** — personal info, social links, nav links, CV data, featured repos, stats.
+  The header nav, the footer columns, and the home-page stat tiles all derive from it.
+- **`lib/seo.ts`** — every canonical URL, sitemap entry, and JSON-LD `url` must go through
+  `canonicalUrl()` or `absoluteUrl()`. `next.config.js` sets `trailingSlash: true`, so the site
+  serves `/about/`; `canonicalUrl()` is what keeps metadata from drifting off by a slash and
+  costing a 301 on every crawl.
+- **`pageMetadata()`** — use it for page metadata rather than hand-rolling a `Metadata` object.
+  Note that a page-level `alternates` **replaces** the layout's, which is why `pageMetadata()`
+  re-declares the RSS `types` entry.
 
-**Fonts:** Inter (sans), Lora (serif/headings), JetBrains Mono (code) via `next/font/google`. CSS variables: `--font-inter`, `--font-lora`, `--font-jetbrains`.
+### Shared layout primitives
 
-**Theming:** Dark/light mode via `next-themes` with `class` strategy. Accent color defined in `tailwind.config.ts` as `accent` / `accent-dark`.
+`components/PageShell.tsx` exports `PageShell`, `PageHeader`, `Breadcrumbs`, and `RelatedLinks`.
+Use them instead of re-writing the container/heading markup:
+
+- `PageShell` owns the one container width (`max-w-5xl`; `narrow` for articles). The header and
+  footer use the same width so every left edge lines up.
+- `Breadcrumbs` renders the visible trail **and** the matching `BreadcrumbList` JSON-LD from one
+  input, so the structured data can't describe navigation the reader cannot see.
+- `RelatedLinks` is the "keep reading" rail. Every page should offer somewhere to go next — no
+  page should be a link dead end.
+
+`components/MdxComponents.tsx` holds the MDX table styling and `rehype-pretty-code` options shared
+by the blog and the book.
+
+**Blog:** `.mdx` files in `/content/blog`, parsed at build time by `lib/mdx.ts`. Tags in frontmatter
+generate `/blog/tag/[tag]` archives automatically. `lib/mdx.ts` exposes `PostSummary` (a post without
+its body) — **pass summaries to client components**, never full posts, or every article's MDX source
+is serialised into the page payload.
+
+**RSS:** `/app/feed.xml/route.ts`, a `force-static` route handler exported as a file.
+
+**Open Source page:** live repo data from the GitHub API via `lib/github.ts`, cached 1 hour.
+
+**Fonts:** Inter (sans), Lora (serif/headings), JetBrains Mono (code), `latin` subset only.
+
+**Theming:** `next-themes`, `class` strategy, system preference enabled with dark as the fallback.
+The header is deliberately always dark, so anything inside it (e.g. `ThemeToggle`) must use the
+`ink`/`sand`/`cream` palette rather than theme-reactive `stone`/`neutral` classes.
+
+## URL history — important
+
+The site served eight locale prefixes (`/en/`, `/fr/`, `/it/`, `/ja/`, `/es/`, `/zh/`, `/ko/`, `/ru/`)
+until August 2026. Body content was English in every locale, so the prefixes were producing ~370
+duplicate URLs. They were removed; `/en/about/` is now `/about/`.
+
+`scripts/generate-locale-redirects.mjs` runs after every export and mirrors each route under all
+eight retired prefixes as a canonical + meta-refresh stub. GitHub Pages cannot issue real 301s, so
+these stubs are the redirect mechanism. The script derives routes from `out/` — it needs no
+maintenance when pages are added or removed.
+
+Once Search Console shows the new URLs fully indexed (roughly a year), the script and its workflow
+step can be deleted.
+
+## Deployment
+
+GitHub Pages, via `.github/workflows/` on push to `main`. `CNAME` pins `corsaro.me`.
+There is no server-side redirect capability — anything redirect-shaped must be generated into `out/`.

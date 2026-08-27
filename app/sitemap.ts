@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/mdx";
+import { getAllPosts, getAllTags } from "@/lib/mdx";
 import { flatSlugs } from "@/lib/bookNav";
-import { locales } from "@/lib/navigation";
-import { siteConfig } from "@/lib/siteConfig";
+import { canonicalUrl } from "@/lib/seo";
 
-const siteUrl = siteConfig.siteUrl;
 const siteLastModified = new Date("2026-04-10");
 const bookLastModified = new Date("2026-04-10");
+
 const reportIssueDates: Record<string, Date> = {
   "2025-10": new Date("2025-10-01"),
   "2025-11": new Date("2025-11-01"),
@@ -30,72 +29,51 @@ const staticRoutes = [
   { path: "/contact", priority: 0.6, changeFrequency: "yearly" as const },
 ];
 
-function localeUrl(locale: string, path: string): string {
-  return `${siteUrl}/${locale}${path}`;
-}
-
-function alternateLanguages(path: string): Record<string, string> {
-  return {
-    ...Object.fromEntries(
-      locales.map((locale) => [locale, localeUrl(locale, path)])
-    ),
-    "x-default": localeUrl("en", path),
-  };
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPosts();
   const entries: MetadataRoute.Sitemap = [];
 
-  // Static routes — one canonical entry per route (English) with hreflang alternates
   for (const route of staticRoutes) {
     entries.push({
-      url: localeUrl("en", route.path),
+      url: canonicalUrl(route.path),
       lastModified: siteLastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
-      alternates: {
-        languages: alternateLanguages(route.path),
-      },
     });
   }
 
-  // Blog posts
-  for (const post of posts) {
-    const path = `/blog/${post.slug}`;
+  for (const post of getAllPosts()) {
     entries.push({
-      url: localeUrl("en", path),
+      url: canonicalUrl(`/blog/${post.slug}`),
       lastModified: new Date(post.date),
       changeFrequency: "yearly",
       priority: 0.7,
-      alternates: {
-        languages: alternateLanguages(path),
-      },
     });
   }
 
-  // Book chapters
-  for (const slug of flatSlugs) {
-    const path = `/zenoh/book/${slug}`;
+  for (const { slug } of getAllTags()) {
     entries.push({
-      url: localeUrl("en", path),
+      url: canonicalUrl(`/blog/tag/${slug}`),
+      lastModified: siteLastModified,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    });
+  }
+
+  for (const slug of flatSlugs) {
+    entries.push({
+      url: canonicalUrl(`/zenoh/book/${slug}`),
       lastModified: bookLastModified,
       changeFrequency: "monthly",
       priority: slug.includes("/") ? 0.7 : 0.8,
-      alternates: { languages: alternateLanguages(path) },
     });
   }
 
-  // Zenoh Report issues
-  const reportIssues = Object.keys(reportIssueDates);
-  for (const issue of reportIssues) {
-    const path = `/zenoh/report/${issue}`;
+  for (const [issue, date] of Object.entries(reportIssueDates)) {
     entries.push({
-      url: localeUrl("en", path),
-      lastModified: reportIssueDates[issue],
+      url: canonicalUrl(`/zenoh/report/${issue}`),
+      lastModified: date,
       changeFrequency: "never",
       priority: 0.8,
-      alternates: { languages: alternateLanguages(path) },
     });
   }
 

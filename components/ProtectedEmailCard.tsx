@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 import { trackContactAction } from "@/lib/analytics";
 
 function decode(chars: readonly number[]) {
@@ -14,7 +13,6 @@ const email =
   `.${decode([109, 101])}`;
 
 export function ProtectedEmailCard() {
-  const t = useTranslations("contact");
   const [revealed, setRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -31,10 +29,10 @@ export function ProtectedEmailCard() {
   return (
     <div className="p-6 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card">
       <h2 className="font-semibold text-stone-800 dark:text-cream">
-        {t("email")}
+        Email
       </h2>
       <p className="mt-1 text-sm text-stone-500 dark:text-ash">
-        {t("emailDesc")}
+        Direct email contact, revealed on demand to reduce scraping by bots.
       </p>
 
       <div className="mt-4">
@@ -44,7 +42,7 @@ export function ProtectedEmailCard() {
             onClick={() => { setRevealed(true); trackContactAction("email_reveal"); }}
             className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
           >
-            {t("revealEmail")}
+            Reveal email
           </button>
         ) : (
           <div className="space-y-3">
@@ -57,14 +55,14 @@ export function ProtectedEmailCard() {
                 onClick={() => { handleCopy(); trackContactAction("email_copy"); }}
                 className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
               >
-                {copied ? t("copied") : t("copyEmail")}
+                {copied ? "Copied" : "Copy email"}
               </button>
               <a
                 href={`mailto:${email}`}
                 onClick={() => trackContactAction("email_write")}
                 className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
               >
-                {t("writeEmail")}
+                Write email
               </a>
             </div>
           </div>
