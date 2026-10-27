@@ -43,11 +43,11 @@ export const siteConfig = {
   profilePhotoSmall: "/me-448.webp",
 
   // ─── Homepage hero ───────────────────────────────────────────────
-  // [CONFIRM] Headline — the alternatives from the new-look plan were:
-  //   "From a 2 KB microcontroller to the cloud — one protocol."
-  //   "Inventor of Zenoh. Builder of what comes next."
+  // [CONFIRM] Headline — one line from 640px up; app/page.tsx sizes it to fit, so
+  // re-measure its width there if this changes. Punchier one-liners considered:
+  //   "One protocol. Every thing."   "Making machines talk."   "Machines, in sync."
   hero: {
-    headline: "I design the protocols machines use to talk to each other.",
+    headline: "Making Things Communicate",
     // [CONFIRM] ≤ 25 words, facts only; last sentence is the post-ZettaScale role.
     supporting:
       "Inventor of the Zenoh protocol. 25 years taking distributed systems from research to global standards. Now Distinguished Scientist at 42dot, building connectivity for Physical AI.",
