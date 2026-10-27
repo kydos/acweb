@@ -78,8 +78,6 @@ export const siteConfig = {
 
   // ─── CV Data ─────────────────────────────────────────────────────
   cv: {
-    resumePdfUrl: "/2026.03.09-Angelo_Corsaro_CV_Academic.pdf",
-
     stats: [
       { label: "Peer-reviewed publications", value: "100+" },
       { label: "Years of experience", value: "25+" },
@@ -100,6 +98,14 @@ export const siteConfig = {
     ],
 
     experience: [
+      {
+        role: "Distinguished Scientist",
+        company: "42dot",
+        location: "Sunnyvale",
+        period: "Sep 2026 – Present",
+        description:
+          "Advancing connectivity for the next generation of Physical AI platforms — from intelligent machines and vehicles to the cloud infrastructure that supports them — as part of 42dot's software-defined mobility team in Silicon Valley.",
+      },
       {
         role: "CEO / CTO & Co-Founder",
         company: "ZettaScale Technology",

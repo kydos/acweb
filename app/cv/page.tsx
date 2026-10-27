@@ -11,7 +11,8 @@ const personCVSchema = {
   honorificSuffix: "Ph.D.",
   url: canonicalUrl(""),
   image: absoluteUrl(siteConfig.profilePhoto),
-  jobTitle: "Eclipse Zenoh Project Lead",
+  jobTitle: "Distinguished Scientist",
+  worksFor: { "@type": "Organization", name: "42dot" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Washington University in St. Louis" },
   sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
   award: [
@@ -36,7 +37,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/cv",
   title: "Curriculum Vitae",
   description:
-    "Academic CV and professional profile for Angelo Corsaro, Ph.D. — distributed systems researcher, Eclipse Zenoh project lead, and protocol designer.",
+    "Academic CV and professional profile for Angelo Corsaro, Ph.D. — Distinguished Scientist at 42dot, Eclipse Zenoh project lead, and protocol designer.",
 });
 
 export default function CVPage() {
@@ -54,10 +55,10 @@ export default function CVPage() {
             {siteConfig.name}, Ph.D.
           </h1>
           <p className="mt-0.5 text-sm font-medium text-azure dark:text-sky">
-            Eclipse Zenoh Project Lead · Exploring Next Venture
+            Distinguished Scientist, 42dot · Eclipse Zenoh Project Lead
           </p>
           <p className="mt-1 text-stone-500 dark:text-ash text-sm">
-            Gif-sur-Yvette, France
+            Sunnyvale, CA
           </p>
         </div>
       </div>

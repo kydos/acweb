@@ -1,0 +1,160 @@
+---
+title: "Proposed Eclipse Zenoh AI Guidelines"
+date: "2026-10-27"
+excerpt: "Generating a patch or a bug report is now cheap; reviewing one is not. A proposal for how Eclipse Zenoh should handle AI-assisted contributions: judge what a submission delivers, not how it was produced."
+tags: ["zenoh", "ai", "open-source", "governance"]
+---
+
+## Why these guidelines
+
+[Zenoh](https://github.com/eclipse-zenoh/zenoh) judges a contribution by what it delivers, not by how it was produced. AI tools now improve at such a pace that human and AI-assisted work is increasingly hard to tell apart, a debate already playing out in writing and publishing.
+
+Trying to police provenance would be unenforceable and would distract reviewers from what matters. Instead, these guidelines state what the project expects from every submission, whoever or whatever helped write it.
+
+What AI does change is the cost asymmetry. Generating a patch or a bug report is now cheap; reviewing one is not. The rules below exist to keep that review cost proportionate, so committers spend their time on work that moves Zenoh forward.
+
+## Scope
+
+These guidelines cover three distinct activities, each with its own bar. They apply to every [Eclipse Zenoh](https://github.com/eclipse-zenoh/zenoh) repository: the Rust core, zenoh-pico, the language bindings and plugins.
+
+| Activity | What it is | The bar |
+| --- | --- | --- |
+| Contributing features | New capability, performance work, a port to a new OS, platform or network | Minimal, tested, documented, configurable where relevant |
+| Raising issues | Reporting a bug or defect | A reproducer the maintainers can run |
+| Solving issues | Fixing a reported bug | A regression test plus the smallest fix that addresses the root cause |
+
+Feature requests and design discussions are welcome on the [Zenoh Discord server](https://discord.gg/2GJ958VuHs), where most community discussion happens, and in [GitHub Discussions](https://github.com/eclipse-zenoh/zenoh/discussions). They do not require a reproducer.
+
+## Contributing features
+
+[Zenoh](https://github.com/eclipse-zenoh/zenoh) welcomes relevant, high-quality contributions; how they were made is a detail. A great contribution meets every criterion below.
+
+### Relevant
+
+It solves a problem Zenoh users actually have and fits the project's direction. For anything beyond a small change, start a discussion on the [Zenoh Discord server](https://discord.gg/2GJ958VuHs) or open an issue first and agree on the approach with the maintainers. A large unsolicited pull request, however polished, may be declined.
+
+### Minimal
+
+The quality of a contribution is measured by doing the job in the smallest amount of code. In practice:
+
+- One concern per pull request; no unrelated refactors, renames or reformatting.
+- Reuse existing abstractions before introducing new ones.
+- No speculative generality, dead code, or defensive code for cases that cannot happen.
+- No new dependencies unless clearly justified in the description.
+
+AI assistants tend to over-produce. Trimming their output is part of the contributor's job, not the reviewer's.
+
+### Performant
+
+Zenoh runs from microcontrollers to data centres, so performance is a feature. Changes on the data path must not regress throughput, latency or memory footprint. Performance claims must come with the benchmark used and before/after numbers.
+
+### Maintainable and idiomatic
+
+The code must be readable by a maintainer who did not write it, follow existing patterns in the codebase, and respect the project's coding guidelines. These are enforced in CI: `cargo fmt` and `cargo clippy` with warnings denied for Rust, and the equivalent formatter and linter for C and other bindings. A pull request that fails CI is not reviewed.
+
+### Tested
+
+Every contribution comes with tests that maintain or raise the project's coverage. Tests must exercise the new behaviour, including error paths and edge cases, not merely execute the code. Tests must be deterministic: no reliance on fixed sleeps, port collisions or timing luck.
+
+### Documented, with examples
+
+Public API changes come with rustdoc (or the binding's equivalent). New user-facing capabilities come with an example in the relevant `examples` directory. Behaviour changes are noted in the pull request so they can reach the release notes.
+
+### Configurable where it matters
+
+If any behaviour should be configurable per deployment, the contribution adds the corresponding entry, with a comment and sensible default, to the Zenoh default configuration file ([`DEFAULT_CONFIG.json5`](https://github.com/eclipse-zenoh/zenoh/blob/main/DEFAULT_CONFIG.json5)).
+
+## Raising issues
+
+Every bug report must include a reproducer. AI is genuinely effective at digging up bugs, but it also produces false positives: misread code paths, impossible preconditions, and confidently described races that never happen. A reproducer is the cheapest way to separate the two.
+
+### What counts as a reproducer
+
+In order of preference:
+
+1. **A failing test** that can be dropped into the repository and fails on the current `main`.
+2. **A minimal standalone program** (Rust crate, C file, or script using the bindings) with its build command, configuration and expected versus actual output.
+3. **Agent-executable instructions**: a step-by-step recipe precise enough that a maintainer's coding agent can reproduce the issue unattended. It names the commit or release, OS and toolchain, topology (peers, routers, transports), configuration, commands to run, and the observable symptom.
+
+AI tools are encouraged to help build any of these. The goal is the same in each case: committers should confirm the problem in minutes, not hours.
+
+### What else to include
+
+- Zenoh version or commit hash, and the repository concerned.
+- Platform, architecture and toolchain version.
+- Logs at the relevant level (`RUST_LOG=debug` or equivalent), trimmed to the failure.
+- For AI-identified issues found by code analysis: the exact file and lines, and the reasoning, so a human can check it quickly.
+
+### Reports without a reproducer
+
+Maintainers may label them `needs-reproducer` and close them if one does not follow within a reasonable time. Security vulnerabilities are the exception: report them privately through the Eclipse Foundation's vulnerability reporting process, never as public issues.
+
+## Solving issues
+
+A bug fix starts with a test that fails and ends with the smallest change that makes it pass. AI is useful here, and also prone to patching symptoms: adding a retry, a timeout or a null check that hides the problem instead of removing its cause.
+
+A fix pull request must:
+
+- **Link the issue** it closes, which must already have a reproducer.
+- **Add a regression test**, ideally the reproducer itself, that fails before the fix and passes after it.
+- **Explain the root cause** in the description in a few sentences: what was wrong, why, and why this change is the right place to fix it.
+- **Stay minimal**: fix the bug, nothing else. Related clean-ups go in a separate pull request.
+- **Check for siblings**: if the same defect pattern exists elsewhere (another transport, another binding), say so, and fix it or open follow-up issues.
+
+Fixes that only suppress a symptom, or that cannot explain the root cause, will be sent back.
+
+## Accountability
+
+The human who submits is the author, fully and without exception. Whatever tools were used, the contributor:
+
+- **Understands every line** and can explain and defend it in review. "The AI wrote it" is not an answer to a review question.
+- **Owns the legal side**: signs the Eclipse Contributor Agreement and signs off commits as usual, which certifies they have the right to submit the code under the project's licences (EPL-2.0 / Apache-2.0). Contributors must make sure AI output does not reproduce third-party code under incompatible terms.
+- **Engages in review personally**. Pasting reviewer comments into an agent and pushing whatever comes back, without reading it, wastes everyone's time.
+- **Keeps descriptions honest and short**. Pull request and issue text should be written for a human reader: no padded summaries, no invented benchmark numbers, no claims the contributor has not verified.
+
+Disclosing AI assistance is welcome but not required. A short note such as "tests drafted with an AI assistant" helps reviewers calibrate, and costs nothing.
+
+## Review and maintainer discretion
+
+Reviewer time is the project's scarcest resource, and maintainers may protect it. Specifically, maintainers may, without detailed justification:
+
+- Close pull requests that fail CI, lack tests, or bundle unrelated changes.
+- Close issues without a reproducer after a reasonable grace period.
+- Close submissions that show no sign the author understood or verified them, such as hallucinated APIs, fabricated output, or unanswered review questions.
+- Limit or block accounts that repeatedly submit low-effort, bulk-generated issues or pull requests.
+
+Maintainers are themselves free to use AI tools for triage and review, and the same accountability applies: a committer approving a change owns that approval.
+
+## Checklists
+
+These can be copied into the pull request and issue templates.
+
+### Pull request (feature or fix)
+
+- [ ] Linked issue, or [Discord](https://discord.gg/2GJ958VuHs) or GitHub discussion, where the approach was agreed
+- [ ] One concern only; smallest change that does the job
+- [ ] `cargo fmt` and `cargo clippy` (or binding equivalents) pass
+- [ ] Tests added; coverage maintained or raised
+- [ ] For fixes: regression test fails before, passes after; root cause explained
+- [ ] For performance work: benchmark and before/after numbers
+- [ ] Docs and examples updated for user-facing changes
+- [ ] New configurable behaviour added to `DEFAULT_CONFIG.json5`
+- [ ] I understand and can explain every line of this change
+
+### Bug report
+
+- [ ] Zenoh version or commit, and repository
+- [ ] Platform, architecture, toolchain
+- [ ] Reproducer: failing test, minimal program, or agent-executable instructions
+- [ ] Expected versus actual behaviour
+- [ ] Relevant, trimmed logs
+- [ ] For findings from code analysis: file, lines and reasoning
+
+## Open questions
+
+- Should AI-assistance disclosure stay optional, or become a required checkbox in the pull request template?
+- What is the grace period before closing a `needs-reproducer` issue: 14 or 30 days?
+- Should coverage be enforced as a CI gate (no decrease allowed), or checked by reviewers?
+- Do we provide a standard format for agent-executable reproduction instructions, for example a `REPRODUCE.md` template?
+- How do these guidelines align with any Eclipse Foundation-wide policy on generative AI? To be checked with the Foundation before adoption.
+- Where should the final version live: `CONTRIBUTING.md` in each repository, or a single page linked from all of them?
