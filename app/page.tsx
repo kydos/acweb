@@ -47,11 +47,10 @@ export default function Home() {
             <span className="block font-mono text-xs uppercase tracking-[0.2em] text-muted">
               {siteConfig.name}
             </span>
-            {/* One line from sm up: the headline is 13.3em wide in Lora 600 at
+            {/* One line at every width: the headline is 8.86em wide in Lora 600 at
                 this tracking, so the size is the content box (100vw − 3rem of
-                padding) over 13.6em, capped where the 976px box runs out.
-                Phones keep 2.5rem and wrap. */}
-            <span className="mt-phi-md block font-serif text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.025em] text-fg sm:whitespace-nowrap sm:text-[min(4.5rem,calc((100vw_-_3rem)/13.6))]">
+                padding) over 9.1em, capped at 5.5rem on wide screens. */}
+            <span className="mt-phi-md block font-serif font-semibold leading-[1.04] tracking-[-0.025em] text-fg whitespace-nowrap text-[min(5.5rem,calc((100vw_-_3rem)/9.1))]">
               {siteConfig.hero.headline}
             </span>
           </h1>
