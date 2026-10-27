@@ -126,7 +126,7 @@ export function BookSidebar({ currentSlug }: Props) {
 
       {/* Mobile toggle — floating button */}
       <button
-        className="lg:hidden fixed bottom-6 right-6 z-30 flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent text-white shadow-lg text-sm font-medium"
+        className="lg:hidden fixed bottom-6 right-6 z-30 flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent text-accent-fg shadow-lg text-sm font-medium"
         onClick={() => setOpen(true)}
       >
         <svg

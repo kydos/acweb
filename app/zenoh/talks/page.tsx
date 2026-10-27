@@ -143,11 +143,11 @@ const typeLabels: Record<Talk["type"], string> = {
 };
 
 const typeBadgeClass: Record<Talk["type"], string> = {
-  conference: "bg-azure/10 text-azure dark:bg-azure/20 dark:text-sky",
-  keynote: "bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent",
+  conference: "bg-stone-100 text-stone-700 dark:bg-ink-shell/40 dark:text-cream",
+  keynote: "bg-fg text-bg",
   workshop: "bg-stone-100 text-stone-600 dark:bg-ink-shell/40 dark:text-sand",
-  webinar: "bg-azure/5 text-azure/80 dark:bg-azure/10 dark:text-fog",
-  invited: "bg-accent/5 text-accent/80 dark:bg-accent/10 dark:text-sand",
+  webinar: "text-muted border border-line",
+  invited: "border border-fg/30 text-fg",
 };
 
 function ExternalIcon() {
@@ -216,7 +216,7 @@ function TalkCard({ talk }: { talk: Talk }) {
               href={talk.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-azure dark:text-sky hover:text-accent transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors duration-200"
             >
               <PlayIcon />
               Video
@@ -227,7 +227,7 @@ function TalkCard({ talk }: { talk: Talk }) {
               href={talk.slidesUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-azure dark:text-sky hover:text-accent transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors duration-200"
             >
               <SlidesIcon />
               Slides
@@ -238,7 +238,7 @@ function TalkCard({ talk }: { talk: Talk }) {
               href={talk.paperUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-azure dark:text-sky hover:text-accent transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors duration-200"
             >
               <ExternalIcon />
               Paper
@@ -334,7 +334,7 @@ export default function ZenohTalksPage() {
                 href="https://zenoh.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-azure dark:text-sky hover:text-accent transition-colors underline underline-offset-2"
+                className="text-fg underline decoration-muted/50 underline-offset-2 hover:text-accent hover:decoration-accent transition-colors"
               >
                 zenoh.io
               </a>

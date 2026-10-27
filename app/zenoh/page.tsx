@@ -149,7 +149,7 @@ export default function ZenohPage() {
       <div>
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative mx-auto max-w-5xl px-6 pt-14 pb-10 md:pt-20 md:pb-12">
-          <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">
+          <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted mb-4 animate-fade-in">
             Eclipse Zenoh
           </p>
           <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream animate-fade-in">
@@ -183,7 +183,7 @@ export default function ZenohPage() {
                 href={repo.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card text-xs font-mono text-stone-600 dark:text-fog hover:border-azure dark:hover:border-azure hover:text-azure dark:hover:text-sky transition-all duration-200"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card text-xs font-mono text-stone-600 dark:text-fog hover:border-accent hover:text-accent transition-all duration-200"
               >
                 <GitHubIcon />
                 {repo.name}
@@ -206,7 +206,7 @@ export default function ZenohPage() {
               href="http://zenoh.corsaro.me:8000/examples/web/"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors whitespace-nowrap"
+              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-accent-fg hover:bg-accent-hover transition-colors whitespace-nowrap"
             >
               Live Demo
               <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -341,7 +341,7 @@ export default function ZenohPage() {
                 <Link
                   key={card.href}
                   href={card.href}
-                  className="group flex items-start gap-4 p-5 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-azure dark:hover:border-azure hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex items-start gap-4 p-5 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-muted hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors">
                     <svg
@@ -355,7 +355,7 @@ export default function ZenohPage() {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-stone-900 dark:text-cream group-hover:text-azure dark:group-hover:text-sky transition-colors">
+                    <h3 className="font-semibold text-stone-900 dark:text-cream group-hover:text-accent transition-colors">
                       {card.title}
                     </h3>
                     <p className="mt-1 text-sm text-stone-500 dark:text-fog leading-relaxed">
@@ -364,7 +364,7 @@ export default function ZenohPage() {
                   </div>
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-4 h-4 mt-1 shrink-0 text-stone-400 dark:text-ash group-hover:text-azure dark:group-hover:text-sky transition-colors"
+                    className="w-4 h-4 mt-1 shrink-0 text-stone-400 dark:text-ash group-hover:text-accent transition-colors"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"

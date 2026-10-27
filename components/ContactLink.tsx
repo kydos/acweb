@@ -28,14 +28,14 @@ export function ContactLink({
       className="group p-6 rounded-xl
                  border border-stone-200 dark:border-ink-wire
                  bg-white dark:bg-ink-card
-                 hover:border-azure dark:hover:border-azure
+                 hover:border-muted
                  hover:shadow-sm hover:-translate-y-0.5
                  transition-all duration-200"
     >
       <h2
         className="font-semibold
                    text-stone-800 dark:text-cream
-                   group-hover:text-azure dark:group-hover:text-sky
+                   group-hover:text-accent
                    transition-colors"
       >
         {label}

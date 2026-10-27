@@ -102,7 +102,7 @@ export default function ZenohBookPage() {
     <PageShell>
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "Book", href: "/zenoh/book" }]} />
       {/* Header */}
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted mb-4 animate-fade-in">
         Built with mdBook · Powered by Rust
       </p>
       <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 dark:text-cream animate-fade-in">

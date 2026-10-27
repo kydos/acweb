@@ -129,7 +129,7 @@ export default function ZenohReportPage() {
               </ul>
               <a
                 href={report.docxFile}
-                className="inline-flex items-center gap-2 text-sm font-medium text-azure hover:text-sky dark:text-sky dark:hover:text-azure transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-fg underline decoration-muted/50 underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
               >
                 Download DOCX
                 <svg

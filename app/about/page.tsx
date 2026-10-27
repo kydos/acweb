@@ -126,7 +126,7 @@ export default function AboutPage() {
                 className="p-5 rounded-xl
                            border border-stone-200 dark:border-ink-wire
                            bg-white dark:bg-ink-card
-                           hover:-translate-y-0.5 hover:border-azure dark:hover:border-azure
+                           hover:-translate-y-0.5 hover:border-muted
                            transition-all duration-200"
               >
                 <h3 className="font-semibold mb-1 text-stone-800 dark:text-cream">{area.title}</h3>

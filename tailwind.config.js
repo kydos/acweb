@@ -37,14 +37,21 @@ module.exports = {
         serif: ["var(--font-lora)", "Georgia", "serif"],
         mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
       },
+      /* Semantic tokens. Values live in app/globals.css as RGB channels so
+         Tailwind's opacity modifiers (`bg-accent/10`) keep working, and the
+         FireflySync canvas reads the same variables at runtime.
+         `accent` is the one accent: primary CTA, stat numbers, the animation,
+         and link hover. Nothing else should be amber. */
       colors: {
+        bg: "rgb(var(--bg) / <alpha-value>)",
+        fg: "rgb(var(--fg) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        line: "rgb(var(--line) / <alpha-value>)",
         accent: {
-          DEFAULT: "#C78A3B",
-          hover: "#E0A95A",
-          dark: "#C78A3B",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          hover: "rgb(var(--accent-hover) / <alpha-value>)",
+          fg: "rgb(var(--on-accent) / <alpha-value>)",
         },
-        sky: "#8BC3EB",
-        azure: "#5FA3D6",
         cream: "#F3EFE7",
         sand: "#C9C2B8",
         fog: "#A7AFBA",
@@ -66,21 +73,17 @@ module.exports = {
           css: {
             maxWidth: "72ch",
             a: {
-              color: "#5FA3D6",
+              color: "rgb(var(--fg))",
               textDecoration: "underline",
+              textDecorationColor: "rgb(var(--muted) / 0.5)",
               textUnderlineOffset: "3px",
-              "&:hover": { color: "#8BC3EB" },
+              "&:hover": {
+                color: "rgb(var(--accent))",
+                textDecorationColor: "rgb(var(--accent))",
+              },
             },
             "code::before": { content: '""' },
             "code::after": { content: '""' },
-          },
-        },
-        invert: {
-          css: {
-            a: {
-              color: "#8BC3EB",
-              "&:hover": { color: "#5FA3D6" },
-            },
           },
         },
       },

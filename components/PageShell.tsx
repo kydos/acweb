@@ -128,24 +128,19 @@ export function RelatedLinks({
   return (
     <nav
       aria-label={heading}
-      className="mt-phi-lg pt-phi-md border-t border-stone-200 dark:border-ink-wire"
+      className="mt-phi-xl"
     >
-      <h2 className="text-xs font-mono uppercase tracking-[0.11em] text-stone-500 dark:text-ash">
+      <h2 className="text-xs font-mono uppercase tracking-[0.11em] text-muted">
         {heading}
       </h2>
-      <ul className="mt-phi-md grid gap-phi-xs sm:grid-cols-2">
+      <ul className="mt-phi-sm grid gap-x-phi-lg gap-y-phi-md sm:grid-cols-2">
         {links.map((link) => (
           <li key={link.href}>
-            <Link
-              href={link.href}
-              className="group block h-full rounded-lg border border-stone-200 dark:border-ink-wire
-                         bg-white dark:bg-ink-card px-4 py-3.5
-                         hover:border-azure dark:hover:border-azure transition-colors"
-            >
-              <span className="block text-sm font-semibold text-stone-800 dark:text-cream group-hover:text-accent transition-colors">
+            <Link href={link.href} className="group block h-full border-t border-line pt-phi-xs">
+              <span className="block text-sm font-semibold text-fg group-hover:text-accent transition-colors">
                 {link.label}
               </span>
-              <span className="mt-1 block text-xs leading-relaxed text-stone-500 dark:text-ash">
+              <span className="mt-1 block text-xs leading-relaxed text-muted">
                 {link.desc}
               </span>
             </Link>

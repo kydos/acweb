@@ -16,7 +16,7 @@ export default function ZenohDdsAlternativePage() {
     <PageShell>
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "DDS Alternative", href: "/zenoh/dds-alternative" }]} />
       <article>
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky">
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted">
         Protocol Architecture
       </p>
       <h1 className="mt-4 text-3xl md:text-5xl font-serif font-bold text-stone-900 dark:text-cream">

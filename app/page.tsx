@@ -76,7 +76,7 @@ export default function Home() {
       <div className="grid items-center gap-phi-lg min-[1152px]:grid-cols-hero-phi">
         <div className="min-w-0">
           <div className="animate-fade-in">
-            <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4">
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted mb-4">
               Protocol Inventor &amp; Technology Executive
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-none text-stone-900 dark:text-cream">
@@ -135,7 +135,7 @@ export default function Home() {
               className="aspect-square w-full object-cover"
             />
             <div className="p-5">
-              <p className="text-xs font-mono uppercase tracking-[0.18em] text-azure dark:text-sky">
+              <p className="text-xs font-mono uppercase tracking-[0.18em] text-muted">
                 Eclipse Zenoh
               </p>
               <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-fog">
@@ -190,7 +190,7 @@ export default function Home() {
             <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">
               Latest from the Blog
             </h2>
-            <Link href="/blog" className="text-sm text-azure dark:text-sky hover:text-accent dark:hover:text-accent transition-colors">
+            <Link href="/blog" className="text-sm text-muted hover:text-accent dark:hover:text-accent transition-colors">
               All posts →
             </Link>
           </div>
@@ -226,7 +226,7 @@ export default function Home() {
             href="http://zenoh.corsaro.me:8000/examples/web/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent/90 transition-colors duration-200 shrink-0 whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-accent-fg text-sm font-medium hover:bg-accent/90 transition-colors duration-200 shrink-0 whitespace-nowrap"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />

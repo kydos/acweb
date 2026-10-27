@@ -496,7 +496,7 @@ export default function ZenohReportIssuePage({
 
       {/* Header */}
       <div className="animate-fade-in">
-        <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-3 print:text-black">
+        <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted mb-3 print:text-black">
           The Zenoh Report
         </p>
         <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 dark:text-cream">

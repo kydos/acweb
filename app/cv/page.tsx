@@ -54,7 +54,7 @@ export default function CVPage() {
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 dark:text-cream">
             {siteConfig.name}, Ph.D.
           </h1>
-          <p className="mt-0.5 text-sm font-medium text-azure dark:text-sky">
+          <p className="mt-0.5 text-sm font-medium text-muted">
             Distinguished Scientist, 42dot · Eclipse Zenoh Project Lead
           </p>
           <p className="mt-1 text-stone-500 dark:text-ash text-sm">
@@ -93,7 +93,7 @@ export default function CVPage() {
           <a
             key={href}
             href={href}
-            className="text-xs font-mono text-azure dark:text-sky hover:text-accent dark:hover:text-accent transition-colors"
+            className="text-xs font-mono text-muted hover:text-accent dark:hover:text-accent transition-colors"
           >
             {label}
           </a>
@@ -234,7 +234,7 @@ export default function CVPage() {
             href="https://scholar.google.com/citations?user=AngeloCorsaro"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-azure dark:text-azure hover:text-sky dark:hover:text-sky underline"
+            className="text-fg underline decoration-muted/50 hover:text-accent hover:decoration-accent"
           >
             Google Scholar
           </a>

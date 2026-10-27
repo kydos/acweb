@@ -46,8 +46,8 @@ export function BlogSearch({ posts, placeholder, empty }: Props) {
                      bg-white dark:bg-ink-card
                      text-sm text-stone-800 dark:text-cream
                      placeholder:text-stone-400 dark:placeholder:text-ash
-                     focus:outline-none focus:ring-1 focus:ring-azure dark:focus:ring-azure
-                     focus:border-azure dark:focus:border-azure
+                     focus:outline-none focus:ring-1 focus:ring-accent
+                     focus:border-accent
                      transition-all"
         />
         {query && (

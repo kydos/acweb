@@ -40,7 +40,7 @@ export function ProtectedEmailCard() {
           <button
             type="button"
             onClick={() => { setRevealed(true); trackContactAction("email_reveal"); }}
-            className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
+            className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-accent hover:text-accent dark:border-ink-wire dark:text-sand"
           >
             Reveal email
           </button>
@@ -53,14 +53,14 @@ export function ProtectedEmailCard() {
               <button
                 type="button"
                 onClick={() => { handleCopy(); trackContactAction("email_copy"); }}
-                className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
+                className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-accent hover:text-accent dark:border-ink-wire dark:text-sand"
               >
                 {copied ? "Copied" : "Copy email"}
               </button>
               <a
                 href={`mailto:${email}`}
                 onClick={() => trackContactAction("email_write")}
-                className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-azure hover:text-azure dark:border-ink-wire dark:text-sand dark:hover:border-azure dark:hover:text-sky"
+                className="inline-flex items-center rounded-md border border-stone-200 px-3 py-2 text-sm text-stone-700 transition-colors hover:border-accent hover:text-accent dark:border-ink-wire dark:text-sand"
               >
                 Write email
               </a>

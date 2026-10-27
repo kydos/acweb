@@ -9,11 +9,11 @@ import {
   getPostBySlug,
   getAdjacentPosts,
   getRelatedPosts,
-  tagSlug,
 } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
 import { siteConfig } from "@/lib/siteConfig";
 import { JsonLd } from "@/components/JsonLd";
+import { TagList } from "@/components/TagList";
 import { ArticleAnalytics } from "@/components/ArticleAnalytics";
 import { PageShell, Breadcrumbs } from "@/components/PageShell";
 import { articleComponents, rehypePrettyCodeOptions } from "@/components/MdxComponents";
@@ -86,29 +86,12 @@ export default function BlogPostPage({ params }: Props) {
             <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream">
               {post.title}
             </h1>
-            <div className="mt-3 flex items-center gap-3 text-sm text-stone-500 dark:text-ash">
+            <div className="mt-3 flex items-center gap-3 text-sm font-mono text-muted">
               <time dateTime={post.date}>{formatDate(post.date)}</time>
               <span aria-hidden="true">&middot;</span>
               <span>{post.readingTime}</span>
             </div>
-            {post.tags && post.tags.length > 0 && (
-              <ul className="mt-4 flex flex-wrap gap-1.5">
-                {post.tags.map((tag) => (
-                  <li key={tag}>
-                    <Link
-                      href={`/blog/tag/${tagSlug(tag)}`}
-                      className="inline-block px-2 py-0.5 text-xs rounded-full
-                                 bg-amber-50 dark:bg-accent/10
-                                 text-amber-700 dark:text-accent
-                                 border border-amber-200 dark:border-accent/20
-                                 hover:border-accent transition-colors"
-                    >
-                      {tag}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+            {post.tags && <TagList tags={post.tags} linked className="mt-phi-xs" />}
           </header>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none animate-fade-in animate-delay-100">
@@ -163,19 +146,14 @@ export default function BlogPostPage({ params }: Props) {
             >
               Related reading
             </h2>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-phi-sm space-y-phi-sm">
               {related.map((rel) => (
                 <li key={rel.slug}>
-                  <Link
-                    href={`/blog/${rel.slug}`}
-                    className="group block rounded-lg border border-stone-200 dark:border-ink-wire
-                               bg-white dark:bg-ink-card px-4 py-3
-                               hover:border-azure dark:hover:border-azure transition-colors"
-                  >
-                    <span className="block text-sm font-semibold text-stone-800 dark:text-cream group-hover:text-accent transition-colors">
+                  <Link href={`/blog/${rel.slug}`} className="group block border-t border-line pt-phi-xs">
+                    <span className="block text-sm font-semibold text-fg group-hover:text-accent transition-colors">
                       {rel.title}
                     </span>
-                    <span className="mt-1 block text-xs leading-relaxed text-stone-500 dark:text-ash line-clamp-2">
+                    <span className="mt-1 block text-xs leading-relaxed text-muted line-clamp-2">
                       {rel.excerpt}
                     </span>
                   </Link>
@@ -186,7 +164,7 @@ export default function BlogPostPage({ params }: Props) {
         )}
 
         <p className="mt-12 text-sm">
-          <Link href="/blog" className="text-azure dark:text-sky hover:text-accent transition-colors">
+          <Link href="/blog" className="text-muted hover:text-accent transition-colors">
             ← All posts
           </Link>
         </p>

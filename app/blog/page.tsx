@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getAllPostSummaries, getAllTags } from "@/lib/mdx";
+import { TagList } from "@/components/TagList";
 import { BlogSearch } from "@/components/BlogSearch";
 import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata, canonicalUrl } from "@/lib/seo";
@@ -58,23 +58,15 @@ export default function BlogPage() {
         </PageHeader>
 
         {tags.length > 0 && (
-          <nav aria-label="Browse by tag" className="mt-phi-md flex flex-wrap items-center gap-2">
-            <span className="text-xs font-mono uppercase tracking-[0.11em] text-stone-400 dark:text-ash mr-1">
+          <nav aria-label="Browse by tag" className="mt-phi-md flex flex-wrap items-baseline gap-x-3 gap-y-2">
+            <span className="text-xs font-mono uppercase tracking-[0.11em] text-muted">
               Topics
             </span>
-            {tags.map(({ tag, slug, posts: tagged }) => (
-              <Link
-                key={slug}
-                href={`/blog/tag/${slug}`}
-                className="px-2.5 py-1 text-xs rounded-full
-                           border border-stone-200 dark:border-ink-wire
-                           text-stone-600 dark:text-fog
-                           hover:border-accent hover:text-accent transition-colors"
-              >
-                {tag}
-                <span className="ml-1.5 text-stone-400 dark:text-ash tabular-nums">{tagged.length}</span>
-              </Link>
-            ))}
+            <TagList
+              tags={tags.map((t) => t.tag)}
+              counts={Object.fromEntries(tags.map((t) => [t.tag, t.posts.length]))}
+              linked
+            />
           </nav>
         )}
 

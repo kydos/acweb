@@ -16,7 +16,7 @@ export default function ZenohRos2Page() {
     <PageShell>
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "ROS 2", href: "/zenoh/ros2" }]} />
       <article>
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky">
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted">
         Eclipse Zenoh
       </p>
       <h1 className="mt-4 text-3xl md:text-5xl font-serif font-bold text-stone-900 dark:text-cream">

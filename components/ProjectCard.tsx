@@ -10,14 +10,14 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
                  border border-stone-200 dark:border-ink-wire
                  bg-white dark:bg-ink-card
                  p-6
-                 hover:border-azure dark:hover:border-azure
+                 hover:border-muted
                  hover:-translate-y-0.5 transition-all duration-200 hover:shadow-sm"
     >
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <h3 className="font-semibold text-lg truncate
                          text-stone-800 dark:text-cream
-                         group-hover:text-azure dark:group-hover:text-sky
+                         group-hover:text-accent
                          transition-colors duration-200">
             {repo.fullName}
           </h3>
