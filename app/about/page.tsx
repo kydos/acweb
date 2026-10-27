@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { siteConfig } from "@/lib/siteConfig";
-import { pageMetadata, canonicalUrl, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { PageShell, PageHeader, RelatedLinks } from "@/components/PageShell";
 
@@ -13,16 +13,6 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
   title,
   description,
-  keywords: [
-    "Angelo Corsaro",
-    "Zenoh inventor",
-    "Zenoh Protocol creator",
-    "distributed systems expert",
-    "ROS 2 middleware",
-    "Eclipse Zenoh creator",
-    "cloud to device continuum",
-    "IoT middleware expert",
-  ],
 });
 
 const bio = [
@@ -57,32 +47,8 @@ const areas = [
 const profilePageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  mainEntity: {
-    "@type": "Person",
-    name: "Angelo Corsaro",
-    url: canonicalUrl(""),
-    image: absoluteUrl(siteConfig.profilePhoto),
-    jobTitle: "Distinguished Scientist",
-    worksFor: { "@type": "Organization", name: "42dot" },
-    description:
-      "Angelo Corsaro, Ph.D. is the inventor of the Zenoh Protocol and a world expert in distributed systems, robotics middleware (ROS 2), AI infrastructure, and the cloud-to-microcontroller continuum.",
-    sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Washington University in St. Louis",
-    },
-    knowsAbout: [
-      "Zenoh Protocol",
-      "Distributed Systems",
-      "Robotics",
-      "ROS 2",
-      "Edge Computing",
-      "IoT",
-      "AI infrastructure",
-      "DDS",
-      "Real-Time Systems",
-    ],
-  },
+  url: canonicalUrl("/about"),
+  mainEntity: personSchema,
 };
 
 export default function AboutPage() {
@@ -101,7 +67,7 @@ export default function AboutPage() {
                 src={siteConfig.profilePhotoSmall}
                 alt={siteConfig.name}
                 width={448}
-                height={439}
+                height={440}
                 className="w-full h-full object-cover"
                 priority
               />

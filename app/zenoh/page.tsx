@@ -1,33 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef, techArticleSchema } from "@/lib/seo";
+import { ZenohBlogLinks } from "@/components/ZenohBlogLinks";
 
 
 export const metadata: Metadata = pageMetadata({
   path: "/zenoh",
   title: "Zenoh Protocol",
   description: "Unifying the IoT / Edge / Cloud continuum",
-  keywords: [
-    "Zenoh Protocol",
-    "Eclipse Zenoh",
-    "Zenoh IoT",
-    "Zenoh robotics",
-    "Zenoh ROS 2",
-    "pub/sub protocol",
-    "cloud-to-edge",
-    "distributed middleware",
-    "edge computing protocol",
-    "DDS alternative",
-    "Angelo Corsaro",
-    "Zenoh inventor",
-    "zero network overhead",
-    "Zenoh embedded",
-    "Zenoh microcontroller",
-    "Zenoh 1.0",
-    "Zenoh 2.0",
-    "Zenoh wire protocol",
-  ],
+});
+
+const articleSchema = techArticleSchema({
+  path: "/zenoh",
+  headline: "Zenoh Protocol — unifying the IoT / Edge / Cloud continuum",
+  description:
+    "A protocol that unifies data in motion, data at rest, and computations, from microcontrollers to cloud clusters.",
 });
 
 const zenohProtocolSchema = {
@@ -45,7 +33,7 @@ const zenohProtocolSchema = {
     url: canonicalUrl(""),
     jobTitle: "Inventor of the Zenoh Protocol",
   },
-  author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
+  author: personRef,
   url: "https://zenoh.io",
   sameAs: [
     "https://github.com/eclipse-zenoh/zenoh",
@@ -146,6 +134,7 @@ export default function ZenohPage() {
   return (
     <>
       <JsonLd data={zenohProtocolSchema} />
+      <JsonLd data={articleSchema} />
       <div>
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative mx-auto max-w-5xl px-6 pt-14 pb-10 md:pt-20 md:pb-12">
@@ -377,7 +366,9 @@ export default function ZenohPage() {
           </div>
         </section>
 
-
+        <div className="mx-auto max-w-5xl px-6 pb-phi-xl">
+          <ZenohBlogLinks href="/zenoh" />
+        </div>
       </div>
     </>
   );

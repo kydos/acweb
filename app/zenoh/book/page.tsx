@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef } from "@/lib/seo";
 import { PageShell, Breadcrumbs, RelatedLinks } from "@/components/PageShell";
 
 
@@ -11,18 +11,6 @@ export const metadata: Metadata = pageMetadata({
   description:
     "The comprehensive guide to the Zenoh protocol — architecture, concepts, and hands-on examples.",
   type: "book",
-  keywords: [
-    "Zenoh book",
-    "Zenoh documentation",
-    "Zenoh tutorial",
-    "Eclipse Zenoh guide",
-    "Zenoh Protocol book",
-    "pub/sub tutorial",
-    "distributed systems protocol guide",
-    "ROS 2 middleware tutorial",
-    "Zenoh embedded guide",
-    "Angelo Corsaro Zenoh",
-  ],
 });
 
 const zenohBookSchema = {
@@ -31,8 +19,8 @@ const zenohBookSchema = {
   name: "The Zenoh Book",
   description:
     "The definitive open-source guide to the Zenoh Protocol — from pub/sub fundamentals to multi-datacenter deployments, embedded systems, and advanced wire-format internals.",
-  author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
-  publisher: { "@type": "Person", name: "Angelo Corsaro" },
+  author: personRef,
+  publisher: personRef,
   inLanguage: "en",
   url: canonicalUrl("/zenoh/book"),
   about: [

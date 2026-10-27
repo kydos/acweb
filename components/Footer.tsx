@@ -15,11 +15,11 @@ export function Footer() {
   const main = (navLinks as NavLink[]).filter((l) => l.href !== "/zenoh" && l.href !== "/");
 
   return (
-    <footer className="border-t border-stone-200 dark:border-ink-wire mt-phi-xl">
+    <footer className="border-t border-line mt-phi-xl">
       <div className="mx-auto max-w-5xl px-6 py-phi-lg">
         <div className="grid gap-phi-lg sm:grid-cols-2 md:grid-cols-4">
 
-          <div>
+          <nav aria-label="Site">
             <FooterHeading>Site</FooterHeading>
             <ul className="mt-phi-xs space-y-2">
               {main.map((link) => (
@@ -28,9 +28,9 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label="Zenoh">
             <FooterHeading>Zenoh</FooterHeading>
             <ul className="mt-phi-xs space-y-2">
               {zenoh?.children?.map((child) => (
@@ -39,21 +39,21 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label="Elsewhere">
             <FooterHeading>Elsewhere</FooterHeading>
             <ul className="mt-phi-xs space-y-2">
               <li><FooterLink href={social.github}>GitHub</FooterLink></li>
               <li><FooterLink href={social.linkedin}>LinkedIn</FooterLink></li>
               <li>
-                <FooterLink href="https://scholar.google.com/citations?user=o0xJE_4AAAAJ">
+                <FooterLink href={social.scholar}>
                   Google Scholar
                 </FooterLink>
               </li>
               <li><FooterLink href="/feed.xml">RSS feed</FooterLink></li>
             </ul>
-          </div>
+          </nav>
 
           <div className="sm:col-span-2 md:col-span-1">
             <FooterHeading>Angelo Corsaro</FooterHeading>
@@ -88,11 +88,13 @@ export function Footer() {
   );
 }
 
+/* A <p>, not a heading: footer columns are navigation, and h2s here would
+   put "Site / Zenoh / Elsewhere" into every page's document outline. */
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-xs font-mono uppercase tracking-[0.11em] text-stone-400 dark:text-ash">
+    <p className="text-xs font-mono uppercase tracking-[0.11em] text-muted">
       {children}
-    </h2>
+    </p>
   );
 }
 

@@ -11,7 +11,7 @@ import { flatSlugs, slugToTitle, navItems } from "@/lib/bookNav";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/PageShell";
 import { tableComponents, rehypePrettyCodeOptions } from "@/components/MdxComponents";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef } from "@/lib/seo";
 
 // Slugs that are section indexes (map to README.md) — their relative links need the slug as a base dir
 const sectionSlugs = new Set(
@@ -78,17 +78,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${title} — The Zenoh Book`,
     description,
     type: "article",
-    keywords: [
-      "Eclipse Zenoh",
-      "Zenoh Protocol",
-      "Zenoh documentation",
-      "Zenoh tutorial",
-      title,
-      "distributed systems",
-      "pub/sub protocol",
-      "ROS 2 middleware",
-      "Angelo Corsaro",
-    ],
   });
 }
 
@@ -158,7 +147,7 @@ export default function BookChapterPage({ params }: Props) {
         "@type": "TechArticle",
         headline: `${title} — The Zenoh Book`,
         name: title,
-        author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
+        author: personRef,
         isPartOf: {
           "@type": "Book",
           name: "The Zenoh Book",

@@ -9,15 +9,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Zenoh Report",
   description:
     "Monthly digest of Zenoh innovations, ecosystem highlights, and community stories.",
-  keywords: [
-    "Zenoh Report",
-    "Zenoh newsletter",
-    "Zenoh Protocol updates",
-    "Eclipse Zenoh news",
-    "Angelo Corsaro newsletter",
-    "Zenoh release notes",
-    "Zenoh 2.0",
-  ],
 });
 
 const reports = [

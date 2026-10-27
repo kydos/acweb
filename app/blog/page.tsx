@@ -3,7 +3,7 @@ import { getAllPostSummaries, getAllTags } from "@/lib/mdx";
 import { TagList } from "@/components/TagList";
 import { BlogSearch } from "@/components/BlogSearch";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef } from "@/lib/seo";
 import { PageShell, PageHeader } from "@/components/PageShell";
 
 const description =
@@ -25,7 +25,7 @@ export default function BlogPage() {
     name: "Angelo Corsaro — Blog",
     url: canonicalUrl("/blog"),
     description: "Writing on Zenoh, distributed systems, and robotics by Angelo Corsaro, Ph.D.",
-    author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
+    author: personRef,
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.title,
@@ -33,7 +33,7 @@ export default function BlogPage() {
       datePublished: post.date,
       url: canonicalUrl(`/blog/${post.slug}`),
       keywords: post.tags?.join(", "),
-      author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
+      author: personRef,
     })),
   };
 

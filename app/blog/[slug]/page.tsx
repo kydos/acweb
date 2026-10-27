@@ -11,13 +11,13 @@ import {
   getRelatedPosts,
 } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
-import { siteConfig } from "@/lib/siteConfig";
 import { JsonLd } from "@/components/JsonLd";
 import { TagList } from "@/components/TagList";
 import { ArticleAnalytics } from "@/components/ArticleAnalytics";
-import { PageShell, Breadcrumbs } from "@/components/PageShell";
+import { PageShell, Breadcrumbs, RelatedLinks } from "@/components/PageShell";
+import { zenohPagesForTags } from "@/lib/zenohLinks";
 import { articleComponents, rehypePrettyCodeOptions } from "@/components/MdxComponents";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, absoluteUrl, personRef } from "@/lib/seo";
 
 interface Props {
   params: { slug: string };
@@ -36,12 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.excerpt,
     type: "article",
-    keywords: [
-      ...(post.tags ?? []),
-      "Zenoh Protocol",
-      "Angelo Corsaro",
-      "distributed systems",
-    ],
+    image: `/blog/${post.slug}/og.png`,
   });
 }
 
@@ -52,17 +47,24 @@ export default function BlogPostPage({ params }: Props) {
   const { previous, next } = getAdjacentPosts(post.slug);
   const related = getRelatedPosts(post.slug);
 
+  const zenohLinks = zenohPagesForTags(post.tags);
+  const url = canonicalUrl(`/blog/${post.slug}`);
+
+  // The visible <Breadcrumbs> below emits the matching BreadcrumbList.
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
-    author: { "@type": "Person", name: siteConfig.name, url: canonicalUrl("") },
-    publisher: { "@type": "Person", name: siteConfig.name, url: canonicalUrl("") },
-    url: canonicalUrl(`/blog/${post.slug}`),
+    dateModified: post.updated ?? post.date,
+    author: personRef,
+    publisher: personRef,
+    url,
+    mainEntityOfPage: url,
+    image: absoluteUrl(`/blog/${post.slug}/og.png`),
     keywords: post.tags?.join(", "),
+    inLanguage: "en",
   };
 
   return (
@@ -162,6 +164,8 @@ export default function BlogPostPage({ params }: Props) {
             </ul>
           </section>
         )}
+
+        {zenohLinks.length > 0 && <RelatedLinks heading="On the Zenoh side" links={zenohLinks} />}
 
         <p className="mt-12 text-sm">
           <Link href="/blog" className="text-muted hover:text-accent transition-colors">

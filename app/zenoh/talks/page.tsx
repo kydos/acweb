@@ -8,15 +8,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Zenoh Talks",
   description:
     "Conference talks, keynotes, workshops, and webinars on the Zenoh Protocol and distributed systems by Angelo Corsaro — inventor of Zenoh.",
-  keywords: [
-    "Zenoh talks",
-    "Zenoh presentations",
-    "Angelo Corsaro keynote",
-    "Eclipse Zenoh conference",
-    "Zenoh Protocol video",
-    "distributed systems talk",
-    "ROS 2 Zenoh",
-  ],
 });
 
 // ─── Data ─────────────────────────────────────────────────────────────────────

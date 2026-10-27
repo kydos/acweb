@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, techArticleSchema } from "@/lib/seo";
 import { PageShell, Breadcrumbs } from "@/components/PageShell";
+import { JsonLd } from "@/components/JsonLd";
+import { ZenohBlogLinks } from "@/components/ZenohBlogLinks";
 
-export const metadata: Metadata = pageMetadata({
-    path: "/zenoh/dds-alternative",
-    title: "Zenoh as a DDS Alternative",
-    description:
-      "Why Eclipse Zenoh is used as a DDS alternative for systems that need to span embedded devices, robots, edge networks, and cloud infrastructure.",
-});
+const title = "Zenoh as a DDS Alternative";
+const description =
+  "Why Eclipse Zenoh is used as a DDS alternative for systems that need to span embedded devices, robots, edge networks, and cloud infrastructure.";
+
+export const metadata: Metadata = pageMetadata({ path: "/zenoh/dds-alternative", title, description });
+
+const articleSchema = techArticleSchema({ path: "/zenoh/dds-alternative", headline: title, description });
 
 export default function ZenohDdsAlternativePage() {
 
   return (
     <PageShell>
+      <JsonLd data={articleSchema} />
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "DDS Alternative", href: "/zenoh/dds-alternative" }]} />
       <article>
       <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted">
@@ -71,6 +75,7 @@ export default function ZenohDdsAlternativePage() {
         </div>
       </section>
       </article>
+      <ZenohBlogLinks href="/zenoh/dds-alternative" />
     </PageShell>
   );
 }

@@ -6,7 +6,7 @@ import { BlogCard } from "@/components/BlogCard";
 import { JsonLd } from "@/components/JsonLd";
 import { HeroFireflies } from "@/components/HeroFireflies";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { pageMetadata, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personSchema } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: "",
@@ -14,50 +14,20 @@ export const metadata: Metadata = pageMetadata({
   description: siteConfig.siteDescription,
 });
 
-const personSchema = {
+const homeSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Angelo Corsaro",
-  url: siteConfig.siteUrl,
-  image: absoluteUrl(siteConfig.profilePhoto),
-  jobTitle: "Innovator & Distributed Systems Architect",
-  description:
-    "Angelo Corsaro, Ph.D. is the inventor of the Zenoh Protocol and a world expert in distributed systems, robotics middleware, AI-native infrastructure, and cloud-to-edge computing.",
-  sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
-  knowsAbout: [
-    "Zenoh Protocol",
-    "Distributed Systems",
-    "Robotics",
-    "ROS 2",
-    "Edge Computing",
-    "IoT",
-    "AI infrastructure",
-    "DDS",
-    "Real-Time Systems",
-    "Autonomous Vehicles",
+  "@graph": [
+    personSchema,
+    {
+      "@type": "WebSite",
+      "@id": `${canonicalUrl("")}#website`,
+      name: siteConfig.siteShortTitle,
+      url: canonicalUrl(""),
+      description: siteConfig.siteDescription,
+      inLanguage: "en",
+      publisher: { "@id": personSchema["@id"] },
+    },
   ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Washington University in St. Louis",
-  },
-  award: [
-    "Technology CEO of the Year 2024",
-    "Genius Minds 2024 — Representing France",
-    "Power 200: World's Most Influential Data Economy Leaders 2019",
-    "Gartner Cool Vendor 2014",
-  ],
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Angelo Corsaro",
-  url: siteConfig.siteUrl,
-  description: siteConfig.siteDescription,
-  author: {
-    "@type": "Person",
-    name: "Angelo Corsaro",
-  },
 };
 
 export default function Home() {
@@ -65,8 +35,7 @@ export default function Home() {
 
   return (
     <>
-      <JsonLd data={personSchema} />
-      <JsonLd data={websiteSchema} />
+      <JsonLd data={homeSchema} />
       {/* Hero — one headline, one line of facts, one filled button. The
           name and the headline share the h1 so the page's single heading
           still carries the name; the headline is the LCP element and is

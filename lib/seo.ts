@@ -8,7 +8,6 @@ type MetadataOptions = {
   description: string;
   type?: "website" | "article" | "book";
   image?: string;
-  keywords?: string[];
 };
 
 /**
@@ -35,7 +34,6 @@ export function pageMetadata({
   description,
   type = "website",
   image = siteConfig.ogImage,
-  keywords,
 }: MetadataOptions): Metadata {
   const url = canonicalUrl(path);
   const imageUrl = absoluteUrl(image);
@@ -44,7 +42,6 @@ export function pageMetadata({
     metadataBase: new URL(siteConfig.siteUrl),
     title,
     description,
-    ...(keywords ? { keywords } : {}),
     alternates: {
       canonical: url,
       // Page-level `alternates` replaces the layout's, so the feed link has to
@@ -55,7 +52,7 @@ export function pageMetadata({
       title,
       description,
       url,
-      siteName: siteConfig.siteTitle,
+      siteName: siteConfig.siteShortTitle,
       type,
       locale: "en_US",
       images: [
@@ -63,7 +60,7 @@ export function pageMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${title} — ${siteConfig.siteTitle}`,
+          alt: title,
         },
       ],
     },
@@ -74,5 +71,75 @@ export function pageMetadata({
       images: [imageUrl],
       creator: siteConfig.social.twitterHandle,
     },
+  };
+}
+
+// ─── Structured data ──────────────────────────────────────────────
+
+/** Stable node id for Angelo, so every author/creator reference points at one Person. */
+export const PERSON_ID = `${canonicalUrl("")}#person`;
+
+/**
+ * Compact reference for `author` / `publisher` / `creator`. Carries name and
+ * url as well as the @id so each page's JSON-LD still validates on its own.
+ */
+export const personRef = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: siteConfig.name,
+  url: canonicalUrl(""),
+} as const;
+
+/** The full Person node. Emitted on the homepage and as /about's ProfilePage mainEntity. */
+export const personSchema = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: siteConfig.name,
+  url: canonicalUrl(""),
+  image: absoluteUrl(siteConfig.profilePhoto),
+  // [CONFIRM] jobTitle / worksFor — matches the current CV entry.
+  jobTitle: "Distinguished Scientist",
+  worksFor: { "@type": "Organization", name: "42dot" },
+  description:
+    "Angelo Corsaro, Ph.D. is the inventor of the Zenoh protocol and has worked on distributed systems for more than 25 years, from research to international standards.",
+  // [CONFIRM] Add Wikidata / Wikipedia URLs here if those entries exist.
+  sameAs: [siteConfig.social.github, siteConfig.social.linkedin, siteConfig.social.scholar],
+  knowsAbout: ["Zenoh", "Distributed systems", "DDS", "ROS 2", "Edge computing", "Rust"],
+  // [CONFIRM] Both from the CV's education section.
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Washington University in St. Louis" },
+    { "@type": "CollegeOrUniversity", name: "Università degli Studi di Catania" },
+  ],
+  award: [
+    "Technology CEO of the Year 2024",
+    "Genius Minds 2024 — Representing France",
+    "Power 200: World's Most Influential Data Economy Leaders 2019",
+    "Gartner Cool Vendor 2014",
+  ],
+} as const;
+
+/** TechArticle for Zenoh reference pages. */
+export function techArticleSchema({
+  path,
+  headline,
+  description,
+}: {
+  path: string;
+  headline: string;
+  description: string;
+}) {
+  const url = canonicalUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline,
+    description,
+    url,
+    mainEntityOfPage: url,
+    image: absoluteUrl(siteConfig.ogImage),
+    author: personRef,
+    publisher: personRef,
+    about: { "@type": "SoftwareApplication", name: "Eclipse Zenoh", url: "https://zenoh.io" },
+    inLanguage: "en",
   };
 }

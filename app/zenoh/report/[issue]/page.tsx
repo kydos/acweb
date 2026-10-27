@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PrintButton } from "@/components/PrintButton";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/PageShell";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -423,16 +423,6 @@ export async function generateMetadata({
     title: `The Zenoh Report — ${issue.label}`,
     description: `${issue.subtitle}. Monthly newsletter on Zenoh Protocol updates, ecosystem news, and community stories by Angelo Corsaro.`,
     type: "article",
-    keywords: [
-      "Zenoh Report",
-      "Zenoh Protocol",
-      "Eclipse Zenoh",
-      issue.label,
-      "Zenoh newsletter",
-      "Angelo Corsaro",
-      "distributed systems",
-      "ROS 2 Zenoh",
-    ],
   });
 }
 
@@ -458,8 +448,8 @@ export default function ZenohReportIssuePage({
     name: `The Zenoh Report ${issue.label}: ${issue.subtitle}`,
     description: `${issue.subtitle}. Monthly newsletter on Zenoh Protocol updates, ecosystem news, and community stories.`,
     datePublished: issueDates[issue.slug] ?? issue.slug,
-    author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
-    publisher: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
+    author: personRef,
+    publisher: personRef,
     url: canonicalUrl(`/zenoh/report/${issue.slug}`),
     keywords: "Eclipse Zenoh, Zenoh Protocol, distributed systems, robotics middleware, Angelo Corsaro",
     about: { "@type": "Thing", name: "Eclipse Zenoh Protocol" },

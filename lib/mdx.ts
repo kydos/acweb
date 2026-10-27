@@ -10,6 +10,8 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  /** Optional `updated` frontmatter; falls back to `date` for dateModified / lastmod. */
+  updated?: string;
   excerpt: string;
   readingTime: string;
   content: string;
@@ -59,6 +61,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     slug,
     title: data.title ?? slug,
     date: data.date ?? "",
+    updated: data.updated,
     excerpt: data.excerpt ?? "",
     readingTime: stats.text,
     content,

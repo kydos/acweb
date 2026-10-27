@@ -28,7 +28,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/blog/tag/${entry.slug}`,
     title: `${entry.tag} — Articles`,
     description: `Articles tagged “${entry.tag}” by Angelo Corsaro, Ph.D. — inventor of the Zenoh Protocol.`,
-    keywords: [entry.tag, "Angelo Corsaro", "Zenoh Protocol", "distributed systems"],
   });
 }
 

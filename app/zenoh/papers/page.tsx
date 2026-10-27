@@ -8,17 +8,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Zenoh Papers",
   description:
     "Scientific papers, journal articles, conference proceedings, and press coverage on Zenoh Protocol and distributed systems research by Angelo Corsaro.",
-  keywords: [
-    "Zenoh papers",
-    "Zenoh research",
-    "Angelo Corsaro publications",
-    "Eclipse Zenoh academic",
-    "Zenoh performance benchmarks",
-    "Zenoh ROS 2 study",
-    "distributed systems research",
-    "pub/sub protocol research",
-    "Zenoh DDS comparison",
-  ],
 });
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
