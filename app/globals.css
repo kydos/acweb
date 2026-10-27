@@ -83,6 +83,20 @@
            transition-colors duration-200;
   }
 
+  /* Hero animation sits behind the text. Masking the canvas (rather than
+     dimming dots in JS) keeps the headline at full contrast for free: text
+     is on the left on desktop, on top on mobile. */
+  .hero-fireflies {
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0.3) 55%, #000 100%);
+    mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0.3) 55%, #000 100%);
+  }
+  @media (min-width: 768px) {
+    .hero-fireflies {
+      -webkit-mask-image: linear-gradient(to right, rgb(0 0 0 / 0.15) 0%, rgb(0 0 0 / 0.3) 45%, #000 85%);
+      mask-image: linear-gradient(to right, rgb(0 0 0 / 0.15) 0%, rgb(0 0 0 / 0.3) 45%, #000 85%);
+    }
+  }
+
   /* Plain text link with an arrow; the secondary action beside .btn-primary */
   .link-quiet {
     @apply text-sm font-medium text-fg underline decoration-muted/50 underline-offset-4

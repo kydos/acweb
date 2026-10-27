@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { getAllPostSummaries } from "@/lib/mdx";
 import { BlogCard } from "@/components/BlogCard";
 import { JsonLd } from "@/components/JsonLd";
+import { HeroFireflies } from "@/components/HeroFireflies";
 import { pageMetadata, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -70,6 +71,7 @@ export default function Home() {
           still carries the name; the headline is the LCP element and is
           painted without any entrance animation. */}
       <section className="relative isolate overflow-hidden">
+        <HeroFireflies />
         <div className="mx-auto flex max-w-5xl flex-col justify-center px-6 py-phi-xl min-h-[calc(100svh-4rem)] md:min-h-[min(calc(100svh-4rem),48rem)]">
           <h1>
             <span className="block font-mono text-xs uppercase tracking-[0.2em] text-muted">
