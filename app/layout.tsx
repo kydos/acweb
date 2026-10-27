@@ -19,22 +19,6 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.siteShortTitle}`,
   },
   description: siteConfig.siteDescription,
-  keywords: [
-    "Zenoh Protocol",
-    "Eclipse Zenoh",
-    "distributed systems",
-    "robotics middleware",
-    "ROS 2",
-    "edge computing",
-    "IoT middleware",
-    "DDS",
-    "AI infrastructure",
-    "Angelo Corsaro",
-    "cloud-to-edge",
-    "real-time systems",
-    "pub/sub protocol",
-    "autonomous systems",
-  ],
   authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
   creator: siteConfig.name,
   alternates: {
@@ -88,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100]
-                       focus:px-4 focus:py-2 focus:rounded-md focus:bg-accent focus:text-ink
+                       focus:px-4 focus:py-2 focus:rounded-md focus:bg-accent focus:text-accent-fg
                        focus:text-sm focus:font-semibold"
           >
             Skip to content

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
+import { tagSlug } from "@/lib/utils";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
 
@@ -9,6 +10,8 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  /** Optional `updated` frontmatter; falls back to `date` for dateModified / lastmod. */
+  updated?: string;
   excerpt: string;
   readingTime: string;
   content: string;
@@ -58,6 +61,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     slug,
     title: data.title ?? slug,
     date: data.date ?? "",
+    updated: data.updated,
     excerpt: data.excerpt ?? "",
     readingTime: stats.text,
     content,
@@ -81,10 +85,7 @@ export function getAdjacentPosts(slug: string): {
   };
 }
 
-/** URL-safe form of a tag: "ROS 2" -> "ros-2". */
-export function tagSlug(tag: string): string {
-  return tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
+export { tagSlug };
 
 /** Every tag in use, with its posts, sorted by post count then name. */
 export function getAllTags(): { tag: string; slug: string; posts: PostSummary[] }[] {

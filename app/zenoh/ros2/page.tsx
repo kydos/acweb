@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, techArticleSchema } from "@/lib/seo";
 import { PageShell, Breadcrumbs } from "@/components/PageShell";
+import { JsonLd } from "@/components/JsonLd";
+import { ZenohBlogLinks } from "@/components/ZenohBlogLinks";
 
-export const metadata: Metadata = pageMetadata({
-    path: "/zenoh/ros2",
-    title: "Zenoh for ROS 2",
-    description:
-      "How Eclipse Zenoh improves ROS 2 communication across robots, fleets, edge systems, and cloud infrastructure.",
-});
+const title = "Zenoh for ROS 2";
+const description =
+  "How Eclipse Zenoh improves ROS 2 communication across robots, fleets, edge systems, and cloud infrastructure.";
+
+export const metadata: Metadata = pageMetadata({ path: "/zenoh/ros2", title, description });
+
+const articleSchema = techArticleSchema({ path: "/zenoh/ros2", headline: title, description });
 
 export default function ZenohRos2Page() {
 
   return (
     <PageShell>
+      <JsonLd data={articleSchema} />
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "ROS 2", href: "/zenoh/ros2" }]} />
       <article>
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky">
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted">
         Eclipse Zenoh
       </p>
       <h1 className="mt-4 text-3xl md:text-5xl font-serif font-bold text-stone-900 dark:text-cream">
@@ -74,6 +78,7 @@ export default function ZenohRos2Page() {
         </div>
       </section>
       </article>
+      <ZenohBlogLinks href="/zenoh/ros2" />
     </PageShell>
   );
 }

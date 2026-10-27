@@ -21,28 +21,21 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    /* Header is ALWAYS dark — ink background regardless of theme */
-    <header className="sticky top-0 z-50 w-full border-b border-ink-wire bg-ink/95 backdrop-blur-md">
+    /* Header is ALWAYS dark: `scheme-dark` pins the colour tokens to their
+       dark values inside it, whatever the page theme. */
+    <header className="scheme-dark sticky top-0 z-50 w-full border-b border-line bg-bg/95 backdrop-blur-md">
       <div className="mx-auto max-w-5xl flex items-center justify-between px-6 h-16">
 
-        {/* Logo — AC monogram with lightning bolt (AC = alternating current) */}
+        {/* Logo — serif monogram; the dot is the site's one accent */}
         <Link
           href="/"
           aria-label="Home — Angelo Corsaro"
-          className="group flex items-center gap-2 select-none"
+          className="group flex items-end gap-[3px] select-none"
         >
-          <span className="relative flex items-center justify-center w-8 h-8 rounded-md border border-[#818cf8]/40 group-hover:border-[#818cf8]/80 transition-colors duration-200 bg-[#818cf8]/5 group-hover:bg-[#818cf8]/10">
-            <svg width="14" height="20" viewBox="0 0 14 20" fill="none" aria-hidden="true">
-              <path
-                d="M9 1L2 11H6.5L4 19L12 9H7.5Z"
-                fill="#818cf8"
-                className="group-hover:opacity-100 opacity-80 transition-opacity duration-200"
-              />
-            </svg>
-          </span>
-          <span className="font-serif text-xl font-bold tracking-tight text-cream group-hover:text-accent transition-colors duration-200">
+          <span className="font-serif text-xl font-bold leading-none tracking-tight text-cream group-hover:text-accent transition-colors duration-200">
             AC
           </span>
+          <span aria-hidden="true" className="mb-[2px] h-[5px] w-[5px] rounded-full bg-accent" />
         </Link>
 
         {/* Desktop nav */}

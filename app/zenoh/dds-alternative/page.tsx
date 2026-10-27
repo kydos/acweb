@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, techArticleSchema } from "@/lib/seo";
 import { PageShell, Breadcrumbs } from "@/components/PageShell";
+import { JsonLd } from "@/components/JsonLd";
+import { ZenohBlogLinks } from "@/components/ZenohBlogLinks";
 
-export const metadata: Metadata = pageMetadata({
-    path: "/zenoh/dds-alternative",
-    title: "Zenoh as a DDS Alternative",
-    description:
-      "Why Eclipse Zenoh is used as a DDS alternative for systems that need to span embedded devices, robots, edge networks, and cloud infrastructure.",
-});
+const title = "Zenoh as a DDS Alternative";
+const description =
+  "Why Eclipse Zenoh is used as a DDS alternative for systems that need to span embedded devices, robots, edge networks, and cloud infrastructure.";
+
+export const metadata: Metadata = pageMetadata({ path: "/zenoh/dds-alternative", title, description });
+
+const articleSchema = techArticleSchema({ path: "/zenoh/dds-alternative", headline: title, description });
 
 export default function ZenohDdsAlternativePage() {
 
   return (
     <PageShell>
+      <JsonLd data={articleSchema} />
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "DDS Alternative", href: "/zenoh/dds-alternative" }]} />
       <article>
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky">
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted">
         Protocol Architecture
       </p>
       <h1 className="mt-4 text-3xl md:text-5xl font-serif font-bold text-stone-900 dark:text-cream">
@@ -30,7 +34,7 @@ export default function ZenohDdsAlternativePage() {
       </p>
 
       <div className="mt-10 overflow-hidden rounded-lg border border-stone-200 dark:border-ink-wire">
-        <div className="grid grid-cols-3 bg-stone-100 text-xs font-mono uppercase tracking-wide text-stone-500 dark:bg-ink-shell dark:text-ash">
+        <div className="grid grid-cols-3 bg-stone-100 text-xs font-mono uppercase tracking-wide text-stone-600 dark:bg-ink-shell dark:text-fog">
           <div className="p-3">Concern</div>
           <div className="p-3">Traditional DDS Fit</div>
           <div className="p-3">Zenoh Fit</div>
@@ -71,6 +75,7 @@ export default function ZenohDdsAlternativePage() {
         </div>
       </section>
       </article>
+      <ZenohBlogLinks href="/zenoh/dds-alternative" />
     </PageShell>
   );
 }

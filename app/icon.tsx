@@ -1,35 +1,32 @@
 import { ImageResponse } from "next/og";
+import { loadLora, loraFonts } from "@/lib/ogFonts";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-export default function Icon() {
+/* Same mark as the header: serif "AC" with the amber dot. */
+export default async function Icon() {
+  const lora = await loadLora(700, "AC");
   return new ImageResponse(
     (
       <div
         style={{
           width: 32,
           height: 32,
-          background: "#0a0a0f",
+          background: "#0B0F14",
           borderRadius: 6,
-          border: "1.5px solid rgba(129,140,248,0.7)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
         }}
       >
-        {/* Lightning bolt — same path as the header badge */}
-        <svg
-          width="12"
-          height="24"
-          viewBox="0 0 12 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M10 0 L0 14 H6 L2 24 L12 10 H6 Z" fill="#818cf8" />
-        </svg>
+        <span style={{ color: "#F3EFE7", fontFamily: "Lora", fontSize: 17, fontWeight: 700, letterSpacing: -0.5, lineHeight: 1 }}>
+          AC
+        </span>
+        <div style={{ position: "absolute", right: 3, bottom: 8, width: 4, height: 4, borderRadius: 2, background: "#C78A3B" }} />
       </div>
     ),
-    { ...size }
+    { ...size, fonts: loraFonts(lora, 700) }
   );
 }

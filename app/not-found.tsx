@@ -17,7 +17,7 @@ const suggestions = [
 export default function NotFound() {
   return (
     <PageShell>
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky">404</p>
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted">404</p>
       <h1 className="mt-4 text-3xl md:text-4xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream">
         This page doesn&rsquo;t exist
       </h1>
@@ -43,7 +43,7 @@ export default function NotFound() {
                 href={item.href}
                 className="group block h-full rounded-lg border border-stone-200 dark:border-ink-wire
                            bg-white dark:bg-ink-card px-4 py-3.5
-                           hover:border-azure dark:hover:border-azure transition-colors"
+                           hover:border-muted transition-colors"
               >
                 <span className="block text-sm font-semibold text-stone-800 dark:text-cream group-hover:text-accent transition-colors">
                   {item.label}

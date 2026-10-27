@@ -1,33 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef, techArticleSchema } from "@/lib/seo";
+import { ZenohBlogLinks } from "@/components/ZenohBlogLinks";
 
 
 export const metadata: Metadata = pageMetadata({
   path: "/zenoh",
   title: "Zenoh Protocol",
   description: "Unifying the IoT / Edge / Cloud continuum",
-  keywords: [
-    "Zenoh Protocol",
-    "Eclipse Zenoh",
-    "Zenoh IoT",
-    "Zenoh robotics",
-    "Zenoh ROS 2",
-    "pub/sub protocol",
-    "cloud-to-edge",
-    "distributed middleware",
-    "edge computing protocol",
-    "DDS alternative",
-    "Angelo Corsaro",
-    "Zenoh inventor",
-    "zero network overhead",
-    "Zenoh embedded",
-    "Zenoh microcontroller",
-    "Zenoh 1.0",
-    "Zenoh 2.0",
-    "Zenoh wire protocol",
-  ],
+});
+
+const articleSchema = techArticleSchema({
+  path: "/zenoh",
+  headline: "Zenoh Protocol — unifying the IoT / Edge / Cloud continuum",
+  description:
+    "A protocol that unifies data in motion, data at rest, and computations, from microcontrollers to cloud clusters.",
 });
 
 const zenohProtocolSchema = {
@@ -45,7 +33,7 @@ const zenohProtocolSchema = {
     url: canonicalUrl(""),
     jobTitle: "Inventor of the Zenoh Protocol",
   },
-  author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
+  author: personRef,
   url: "https://zenoh.io",
   sameAs: [
     "https://github.com/eclipse-zenoh/zenoh",
@@ -146,10 +134,11 @@ export default function ZenohPage() {
   return (
     <>
       <JsonLd data={zenohProtocolSchema} />
+      <JsonLd data={articleSchema} />
       <div>
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section className="relative mx-auto max-w-5xl px-6 pt-14 pb-10 md:pt-20 md:pb-12">
-          <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">
+          <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted mb-4 animate-fade-in">
             Eclipse Zenoh
           </p>
           <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-cream animate-fade-in">
@@ -183,7 +172,7 @@ export default function ZenohPage() {
                 href={repo.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card text-xs font-mono text-stone-600 dark:text-fog hover:border-azure dark:hover:border-azure hover:text-azure dark:hover:text-sky transition-all duration-200"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 dark:border-ink-wire bg-stone-50 dark:bg-ink-card text-xs font-mono text-stone-600 dark:text-fog hover:border-accent hover:text-accent transition-all duration-200"
               >
                 <GitHubIcon />
                 {repo.name}
@@ -206,7 +195,7 @@ export default function ZenohPage() {
               href="http://zenoh.corsaro.me:8000/examples/web/"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors whitespace-nowrap"
+              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-accent-fg hover:bg-accent-hover transition-colors whitespace-nowrap"
             >
               Live Demo
               <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -266,7 +255,7 @@ export default function ZenohPage() {
             <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-2 text-stone-900 dark:text-cream">
               {"The Genesis of Zenoh"}
             </h2>
-            <p className="text-sm text-stone-400 dark:text-ash mb-8 italic">
+            <p className="text-sm text-muted mb-8 italic">
               {"How a protocol was born from necessity — and named after a philosopher"}
             </p>
 
@@ -292,7 +281,7 @@ export default function ZenohPage() {
 
               <blockquote className="border-l-4 border-accent pl-6 py-1 text-stone-600 dark:text-sand italic">
                 &ldquo;{"I had to do something. I started working on the idea of coming up with a protocol that could work efficiently from the microcontroller up to the data-center, would not have any topological constraints and would provide unified abstraction for dealing with data in movement and data at rest."}&rdquo;
-                <footer className="mt-2 text-xs not-italic text-stone-400 dark:text-ash">
+                <footer className="mt-2 text-xs not-italic text-muted">
                   — Angelo Corsaro, The Zenoh Report, February 2026
                 </footer>
               </blockquote>
@@ -300,7 +289,7 @@ export default function ZenohPage() {
 
             {/* Why "Zenoh"? */}
             <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-6">
-              <h3 className="font-semibold text-accent mb-3 text-lg">
+              <h3 className="font-semibold text-fg mb-3 text-lg">
                 {"Why “Zenoh”?"}
               </h3>
               <p className="text-sm text-stone-700 dark:text-fog leading-relaxed mb-3">
@@ -310,7 +299,7 @@ export default function ZenohPage() {
                 {"Stoicism — founded by Zenon of Citium — left an equally deep mark through Marcus Aurelius’s Meditations."}
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <span className="px-3 py-1.5 rounded-lg bg-accent/10 text-sm font-mono text-accent font-semibold">
+                <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-card text-sm font-mono text-fg font-semibold">
                   Z·E·N·O·H
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
@@ -323,7 +312,7 @@ export default function ZenohPage() {
                   Zenon of Citium (Stoic founder)
                 </span>
               </div>
-              <p className="mt-3 text-xs text-stone-400 dark:text-ash italic">
+              <p className="mt-3 text-xs text-muted italic">
                 {"The difference between Zenon and Zenoh is less than a letter — it is just the overshoot of the “h”."}
               </p>
             </div>
@@ -341,7 +330,7 @@ export default function ZenohPage() {
                 <Link
                   key={card.href}
                   href={card.href}
-                  className="group flex items-start gap-4 p-5 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-azure dark:hover:border-azure hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex items-start gap-4 p-5 rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card hover:border-muted hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors">
                     <svg
@@ -355,7 +344,7 @@ export default function ZenohPage() {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-stone-900 dark:text-cream group-hover:text-azure dark:group-hover:text-sky transition-colors">
+                    <h3 className="font-semibold text-stone-900 dark:text-cream group-hover:text-accent transition-colors">
                       {card.title}
                     </h3>
                     <p className="mt-1 text-sm text-stone-500 dark:text-fog leading-relaxed">
@@ -364,7 +353,7 @@ export default function ZenohPage() {
                   </div>
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-4 h-4 mt-1 shrink-0 text-stone-400 dark:text-ash group-hover:text-azure dark:group-hover:text-sky transition-colors"
+                    className="w-4 h-4 mt-1 shrink-0 text-muted group-hover:text-accent transition-colors"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -377,7 +366,9 @@ export default function ZenohPage() {
           </div>
         </section>
 
-
+        <div className="mx-auto max-w-5xl px-6 pb-phi-xl">
+          <ZenohBlogLinks href="/zenoh" />
+        </div>
       </div>
     </>
   );

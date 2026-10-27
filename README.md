@@ -70,7 +70,7 @@ Post content here...
 Place the following in `/public`:
 - `photo.jpg` — Profile photo
 - `resume.pdf` — CV/resume download
-- `og-image.png` — Open Graph image
+- Open Graph images are generated at build: `app/og.png/route.tsx` (site) and `app/blog/[slug]/og.png/route.tsx` (per post)
 
 ## Deployment
 

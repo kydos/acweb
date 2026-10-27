@@ -8,15 +8,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Zenoh Talks",
   description:
     "Conference talks, keynotes, workshops, and webinars on the Zenoh Protocol and distributed systems by Angelo Corsaro — inventor of Zenoh.",
-  keywords: [
-    "Zenoh talks",
-    "Zenoh presentations",
-    "Angelo Corsaro keynote",
-    "Eclipse Zenoh conference",
-    "Zenoh Protocol video",
-    "distributed systems talk",
-    "ROS 2 Zenoh",
-  ],
 });
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -143,11 +134,11 @@ const typeLabels: Record<Talk["type"], string> = {
 };
 
 const typeBadgeClass: Record<Talk["type"], string> = {
-  conference: "bg-azure/10 text-azure dark:bg-azure/20 dark:text-sky",
-  keynote: "bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent",
+  conference: "bg-stone-100 text-stone-700 dark:bg-ink-shell/40 dark:text-cream",
+  keynote: "bg-fg text-bg",
   workshop: "bg-stone-100 text-stone-600 dark:bg-ink-shell/40 dark:text-sand",
-  webinar: "bg-azure/5 text-azure/80 dark:bg-azure/10 dark:text-fog",
-  invited: "bg-accent/5 text-accent/80 dark:bg-accent/10 dark:text-sand",
+  webinar: "text-muted border border-line",
+  invited: "border border-fg/30 text-fg",
 };
 
 function ExternalIcon() {
@@ -183,11 +174,11 @@ function TalkCard({ talk }: { talk: Talk }) {
         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${typeBadgeClass[talk.type]}`}>
           {typeLabels[talk.type]}
         </span>
-        <span className="text-xs text-stone-400 dark:text-ash font-mono">
+        <span className="text-xs text-muted font-mono">
           {talk.month ? `${talk.month} ` : ""}{talk.year}
         </span>
         {talk.location && (
-          <span className="text-xs text-stone-400 dark:text-ash">· {talk.location}</span>
+          <span className="text-xs text-muted">· {talk.location}</span>
         )}
       </div>
 
@@ -203,7 +194,7 @@ function TalkCard({ talk }: { talk: Talk }) {
 
       {/* Description */}
       {talk.description && (
-        <p className="mt-2 text-xs text-stone-400 dark:text-ash leading-relaxed">
+        <p className="mt-2 text-xs text-muted leading-relaxed">
           {talk.description}
         </p>
       )}
@@ -216,7 +207,7 @@ function TalkCard({ talk }: { talk: Talk }) {
               href={talk.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-azure dark:text-sky hover:text-accent transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors duration-200"
             >
               <PlayIcon />
               Video
@@ -227,7 +218,7 @@ function TalkCard({ talk }: { talk: Talk }) {
               href={talk.slidesUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-azure dark:text-sky hover:text-accent transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors duration-200"
             >
               <SlidesIcon />
               Slides
@@ -238,7 +229,7 @@ function TalkCard({ talk }: { talk: Talk }) {
               href={talk.paperUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-azure dark:text-sky hover:text-accent transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors duration-200"
             >
               <ExternalIcon />
               Paper
@@ -263,7 +254,7 @@ function Section({
     <div className="mt-12">
       <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-stone-200 dark:border-ink-wire">
         <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">{title}</h2>
-        <span className="text-sm text-stone-400 dark:text-ash font-mono">{count}</span>
+        <span className="text-sm text-muted font-mono">{count}</span>
       </div>
       <div className="space-y-3">{children}</div>
     </div>
@@ -334,7 +325,7 @@ export default function ZenohTalksPage() {
                 href="https://zenoh.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-azure dark:text-sky hover:text-accent transition-colors underline underline-offset-2"
+                className="text-fg underline decoration-muted/50 underline-offset-2 hover:text-accent hover:decoration-accent transition-colors"
               >
                 zenoh.io
               </a>

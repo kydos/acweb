@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, canonicalUrl } from "@/lib/seo";
+import { pageMetadata, canonicalUrl, personRef } from "@/lib/seo";
 import { PageShell, Breadcrumbs, RelatedLinks } from "@/components/PageShell";
 
 
@@ -11,18 +11,6 @@ export const metadata: Metadata = pageMetadata({
   description:
     "The comprehensive guide to the Zenoh protocol — architecture, concepts, and hands-on examples.",
   type: "book",
-  keywords: [
-    "Zenoh book",
-    "Zenoh documentation",
-    "Zenoh tutorial",
-    "Eclipse Zenoh guide",
-    "Zenoh Protocol book",
-    "pub/sub tutorial",
-    "distributed systems protocol guide",
-    "ROS 2 middleware tutorial",
-    "Zenoh embedded guide",
-    "Angelo Corsaro Zenoh",
-  ],
 });
 
 const zenohBookSchema = {
@@ -31,8 +19,8 @@ const zenohBookSchema = {
   name: "The Zenoh Book",
   description:
     "The definitive open-source guide to the Zenoh Protocol — from pub/sub fundamentals to multi-datacenter deployments, embedded systems, and advanced wire-format internals.",
-  author: { "@type": "Person", name: "Angelo Corsaro", url: canonicalUrl("") },
-  publisher: { "@type": "Person", name: "Angelo Corsaro" },
+  author: personRef,
+  publisher: personRef,
   inLanguage: "en",
   url: canonicalUrl("/zenoh/book"),
   about: [
@@ -102,7 +90,7 @@ export default function ZenohBookPage() {
     <PageShell>
       <Breadcrumbs trail={[{ label: "Zenoh", href: "/zenoh" }, { label: "Book", href: "/zenoh/book" }]} />
       {/* Header */}
-      <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4 animate-fade-in">
+      <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted mb-4 animate-fade-in">
         Built with mdBook · Powered by Rust
       </p>
       <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 dark:text-cream animate-fade-in">
@@ -149,7 +137,7 @@ export default function ZenohBookPage() {
               className="group block rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card p-5 hover:border-accent dark:hover:border-accent transition-colors duration-200"
             >
               <div className="flex gap-4">
-                <span className="shrink-0 font-mono text-2xl font-bold text-accent/30 dark:text-accent/20 leading-none pt-1">
+                <span className="shrink-0 font-mono text-2xl font-bold text-muted leading-none pt-1">
                   {ch.num}
                 </span>
                 <div className="flex-1 min-w-0">
@@ -184,7 +172,7 @@ export default function ZenohBookPage() {
             href="https://zenoh.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:underline"
+            className="text-fg underline decoration-muted/50 underline-offset-2 hover:text-accent hover:decoration-accent"
           >
             zenoh.io
           </a>.

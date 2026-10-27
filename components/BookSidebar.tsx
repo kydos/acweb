@@ -17,7 +17,7 @@ function NavTree({
       <Link
         href="/zenoh/book"
         onClick={onClose}
-        className="block px-2 mb-5 text-xs font-mono uppercase tracking-widest text-stone-400 dark:text-ash hover:text-accent transition-colors"
+        className="block px-2 mb-5 text-xs font-mono uppercase tracking-widest text-muted hover:text-accent transition-colors"
       >
         ← The Zenoh Book
       </Link>
@@ -37,14 +37,14 @@ function NavTree({
                 onClick={onClose}
                 className={`flex items-center gap-1.5 px-2 py-1.5 rounded-md text-sm transition-colors ${
                   isActive
-                    ? "bg-accent/10 text-accent font-semibold"
+                    ? "bg-stone-100 dark:bg-ink-card text-fg font-semibold"
                     : isSectionOpen
                     ? "text-stone-800 dark:text-cream font-medium"
                     : "text-stone-600 dark:text-fog hover:text-stone-900 dark:hover:text-cream hover:bg-stone-100 dark:hover:bg-ink-shell/40"
                 }`}
               >
                 {isSection && (
-                  <span className="text-[10px] text-stone-400 dark:text-ash shrink-0">
+                  <span className="text-[10px] text-muted shrink-0">
                     {isSectionOpen ? "▾" : "▸"}
                   </span>
                 )}
@@ -62,7 +62,7 @@ function NavTree({
                           onClick={onClose}
                           className={`block px-2 py-1 rounded-md text-sm transition-colors ${
                             childActive
-                              ? "text-accent font-semibold"
+                              ? "text-fg font-semibold"
                               : "text-stone-500 dark:text-fog hover:text-stone-800 dark:hover:text-cream hover:bg-stone-100 dark:hover:bg-ink-shell/40"
                           }`}
                         >
@@ -103,7 +103,7 @@ export function BookSidebar({ currentSlug }: Props) {
               </span>
               <button
                 onClick={() => setOpen(false)}
-                className="p-1.5 rounded-md text-stone-400 hover:text-stone-700 dark:hover:text-cream hover:bg-stone-100 dark:hover:bg-ink-shell"
+                className="p-1.5 rounded-md text-muted hover:text-stone-700 dark:hover:text-cream hover:bg-stone-100 dark:hover:bg-ink-shell"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -126,7 +126,7 @@ export function BookSidebar({ currentSlug }: Props) {
 
       {/* Mobile toggle — floating button */}
       <button
-        className="lg:hidden fixed bottom-6 right-6 z-30 flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent text-white shadow-lg text-sm font-medium"
+        className="lg:hidden fixed bottom-6 right-6 z-30 flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent text-accent-fg shadow-lg text-sm font-medium"
         onClick={() => setOpen(true)}
       >
         <svg

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 import { getAllPostSummaries } from "@/lib/mdx";
 import { BlogCard } from "@/components/BlogCard";
 import { JsonLd } from "@/components/JsonLd";
-import { pageMetadata, absoluteUrl } from "@/lib/seo";
+import { HeroFireflies } from "@/components/HeroFireflies";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { pageMetadata, canonicalUrl, personSchema } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: "",
@@ -13,243 +14,200 @@ export const metadata: Metadata = pageMetadata({
   description: siteConfig.siteDescription,
 });
 
-const personSchema = {
+const homeSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Angelo Corsaro",
-  url: siteConfig.siteUrl,
-  image: absoluteUrl(siteConfig.profilePhoto),
-  jobTitle: "Innovator & Distributed Systems Architect",
-  description:
-    "Angelo Corsaro, Ph.D. is the inventor of the Zenoh Protocol and a world expert in distributed systems, robotics middleware, AI-native infrastructure, and cloud-to-edge computing.",
-  sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
-  knowsAbout: [
-    "Zenoh Protocol",
-    "Distributed Systems",
-    "Robotics",
-    "ROS 2",
-    "Edge Computing",
-    "IoT",
-    "AI infrastructure",
-    "DDS",
-    "Real-Time Systems",
-    "Autonomous Vehicles",
-  ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Washington University in St. Louis",
-  },
-  award: [
-    "Technology CEO of the Year 2024",
-    "Genius Minds 2024 — Representing France",
-    "Power 200: World's Most Influential Data Economy Leaders 2019",
-    "Gartner Cool Vendor 2014",
+  "@graph": [
+    personSchema,
+    {
+      "@type": "WebSite",
+      "@id": `${canonicalUrl("")}#website`,
+      name: siteConfig.siteShortTitle,
+      url: canonicalUrl(""),
+      description: siteConfig.siteDescription,
+      inLanguage: "en",
+      publisher: { "@id": personSchema["@id"] },
+    },
   ],
 };
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Angelo Corsaro",
-  url: siteConfig.siteUrl,
-  description: siteConfig.siteDescription,
-  author: {
-    "@type": "Person",
-    name: "Angelo Corsaro",
-  },
-};
-
-const profilePillRows = [
-  ["ROS 2", "DDS", "Edge AI", "IoT", "SDV", "V2X"],
-  ["Rust", "C++", "OCaml", "Robotics", "Embedded", "Standards"],
-  ["Innovation", "Middleware", "Real-Time", "Cloud Continuum"],
-] as const;
 
 export default function Home() {
   const recentPosts = getAllPostSummaries().slice(0, 3);
 
   return (
     <>
-      <JsonLd data={personSchema} />
-      <JsonLd data={websiteSchema} />
-    <section className="relative mx-auto max-w-6xl px-6 py-phi-xl md:py-phi-2xl">
-      <div className="grid items-center gap-phi-lg min-[1152px]:grid-cols-hero-phi">
-        <div className="min-w-0">
-          <div className="animate-fade-in">
-            <p className="text-sm font-mono uppercase tracking-[0.2em] text-sky dark:text-sky mb-4">
-              Protocol Inventor &amp; Technology Executive
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-none text-stone-900 dark:text-cream">
+      <JsonLd data={homeSchema} />
+      {/* Hero — one headline, one line of facts, one filled button. The
+          name and the headline share the h1 so the page's single heading
+          still carries the name; the headline is the LCP element and is
+          painted without any entrance animation. */}
+      <section className="relative isolate overflow-hidden">
+        <HeroFireflies />
+        <div className="mx-auto flex max-w-5xl flex-col justify-center px-6 py-phi-xl min-h-[calc(100svh-4rem)] md:min-h-[min(calc(100svh-4rem),48rem)]">
+          <h1>
+            <span className="block font-mono text-xs uppercase tracking-[0.2em] text-muted">
               {siteConfig.name}
-            </h1>
-            <p className="mt-phi-md text-xl md:text-2xl font-light max-w-2xl leading-relaxed text-stone-600 dark:text-sand">
-              Inventor, Implementor &amp; Industry Driver
-            </p>
-          </div>
-
-          <p className="mt-phi-lg text-lg max-w-2xl leading-relaxed animate-fade-in animate-delay-100 text-stone-500 dark:text-fog">
-            Inventor of the Zenoh Protocol and serial technology executive. A rare combination of
-            deep technologist and proven CEO/CTO — someone who invents technologies from first
-            principles, implements them, and drives their adoption to global industry standards.
+            </span>
+            {/* One line at every width: the headline is 8.86em wide in Lora 600 at
+                this tracking, so the size is the content box (100vw − 3rem of
+                padding) over 9.1em, capped at 5.5rem on wide screens. */}
+            <span className="mt-phi-md block font-serif font-semibold leading-[1.04] tracking-[-0.025em] text-fg whitespace-nowrap text-[min(5.5rem,calc((100vw_-_3rem)/9.1))]">
+              {siteConfig.hero.headline}
+            </span>
+          </h1>
+          <p className="mt-phi-md max-w-xl text-lg leading-relaxed text-muted">
+            {siteConfig.hero.supporting}
           </p>
-
-          <div className="mt-phi-lg grid grid-cols-2 sm:grid-cols-4 gap-phi-xs animate-fade-in animate-delay-200">
-            {siteConfig.cv.stats.map((item) => (
-              <div
-                key={item.label}
-                className="flex min-h-[92px] flex-col justify-between border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card px-4 py-3 rounded-lg"
-              >
-                <div className="font-mono text-xl font-bold text-accent">{item.value}</div>
-                <div className="mt-1 text-xs leading-tight text-stone-500 dark:text-ash">
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-phi-lg flex flex-wrap gap-phi-xs animate-fade-in animate-delay-300">
-            <Link href="/zenoh" className="btn-primary">Zenoh Protocol</Link>
-            <Link href="/zenoh/report" className="btn-ghost">Zenoh Report</Link>
-            <Link href="/cv" className="btn-ghost">Curriculum Vitae</Link>
-            <Link href="/blog" className="btn-ghost">Read the Blog</Link>
-          </div>
-
-          <div className="mt-phi-lg flex items-center gap-phi-md animate-fade-in animate-delay-400">
-            <SocialIcon href={siteConfig.social.github} label="GitHub">
-              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-            </SocialIcon>
-            <SocialIcon href={siteConfig.social.linkedin} label="LinkedIn">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </SocialIcon>
-          </div>
-        </div>
-
-        <aside className="animate-fade-in animate-delay-200">
-          <div className="overflow-hidden rounded-lg border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card">
-            <Image
-              src={siteConfig.profilePhoto}
-              alt={siteConfig.name}
-              width={800}
-              height={784}
-              priority
-              className="aspect-square w-full object-cover"
-            />
-            <div className="p-5">
-              <p className="text-xs font-mono uppercase tracking-[0.18em] text-azure dark:text-sky">
-                Eclipse Zenoh
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-fog">
-                A protocol that unifies data in motion, data at rest, and computations. From 2KB
-                microcontrollers to cloud clusters.
-              </p>
-              <div className="mt-4 space-y-2">
-                {profilePillRows.map((row, index) => (
-                  <div key={index} className="flex flex-wrap gap-1.5">
-                    {row.map((label) => (
-                      <span
-                        key={label}
-                        className="whitespace-nowrap rounded-full border border-stone-200 dark:border-ink-wire px-2.5 py-1 text-[11px] leading-none text-stone-500 dark:text-ash"
-                      >
-                        {label}
-                      </span>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section className="mx-auto max-w-6xl px-6 pb-phi-xl">
-      <div className="border-t border-stone-100 dark:border-ink-wire pt-phi-lg">
-        <p className="text-xs font-mono uppercase tracking-[0.2em] text-stone-400 dark:text-ash text-center mb-6">
-          Featured In
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-          {siteConfig.pressMedia.map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors duration-200 whitespace-nowrap"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {recentPosts.length > 0 && (
-      <section className="mx-auto max-w-6xl px-6 pb-phi-xl">
-        <div className="border-t border-stone-100 dark:border-ink-wire pt-phi-lg">
-          <div className="flex items-baseline justify-between mb-2">
-            <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">
-              Latest from the Blog
-            </h2>
-            <Link href="/blog" className="text-sm text-azure dark:text-sky hover:text-accent dark:hover:text-accent transition-colors">
-              All posts →
+          <div className="mt-phi-lg flex flex-wrap items-center gap-x-phi-md gap-y-phi-sm">
+            <Link href="/zenoh" className="btn-primary">
+              Explore Zenoh
             </Link>
-          </div>
-          <div className="divide-y divide-stone-100 dark:divide-ink-wire/50">
-            {recentPosts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
+            <Link href="/blog" className="link-quiet">
+              Read the writing <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
-    )}
 
-    <section className="mx-auto max-w-6xl px-6 pb-phi-2xl">
-      <div className="rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent dark:from-accent/15 dark:via-accent/5 dark:to-transparent p-6 md:p-8">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent/20 shrink-0">
-                <svg viewBox="0 0 24 24" className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>
-              </span>
-              <h2 className="text-lg font-semibold text-stone-900 dark:text-cream">
-                Try Zenoh in Your Browser
-              </h2>
+      {/* Proof strip — numbers, no boxes. */}
+      <section aria-label="Track record" className="mx-auto max-w-5xl px-6 pb-phi-xl">
+        <dl data-reveal className="grid grid-cols-2 gap-x-phi-lg gap-y-phi-md sm:grid-cols-4">
+          {siteConfig.cv.stats.map((item) => (
+            // dt must precede dd in the markup; flex-col-reverse puts the number on top.
+            <div key={item.label} className="flex flex-col-reverse">
+              <dt className="mt-1 text-sm text-muted">{item.label}</dt>
+              <dd className="text-4xl font-semibold tracking-tight tabular-nums text-accent md:text-5xl">
+                {item.value}
+              </dd>
             </div>
-            <p className="text-sm text-stone-600 dark:text-fog leading-relaxed">
-              Explore all Zenoh features — publishers, subscribers, queryables, and get operations —
-              live in your browser. Open multiple tabs to test cross-instance communication.
-            </p>
-          </div>
-          <a
-            href="http://zenoh.corsaro.me:8000/examples/web/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent/90 transition-colors duration-200 shrink-0 whitespace-nowrap"
-          >
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-            </svg>
-            Try the Live Web Demo
-          </a>
+          ))}
+        </dl>
+
+        <div data-reveal className="mt-phi-lg flex flex-wrap items-baseline gap-x-phi-md gap-y-phi-xs">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Featured in</p>
+          <ul className="flex flex-wrap gap-x-phi-md gap-y-phi-xs">
+            {siteConfig.pressMedia.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whitespace-nowrap text-sm font-medium text-muted transition-colors hover:text-accent"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Zenoh — one sentence, one picture, one thing to try. */}
+      <section aria-labelledby="zenoh-heading" className="mx-auto max-w-5xl px-6 py-phi-xl">
+        <div data-reveal className="border-t border-line pt-phi-lg">
+          <h2 id="zenoh-heading" className="font-serif text-3xl font-semibold text-fg">
+            Zenoh
+          </h2>
+          <p className="mt-phi-xs max-w-2xl text-lg leading-relaxed text-muted">
+            One protocol for data in motion, data at rest and computation — from a microcontroller
+            to the cloud.
+          </p>
+
+          <ContinuumDiagram />
+
+          <div className="mt-phi-lg flex flex-wrap items-baseline gap-x-phi-lg gap-y-phi-sm">
+            <a href={siteConfig.zenohDemoUrl} target="_blank" rel="noopener noreferrer" className="link-quiet">
+              Try Zenoh in your browser <span aria-hidden="true">↗</span>
+            </a>
+            <Link href="/zenoh/book" className="link-quiet">
+              Read the Zenoh book <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+          <p className="mt-phi-xs max-w-2xl text-sm leading-relaxed text-muted">
+            The demo runs publishers, subscribers, queryables and gets live in the page — open it
+            in two tabs and watch them talk.
+          </p>
+        </div>
+      </section>
+
+      {/* Writing — titles, dates, reading time. */}
+      {recentPosts.length > 0 && (
+        <section aria-labelledby="writing-heading" className="mx-auto max-w-5xl px-6 pb-phi-xl">
+          <div data-reveal className="border-t border-line pt-phi-lg">
+            <div className="flex items-baseline justify-between gap-phi-sm">
+              <h2 id="writing-heading" className="font-serif text-3xl font-semibold text-fg">
+                Writing
+              </h2>
+              <Link href="/blog" className="link-quiet">
+                All posts <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <div className="mt-phi-xs divide-y divide-line">
+              {recentPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} compact headingLevel="h3" />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <ScrollReveal />
     </>
   );
 }
 
-function SocialIcon({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
+/**
+ * MCU → edge → cloud, drawn in HTML + small inline SVG icons so the labels
+ * stay legible at phone width (a single scaled SVG would shrink them to ~6px).
+ */
+function ContinuumDiagram() {
+  const tiers = [
+    {
+      label: "Microcontroller",
+      icon: (
+        <>
+          <rect x="11" y="11" width="18" height="18" rx="2" />
+          <path d="M15 7v4M20 7v4M25 7v4M15 29v4M20 29v4M25 29v4M7 15h4M7 20h4M7 25h4M29 15h4M29 20h4M29 25h4" />
+        </>
+      ),
+    },
+    {
+      label: "Edge",
+      icon: (
+        <>
+          <rect x="6" y="10" width="28" height="9" rx="2" />
+          <rect x="6" y="21" width="28" height="9" rx="2" />
+          <path d="M10 14.5h4M10 25.5h4" />
+        </>
+      ),
+    },
+    {
+      label: "Cloud",
+      icon: <path d="M12 29h17a6 6 0 0 0 .6-11.97A8 8 0 0 0 14.2 15.6 6.75 6.75 0 0 0 12 29Z" />,
+    },
+  ];
+
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent hover:scale-110 transition-all duration-200"
-    >
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">{children}</svg>
-    </a>
+    <figure className="mt-phi-lg">
+      <div
+        role="img"
+        aria-label="Zenoh runs on microcontrollers, edge nodes and cloud servers, speaking one protocol end to end."
+        className="flex items-start text-muted"
+      >
+        {tiers.map((tier, i) => (
+          <div key={tier.label} className={i < tiers.length - 1 ? "flex flex-1 items-start" : "flex items-start"}>
+            <div className="flex w-24 shrink-0 flex-col items-center gap-phi-xs sm:w-32">
+              <svg viewBox="0 0 40 40" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                {tier.icon}
+              </svg>
+              <span className="text-center font-mono text-xs">{tier.label}</span>
+            </div>
+            {i < tiers.length - 1 && <span className="mt-5 h-px flex-1 bg-muted/50" />}
+          </div>
+        ))}
+      </div>
+      <figcaption className="mt-phi-sm text-center font-mono text-xs text-muted">
+        one protocol, end to end
+      </figcaption>
+    </figure>
   );
 }

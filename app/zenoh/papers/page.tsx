@@ -8,17 +8,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Zenoh Papers",
   description:
     "Scientific papers, journal articles, conference proceedings, and press coverage on Zenoh Protocol and distributed systems research by Angelo Corsaro.",
-  keywords: [
-    "Zenoh papers",
-    "Zenoh research",
-    "Angelo Corsaro publications",
-    "Eclipse Zenoh academic",
-    "Zenoh performance benchmarks",
-    "Zenoh ROS 2 study",
-    "distributed systems research",
-    "pub/sub protocol research",
-    "Zenoh DDS comparison",
-  ],
 });
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -284,16 +273,16 @@ function PaperRow({ paper }: { paper: Paper }) {
         <p className={`font-medium text-sm leading-snug ${paper.url ? "text-stone-900 dark:text-cream group-hover:text-accent transition-colors" : "text-stone-900 dark:text-cream"}`}>
           {paper.title}
           {paper.lang && (
-            <span className="ml-2 px-1.5 py-0.5 text-[10px] rounded font-mono bg-stone-100 dark:bg-ink-shell/40 text-stone-500 dark:text-ash align-middle uppercase">
+            <span className="ml-2 px-1.5 py-0.5 text-[10px] rounded font-mono bg-stone-100 dark:bg-ink-shell/40 text-stone-600 dark:text-ash align-middle uppercase">
               {paper.lang}
             </span>
           )}
         </p>
         {paper.note && (
-          <p className="text-xs text-stone-400 dark:text-ash italic mt-0.5">{paper.note}</p>
+          <p className="text-xs text-muted italic mt-0.5">{paper.note}</p>
         )}
         <p className="mt-1 text-xs text-stone-500 dark:text-fog">{paper.authors}</p>
-        <p className="mt-0.5 text-xs text-stone-400 dark:text-ash">
+        <p className="mt-0.5 text-xs text-muted">
           {paper.venue} · {paper.year}
           {paper.doi && <span className="ml-1.5 font-mono">DOI: {paper.doi}</span>}
         </p>
@@ -321,7 +310,7 @@ function Section({ title, count, children }: { title: string; count: number; chi
     <div className="mt-12">
       <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-stone-200 dark:border-ink-wire">
         <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">{title}</h2>
-        <span className="text-sm text-stone-400 dark:text-ash font-mono">{count}</span>
+        <span className="text-sm text-muted font-mono">{count}</span>
       </div>
       <div className="space-y-2.5">{children}</div>
     </div>
@@ -393,7 +382,7 @@ export default function ZenohPapersPage() {
         </Section>
 
         <Section title="Reports" count={reports.length}>
-          <p className="text-xs text-stone-400 dark:text-ash mb-3 italic">
+          <p className="text-xs text-muted mb-3 italic">
             Industry and standards body reports referencing or adopting Zenoh.
           </p>
           {reports.map((p, i) => <PaperRow key={i} paper={p} />)}
@@ -404,14 +393,14 @@ export default function ZenohPapersPage() {
         </Section>
 
         <Section title="Academic Papers on Zenoh (by others)" count={zenohPapersByOthers.length}>
-          <p className="text-xs text-stone-400 dark:text-ash mb-3 italic">
+          <p className="text-xs text-muted mb-3 italic">
             Papers published by the research community that study or build on the Zenoh protocol.
           </p>
           {zenohPapersByOthers.map((p, i) => <PaperRow key={i} paper={p} />)}
         </Section>
 
         <Section title="Non-English Publications" count={nonEnglishArticles.length}>
-          <p className="text-xs text-stone-400 dark:text-ash mb-3 italic">
+          <p className="text-xs text-muted mb-3 italic">
             Articles and papers published in languages other than English.
           </p>
           {nonEnglishArticles.map((p, i) => <PaperRow key={i} paper={p} />)}

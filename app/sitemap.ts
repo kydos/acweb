@@ -4,6 +4,14 @@ import { flatSlugs } from "@/lib/bookNav";
 import { canonicalUrl } from "@/lib/seo";
 
 const siteLastModified = new Date("2026-04-10");
+// Pages whose content changed after siteLastModified.
+const routeLastModified: Record<string, Date> = {
+  "": new Date("2026-10-27"), // new-look homepage
+  // Gained a "From the blog" rail
+  "/zenoh": new Date("2026-10-27"),
+  "/zenoh/ros2": new Date("2026-10-27"),
+  "/zenoh/dds-alternative": new Date("2026-10-27"),
+};
 const bookLastModified = new Date("2026-04-10");
 
 const reportIssueDates: Record<string, Date> = {
@@ -32,19 +40,24 @@ const staticRoutes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
+  const posts = getAllPosts();
+  const postModified = (p: (typeof posts)[number]) => new Date(p.updated ?? p.date);
+  // The blog index changes whenever a post is published.
+  routeLastModified["/blog"] = posts.length ? postModified(posts[0]) : siteLastModified;
+
   for (const route of staticRoutes) {
     entries.push({
       url: canonicalUrl(route.path),
-      lastModified: siteLastModified,
+      lastModified: routeLastModified[route.path] ?? siteLastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     });
   }
 
-  for (const post of getAllPosts()) {
+  for (const post of posts) {
     entries.push({
       url: canonicalUrl(`/blog/${post.slug}`),
-      lastModified: new Date(post.date),
+      lastModified: postModified(post),
       changeFrequency: "yearly",
       priority: 0.7,
     });

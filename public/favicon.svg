@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Dark background matching ink header -->
-  <rect width="32" height="32" rx="6" fill="#0a0a0f"/>
-  <!-- Indigo border -->
-  <rect width="32" height="32" rx="6" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.7"/>
-  <!-- Lightning bolt centred in the badge -->
-  <path d="M20 4 L10 18 H16 L12 28 L22 14 H16 Z" fill="#818cf8"/>
+  <!-- Static fallback of app/icon.tsx: serif "AC" with the amber dot on ink -->
+  <rect width="32" height="32" rx="6" fill="#0B0F14"/>
+  <text x="14" y="21.5" text-anchor="middle" font-family="Lora, Georgia, serif" font-weight="700" font-size="16" fill="#F3EFE7">AC</text>
+  <circle cx="27" cy="20" r="2" fill="#C78A3B"/>
 </svg>

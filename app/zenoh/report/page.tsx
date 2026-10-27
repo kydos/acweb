@@ -9,15 +9,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Zenoh Report",
   description:
     "Monthly digest of Zenoh innovations, ecosystem highlights, and community stories.",
-  keywords: [
-    "Zenoh Report",
-    "Zenoh newsletter",
-    "Zenoh Protocol updates",
-    "Eclipse Zenoh news",
-    "Angelo Corsaro newsletter",
-    "Zenoh release notes",
-    "Zenoh 2.0",
-  ],
 });
 
 const reports = [
@@ -94,11 +85,11 @@ export default function ZenohReportPage() {
           >
             {/* Top row: clickable to issue page */}
             <Link href={`/zenoh/report/${report.slug}`} className="flex items-start gap-4 p-6 pb-4">
-              <span className="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent font-bold font-mono text-sm">
+              <span className="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 dark:bg-ink-card text-fg font-bold font-mono text-sm">
                 {report.num}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-xs font-mono uppercase tracking-widest text-stone-400 dark:text-ash">
+                <p className="text-xs font-mono uppercase tracking-widest text-muted">
                   The Zenoh Report
                 </p>
                 <h2 className="font-semibold text-lg text-stone-900 dark:text-cream group-hover:text-accent transition-colors">
@@ -129,7 +120,7 @@ export default function ZenohReportPage() {
               </ul>
               <a
                 href={report.docxFile}
-                className="inline-flex items-center gap-2 text-sm font-medium text-azure hover:text-sky dark:text-sky dark:hover:text-azure transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-fg underline decoration-muted/50 underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
               >
                 Download DOCX
                 <svg
@@ -150,7 +141,7 @@ export default function ZenohReportPage() {
 
       {/* Subscribe callout */}
       <div className="mt-12 border-l-4 border-accent bg-accent/5 dark:bg-accent/10 rounded-r-lg p-6 animate-fade-in animate-delay-300">
-        <h3 className="font-semibold text-accent mb-2">Stay up to date</h3>
+        <h3 className="font-semibold text-fg mb-2">Stay up to date</h3>
         <p className="text-stone-700 dark:text-fog text-sm leading-relaxed">
           The Zenoh Report is published monthly and covers protocol updates, ecosystem news, and
           community stories — written entirely by Angelo Corsaro in his own voice, without AI tools.
