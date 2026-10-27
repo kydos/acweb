@@ -37,13 +37,13 @@ Same method, same machine, same server.
 | `/zenoh/` | mobile | 97 | **100** | 100 | 100 | 2.6 s | 0 | 10 ms | — |
 | `/zenoh/` | desktop | 100 | **100** | 100 | 100 | 0.5 s | 0 | 0 ms | — |
 
-`/` mobile was run twice (97 / 97). Targets — Perf ≥ 95, A11y = 100, BP ≥ 95, SEO = 100 — are met.
+`/` mobile was run twice (97 / 97), and three more times after the headline change (95 / 97 / 97). Targets — Perf ≥ 95, A11y = 100, BP ≥ 95, SEO = 100 — are met.
 
 ## Other checks
 
 | Check | Result |
 |---|---|
-| LCP element on `/` | The hero headline (mobile and desktop). Before: the header "AC" wordmark on mobile. |
+| LCP element on `/` | Desktop: the hero headline. Mobile: the supporting paragraph — after the switch to the one-line "Making Things Talk" headline, five lines of 18px text cover more of a 390px screen than one line of 38px serif (before: the header "AC" wordmark). Both are server-rendered text; mobile LCP is unchanged at 2.6 s. |
 | CLS | 0 on every page measured. |
 | Firefly Sync cost | rAF callback p95 **0.6 ms**, max 1.2 ms at 1280px (120 dots); p95 0.2 ms at 390px (60 dots); Chrome with **4× CPU throttle** on an Apple-silicon Mac — an emulation of mid-range mobile, not a real device. Chunk: 3.4 KB raw, **1.7 KB gzipped**. |
 | Animation pauses | 0 rAF callbacks while the hero is scrolled off screen. |
