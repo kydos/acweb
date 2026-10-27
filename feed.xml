@@ -7,7 +7,30 @@
     <language>en</language>
     <managingEditor>Angelo Corsaro</managingEditor>
     <atom:link href="https://corsaro.me/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Proposed Eclipse Zenoh AI Guidelines</title>
+      <link>https://corsaro.me/blog/zenoh-ai-guidelines/</link>
+      <guid isPermaLink="true">https://corsaro.me/blog/zenoh-ai-guidelines/</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Generating a patch or a bug report is now cheap; reviewing one is not. A proposal for how Eclipse Zenoh should handle AI-assisted contributions: judge what a submission delivers, not how it was produced.</description>
+      <category>zenoh</category>
+      <category>ai</category>
+      <category>open-source</category>
+      <category>governance</category>
+    </item>
+    <item>
+      <title>Joining 42dot as Distinguished Scientist</title>
+      <link>https://corsaro.me/blog/joining-42dot/</link>
+      <guid isPermaLink="true">https://corsaro.me/blog/joining-42dot/</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
+      <description>I have joined 42dot in Silicon Valley as a Distinguished Scientist, to advance connectivity for the next generation of Physical AI platforms.</description>
+      <category>42dot</category>
+      <category>physical-ai</category>
+      <category>sdv</category>
+      <category>distributed-systems</category>
+      <category>connectivity</category>
+    </item>
     <item>
       <title>Adieu ZettaScale</title>
       <link>https://corsaro.me/blog/adieu-zettascale/</link>
