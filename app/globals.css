@@ -105,6 +105,14 @@
 }
 
 @layer utilities {
+  /* See components/ScrollReveal.tsx */
+  [data-reveal="hidden"] { opacity: 0; transform: translateY(8px); }
+  [data-reveal="shown"] {
+    opacity: 1;
+    transform: none;
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
+  }
+
   .animate-delay-100 { animation-delay: 100ms; animation-fill-mode: both; }
   .animate-delay-200 { animation-delay: 200ms; animation-fill-mode: both; }
   .animate-delay-300 { animation-delay: 300ms; animation-fill-mode: both; }

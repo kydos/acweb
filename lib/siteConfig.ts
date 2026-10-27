@@ -9,6 +9,8 @@ export interface NavLink {
   children?: NavChild[];
 }
 
+const zenohDemoUrl = "http://zenoh.corsaro.me:8000/examples/web/";
+
 export const siteConfig = {
   // ─── Personal Info ───────────────────────────────────────────────
   name: "Angelo Corsaro",
@@ -49,6 +51,8 @@ export const siteConfig = {
       "Inventor of the Zenoh protocol. 25 years taking distributed systems from research to global standards. Now Distinguished Scientist at 42dot, building connectivity for Physical AI.",
   },
 
+  zenohDemoUrl,
+
   // ─── Navigation ──────────────────────────────────────────────────
   navLinks: [
     { label: "Home",    href: "/" },
@@ -64,7 +68,7 @@ export const siteConfig = {
       { label: "ROS 2",           href: "/zenoh/ros2" },
       { label: "DDS Alternative", href: "/zenoh/dds-alternative" },
       { label: "Spec",            href: "https://spec.zenoh.io" },
-      { label: "Live Demo",       href: "http://zenoh.corsaro.me:8000/examples/web/" },
+      { label: "Live Demo",       href: zenohDemoUrl },
     ]},
     { label: "Contact", href: "/contact" },
   ] as NavLink[],
@@ -93,7 +97,8 @@ export const siteConfig = {
       { label: "Peer-reviewed publications", value: "100+" },
       { label: "Years of experience", value: "25+" },
       { label: "International standards", value: "10+" },
-      { label: "Citations", value: "1,478+" },
+      // [CONFIRM] Rounded down from 1,478 so the figure doesn't go stale.
+      { label: "Citations", value: "1,400+" },
     ],
 
     researchProfile:

@@ -5,6 +5,7 @@ import { getAllPostSummaries } from "@/lib/mdx";
 import { BlogCard } from "@/components/BlogCard";
 import { JsonLd } from "@/components/JsonLd";
 import { HeroFireflies } from "@/components/HeroFireflies";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { pageMetadata, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -95,91 +96,146 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 pb-phi-xl">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-phi-xs">
+      {/* Proof strip — numbers, no boxes. */}
+      <section aria-label="Track record" className="mx-auto max-w-5xl px-6 pb-phi-xl">
+        <dl data-reveal className="grid grid-cols-2 gap-x-phi-lg gap-y-phi-md sm:grid-cols-4">
           {siteConfig.cv.stats.map((item) => (
-            <div key={item.label}>
-              <div className="font-mono text-xl font-bold text-accent">{item.value}</div>
-              <div className="mt-1 text-xs leading-tight text-muted">{item.label}</div>
+            // dt must precede dd in the markup; flex-col-reverse puts the number on top.
+            <div key={item.label} className="flex flex-col-reverse">
+              <dt className="mt-1 text-sm text-muted">{item.label}</dt>
+              <dd className="text-4xl font-semibold tracking-tight tabular-nums text-accent md:text-5xl">
+                {item.value}
+              </dd>
             </div>
           ))}
+        </dl>
+
+        <div data-reveal className="mt-phi-lg flex flex-wrap items-baseline gap-x-phi-md gap-y-phi-xs">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Featured in</p>
+          <ul className="flex flex-wrap gap-x-phi-md gap-y-phi-xs">
+            {siteConfig.pressMedia.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whitespace-nowrap text-sm font-medium text-muted transition-colors hover:text-accent"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-    <section className="mx-auto max-w-6xl px-6 pb-phi-xl">
-      <div className="border-t border-stone-100 dark:border-ink-wire pt-phi-lg">
-        <p className="text-xs font-mono uppercase tracking-[0.2em] text-stone-400 dark:text-ash text-center mb-6">
-          Featured In
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-          {siteConfig.pressMedia.map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors duration-200 whitespace-nowrap"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
+      {/* Zenoh — one sentence, one picture, one thing to try. */}
+      <section aria-labelledby="zenoh-heading" className="mx-auto max-w-5xl px-6 py-phi-xl">
+        <div data-reveal className="border-t border-line pt-phi-lg">
+          <h2 id="zenoh-heading" className="font-serif text-3xl font-semibold text-fg">
+            Zenoh
+          </h2>
+          <p className="mt-phi-xs max-w-2xl text-lg leading-relaxed text-muted">
+            One protocol for data in motion, data at rest and computation — from a microcontroller
+            to the cloud.
+          </p>
 
-    {recentPosts.length > 0 && (
-      <section className="mx-auto max-w-6xl px-6 pb-phi-xl">
-        <div className="border-t border-stone-100 dark:border-ink-wire pt-phi-lg">
-          <div className="flex items-baseline justify-between mb-2">
-            <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">
-              Latest from the Blog
-            </h2>
-            <Link href="/blog" className="text-sm text-muted hover:text-accent dark:hover:text-accent transition-colors">
-              All posts →
+          <ContinuumDiagram />
+
+          <div className="mt-phi-lg flex flex-wrap items-baseline gap-x-phi-lg gap-y-phi-sm">
+            <a href={siteConfig.zenohDemoUrl} target="_blank" rel="noopener noreferrer" className="link-quiet">
+              Try Zenoh in your browser <span aria-hidden="true">↗</span>
+            </a>
+            <Link href="/zenoh/book" className="link-quiet">
+              Read the Zenoh book <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="divide-y divide-stone-100 dark:divide-ink-wire/50">
-            {recentPosts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
+          <p className="mt-phi-xs max-w-2xl text-sm leading-relaxed text-muted">
+            The demo runs publishers, subscribers, queryables and gets live in the page — open it
+            in two tabs and watch them talk.
+          </p>
         </div>
       </section>
-    )}
 
-    <section className="mx-auto max-w-6xl px-6 pb-phi-2xl">
-      <div className="rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent dark:from-accent/15 dark:via-accent/5 dark:to-transparent p-6 md:p-8">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent/20 shrink-0">
-                <svg viewBox="0 0 24 24" className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>
-              </span>
-              <h2 className="text-lg font-semibold text-stone-900 dark:text-cream">
-                Try Zenoh in Your Browser
+      {/* Writing — titles, dates, reading time. */}
+      {recentPosts.length > 0 && (
+        <section aria-labelledby="writing-heading" className="mx-auto max-w-5xl px-6 pb-phi-xl">
+          <div data-reveal className="border-t border-line pt-phi-lg">
+            <div className="flex items-baseline justify-between gap-phi-sm">
+              <h2 id="writing-heading" className="font-serif text-3xl font-semibold text-fg">
+                Writing
               </h2>
+              <Link href="/blog" className="link-quiet">
+                All posts <span aria-hidden="true">→</span>
+              </Link>
             </div>
-            <p className="text-sm text-stone-600 dark:text-fog leading-relaxed">
-              Explore all Zenoh features — publishers, subscribers, queryables, and get operations —
-              live in your browser. Open multiple tabs to test cross-instance communication.
-            </p>
+            <div className="mt-phi-xs divide-y divide-line">
+              {recentPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} compact headingLevel="h3" />
+              ))}
+            </div>
           </div>
-          <a
-            href="http://zenoh.corsaro.me:8000/examples/web/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-accent-fg text-sm font-medium hover:bg-accent/90 transition-colors duration-200 shrink-0 whitespace-nowrap"
-          >
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-            </svg>
-            Try the Live Web Demo
-          </a>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+
+      <ScrollReveal />
     </>
+  );
+}
+
+/**
+ * MCU → edge → cloud, drawn in HTML + small inline SVG icons so the labels
+ * stay legible at phone width (a single scaled SVG would shrink them to ~6px).
+ */
+function ContinuumDiagram() {
+  const tiers = [
+    {
+      label: "Microcontroller",
+      icon: (
+        <>
+          <rect x="11" y="11" width="18" height="18" rx="2" />
+          <path d="M15 7v4M20 7v4M25 7v4M15 29v4M20 29v4M25 29v4M7 15h4M7 20h4M7 25h4M29 15h4M29 20h4M29 25h4" />
+        </>
+      ),
+    },
+    {
+      label: "Edge",
+      icon: (
+        <>
+          <rect x="6" y="10" width="28" height="9" rx="2" />
+          <rect x="6" y="21" width="28" height="9" rx="2" />
+          <path d="M10 14.5h4M10 25.5h4" />
+        </>
+      ),
+    },
+    {
+      label: "Cloud",
+      icon: <path d="M12 29h17a6 6 0 0 0 .6-11.97A8 8 0 0 0 14.2 15.6 6.75 6.75 0 0 0 12 29Z" />,
+    },
+  ];
+
+  return (
+    <figure className="mt-phi-lg">
+      <div
+        role="img"
+        aria-label="Zenoh runs on microcontrollers, edge nodes and cloud servers, speaking one protocol end to end."
+        className="flex items-start text-muted"
+      >
+        {tiers.map((tier, i) => (
+          <div key={tier.label} className={i < tiers.length - 1 ? "flex flex-1 items-start" : "flex items-start"}>
+            <div className="flex w-24 shrink-0 flex-col items-center gap-phi-xs sm:w-32">
+              <svg viewBox="0 0 40 40" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                {tier.icon}
+              </svg>
+              <span className="text-center font-mono text-xs">{tier.label}</span>
+            </div>
+            {i < tiers.length - 1 && <span className="mt-5 h-px flex-1 bg-muted/50" />}
+          </div>
+        ))}
+      </div>
+      <figcaption className="mt-phi-sm text-center font-mono text-xs text-muted">
+        one protocol, end to end
+      </figcaption>
+    </figure>
   );
 }
