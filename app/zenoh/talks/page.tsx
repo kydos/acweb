@@ -174,11 +174,11 @@ function TalkCard({ talk }: { talk: Talk }) {
         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${typeBadgeClass[talk.type]}`}>
           {typeLabels[talk.type]}
         </span>
-        <span className="text-xs text-stone-400 dark:text-ash font-mono">
+        <span className="text-xs text-muted font-mono">
           {talk.month ? `${talk.month} ` : ""}{talk.year}
         </span>
         {talk.location && (
-          <span className="text-xs text-stone-400 dark:text-ash">· {talk.location}</span>
+          <span className="text-xs text-muted">· {talk.location}</span>
         )}
       </div>
 
@@ -194,7 +194,7 @@ function TalkCard({ talk }: { talk: Talk }) {
 
       {/* Description */}
       {talk.description && (
-        <p className="mt-2 text-xs text-stone-400 dark:text-ash leading-relaxed">
+        <p className="mt-2 text-xs text-muted leading-relaxed">
           {talk.description}
         </p>
       )}
@@ -254,7 +254,7 @@ function Section({
     <div className="mt-12">
       <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-stone-200 dark:border-ink-wire">
         <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">{title}</h2>
-        <span className="text-sm text-stone-400 dark:text-ash font-mono">{count}</span>
+        <span className="text-sm text-muted font-mono">{count}</span>
       </div>
       <div className="space-y-3">{children}</div>
     </div>

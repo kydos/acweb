@@ -476,7 +476,7 @@ export default function ZenohReportIssuePage({
       {/* Back link — hidden when printing */}
       <a
         href=".."
-        className="print:hidden inline-flex items-center gap-1.5 text-sm text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors mb-8 group"
+        className="print:hidden inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent dark:hover:text-accent transition-colors mb-8 group"
       >
         <svg viewBox="0 0 24 24" className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M19 12H5M5 12l7 7M5 12l7-7" />
@@ -522,7 +522,7 @@ export default function ZenohReportIssuePage({
                   className="rounded-lg border border-stone-200 dark:border-ink-wire w-full h-auto"
                 />
                 {section.image.caption && (
-                  <figcaption className="mt-2 text-xs text-stone-400 dark:text-ash italic text-center">
+                  <figcaption className="mt-2 text-xs text-muted italic text-center">
                     {section.image.caption}
                   </figcaption>
                 )}
@@ -574,7 +574,7 @@ export default function ZenohReportIssuePage({
                   className="rounded-lg border border-stone-200 dark:border-ink-wire w-full h-auto"
                 />
                 {section.imageAfter.caption && (
-                  <figcaption className="mt-2 text-xs text-stone-400 dark:text-ash italic text-center">
+                  <figcaption className="mt-2 text-xs text-muted italic text-center">
                     {section.imageAfter.caption}
                   </figcaption>
                 )}
@@ -592,7 +592,7 @@ export default function ZenohReportIssuePage({
                   className="rounded-lg border border-stone-200 dark:border-ink-wire w-full h-auto"
                 />
                 {img.caption && (
-                  <figcaption className="mt-2 text-xs text-stone-400 dark:text-ash italic text-center">
+                  <figcaption className="mt-2 text-xs text-muted italic text-center">
                     {img.caption}
                   </figcaption>
                 )}
@@ -613,7 +613,7 @@ export default function ZenohReportIssuePage({
               <path d="M19 12H5M5 12l7 7M5 12l7-7" />
             </svg>
             <span>
-              <span className="block text-xs text-stone-400 dark:text-ash/60">Previous</span>
+              <span className="block text-xs text-muted">Previous</span>
               {issues[prevSlug].label}
             </span>
           </a>
@@ -626,7 +626,7 @@ export default function ZenohReportIssuePage({
             className="flex items-center gap-2 text-right text-stone-500 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors group"
           >
             <span>
-              <span className="block text-xs text-stone-400 dark:text-ash/60">Next</span>
+              <span className="block text-xs text-muted">Next</span>
               {issues[nextSlug].label}
             </span>
             <svg viewBox="0 0 24 24" className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2">

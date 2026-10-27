@@ -179,9 +179,9 @@ export default function BookChapterPage({ params }: Props) {
             prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-6
             prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-10 prose-h2:mb-3
             prose-h3:text-lg prose-h3:font-semibold prose-h3:mt-6 prose-h3:mb-2
-            prose-code:text-accent prose-code:font-mono prose-code:text-sm
+            prose-code:font-mono prose-code:text-sm
             prose-blockquote:border-l-4 prose-blockquote:border-accent/40 prose-blockquote:pl-4 prose-blockquote:italic
-            prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
+            ">
             <MDXRemote
               source={content}
               components={makeMdxComponents(currentSlug)}
@@ -214,7 +214,7 @@ export default function BookChapterPage({ params }: Props) {
                 <path d="M19 12H5M5 12l7 7M5 12l7-7" />
               </svg>
               <span>
-                <span className="block text-xs text-stone-400 dark:text-ash/60">Previous</span>
+                <span className="block text-xs text-muted">Previous</span>
                 {slugToTitle[prevSlug]}
               </span>
             </Link>
@@ -227,7 +227,7 @@ export default function BookChapterPage({ params }: Props) {
               className="flex items-center gap-2 text-right text-stone-500 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors group"
             >
               <span>
-                <span className="block text-xs text-stone-400 dark:text-ash/60">Next</span>
+                <span className="block text-xs text-muted">Next</span>
                 {slugToTitle[nextSlug]}
               </span>
               <svg

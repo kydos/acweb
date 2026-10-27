@@ -19,11 +19,15 @@ export function TagList({
 }) {
   if (tags.length === 0) return null;
   return (
-    <ul className={cn("flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs font-mono text-muted", className)}>
+    <ul className={cn("flex flex-wrap items-baseline gap-x-2 text-xs font-mono text-muted", className)}>
       {tags.map((tag, i) => (
         <li key={tag} className="flex items-baseline gap-x-2">
           {linked ? (
-            <Link href={`/blog/tag/${tagSlug(tag)}`} className="hover:text-accent transition-colors">
+            // min-h-6: a 24px-tall hit area (WCAG 2.5.8) once tags wrap onto two lines.
+            <Link
+              href={`/blog/tag/${tagSlug(tag)}`}
+              className="inline-flex min-h-6 items-center hover:text-accent transition-colors"
+            >
               #{tag}
               {counts && <span className="ml-1 tabular-nums opacity-70">{counts[tag]}</span>}
             </Link>

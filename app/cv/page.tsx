@@ -127,13 +127,13 @@ export default function CVPage() {
               <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-accent" />
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-3">
                 <h3 className="font-semibold text-base text-stone-900 dark:text-cream">{job.role}</h3>
-                <span className="text-xs font-mono text-stone-400 dark:text-ash shrink-0">
+                <span className="text-xs font-mono text-muted shrink-0">
                   {job.period}
                 </span>
               </div>
               <p className="text-accent text-sm font-medium mt-0.5">
                 {job.company}
-                <span className="text-stone-400 dark:text-ash font-normal"> · {job.location}</span>
+                <span className="text-muted font-normal"> · {job.location}</span>
               </p>
               <p className="mt-1.5 text-stone-600 dark:text-fog text-sm leading-relaxed">
                 {job.description}
@@ -151,14 +151,14 @@ export default function CVPage() {
               <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-stone-400 dark:bg-ash" />
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
                 <h3 className="font-semibold text-base text-stone-900 dark:text-cream">{t_entry.role}</h3>
-                <span className="text-xs font-mono text-stone-400 dark:text-ash shrink-0">
+                <span className="text-xs font-mono text-muted shrink-0">
                   {t_entry.period}
                 </span>
               </div>
               <p className="text-sm text-stone-600 dark:text-fog mt-0.5">
                 {t_entry.institution}
                 {"note" in t_entry && t_entry.note ? (
-                  <span className="text-stone-400 dark:text-ash"> — {t_entry.note}</span>
+                  <span className="text-muted"> — {t_entry.note}</span>
                 ) : null}
               </p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
@@ -184,13 +184,13 @@ export default function CVPage() {
               <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-accent" />
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
                 <h3 className="font-semibold text-stone-900 dark:text-cream">{edu.degree}</h3>
-                <span className="text-xs font-mono text-stone-400 dark:text-ash shrink-0">
+                <span className="text-xs font-mono text-muted shrink-0">
                   {edu.period}
                 </span>
               </div>
               <p className="text-sm text-stone-600 dark:text-fog">
                 {edu.institution}
-                <span className="text-stone-400 dark:text-ash"> · {edu.location}</span>
+                <span className="text-muted"> · {edu.location}</span>
               </p>
               {"note" in edu && edu.note ? (
                 <p className="mt-1 text-xs text-stone-500 dark:text-ash italic">
@@ -214,7 +214,7 @@ export default function CVPage() {
                 <h3 className="font-semibold text-accent">
                   {contrib.title}
                 </h3>
-                <span className="text-xs font-mono text-stone-400 dark:text-ash shrink-0">
+                <span className="text-xs font-mono text-muted shrink-0">
                   {contrib.period}
                 </span>
               </div>
@@ -292,7 +292,7 @@ export default function CVPage() {
         <div className="space-y-2">
           {cv.recognition.map((r, i) => (
             <div key={i} className="flex gap-4 items-baseline">
-              <span className="text-xs font-mono text-stone-400 dark:text-ash shrink-0 w-16 text-right">
+              <span className="text-xs font-mono text-muted shrink-0 w-16 text-right">
                 {r.year}
               </span>
               <p className="text-sm text-stone-700 dark:text-fog">{r.award}</p>
@@ -316,7 +316,7 @@ export default function CVPage() {
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-stone-200 dark:border-ink-wire text-sm"
                 >
                   <span className="font-medium text-stone-800 dark:text-cream">{lang}</span>
-                  <span className="text-stone-400 dark:text-ash text-xs">{level}</span>
+                  <span className="text-muted text-xs">{level}</span>
                 </div>
               ))}
             </div>

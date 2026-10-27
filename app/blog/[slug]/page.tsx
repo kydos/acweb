@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }: Props) {
           >
             {previous ? (
               <Link href={`/blog/${previous.slug}`} className="group">
-                <span className="block text-xs text-stone-400 dark:text-ash/70">Previous</span>
+                <span className="block text-xs text-muted">Previous</span>
                 <span className="mt-0.5 block font-medium text-stone-700 dark:text-fog group-hover:text-accent transition-colors">
                   ← {previous.title}
                 </span>
@@ -129,7 +129,7 @@ export default function BlogPostPage({ params }: Props) {
             )}
             {next ? (
               <Link href={`/blog/${next.slug}`} className="group sm:text-right">
-                <span className="block text-xs text-stone-400 dark:text-ash/70">Next</span>
+                <span className="block text-xs text-muted">Next</span>
                 <span className="mt-0.5 block font-medium text-stone-700 dark:text-fog group-hover:text-accent transition-colors">
                   {next.title} →
                 </span>

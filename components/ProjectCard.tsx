@@ -6,7 +6,9 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
       href={repo.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl
+      // min-w-0: the truncated title is nowrap, so without it the grid item's
+      // min-content width is the full repo name and overflows at 320px.
+      className="group block min-w-0 rounded-xl
                  border border-stone-200 dark:border-ink-wire
                  bg-white dark:bg-ink-card
                  p-6
@@ -27,7 +29,7 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-stone-400 dark:text-ash">
+      <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-muted">
         {repo.language && (
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-accent/70" />
@@ -55,7 +57,7 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
               key={topic}
               className="px-2 py-0.5 text-xs rounded-full
                          bg-stone-100 dark:bg-ink-shell/40
-                         text-stone-500 dark:text-ash"
+                         text-stone-600 dark:text-ash"
             >
               {topic}
             </span>

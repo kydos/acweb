@@ -43,7 +43,7 @@ function HistoricalProjectCard({ project }: { project: HistoricalProject }) {
             <h3 className="font-semibold text-lg text-stone-800 dark:text-cream group-hover:text-accent transition-colors duration-200">
               {project.name}
             </h3>
-            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-stone-100 dark:bg-ink-shell/40 text-stone-500 dark:text-ash">
+            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-stone-100 dark:bg-ink-shell/40 text-stone-600 dark:text-ash">
               Historical
             </span>
           </div>
@@ -52,7 +52,7 @@ function HistoricalProjectCard({ project }: { project: HistoricalProject }) {
           </p>
         </div>
       </div>
-      <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-stone-400 dark:text-ash">
+      <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted">
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-accent/70" />
           {project.language}
@@ -86,7 +86,7 @@ export default async function OpenSourcePage() {
       />
 
       {repos.length === 0 ? (
-        <p className="mt-12 text-stone-400 dark:text-ash">Unable to load repositories. Please try again later.</p>
+        <p className="mt-12 text-muted">Unable to load repositories. Please try again later.</p>
       ) : (
         <div className="mt-10 grid gap-4 animate-fade-in animate-delay-200">
           {repos.map((repo) => (
@@ -99,9 +99,9 @@ export default async function OpenSourcePage() {
       <div className="mt-16 animate-fade-in animate-delay-300">
         <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-stone-200 dark:border-ink-wire">
           <h2 className="text-xl font-serif font-semibold text-stone-900 dark:text-cream">Historical Projects</h2>
-          <span className="text-sm text-stone-400 dark:text-ash font-mono">{historicalProjects.length}</span>
+          <span className="text-sm text-muted font-mono">{historicalProjects.length}</span>
         </div>
-        <p className="mb-5 text-xs text-stone-400 dark:text-ash italic">
+        <p className="mb-5 text-xs text-muted italic">
           Projects that predate GitHub, preserved here for their historical and technical significance.
         </p>
         <div className="grid gap-4">

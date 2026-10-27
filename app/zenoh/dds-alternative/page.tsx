@@ -34,7 +34,7 @@ export default function ZenohDdsAlternativePage() {
       </p>
 
       <div className="mt-10 overflow-hidden rounded-lg border border-stone-200 dark:border-ink-wire">
-        <div className="grid grid-cols-3 bg-stone-100 text-xs font-mono uppercase tracking-wide text-stone-500 dark:bg-ink-shell dark:text-ash">
+        <div className="grid grid-cols-3 bg-stone-100 text-xs font-mono uppercase tracking-wide text-stone-600 dark:bg-ink-shell dark:text-fog">
           <div className="p-3">Concern</div>
           <div className="p-3">Traditional DDS Fit</div>
           <div className="p-3">Zenoh Fit</div>

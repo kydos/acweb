@@ -137,7 +137,7 @@ export default function ZenohBookPage() {
               className="group block rounded-xl border border-stone-200 dark:border-ink-wire bg-white dark:bg-ink-card p-5 hover:border-accent dark:hover:border-accent transition-colors duration-200"
             >
               <div className="flex gap-4">
-                <span className="shrink-0 font-mono text-2xl font-bold text-accent/30 dark:text-accent/20 leading-none pt-1">
+                <span className="shrink-0 font-mono text-2xl font-bold text-muted leading-none pt-1">
                   {ch.num}
                 </span>
                 <div className="flex-1 min-w-0">
@@ -172,7 +172,7 @@ export default function ZenohBookPage() {
             href="https://zenoh.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:underline"
+            className="text-fg underline decoration-muted/50 underline-offset-2 hover:text-accent hover:decoration-accent"
           >
             zenoh.io
           </a>.

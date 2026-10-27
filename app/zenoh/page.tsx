@@ -255,7 +255,7 @@ export default function ZenohPage() {
             <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-2 text-stone-900 dark:text-cream">
               {"The Genesis of Zenoh"}
             </h2>
-            <p className="text-sm text-stone-400 dark:text-ash mb-8 italic">
+            <p className="text-sm text-muted mb-8 italic">
               {"How a protocol was born from necessity — and named after a philosopher"}
             </p>
 
@@ -281,7 +281,7 @@ export default function ZenohPage() {
 
               <blockquote className="border-l-4 border-accent pl-6 py-1 text-stone-600 dark:text-sand italic">
                 &ldquo;{"I had to do something. I started working on the idea of coming up with a protocol that could work efficiently from the microcontroller up to the data-center, would not have any topological constraints and would provide unified abstraction for dealing with data in movement and data at rest."}&rdquo;
-                <footer className="mt-2 text-xs not-italic text-stone-400 dark:text-ash">
+                <footer className="mt-2 text-xs not-italic text-muted">
                   — Angelo Corsaro, The Zenoh Report, February 2026
                 </footer>
               </blockquote>
@@ -289,7 +289,7 @@ export default function ZenohPage() {
 
             {/* Why "Zenoh"? */}
             <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-6">
-              <h3 className="font-semibold text-accent mb-3 text-lg">
+              <h3 className="font-semibold text-fg mb-3 text-lg">
                 {"Why “Zenoh”?"}
               </h3>
               <p className="text-sm text-stone-700 dark:text-fog leading-relaxed mb-3">
@@ -299,7 +299,7 @@ export default function ZenohPage() {
                 {"Stoicism — founded by Zenon of Citium — left an equally deep mark through Marcus Aurelius’s Meditations."}
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <span className="px-3 py-1.5 rounded-lg bg-accent/10 text-sm font-mono text-accent font-semibold">
+                <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-card text-sm font-mono text-fg font-semibold">
                   Z·E·N·O·H
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-ink-shell/40 text-sm text-stone-700 dark:text-fog">
@@ -312,7 +312,7 @@ export default function ZenohPage() {
                   Zenon of Citium (Stoic founder)
                 </span>
               </div>
-              <p className="mt-3 text-xs text-stone-400 dark:text-ash italic">
+              <p className="mt-3 text-xs text-muted italic">
                 {"The difference between Zenon and Zenoh is less than a letter — it is just the overshoot of the “h”."}
               </p>
             </div>
@@ -353,7 +353,7 @@ export default function ZenohPage() {
                   </div>
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-4 h-4 mt-1 shrink-0 text-stone-400 dark:text-ash group-hover:text-accent transition-colors"
+                    className="w-4 h-4 mt-1 shrink-0 text-muted group-hover:text-accent transition-colors"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"

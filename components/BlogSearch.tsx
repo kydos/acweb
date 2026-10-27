@@ -30,7 +30,7 @@ export function BlogSearch({ posts, placeholder, empty }: Props) {
       <div className="mt-8 relative">
         <svg
           viewBox="0 0 24 24"
-          className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-ash pointer-events-none"
+          className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-muted pointer-events-none"
           fill="none" stroke="currentColor" strokeWidth="2"
         >
           <circle cx="11" cy="11" r="8" />
@@ -45,7 +45,7 @@ export function BlogSearch({ posts, placeholder, empty }: Props) {
                      border border-stone-200 dark:border-ink-wire
                      bg-white dark:bg-ink-card
                      text-sm text-stone-800 dark:text-cream
-                     placeholder:text-stone-400 dark:placeholder:text-ash
+                     placeholder:text-muted
                      focus:outline-none focus:ring-1 focus:ring-accent
                      focus:border-accent
                      transition-all"
@@ -54,7 +54,7 @@ export function BlogSearch({ posts, placeholder, empty }: Props) {
           <button
             onClick={() => setQuery("")}
             className="absolute right-3 top-1/2 -translate-y-1/2
-                       text-stone-400 dark:text-ash
+                       text-muted
                        hover:text-stone-700 dark:hover:text-cream
                        transition-colors"
             aria-label="Clear search"

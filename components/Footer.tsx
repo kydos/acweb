@@ -76,7 +76,7 @@ export function Footer() {
                         flex flex-col sm:flex-row items-center justify-between gap-3
                         text-sm text-stone-500 dark:text-ash">
           <p>&copy; {year} {siteConfig.name}. All rights reserved.</p>
-          <p className="text-xs text-stone-400 dark:text-stone-500">
+          <p className="text-xs text-muted">
             Code:{" "}
             <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">AGPL-3.0</a>
             {" · "}Content:{" "}
@@ -132,7 +132,7 @@ function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="text-stone-400 dark:text-ash hover:text-accent dark:hover:text-accent transition-colors duration-200"
+      className="text-muted hover:text-accent dark:hover:text-accent transition-colors duration-200"
     >
       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
         {children}
